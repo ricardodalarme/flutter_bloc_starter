@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_starter/l10n/l10n.dart';
 import 'package:flutter_bloc_starter/routes/app_routes.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
 import 'package:go_router/go_router.dart';
@@ -9,21 +10,23 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
+      appBar: AppBar(
+        title: Text(context.l10n.login),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(AppSpacing.large),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const TextField(
+            TextField(
               decoration: InputDecoration(
-                labelText: 'Username',
+                labelText: context.l10n.username,
               ),
             ),
             const SizedBox(height: AppSpacing.medium),
-            const TextField(
+            TextField(
               decoration: InputDecoration(
-                labelText: 'Password',
+                labelText: context.l10n.password,
               ),
             ),
             const SizedBox(height: AppSpacing.large),
@@ -31,7 +34,7 @@ class LoginView extends StatelessWidget {
               onPressed: () {
                 context.go(AppPaths.home);
               },
-              child: const Text('Submit'),
+              child: Text(context.l10n.login),
             ),
           ],
         ),

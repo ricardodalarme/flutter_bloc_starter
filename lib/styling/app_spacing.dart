@@ -4,7 +4,7 @@ abstract class AppSpacing {
   static const double spaceUnit = 16;
 
   /// none spacing value (0pt)
-  static const double none = 0.0;
+  static const double none = 0;
 
   /// xxxs spacing value (1pt)
   static const double xxxsmall = 0.0625 * spaceUnit;

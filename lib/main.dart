@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc_starter/app.dart';
+import 'package:flutter_bloc_starter/app/app.dart';
+import 'package:flutter_bloc_starter/app/bootstrap.dart';
 
 void main() {
-  runApp(const App());
+  bootstrap(App.new);
 }

@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Lunch Development",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "Lunch Production",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    }
+  ]
+}

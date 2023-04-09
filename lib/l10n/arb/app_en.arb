@@ -4,5 +4,8 @@
   "email": "Email",
   "password": "Password",
   "home": "Home",
-  "logout": "Logout"
+  "logout": "Logout",
+  "dontHaveAnAccount": "Don't have an account? ",
+  "signUp": "Sign Up",
+  "confirmPassword": "Confirm Password"
 }

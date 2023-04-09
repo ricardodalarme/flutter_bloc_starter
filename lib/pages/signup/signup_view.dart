@@ -4,14 +4,14 @@ import 'package:flutter_bloc_starter/routes/app_routes.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class SignUpView extends StatelessWidget {
+  const SignUpView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.l10n.login),
+        title: Text(context.l10n.signUp),
       ),
       body: Padding(
         padding: const EdgeInsets.all(AppSpacing.large),
@@ -25,8 +25,16 @@ class LoginView extends StatelessWidget {
             ),
             const SizedBox(height: AppSpacing.medium),
             TextField(
+              obscureText: true,
               decoration: InputDecoration(
                 labelText: context.l10n.password,
+              ),
+            ),
+            const SizedBox(height: AppSpacing.medium),
+            TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: context.l10n.confirmPassword,
               ),
             ),
             const SizedBox(height: AppSpacing.large),
@@ -34,25 +42,7 @@ class LoginView extends StatelessWidget {
               onPressed: () {
                 context.go(AppPaths.home);
               },
-              child: Text(context.l10n.login),
-            ),
-            TextButton(
-              onPressed: () async {
-                await context.push(AppPaths.signup);
-              },
-              child: Text.rich(
-                TextSpan(
-                  text: context.l10n.dontHaveAnAccount,
-                  children: [
-                    TextSpan(
-                      text: context.l10n.signUp,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              child: Text(context.l10n.signUp),
             ),
           ],
         ),

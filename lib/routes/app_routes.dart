@@ -1,5 +1,6 @@
 import 'package:flutter_bloc_starter/pages/home/home_view.dart';
 import 'package:flutter_bloc_starter/pages/login/login_view.dart';
+import 'package:flutter_bloc_starter/pages/signup/signup_view.dart';
 import 'package:go_router/go_router.dart';
 
 part 'app_paths.dart';
@@ -18,6 +19,10 @@ abstract class AppRoutes {
     GoRoute(
       path: _Paths.home,
       builder: (context, state) => const HomeView(),
+    ),
+    GoRoute(
+      path: _Paths.signup,
+      builder: (context, state) => const SignUpView(),
     ),
   ];
 }

@@ -4,5 +4,8 @@
   "email": "Email",
   "password": "Senha",
   "home": "Home",
-  "logout": "Sair"
+  "logout": "Sair",
+  "signUp": "Registrar",
+  "dontHaveAnAccount": "Não tem uma conta? ",
+  "confirmPassword": "Confirmar Senha"
 }

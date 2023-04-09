@@ -1,7 +1,7 @@
 {
   "appName": "Flutter Bloc Starter",
   "login": "Login",
-  "username": "Username",
+  "email": "Email",
   "password": "Password",
   "home": "Home",
   "logout": "Logout"

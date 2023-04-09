@@ -20,7 +20,7 @@ class LoginView extends StatelessWidget {
           children: [
             TextField(
               decoration: InputDecoration(
-                labelText: context.l10n.username,
+                labelText: context.l10n.email,
               ),
             ),
             const SizedBox(height: AppSpacing.medium),

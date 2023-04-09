@@ -25,6 +25,7 @@ class LoginView extends StatelessWidget {
             ),
             const SizedBox(height: AppSpacing.medium),
             TextField(
+              obscureText: true,
               decoration: InputDecoration(
                 labelText: context.l10n.password,
               ),

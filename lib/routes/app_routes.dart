@@ -2,6 +2,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc_starter/pages/home/home_view.dart';
 import 'package:flutter_bloc_starter/pages/login/login_view.dart';
+import 'package:flutter_bloc_starter/pages/not_found/not_found_view.dart';
 import 'package:flutter_bloc_starter/pages/signup/signup_view.dart';
 import 'package:go_router/go_router.dart';
 
@@ -12,6 +13,7 @@ abstract class AppRoutes {
     routes: _routes,
     initialLocation: AppPaths.login,
     debugLogDiagnostics: kDebugMode,
+    errorBuilder: (context, state) => const NotFoundView(),
     observers: [
       FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance),
     ],

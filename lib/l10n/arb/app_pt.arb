@@ -18,5 +18,8 @@
   "forgotPasswordPinDescription": "Digite o código que enviamos para seu email.",
   "resendCode": "Reenviar código",
   "resetPassword": "Redefinir Senha",
-  "newPassword": "Nova Senha"
+  "newPassword": "Nova Senha",
+  "changePassword": "Alterar Senha",
+  "currentPassword": "Senha Atual",
+  "save": "Salvar"
 }

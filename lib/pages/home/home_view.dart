@@ -19,6 +19,12 @@ class HomeView extends StatelessWidget {
             children: [
               FilledButton(
                 onPressed: () {
+                  context.push(AppPaths.changePassword);
+                },
+                child: Text(context.l10n.changePassword),
+              ),
+              FilledButton(
+                onPressed: () {
                   context.go(AppPaths.login);
                 },
                 child: Text(context.l10n.logout),

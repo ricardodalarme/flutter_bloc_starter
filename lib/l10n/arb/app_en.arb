@@ -18,5 +18,8 @@
   "forgotPasswordPinDescription": "Enter the code sent to your email address",
   "resendCode": "Resend Code",
   "resetPassword": "Reset Password",
-  "newPassword": "New Password"
+  "newPassword": "New Password",
+  "changePassword": "Change Password",
+  "currentPassword": "Current Password",
+  "save": "Save"
 }

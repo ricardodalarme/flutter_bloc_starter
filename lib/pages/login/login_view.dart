@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc_starter/l10n/l10n.dart';
 import 'package:flutter_bloc_starter/routes/app_routes.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
+import 'package:flutter_bloc_starter/widgets/password_text_field.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginView extends StatelessWidget {
@@ -24,11 +25,8 @@ class LoginView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: AppSpacing.medium),
-            TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: context.l10n.password,
-              ),
+            PasswordTextField(
+              labelText: context.l10n.password,
             ),
             const SizedBox(height: AppSpacing.large),
             FilledButton(

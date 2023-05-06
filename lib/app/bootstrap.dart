@@ -18,8 +18,5 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
   Bloc.observer = AppBlocObserver();
 
-  await runZonedGuarded(
-    () async => runApp(await builder()),
-    FirebaseCrashlytics.instance.recordError,
-  );
+  runApp(await builder());
 }

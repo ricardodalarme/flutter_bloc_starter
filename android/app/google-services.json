@@ -14,7 +14,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "707495094215-s7aau2i4fdg6lf98h4boub72e1ilhrbp.apps.googleusercontent.com",
+          "client_id": "707495094215-326cds9l33rnbmqp4ui9l3lqijaoctin.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,8 +27,15 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "707495094215-s7aau2i4fdg6lf98h4boub72e1ilhrbp.apps.googleusercontent.com",
+              "client_id": "707495094215-326cds9l33rnbmqp4ui9l3lqijaoctin.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "707495094215-3tpcvcqkdvsimreuq5herigf8aule918.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lunardevs.flutterBlocStarter"
+              }
             }
           ]
         }

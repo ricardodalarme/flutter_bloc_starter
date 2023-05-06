@@ -6,10 +6,12 @@ abstract class AppPaths {
   static const home = _Paths.home;
   static const login = _Paths.login;
   static const signup = _Paths.signup;
+  static const forgotPassword = _Paths.forgotPassword;
 }
 
 abstract class _Paths {
   static const home = '/';
   static const login = '/login';
   static const signup = '/signup';
+  static const forgotPassword = '/forgot-password';
 }

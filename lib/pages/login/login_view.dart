@@ -28,6 +28,17 @@ class LoginView extends StatelessWidget {
             PasswordTextField(
               labelText: context.l10n.password,
             ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () {
+                  context.push(AppPaths.forgotPassword);
+                },
+                child: Text(
+                  context.l10n.forgotPassword,
+                ),
+              ),
+            ),
             const SizedBox(height: AppSpacing.large),
             FilledButton(
               onPressed: () {

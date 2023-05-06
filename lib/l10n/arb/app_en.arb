@@ -10,5 +10,13 @@
   "confirmPassword": "Confirm Password",
   "pageNotFound": "Page not found",
   "goBackHome": "Go back home",
-  "error404": "404"
+  "error404": "404",
+  "forgotPassword": "Forgot Password?",
+  "recoverPassword": "Recover Password",
+  "forgotPasswordDescription": "Enter your email address and we'll send you a code to reset your password",
+  "send": "Send",
+  "forgotPasswordPinDescription": "Enter the code sent to your email address",
+  "resendCode": "Resend Code",
+  "resetPassword": "Reset Password",
+  "newPassword": "New Password"
 }

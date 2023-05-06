@@ -10,5 +10,13 @@
   "confirmPassword": "Confirmar Senha",
   "pageNotFound": "Página não encontrada",
   "goBackHome": "Voltar para página inicial",
-  "error404": "404"
+  "error404": "404",
+  "forgotPassword": "Esqueceu a senha?",
+  "recoverPassword": "Recuperar Senha",
+  "forgotPasswordDescription": "Digite seu email e enviaremos um código para redefinir sua senha.",
+  "send": "Enviar",
+  "forgotPasswordPinDescription": "Digite o código que enviamos para seu email.",
+  "resendCode": "Reenviar código",
+  "resetPassword": "Redefinir Senha",
+  "newPassword": "Nova Senha"
 }

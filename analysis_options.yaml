@@ -6,4 +6,5 @@ analyzer:
 
 linter:
   rules:
+    flutter_style_todos: false
     public_member_api_docs: false

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_starter/blocs/forgot_password/forgot_password_bloc.dart';
 import 'package:flutter_bloc_starter/l10n/l10n.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
 
@@ -16,17 +18,29 @@ class ForgotPasswordEmailForm extends StatelessWidget {
           style: Theme.of(context).textTheme.titleMedium,
         ),
         const SizedBox(height: AppSpacing.xlarge),
-        TextField(
-          decoration: InputDecoration(
-            labelText: context.l10n.email,
-          ),
-        ),
+        const _EmailTextField(),
         const SizedBox(height: AppSpacing.large),
         FilledButton(
           onPressed: null,
           child: Text(context.l10n.send),
         ),
       ],
+    );
+  }
+}
+
+class _EmailTextField extends StatelessWidget {
+  const _EmailTextField();
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      onChanged: (value) => context
+          .read<ForgotPasswordBloc>()
+          .add(ForgotPasswordEmailChanged(value)),
+      decoration: InputDecoration(
+        labelText: context.l10n.email,
+      ),
     );
   }
 }

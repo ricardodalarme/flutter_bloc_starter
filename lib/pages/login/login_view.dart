@@ -45,24 +45,7 @@ class LoginView extends StatelessWidget {
                   },
                   child: Text(context.l10n.login),
                 ),
-                TextButton(
-                  onPressed: () async {
-                    await context.push(AppPaths.signup);
-                  },
-                  child: Text.rich(
-                    TextSpan(
-                      text: context.l10n.dontHaveAnAccount,
-                      children: [
-                        TextSpan(
-                          text: context.l10n.signUp,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                const _SignupButton(),
               ],
             ),
           ),
@@ -96,6 +79,32 @@ class _PasswordTextField extends StatelessWidget {
       onChanged: (password) =>
           context.read<LoginBloc>().add(LoginPasswordChanged(password)),
       labelText: context.l10n.password,
+    );
+  }
+}
+
+class _SignupButton extends StatelessWidget {
+  const _SignupButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () async {
+        await context.push(AppPaths.signup);
+      },
+      child: Text.rich(
+        TextSpan(
+          text: context.l10n.dontHaveAnAccount,
+          children: [
+            TextSpan(
+              text: context.l10n.signUp,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

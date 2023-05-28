@@ -16,26 +16,28 @@ class ChangePasswordView extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.l10n.changePassword),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(AppSpacing.large),
-        child: BlocProvider(
-          create: (context) => ChangePasswordBloc(),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const _CurrentPasswordTextField(),
-              const SizedBox(height: AppSpacing.medium),
-              const _NewPasswordTextField(),
-              const SizedBox(height: AppSpacing.medium),
-              const _ConfirmPasswordTextField(),
-              const SizedBox(height: AppSpacing.large),
-              FilledButton(
-                onPressed: () {
-                  context.go(AppPaths.home);
-                },
-                child: Text(context.l10n.save),
-              ),
-            ],
+      body: Center(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(AppSpacing.large),
+          child: BlocProvider(
+            create: (context) => ChangePasswordBloc(),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const _CurrentPasswordTextField(),
+                const SizedBox(height: AppSpacing.medium),
+                const _NewPasswordTextField(),
+                const SizedBox(height: AppSpacing.medium),
+                const _ConfirmPasswordTextField(),
+                const SizedBox(height: AppSpacing.large),
+                FilledButton(
+                  onPressed: () {
+                    context.go(AppPaths.home);
+                  },
+                  child: Text(context.l10n.save),
+                ),
+              ],
+            ),
           ),
         ),
       ),

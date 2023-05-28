@@ -10,18 +10,23 @@ class ForgotPasswordResetPasswordForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const _NewPasswordTextField(),
-        const SizedBox(height: AppSpacing.medium),
-        const _ConfirmPasswordTextField(),
-        const SizedBox(height: AppSpacing.large),
-        FilledButton(
-          onPressed: null,
-          child: Text(context.l10n.resetPassword),
+    return Center(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(AppSpacing.large),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const _NewPasswordTextField(),
+            const SizedBox(height: AppSpacing.medium),
+            const _ConfirmPasswordTextField(),
+            const SizedBox(height: AppSpacing.large),
+            FilledButton(
+              onPressed: null,
+              child: Text(context.l10n.resetPassword),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

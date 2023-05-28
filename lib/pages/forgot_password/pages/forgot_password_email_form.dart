@@ -9,22 +9,27 @@ class ForgotPasswordEmailForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          context.l10n.forgotPasswordDescription,
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.titleMedium,
+    return Center(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(AppSpacing.large),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              context.l10n.forgotPasswordDescription,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: AppSpacing.xlarge),
+            const _EmailTextField(),
+            const SizedBox(height: AppSpacing.large),
+            FilledButton(
+              onPressed: null,
+              child: Text(context.l10n.send),
+            ),
+          ],
         ),
-        const SizedBox(height: AppSpacing.xlarge),
-        const _EmailTextField(),
-        const SizedBox(height: AppSpacing.large),
-        FilledButton(
-          onPressed: null,
-          child: Text(context.l10n.send),
-        ),
-      ],
+      ),
     );
   }
 }

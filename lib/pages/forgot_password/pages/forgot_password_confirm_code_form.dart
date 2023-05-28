@@ -10,22 +10,27 @@ class ResetPasswordConfirmCodeForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          context.l10n.forgotPasswordPinDescription,
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.titleMedium,
+    return Center(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(AppSpacing.large),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              context.l10n.forgotPasswordPinDescription,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: AppSpacing.xlarge),
+            const _PinCodeInput(),
+            const SizedBox(height: AppSpacing.large),
+            FilledButton(
+              onPressed: null,
+              child: Text(context.l10n.resendCode),
+            ),
+          ],
         ),
-        const SizedBox(height: AppSpacing.xlarge),
-        const _PinCodeInput(),
-        const SizedBox(height: AppSpacing.large),
-        FilledButton(
-          onPressed: null,
-          child: Text(context.l10n.resendCode),
-        ),
-      ],
+      ),
     );
   }
 }

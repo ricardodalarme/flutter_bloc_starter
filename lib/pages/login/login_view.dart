@@ -16,53 +16,55 @@ class LoginView extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.l10n.login),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(AppSpacing.large),
-        child: BlocProvider(
-          create: (context) => LoginBloc(),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const _EmailTextField(),
-              const SizedBox(height: AppSpacing.medium),
-              const _PasswordTextField(),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
+      body: Center(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(AppSpacing.large),
+          child: BlocProvider(
+            create: (context) => LoginBloc(),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const _EmailTextField(),
+                const SizedBox(height: AppSpacing.medium),
+                const _PasswordTextField(),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () {
+                      context.push(AppPaths.forgotPassword);
+                    },
+                    child: Text(
+                      context.l10n.forgotPassword,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.large),
+                FilledButton(
                   onPressed: () {
-                    context.push(AppPaths.forgotPassword);
+                    context.go(AppPaths.home);
                   },
-                  child: Text(
-                    context.l10n.forgotPassword,
-                  ),
+                  child: Text(context.l10n.login),
                 ),
-              ),
-              const SizedBox(height: AppSpacing.large),
-              FilledButton(
-                onPressed: () {
-                  context.go(AppPaths.home);
-                },
-                child: Text(context.l10n.login),
-              ),
-              TextButton(
-                onPressed: () async {
-                  await context.push(AppPaths.signup);
-                },
-                child: Text.rich(
-                  TextSpan(
-                    text: context.l10n.dontHaveAnAccount,
-                    children: [
-                      TextSpan(
-                        text: context.l10n.signUp,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
+                TextButton(
+                  onPressed: () async {
+                    await context.push(AppPaths.signup);
+                  },
+                  child: Text.rich(
+                    TextSpan(
+                      text: context.l10n.dontHaveAnAccount,
+                      children: [
+                        TextSpan(
+                          text: context.l10n.signUp,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

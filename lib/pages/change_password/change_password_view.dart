@@ -21,21 +21,16 @@ class ChangePasswordView extends StatelessWidget {
           padding: const EdgeInsets.all(AppSpacing.large),
           child: BlocProvider(
             create: (context) => ChangePasswordBloc(),
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const _CurrentPasswordTextField(),
-                const SizedBox(height: AppSpacing.medium),
-                const _NewPasswordTextField(),
-                const SizedBox(height: AppSpacing.medium),
-                const _ConfirmPasswordTextField(),
-                const SizedBox(height: AppSpacing.large),
-                FilledButton(
-                  onPressed: () {
-                    context.go(AppPaths.home);
-                  },
-                  child: Text(context.l10n.save),
-                ),
+                _CurrentPasswordTextField(),
+                SizedBox(height: AppSpacing.medium),
+                _NewPasswordTextField(),
+                SizedBox(height: AppSpacing.medium),
+                _ConfirmPasswordTextField(),
+                SizedBox(height: AppSpacing.large),
+                _SubmitButton(),
               ],
             ),
           ),
@@ -83,6 +78,21 @@ class _ConfirmPasswordTextField extends StatelessWidget {
           .read<ChangePasswordBloc>()
           .add(ChangePasswordConfirmPasswordChanged(password)),
       labelText: context.l10n.confirmPassword,
+    );
+  }
+}
+
+class _SubmitButton extends StatelessWidget {
+  const _SubmitButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return FilledButton(
+      onPressed: () {
+        context.read<ChangePasswordBloc>().add(ChangePasswordSubmitted());
+        context.go(AppPaths.home);
+      },
+      child: Text(context.l10n.save),
     );
   }
 }

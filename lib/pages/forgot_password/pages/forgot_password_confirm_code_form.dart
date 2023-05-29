@@ -24,10 +24,7 @@ class ResetPasswordConfirmCodeForm extends StatelessWidget {
             const SizedBox(height: AppSpacing.xlarge),
             const _PinCodeInput(),
             const SizedBox(height: AppSpacing.large),
-            FilledButton(
-              onPressed: null,
-              child: Text(context.l10n.resendCode),
-            ),
+            const _ResendCodeButton(),
           ],
         ),
       ),
@@ -44,6 +41,23 @@ class _PinCodeInput extends StatelessWidget {
       onChanged: (value) => context
           .read<ForgotPasswordBloc>()
           .add(ForgotPasswordCodeChanged(value)),
+      onSubmitted: (value) => context
+          .read<ForgotPasswordBloc>()
+          .add(ForgotPasswordConfirmCodeSubmitted()),
+    );
+  }
+}
+
+class _ResendCodeButton extends StatelessWidget {
+  const _ResendCodeButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return FilledButton(
+      onPressed: () => context
+          .read<ForgotPasswordBloc>()
+          .add(ForgotPasswordResendCodePressed()),
+      child: Text(context.l10n.resendCode),
     );
   }
 }

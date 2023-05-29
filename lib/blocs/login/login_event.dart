@@ -14,3 +14,5 @@ final class LoginPasswordChanged extends LoginEvent {
 
   final String password;
 }
+
+final class LoginSubmitted extends LoginEvent {}

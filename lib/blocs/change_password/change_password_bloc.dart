@@ -10,6 +10,7 @@ final class ChangePasswordBloc
     on<ChangePasswordCurrentPasswordChanged>(_onCurrentPasswordChanged);
     on<ChangePasswordNewPasswordChanged>(_onNewPasswordChanged);
     on<ChangePasswordConfirmPasswordChanged>(_onConfirmPasswordChanged);
+    on<ChangePasswordSubmitted>(_onSubmitted);
   }
 
   void _onCurrentPasswordChanged(
@@ -32,4 +33,9 @@ final class ChangePasswordBloc
   ) {
     emit(state.copyWith(confirmPassword: event.confirmPassword));
   }
+
+  void _onSubmitted(
+    ChangePasswordSubmitted event,
+    Emitter<ChangePasswordState> emit,
+  ) {}
 }

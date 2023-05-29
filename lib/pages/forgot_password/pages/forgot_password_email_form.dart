@@ -23,10 +23,7 @@ class ForgotPasswordEmailForm extends StatelessWidget {
             const SizedBox(height: AppSpacing.xlarge),
             const _EmailTextField(),
             const SizedBox(height: AppSpacing.large),
-            FilledButton(
-              onPressed: null,
-              child: Text(context.l10n.send),
-            ),
+            const _SendEmailButton(),
           ],
         ),
       ),
@@ -46,6 +43,20 @@ class _EmailTextField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: context.l10n.email,
       ),
+    );
+  }
+}
+
+class _SendEmailButton extends StatelessWidget {
+  const _SendEmailButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return FilledButton(
+      onPressed: () => context
+          .read<ForgotPasswordBloc>()
+          .add(ForgotPasswordSendEmailPressed()),
+      child: Text(context.l10n.send),
     );
   }
 }

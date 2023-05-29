@@ -20,3 +20,5 @@ final class ChangePasswordConfirmPasswordChanged extends ChangePasswordEvent {
 
   final String confirmPassword;
 }
+
+final class ChangePasswordSubmitted extends ChangePasswordEvent {}

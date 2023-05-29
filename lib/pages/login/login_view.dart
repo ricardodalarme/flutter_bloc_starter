@@ -39,12 +39,7 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: AppSpacing.large),
-                FilledButton(
-                  onPressed: () {
-                    context.go(AppPaths.home);
-                  },
-                  child: Text(context.l10n.login),
-                ),
+                const _LoginButton(),
                 const _SignupButton(),
               ],
             ),
@@ -79,6 +74,21 @@ class _PasswordTextField extends StatelessWidget {
       onChanged: (password) =>
           context.read<LoginBloc>().add(LoginPasswordChanged(password)),
       labelText: context.l10n.password,
+    );
+  }
+}
+
+class _LoginButton extends StatelessWidget {
+  const _LoginButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return FilledButton(
+      onPressed: () {
+        context.read<LoginBloc>().add(LoginSubmitted());
+        context.go(AppPaths.home);
+      },
+      child: Text(context.l10n.login),
     );
   }
 }

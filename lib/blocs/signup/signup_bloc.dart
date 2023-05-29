@@ -9,6 +9,7 @@ final class SignupBloc extends Bloc<SignupEvent, SignupState> {
     on<SignupEmailChanged>(_onEmailChanged);
     on<SignupPasswordChanged>(_onPasswordChanged);
     on<SignupConfirmPasswordChanged>(_onConfirmPasswordChanged);
+    on<SignupSubmitted>(_onSubmitted);
   }
 
   void _onEmailChanged(
@@ -31,4 +32,9 @@ final class SignupBloc extends Bloc<SignupEvent, SignupState> {
   ) {
     emit(state.copyWith(confirmPassword: event.confirmPassword));
   }
+
+  void _onSubmitted(
+    SignupSubmitted event,
+    Emitter<SignupState> emit,
+  ) {}
 }

@@ -26,3 +26,11 @@ final class ForgotPasswordConfirmPasswordChanged extends ForgotPasswordEvent {
 
   final String confirmPassword;
 }
+
+final class ForgotPasswordSendEmailPressed extends ForgotPasswordEvent {}
+
+final class ForgotPasswordConfirmCodeSubmitted extends ForgotPasswordEvent {}
+
+final class ForgotPasswordResendCodePressed extends ForgotPasswordEvent {}
+
+final class ForgotPasswordSubmitted extends ForgotPasswordEvent {}

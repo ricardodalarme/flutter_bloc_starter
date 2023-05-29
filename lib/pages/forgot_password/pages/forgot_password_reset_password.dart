@@ -10,20 +10,17 @@ class ForgotPasswordResetPasswordForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: SingleChildScrollView(
-        padding: const EdgeInsets.all(AppSpacing.large),
+        padding: EdgeInsets.all(AppSpacing.large),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const _NewPasswordTextField(),
-            const SizedBox(height: AppSpacing.medium),
-            const _ConfirmPasswordTextField(),
-            const SizedBox(height: AppSpacing.large),
-            FilledButton(
-              onPressed: null,
-              child: Text(context.l10n.resetPassword),
-            ),
+            _NewPasswordTextField(),
+            SizedBox(height: AppSpacing.medium),
+            _ConfirmPasswordTextField(),
+            SizedBox(height: AppSpacing.large),
+            _SubmitButton(),
           ],
         ),
       ),
@@ -55,6 +52,19 @@ class _ConfirmPasswordTextField extends StatelessWidget {
           .read<ForgotPasswordBloc>()
           .add(ForgotPasswordConfirmPasswordChanged(value)),
       labelText: context.l10n.confirmPassword,
+    );
+  }
+}
+
+class _SubmitButton extends StatelessWidget {
+  const _SubmitButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return FilledButton(
+      onPressed: () =>
+          context.read<ForgotPasswordBloc>().add(ForgotPasswordSubmitted()),
+      child: Text(context.l10n.resetPassword),
     );
   }
 }

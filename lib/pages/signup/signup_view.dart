@@ -21,21 +21,16 @@ class SignUpView extends StatelessWidget {
           padding: const EdgeInsets.all(AppSpacing.large),
           child: BlocProvider(
             create: (context) => SignupBloc(),
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const _EmailTextField(),
-                const SizedBox(height: AppSpacing.medium),
-                const _PasswordTextField(),
-                const SizedBox(height: AppSpacing.medium),
-                const _ConfirmPasswordTextField(),
-                const SizedBox(height: AppSpacing.large),
-                FilledButton(
-                  onPressed: () {
-                    context.go(AppPaths.home);
-                  },
-                  child: Text(context.l10n.signUp),
-                ),
+                _EmailTextField(),
+                SizedBox(height: AppSpacing.medium),
+                _PasswordTextField(),
+                SizedBox(height: AppSpacing.medium),
+                _ConfirmPasswordTextField(),
+                SizedBox(height: AppSpacing.large),
+                _SubmitButton(),
               ],
             ),
           ),
@@ -83,6 +78,21 @@ class _ConfirmPasswordTextField extends StatelessWidget {
           .read<SignupBloc>()
           .add(SignupConfirmPasswordChanged(password)),
       labelText: context.l10n.confirmPassword,
+    );
+  }
+}
+
+class _SubmitButton extends StatelessWidget {
+  const _SubmitButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return FilledButton(
+      onPressed: () {
+        context.go(AppPaths.home);
+        context.read<SignupBloc>().add(SignupSubmitted());
+      },
+      child: Text(context.l10n.signUp),
     );
   }
 }

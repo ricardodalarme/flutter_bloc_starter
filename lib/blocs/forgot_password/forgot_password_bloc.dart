@@ -11,6 +11,10 @@ class ForgotPasswordBloc
     on<ForgotPasswordCodeChanged>(_onCodeChanged);
     on<ForgotPasswordNewPasswordChanged>(_onNewPasswordChanged);
     on<ForgotPasswordConfirmPasswordChanged>(_onConfirmPasswordChanged);
+    on<ForgotPasswordSendEmailPressed>(_onSendEmailPressed);
+    on<ForgotPasswordConfirmCodeSubmitted>(_onConfirmCodeSubmitted);
+    on<ForgotPasswordResendCodePressed>(_onResendCodePressed);
+    on<ForgotPasswordSubmitted>(_onSubmitted);
   }
 
   void _onEmailChanged(
@@ -40,4 +44,24 @@ class ForgotPasswordBloc
   ) {
     emit(state.copyWith(confirmPassword: event.confirmPassword));
   }
+
+  void _onSendEmailPressed(
+    ForgotPasswordSendEmailPressed event,
+    Emitter<ForgotPasswordState> emit,
+  ) {}
+
+  void _onConfirmCodeSubmitted(
+    ForgotPasswordConfirmCodeSubmitted event,
+    Emitter<ForgotPasswordState> emit,
+  ) {}
+
+  void _onResendCodePressed(
+    ForgotPasswordResendCodePressed event,
+    Emitter<ForgotPasswordState> emit,
+  ) {}
+
+  void _onSubmitted(
+    ForgotPasswordSubmitted event,
+    Emitter<ForgotPasswordState> emit,
+  ) {}
 }

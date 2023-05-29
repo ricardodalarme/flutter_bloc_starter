@@ -8,6 +8,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(const LoginState()) {
     on<LoginEmailChanged>(_onEmailChanged);
     on<LoginPasswordChanged>(_onPasswordChanged);
+    on<LoginSubmitted>(_onSubmitted);
   }
 
   void _onEmailChanged(
@@ -23,4 +24,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   ) {
     emit(state.copyWith(password: event.password));
   }
+
+  void _onSubmitted(
+    LoginSubmitted event,
+    Emitter<LoginState> emit,
+  ) {}
 }

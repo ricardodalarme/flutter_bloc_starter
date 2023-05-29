@@ -20,3 +20,5 @@ final class SignupConfirmPasswordChanged extends SignupEvent {
 
   final String confirmPassword;
 }
+
+final class SignupSubmitted extends SignupEvent {}

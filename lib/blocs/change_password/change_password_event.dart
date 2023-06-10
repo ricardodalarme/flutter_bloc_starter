@@ -4,9 +4,9 @@ part of 'change_password_bloc.dart';
 sealed class ChangePasswordEvent {}
 
 final class ChangePasswordCurrentPasswordChanged extends ChangePasswordEvent {
-  ChangePasswordCurrentPasswordChanged(this.email);
+  ChangePasswordCurrentPasswordChanged(this.currentPassword);
 
-  final String email;
+  final String currentPassword;
 }
 
 final class ChangePasswordNewPasswordChanged extends ChangePasswordEvent {

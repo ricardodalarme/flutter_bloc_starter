@@ -4,7 +4,9 @@ import 'package:flutter_bloc_starter/blocs/change_password/change_password_bloc.
 import 'package:flutter_bloc_starter/l10n/l10n.dart';
 import 'package:flutter_bloc_starter/routes/app_routes.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
+import 'package:flutter_bloc_starter/widgets/base_button.dart';
 import 'package:flutter_bloc_starter/widgets/password_text_field.dart';
+import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 
 class ChangePasswordView extends StatelessWidget {
@@ -87,12 +89,18 @@ class _SubmitButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FilledButton(
-      onPressed: () {
-        context.read<ChangePasswordBloc>().add(ChangePasswordSubmitted());
-        context.go(AppPaths.home);
+    return BlocBuilder<ChangePasswordBloc, ChangePasswordState>(
+      builder: (context, state) {
+        return BaseButton(
+          text: context.l10n.save,
+          isLoading: state.status.isInProgress,
+          isEnabled: state.isValid,
+          onPressed: () {
+            context.read<ChangePasswordBloc>().add(ChangePasswordSubmitted());
+            context.go(AppPaths.home);
+          },
+        );
       },
-      child: Text(context.l10n.save),
     );
   }
 }

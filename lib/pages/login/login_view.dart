@@ -5,6 +5,7 @@ import 'package:flutter_bloc_starter/l10n/l10n.dart';
 import 'package:flutter_bloc_starter/routes/app_routes.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
 import 'package:flutter_bloc_starter/widgets/password_text_field.dart';
+import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginView extends StatelessWidget {
@@ -83,12 +84,20 @@ class _LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FilledButton(
-      onPressed: () {
-        context.read<LoginBloc>().add(LoginSubmitted());
-        context.go(AppPaths.home);
+    return BlocBuilder<LoginBloc, LoginState>(
+      builder: (context, state) {
+        return FilledButton(
+          onPressed: state.isValid
+              ? () {
+                  context.read<LoginBloc>().add(LoginSubmitted());
+                  context.go(AppPaths.home);
+                }
+              : null,
+          child: state.status.isInProgress
+              ? const CircularProgressIndicator()
+              : Text(context.l10n.login),
+        );
       },
-      child: Text(context.l10n.login),
     );
   }
 }

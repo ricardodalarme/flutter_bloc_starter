@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:formz/formz.dart';
+import 'package:formz_inputs/formz_inputs.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';
@@ -15,14 +17,18 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     LoginEmailChanged event,
     Emitter<LoginState> emit,
   ) {
-    emit(state.copyWith(email: event.email));
+    emit(
+      state.copyWith(email: Email.dirty(event.email)),
+    );
   }
 
   void _onPasswordChanged(
     LoginPasswordChanged event,
     Emitter<LoginState> emit,
   ) {
-    emit(state.copyWith(password: event.password));
+    emit(
+      state.copyWith(password: Password.dirty(event.password)),
+    );
   }
 
   void _onSubmitted(

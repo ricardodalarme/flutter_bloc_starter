@@ -1,26 +1,34 @@
 part of 'signup_bloc.dart';
 
 @immutable
-final class SignupState {
+final class SignupState with FormzMixin {
   const SignupState({
-    this.email = '',
-    this.password = '',
-    this.confirmPassword = '',
+    this.email = const Email.pure(),
+    this.password = const Password.pure(),
+    this.confirmPassword = const ConfirmedPassword.pure(),
+    this.status = FormzSubmissionStatus.initial,
   });
 
-  final String email;
-  final String password;
-  final String confirmPassword;
+  final Email email;
+  final Password password;
+  final ConfirmedPassword confirmPassword;
+  final FormzSubmissionStatus status;
 
   SignupState copyWith({
-    String? email,
-    String? password,
-    String? confirmPassword,
+    Email? email,
+    Password? password,
+    ConfirmedPassword? confirmPassword,
+    FormzSubmissionStatus? status,
   }) {
     return SignupState(
       email: email ?? this.email,
       password: password ?? this.password,
       confirmPassword: confirmPassword ?? this.confirmPassword,
+      status: status ?? this.status,
     );
   }
+
+  @override
+  List<FormzInput<dynamic, dynamic>> get inputs =>
+      [email, password, confirmPassword];
 }

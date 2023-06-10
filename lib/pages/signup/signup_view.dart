@@ -5,6 +5,7 @@ import 'package:flutter_bloc_starter/l10n/l10n.dart';
 import 'package:flutter_bloc_starter/routes/app_routes.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
 import 'package:flutter_bloc_starter/widgets/password_text_field.dart';
+import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 
 class SignUpView extends StatelessWidget {
@@ -87,12 +88,20 @@ class _SubmitButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FilledButton(
-      onPressed: () {
-        context.go(AppPaths.home);
-        context.read<SignupBloc>().add(SignupSubmitted());
+    return BlocBuilder<SignupBloc, SignupState>(
+      builder: (context, state) {
+        return FilledButton(
+          onPressed: state.isValid
+              ? () {
+                  context.go(AppPaths.home);
+                  context.read<SignupBloc>().add(SignupSubmitted());
+                }
+              : null,
+          child: state.status == FormzSubmissionStatus.inProgress
+              ? const CircularProgressIndicator()
+              : Text(context.l10n.signUp),
+        );
       },
-      child: Text(context.l10n.signUp),
     );
   }
 }

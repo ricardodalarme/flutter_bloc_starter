@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_starter/blocs/app/app_bloc.dart';
 import 'package:flutter_bloc_starter/l10n/l10n.dart';
 import 'package:flutter_bloc_starter/routes/app_routes.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
@@ -24,9 +26,8 @@ class HomeView extends StatelessWidget {
                 child: Text(context.l10n.changePassword),
               ),
               FilledButton(
-                onPressed: () {
-                  context.go(AppPaths.login);
-                },
+                onPressed: () =>
+                    context.read<AppBloc>().add(const AppLogoutRequested()),
                 child: Text(context.l10n.logout),
               )
             ],

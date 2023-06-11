@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_starter/blocs/signup/signup_bloc.dart';
 import 'package:flutter_bloc_starter/l10n/l10n.dart';
+import 'package:flutter_bloc_starter/repositories/authentication_repository.dart';
 import 'package:flutter_bloc_starter/routes/app_routes.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
 import 'package:flutter_bloc_starter/widgets/base_button.dart';
@@ -18,12 +19,14 @@ class SignUpView extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.l10n.signUp),
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(AppSpacing.large),
-          child: BlocProvider(
-            create: (context) => SignupBloc(),
-            child: const Column(
+      body: BlocProvider(
+        create: (context) => SignupBloc(
+          authenticationRepository: context.read<AuthenticationRepository>(),
+        ),
+        child: const Center(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.all(AppSpacing.large),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 _EmailTextField(),

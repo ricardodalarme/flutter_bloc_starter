@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_starter/blocs/login/login_bloc.dart';
 import 'package:flutter_bloc_starter/l10n/l10n.dart';
+import 'package:flutter_bloc_starter/repositories/authentication_repository.dart';
 import 'package:flutter_bloc_starter/routes/app_routes.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
 import 'package:flutter_bloc_starter/widgets/base_button.dart';
@@ -18,11 +19,13 @@ class LoginView extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.l10n.login),
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(AppSpacing.large),
-          child: BlocProvider(
-            create: (context) => LoginBloc(),
+      body: BlocProvider(
+        create: (context) => LoginBloc(
+          authenticationRepository: context.read<AuthenticationRepository>(),
+        ),
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(AppSpacing.large),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

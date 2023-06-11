@@ -24,7 +24,7 @@ class BaseButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: ElevatedButton(
+      child: FilledButton(
         onPressed: callback,
         child: isLoading ? const CircularProgressIndicator() : Text(text),
       ),

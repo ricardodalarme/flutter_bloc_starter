@@ -1,4 +1,4 @@
-import 'package:flutter_bloc_starter/pages/login/login_view.dart';
+import 'package:flutter_bloc_starter/features/login/login_view.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../test_helpers/pump_app.dart';

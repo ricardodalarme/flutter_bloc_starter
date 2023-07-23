@@ -4,7 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_starter/app/bloc_observer.dart';
+import 'package:flutter_bloc_starter/features/app/bloc_observer.dart';
 import 'package:flutter_bloc_starter/firebase_options.dart';
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {

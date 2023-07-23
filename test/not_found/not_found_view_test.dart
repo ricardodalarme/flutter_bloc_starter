@@ -1,4 +1,4 @@
-import 'package:flutter_bloc_starter/pages/not_found/not_found_view.dart';
+import 'package:flutter_bloc_starter/features/not_found/not_found_view.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../test_helpers/pump_app.dart';

@@ -23,6 +23,7 @@ dependencies:
   go_router: ^10.0.0
   intl: ^0.18.0
   pinput: ^2.2.31
+  sign_in_button: ^3.2.0
 
 dev_dependencies:
   bloc_test: ^9.1.3

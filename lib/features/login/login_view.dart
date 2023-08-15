@@ -7,8 +7,10 @@ import 'package:flutter_bloc_starter/routes/app_routes.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
 import 'package:flutter_bloc_starter/widgets/base_button.dart';
 import 'package:flutter_bloc_starter/widgets/password_text_field.dart';
+import 'package:flutter_bloc_starter/widgets/text_divider.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sign_in_button/sign_in_button.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -43,8 +45,14 @@ class LoginView extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: AppSpacing.large),
+                const SizedBox(height: AppSpacing.small),
                 const _LoginButton(),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: AppSpacing.large),
+                  child: TextDivider(context.l10n.or.toUpperCase()),
+                ),
+                const _SigninWithThirdPartyButtons(),
                 const _SignupButton(),
               ],
             ),
@@ -100,6 +108,26 @@ class _LoginButton extends StatelessWidget {
           },
         );
       },
+    );
+  }
+}
+
+class _SigninWithThirdPartyButtons extends StatelessWidget {
+  const _SigninWithThirdPartyButtons();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SignInButton(
+          Buttons.googleDark,
+          onPressed: () {},
+        ),
+        SignInButton(
+          Buttons.facebookNew,
+          onPressed: () {},
+        ),
+      ],
     );
   }
 }

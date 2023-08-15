@@ -21,5 +21,6 @@
   "newPassword": "New Password",
   "changePassword": "Change Password",
   "currentPassword": "Current Password",
-  "save": "Save"
+  "save": "Save",
+  "or": "Or"
 }

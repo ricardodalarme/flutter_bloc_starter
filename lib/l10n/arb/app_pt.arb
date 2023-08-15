@@ -21,5 +21,6 @@
   "newPassword": "Nova Senha",
   "changePassword": "Alterar Senha",
   "currentPassword": "Senha Atual",
-  "save": "Salvar"
+  "save": "Salvar",
+  "or": "Ou"
 }

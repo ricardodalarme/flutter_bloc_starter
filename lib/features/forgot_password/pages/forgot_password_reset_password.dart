@@ -38,6 +38,7 @@ class _NewPasswordTextField extends StatelessWidget {
           .read<ForgotPasswordBloc>()
           .add(ForgotPasswordNewPasswordChanged(value)),
       labelText: context.l10n.newPassword,
+      textInputAction: TextInputAction.next,
     );
   }
 }
@@ -52,6 +53,9 @@ class _ConfirmPasswordTextField extends StatelessWidget {
           .read<ForgotPasswordBloc>()
           .add(ForgotPasswordConfirmPasswordChanged(value)),
       labelText: context.l10n.confirmPassword,
+      textInputAction: TextInputAction.done,
+      onSubmitted: (_) =>
+          context.read<ForgotPasswordBloc>().add(ForgotPasswordSubmitted()),
     );
   }
 }

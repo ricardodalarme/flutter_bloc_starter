@@ -56,6 +56,8 @@ class _EmailTextField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: context.l10n.email,
       ),
+      keyboardType: TextInputType.emailAddress,
+      textInputAction: TextInputAction.next,
     );
   }
 }
@@ -69,6 +71,7 @@ class _PasswordTextField extends StatelessWidget {
       onChanged: (password) =>
           context.read<SignupBloc>().add(SignupPasswordChanged(password)),
       labelText: context.l10n.password,
+      textInputAction: TextInputAction.next,
     );
   }
 }
@@ -83,6 +86,8 @@ class _ConfirmPasswordTextField extends StatelessWidget {
           .read<SignupBloc>()
           .add(SignupConfirmPasswordChanged(password)),
       labelText: context.l10n.confirmPassword,
+      textInputAction: TextInputAction.done,
+      onSubmitted: (_) => context.read<SignupBloc>().add(SignupSubmitted()),
     );
   }
 }

@@ -25,36 +25,43 @@ class LoginView extends StatelessWidget {
         create: (context) => LoginBloc(
           authenticationRepository: context.read<AuthenticationRepository>(),
         ),
-        child: Center(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(AppSpacing.large),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const _EmailTextField(),
-                const SizedBox(height: AppSpacing.medium),
-                const _PasswordTextField(),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () {
-                      context.push(AppPaths.forgotPassword);
-                    },
-                    child: Text(
-                      context.l10n.forgotPassword,
+        child: BlocListener<LoginBloc, LoginState>(
+          listener: (context, state) {
+            if (state.status.isSuccess) {
+              context.go(AppPaths.home);
+            }
+          },
+          child: Center(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(AppSpacing.large),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const _EmailTextField(),
+                  const SizedBox(height: AppSpacing.medium),
+                  const _PasswordTextField(),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                      onPressed: () {
+                        context.push(AppPaths.forgotPassword);
+                      },
+                      child: Text(
+                        context.l10n.forgotPassword,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: AppSpacing.small),
-                const _LoginButton(),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: AppSpacing.large),
-                  child: TextDivider(context.l10n.or.toUpperCase()),
-                ),
-                const _SigninWithThirdPartyButtons(),
-                const _SignupButton(),
-              ],
+                  const SizedBox(height: AppSpacing.small),
+                  const _LoginButton(),
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: AppSpacing.large),
+                    child: TextDivider(context.l10n.or.toUpperCase()),
+                  ),
+                  const _SigninWithThirdPartyButtons(),
+                  const _SignupButton(),
+                ],
+              ),
             ),
           ),
         ),
@@ -74,6 +81,8 @@ class _EmailTextField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: context.l10n.email,
       ),
+      keyboardType: TextInputType.emailAddress,
+      textInputAction: TextInputAction.next,
     );
   }
 }
@@ -87,6 +96,8 @@ class _PasswordTextField extends StatelessWidget {
       onChanged: (password) =>
           context.read<LoginBloc>().add(LoginPasswordChanged(password)),
       labelText: context.l10n.password,
+      textInputAction: TextInputAction.done,
+      onSubmitted: (_) => context.read<LoginBloc>().add(LoginSubmitted()),
     );
   }
 }
@@ -102,10 +113,7 @@ class _LoginButton extends StatelessWidget {
           text: context.l10n.login,
           isLoading: state.status.isInProgress,
           isEnabled: state.isValid,
-          onPressed: () {
-            context.read<LoginBloc>().add(LoginSubmitted());
-            context.go(AppPaths.home);
-          },
+          onPressed: () => context.read<LoginBloc>().add(LoginSubmitted()),
         );
       },
     );

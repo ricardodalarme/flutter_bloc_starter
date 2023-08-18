@@ -29,7 +29,7 @@ class HomeView extends StatelessWidget {
                 onPressed: () =>
                     context.read<AppBloc>().add(const AppLogoutRequested()),
                 child: Text(context.l10n.logout),
-              )
+              ),
             ],
           ),
         ),

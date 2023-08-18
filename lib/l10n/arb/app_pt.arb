@@ -22,5 +22,13 @@
   "changePassword": "Alterar Senha",
   "currentPassword": "Senha Atual",
   "save": "Salvar",
-  "or": "Ou"
+  "or": "Ou",
+  "signInWith": "Continue com {PROVIDER}",
+  "@signInWith": {
+    "placeholders": {
+      "PROVIDER": {
+        "type": "String"
+      }
+    }
+  }
 }

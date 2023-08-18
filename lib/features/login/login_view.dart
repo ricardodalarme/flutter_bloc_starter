@@ -129,10 +129,12 @@ class _SigninWithThirdPartyButtons extends StatelessWidget {
       children: [
         SignInButton(
           Buttons.googleDark,
+          text: context.l10n.signInWith('Google'),
           onPressed: () {},
         ),
         SignInButton(
           Buttons.facebookNew,
+          text: context.l10n.signInWith('Facebook'),
           onPressed: () {},
         ),
       ],

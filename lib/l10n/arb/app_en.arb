@@ -22,5 +22,13 @@
   "changePassword": "Change Password",
   "currentPassword": "Current Password",
   "save": "Save",
-  "or": "Or"
+  "or": "Or",
+  "signInWith": "Sign in with {PROVIDER}",
+  "@signInWith": {
+    "placeholders": {
+      "PROVIDER": {
+        "type": "String"
+      }
+    }
+  }
 }

@@ -1,3 +1,5 @@
+library authentication_repository;
+
 class AuthenticationRepository {
   Future<void> logInWithEmailAndPassword(String email, String password) async {}
 

@@ -23,20 +23,27 @@ class SignUpView extends StatelessWidget {
         create: (context) => SignupBloc(
           authenticationRepository: context.read<AuthenticationRepository>(),
         ),
-        child: const Center(
-          child: SingleChildScrollView(
-            padding: EdgeInsets.all(AppSpacing.large),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _EmailTextField(),
-                SizedBox(height: AppSpacing.medium),
-                _PasswordTextField(),
-                SizedBox(height: AppSpacing.medium),
-                _ConfirmPasswordTextField(),
-                SizedBox(height: AppSpacing.large),
-                _SubmitButton(),
-              ],
+        child: BlocListener<SignupBloc, SignupState>(
+          listener: (context, state) {
+            if (state.status.isSuccess) {
+              context.go(AppPaths.home);
+            }
+          },
+          child: const Center(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.all(AppSpacing.large),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _EmailTextField(),
+                  SizedBox(height: AppSpacing.medium),
+                  _PasswordTextField(),
+                  SizedBox(height: AppSpacing.medium),
+                  _ConfirmPasswordTextField(),
+                  SizedBox(height: AppSpacing.large),
+                  _SubmitButton(),
+                ],
+              ),
             ),
           ),
         ),
@@ -103,10 +110,7 @@ class _SubmitButton extends StatelessWidget {
           text: context.l10n.signUp,
           isLoading: state.status.isInProgress,
           isEnabled: state.isValid,
-          onPressed: () {
-            context.go(AppPaths.home);
-            context.read<SignupBloc>().add(SignupSubmitted());
-          },
+          onPressed: () => context.read<SignupBloc>().add(SignupSubmitted()),
         );
       },
     );

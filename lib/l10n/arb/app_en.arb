@@ -3,7 +3,6 @@
   "login": "Login",
   "email": "Email",
   "password": "Password",
-  "home": "Home",
   "logout": "Logout",
   "dontHaveAnAccount": "Don't have an account? ",
   "signUp": "Sign Up",
@@ -30,5 +29,7 @@
         "type": "String"
       }
     }
-  }
+  },
+  "feed": "Feed",
+  "profile": "Profile"
 }

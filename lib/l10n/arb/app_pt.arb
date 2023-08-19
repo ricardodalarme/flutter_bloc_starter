@@ -3,7 +3,6 @@
   "login": "Login",
   "email": "Email",
   "password": "Senha",
-  "home": "Home",
   "logout": "Sair",
   "signUp": "Registrar",
   "dontHaveAnAccount": "Não tem uma conta? ",
@@ -30,5 +29,7 @@
         "type": "String"
       }
     }
-  }
+  },
+  "feed": "Feed",
+  "profile": "Perfil"
 }

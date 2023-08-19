@@ -8,6 +8,7 @@ import 'package:flutter_bloc_starter/widgets/base_button.dart';
 import 'package:flutter_bloc_starter/widgets/password_text_field.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
+import 'package:user_repository/user_repository.dart';
 
 class ChangePasswordView extends StatelessWidget {
   const ChangePasswordView({super.key});
@@ -18,22 +19,31 @@ class ChangePasswordView extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.l10n.changePassword),
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(AppSpacing.large),
-          child: BlocProvider(
-            create: (context) => ChangePasswordBloc(),
-            child: const Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _CurrentPasswordTextField(),
-                SizedBox(height: AppSpacing.medium),
-                _NewPasswordTextField(),
-                SizedBox(height: AppSpacing.medium),
-                _ConfirmPasswordTextField(),
-                SizedBox(height: AppSpacing.large),
-                _SubmitButton(),
-              ],
+      body: BlocProvider(
+        create: (context) => ChangePasswordBloc(
+          userRepository: context.read<UserRepository>(),
+        ),
+        child: BlocListener<ChangePasswordBloc, ChangePasswordState>(
+          listener: (context, state) {
+            if (state.status.isSuccess) {
+              context.go(AppPaths.home);
+            }
+          },
+          child: const Center(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.all(AppSpacing.large),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _CurrentPasswordTextField(),
+                  SizedBox(height: AppSpacing.medium),
+                  _NewPasswordTextField(),
+                  SizedBox(height: AppSpacing.medium),
+                  _ConfirmPasswordTextField(),
+                  SizedBox(height: AppSpacing.large),
+                  _SubmitButton(),
+                ],
+              ),
             ),
           ),
         ),
@@ -82,6 +92,9 @@ class _ConfirmPasswordTextField extends StatelessWidget {
           .read<ChangePasswordBloc>()
           .add(ChangePasswordConfirmPasswordChanged(password)),
       labelText: context.l10n.confirmPassword,
+      textInputAction: TextInputAction.done,
+      onSubmitted: (_) =>
+          context.read<ChangePasswordBloc>().add(ChangePasswordSubmitted()),
     );
   }
 }
@@ -97,10 +110,8 @@ class _SubmitButton extends StatelessWidget {
           text: context.l10n.save,
           isLoading: state.status.isInProgress,
           isEnabled: state.isValid,
-          onPressed: () {
-            context.read<ChangePasswordBloc>().add(ChangePasswordSubmitted());
-            context.go(AppPaths.home);
-          },
+          onPressed: () =>
+              context.read<ChangePasswordBloc>().add(ChangePasswordSubmitted()),
         );
       },
     );

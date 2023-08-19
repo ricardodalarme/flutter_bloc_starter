@@ -4,14 +4,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_starter/features/app/bloc/app_bloc.dart';
 import 'package:flutter_bloc_starter/l10n/l10n.dart';
 import 'package:flutter_bloc_starter/routes/app_routes.dart';
+import 'package:user_repository/user_repository.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return RepositoryProvider(
-      create: (context) => AuthenticationRepository(),
+    return MultiRepositoryProvider(
+      providers: [
+        RepositoryProvider(
+          create: (context) => AuthenticationRepository(),
+        ),
+        RepositoryProvider(
+          create: (context) => UserRepository(),
+        ),
+      ],
       child: BlocProvider(
         create: (context) => AppBloc(
           authenticationRepository: context.read<AuthenticationRepository>(),

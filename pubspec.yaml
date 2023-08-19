@@ -26,6 +26,8 @@ dependencies:
   intl: ^0.18.1
   pinput: ^3.0.0
   sign_in_button: ^3.2.0
+  user_repository:
+    path: ./packages/user_repository
 
 dev_dependencies:
   bloc_test: ^9.1.4

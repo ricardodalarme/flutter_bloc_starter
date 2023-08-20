@@ -31,5 +31,7 @@
     }
   },
   "feed": "Feed",
-  "profile": "Perfil"
+  "profile": "Perfil",
+  "editProfile": "Editar Perfil",
+  "settings": "Configurações"
 }

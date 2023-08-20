@@ -8,6 +8,8 @@ abstract class AppPaths {
   static const signup = _Paths.signup;
   static const forgotPassword = _Paths.forgotPassword;
   static const changePassword = _Paths.changePassword;
+  static const editProfile = _Paths.editProfile;
+  static const settings = _Paths.settings;
 }
 
 abstract class _Paths {
@@ -16,4 +18,6 @@ abstract class _Paths {
   static const signup = '/signup';
   static const forgotPassword = '/forgot-password';
   static const changePassword = '/change-password';
+  static const editProfile = '/edit-profile';
+  static const settings = '/settings';
 }

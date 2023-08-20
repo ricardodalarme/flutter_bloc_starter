@@ -18,14 +18,26 @@ class ProfileView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FilledButton(
-              onPressed: () => context.push(AppPaths.changePassword),
-              child: Text(context.l10n.changePassword),
+            ListTile(
+              title: Text(context.l10n.editProfile),
+              leading: const Icon(Icons.person),
+              onTap: () => context.push(AppPaths.editProfile),
             ),
-            FilledButton(
-              onPressed: () =>
+            ListTile(
+              title: Text(context.l10n.changePassword),
+              leading: const Icon(Icons.lock),
+              onTap: () => context.push(AppPaths.changePassword),
+            ),
+            ListTile(
+              title: Text(context.l10n.settings),
+              leading: const Icon(Icons.settings),
+              onTap: () => context.push(AppPaths.settings),
+            ),
+            ListTile(
+              title: Text(context.l10n.logout),
+              leading: const Icon(Icons.logout),
+              onTap: () =>
                   context.read<AppBloc>().add(const AppLogoutRequested()),
-              child: Text(context.l10n.logout),
             ),
           ],
         ),

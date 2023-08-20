@@ -1,0 +1,18 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc_starter/l10n/l10n.dart';
+
+class SettingsView extends StatelessWidget {
+  const SettingsView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(context.l10n.settings),
+      ),
+      body: const Center(
+        child: Text('SettingsView'),
+      ),
+    );
+  }
+}

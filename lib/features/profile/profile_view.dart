@@ -3,7 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_starter/features/app/bloc/app_bloc.dart';
 import 'package:flutter_bloc_starter/l10n/l10n.dart';
 import 'package:flutter_bloc_starter/routes/app_routes.dart';
+import 'package:flutter_bloc_starter/styling/app_spacing.dart';
+import 'package:flutter_bloc_starter/widgets/profile_picture.dart';
 import 'package:go_router/go_router.dart';
+
+const _profilePictureSize = 175.0;
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -18,6 +22,11 @@ class ProfileView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const ProfilePicture(
+              photoUrl: null,
+              size: _profilePictureSize,
+            ),
+            const SizedBox(height: AppSpacing.xxlarge),
             ListTile(
               title: Text(context.l10n.editProfile),
               leading: const Icon(Icons.person),

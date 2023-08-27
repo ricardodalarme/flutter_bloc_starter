@@ -19,36 +19,38 @@ class ProfileView extends StatelessWidget {
         title: Text(context.l10n.profile),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const ProfilePicture(
-              photoUrl: null,
-              size: _profilePictureSize,
-            ),
-            const SizedBox(height: AppSpacing.xxlarge),
-            ListTile(
-              title: Text(context.l10n.editProfile),
-              leading: const Icon(Icons.person),
-              onTap: () => context.push(AppPaths.editProfile),
-            ),
-            ListTile(
-              title: Text(context.l10n.changePassword),
-              leading: const Icon(Icons.lock),
-              onTap: () => context.push(AppPaths.changePassword),
-            ),
-            ListTile(
-              title: Text(context.l10n.settings),
-              leading: const Icon(Icons.settings),
-              onTap: () => context.push(AppPaths.settings),
-            ),
-            ListTile(
-              title: Text(context.l10n.logout),
-              leading: const Icon(Icons.logout),
-              onTap: () =>
-                  context.read<AppBloc>().add(const AppLogoutRequested()),
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const ProfilePicture(
+                photoUrl: null,
+                size: _profilePictureSize,
+              ),
+              const SizedBox(height: AppSpacing.xxlarge),
+              ListTile(
+                title: Text(context.l10n.editProfile),
+                leading: const Icon(Icons.person),
+                onTap: () => context.push(AppPaths.editProfile),
+              ),
+              ListTile(
+                title: Text(context.l10n.changePassword),
+                leading: const Icon(Icons.lock),
+                onTap: () => context.push(AppPaths.changePassword),
+              ),
+              ListTile(
+                title: Text(context.l10n.settings),
+                leading: const Icon(Icons.settings),
+                onTap: () => context.push(AppPaths.settings),
+              ),
+              ListTile(
+                title: Text(context.l10n.logout),
+                leading: const Icon(Icons.logout),
+                onTap: () =>
+                    context.read<AppBloc>().add(const AppLogoutRequested()),
+              ),
+            ],
+          ),
         ),
       ),
     );

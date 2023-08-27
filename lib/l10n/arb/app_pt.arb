@@ -33,5 +33,7 @@
   "feed": "Feed",
   "profile": "Perfil",
   "editProfile": "Editar Perfil",
-  "settings": "Configurações"
+  "settings": "Configurações",
+  "firstName": "Nome",
+  "lastName": "Sobrenome"
 }

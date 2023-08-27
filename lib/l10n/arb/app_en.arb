@@ -33,5 +33,7 @@
   "feed": "Feed",
   "profile": "Profile",
   "editProfile": "Edit Profile",
-  "settings": "Settings"
+  "settings": "Settings",
+  "firstName": "First Name",
+  "lastName": "Last Name"
 }

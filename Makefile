@@ -6,3 +6,6 @@ splash_screen:
 
 launcher_icon:
 	dart run flutter_launcher_icons:main
+
+git_hooks:
+	./scripts/git/install-git-hooks

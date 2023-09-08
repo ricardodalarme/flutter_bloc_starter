@@ -4,6 +4,6 @@
 source "$(dirname "$0")"/scripts
 
 check_staged_files
-test_dependencies
-call_format
-call_analyzer
+check_flutter_installed
+run_flutter_format
+run_flutter_analyzer

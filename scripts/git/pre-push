@@ -3,7 +3,7 @@
 # shellcheck source=scripts/git/scripts
 source "$(dirname "$0")"/scripts
 
-test_dependencies
-call_format
-call_analyzer
-call_tests
+check_flutter_installed
+run_flutter_format
+run_flutter_analyzer
+run_flutter_tests

@@ -7,10 +7,10 @@ import 'package:flutter_bloc_starter/routes/app_routes.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
 import 'package:flutter_bloc_starter/widgets/base_button.dart';
 import 'package:flutter_bloc_starter/widgets/password_text_field.dart';
+import 'package:flutter_bloc_starter/widgets/sign_in_button.dart';
 import 'package:flutter_bloc_starter/widgets/text_divider.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sign_in_button/sign_in_button.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -128,13 +128,11 @@ class _SigninWithThirdPartyButtons extends StatelessWidget {
     return Column(
       children: [
         SignInButton(
-          Buttons.googleDark,
-          text: context.l10n.signInWith('Google'),
+          ButtonProvider.google,
           onPressed: () {},
         ),
         SignInButton(
-          Buttons.facebookNew,
-          text: context.l10n.signInWith('Facebook'),
+          ButtonProvider.facebook,
           onPressed: () {},
         ),
       ],

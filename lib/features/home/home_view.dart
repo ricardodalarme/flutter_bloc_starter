@@ -4,6 +4,7 @@ import 'package:flutter_bloc_starter/features/feed/feed_view.dart';
 import 'package:flutter_bloc_starter/features/home/cubit/home_cubit.dart';
 import 'package:flutter_bloc_starter/features/home/widgets/navigation_bar.dart';
 import 'package:flutter_bloc_starter/features/profile/profile_view.dart';
+import 'package:flutter_bloc_starter/features/search/search_view.dart';
 import 'package:flutter_bloc_starter/l10n/l10n.dart';
 
 class HomeView extends StatelessWidget {
@@ -15,8 +16,7 @@ class HomeView extends StatelessWidget {
       create: (context) => HomeCubit(),
       child: Builder(
         builder: (context) {
-          final selectedTab =
-              context.select((HomeCubit cubit) => cubit.state.index);
+          final selectedTab = context.select((HomeCubit cubit) => cubit.state);
 
           return Scaffold(
             bottomNavigationBar: NavBar(
@@ -24,6 +24,10 @@ class HomeView extends StatelessWidget {
               onTap: (index) => context.read<HomeCubit>().setTab(index),
               items: [
                 NavBarItem(icon: Icons.home_rounded, label: context.l10n.feed),
+                NavBarItem(
+                  icon: Icons.search_rounded,
+                  label: context.l10n.search,
+                ),
                 NavBarItem(icon: Icons.person, label: context.l10n.profile),
               ],
             ),
@@ -31,6 +35,7 @@ class HomeView extends StatelessWidget {
               index: selectedTab,
               children: const [
                 FeedView(),
+                SearchView(),
                 ProfileView(),
               ],
             ),

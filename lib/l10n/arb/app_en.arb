@@ -35,5 +35,6 @@
   "editProfile": "Edit Profile",
   "settings": "Settings",
   "firstName": "First Name",
-  "lastName": "Last Name"
+  "lastName": "Last Name",
+  "search": "Search"
 }

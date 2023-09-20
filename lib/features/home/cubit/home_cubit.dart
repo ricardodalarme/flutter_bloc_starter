@@ -1,11 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-part 'home_state.dart';
-
-class HomeCubit extends Cubit<HomeState> {
-  HomeCubit() : super(HomeState.feed);
+class HomeCubit extends Cubit<int> {
+  HomeCubit() : super(0);
 
   void setTab(int selectedTab) {
-    return emit(HomeState.values[selectedTab]);
+    return emit(selectedTab);
   }
 }

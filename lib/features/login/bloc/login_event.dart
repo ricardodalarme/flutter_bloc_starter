@@ -16,3 +16,7 @@ final class LoginPasswordChanged extends LoginEvent {
 }
 
 final class LoginSubmitted extends LoginEvent {}
+
+final class LoginWithGoogleSubmitted extends LoginEvent {}
+
+final class LoginWithFacebookSubmitted extends LoginEvent {}

@@ -129,11 +129,13 @@ class _SigninWithThirdPartyButtons extends StatelessWidget {
       children: [
         SignInButton(
           ButtonProvider.google,
-          onPressed: () {},
+          onPressed: () =>
+              context.read<LoginBloc>().add(LoginWithGoogleSubmitted()),
         ),
         SignInButton(
           ButtonProvider.facebook,
-          onPressed: () {},
+          onPressed: () =>
+              context.read<LoginBloc>().add(LoginWithFacebookSubmitted()),
         ),
       ],
     );

@@ -15,6 +15,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     on<LoginEmailChanged>(_onEmailChanged);
     on<LoginPasswordChanged>(_onPasswordChanged);
     on<LoginSubmitted>(_onSubmitted);
+    on<LoginWithGoogleSubmitted>(_onLoginWithGoogleSubmitted);
+    on<LoginWithFacebookSubmitted>(_onLoginWithFacebookSubmitted);
   }
 
   final AuthenticationRepository _authenticationRepository;
@@ -50,6 +52,28 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       emit(state.copyWith(status: FormzSubmissionStatus.success));
     } catch (error) {
       emit(state.copyWith(status: FormzSubmissionStatus.failure));
+    }
+  }
+
+  Future<void> _onLoginWithGoogleSubmitted(
+    LoginWithGoogleSubmitted event,
+    Emitter<LoginState> emit,
+  ) async {
+    try {
+      await _authenticationRepository.loginWithGoogle();
+    } catch (error) {
+      // TODO: Handle error
+    }
+  }
+
+  Future<void> _onLoginWithFacebookSubmitted(
+    LoginWithFacebookSubmitted event,
+    Emitter<LoginState> emit,
+  ) async {
+    try {
+      await _authenticationRepository.loginWithFacebook();
+    } catch (error) {
+      // TODO: Handle error
     }
   }
 }

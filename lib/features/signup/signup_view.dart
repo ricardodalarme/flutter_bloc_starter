@@ -6,6 +6,7 @@ import 'package:flutter_bloc_starter/l10n/l10n.dart';
 import 'package:flutter_bloc_starter/routes/app_routes.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
 import 'package:flutter_bloc_starter/widgets/base_button.dart';
+import 'package:flutter_bloc_starter/widgets/base_text_field.dart';
 import 'package:flutter_bloc_starter/widgets/password_text_field.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
@@ -57,7 +58,7 @@ class _EmailTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return BaseTextField(
       onChanged: (email) =>
           context.read<SignupBloc>().add(SignupEmailChanged(email)),
       decoration: InputDecoration(

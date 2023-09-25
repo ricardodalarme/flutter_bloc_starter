@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_starter/widgets/base_text_field.dart';
 
 class PasswordTextField extends StatefulWidget {
   const PasswordTextField({
@@ -23,7 +24,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return BaseTextField(
       obscureText: _obscureText,
       onChanged: widget.onChanged,
       autocorrect: false,

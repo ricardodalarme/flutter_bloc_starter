@@ -3,18 +3,18 @@ part of 'login_bloc.dart';
 @immutable
 final class LoginState with FormzMixin {
   const LoginState({
-    this.email = const Email.pure(),
-    this.password = const Password.pure(),
+    this.email = const EmailInput.pure(),
+    this.password = const PasswordInput.pure(),
     this.status = FormzSubmissionStatus.initial,
   });
 
-  final Email email;
-  final Password password;
+  final EmailInput email;
+  final PasswordInput password;
   final FormzSubmissionStatus status;
 
   LoginState copyWith({
-    Email? email,
-    Password? password,
+    EmailInput? email,
+    PasswordInput? password,
     FormzSubmissionStatus? status,
   }) {
     return LoginState(

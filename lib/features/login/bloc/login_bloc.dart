@@ -26,7 +26,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     Emitter<LoginState> emit,
   ) {
     emit(
-      state.copyWith(email: Email.dirty(event.email)),
+      state.copyWith(email: EmailInput.dirty(event.email)),
     );
   }
 
@@ -35,7 +35,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     Emitter<LoginState> emit,
   ) {
     emit(
-      state.copyWith(password: Password.dirty(event.password)),
+      state.copyWith(password: PasswordInput.dirty(event.password)),
     );
   }
 

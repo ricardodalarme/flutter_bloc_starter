@@ -9,7 +9,7 @@ environment:
 dependencies:
   authentication_repository:
     path: ./packages/authentication_repository
-  cached_network_image: ^3.2.3
+  cached_network_image: ^3.3.0
   firebase_analytics: ^10.5.0
   firebase_auth: ^4.10.0
   firebase_core: ^2.16.0
@@ -24,8 +24,8 @@ dependencies:
   flutter_native_splash: ^2.3.2
   flutter_svg: ^2.0.7
   formz: ^0.6.1
-  formz_inputs: ^1.0.0
-  go_router: ^10.2.0
+  formz_inputs: ^1.1.1
+  go_router: ^11.0.0
   hydrated_bloc: ^9.1.2
   intl: ^0.18.1
   path_provider: ^2.1.1

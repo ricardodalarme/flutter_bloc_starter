@@ -3,21 +3,21 @@ part of 'change_password_bloc.dart';
 @immutable
 final class ChangePasswordState with FormzMixin {
   const ChangePasswordState({
-    this.currentPassword = const Password.pure(),
-    this.password = const Password.pure(),
-    this.confirmPassword = const ConfirmedPassword.pure(),
+    this.currentPassword = const PasswordInput.pure(),
+    this.password = const PasswordInput.pure(),
+    this.confirmPassword = const ConfirmedPasswordInput.pure(),
     this.status = FormzSubmissionStatus.initial,
   });
 
-  final Password currentPassword;
-  final Password password;
-  final ConfirmedPassword confirmPassword;
+  final PasswordInput currentPassword;
+  final PasswordInput password;
+  final ConfirmedPasswordInput confirmPassword;
   final FormzSubmissionStatus status;
 
   ChangePasswordState copyWith({
-    Password? currentPassword,
-    Password? password,
-    ConfirmedPassword? confirmPassword,
+    PasswordInput? currentPassword,
+    PasswordInput? password,
+    ConfirmedPasswordInput? confirmPassword,
     FormzSubmissionStatus? status,
   }) {
     return ChangePasswordState(

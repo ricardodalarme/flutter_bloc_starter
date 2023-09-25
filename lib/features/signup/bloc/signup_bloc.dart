@@ -25,7 +25,7 @@ final class SignupBloc extends Bloc<SignupEvent, SignupState> {
     Emitter<SignupState> emit,
   ) {
     emit(
-      state.copyWith(email: Email.dirty(event.email)),
+      state.copyWith(email: EmailInput.dirty(event.email)),
     );
   }
 
@@ -35,8 +35,8 @@ final class SignupBloc extends Bloc<SignupEvent, SignupState> {
   ) {
     emit(
       state.copyWith(
-        password: Password.dirty(event.password),
-        confirmPassword: ConfirmedPassword.dirty(
+        password: PasswordInput.dirty(event.password),
+        confirmPassword: ConfirmedPasswordInput.dirty(
           password: event.password,
           value: state.confirmPassword.value,
         ),
@@ -50,7 +50,7 @@ final class SignupBloc extends Bloc<SignupEvent, SignupState> {
   ) {
     emit(
       state.copyWith(
-        confirmPassword: ConfirmedPassword.dirty(
+        confirmPassword: ConfirmedPasswordInput.dirty(
           password: state.password.value,
           value: event.confirmPassword,
         ),

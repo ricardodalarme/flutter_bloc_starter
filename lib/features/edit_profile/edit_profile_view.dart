@@ -7,6 +7,7 @@ import 'package:flutter_bloc_starter/widgets/base_button.dart';
 import 'package:flutter_bloc_starter/widgets/base_text_field.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
+import 'package:user_repository/user_repository.dart';
 
 class EditProfileView extends StatelessWidget {
   const EditProfileView({super.key});
@@ -18,7 +19,9 @@ class EditProfileView extends StatelessWidget {
         title: Text(context.l10n.editProfile),
       ),
       body: BlocProvider(
-        create: (context) => EditProfileBloc(),
+        create: (context) => EditProfileBloc(
+          userRepository: context.read<UserRepository>(),
+        ),
         child: BlocListener<EditProfileBloc, EditProfileState>(
           listener: (context, state) {
             if (state.status.isSuccess) {

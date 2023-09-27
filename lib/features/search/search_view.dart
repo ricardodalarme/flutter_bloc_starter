@@ -12,12 +12,9 @@ class SearchView extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.l10n.search),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(AppSpacing.medium),
-        child: SearchTextField(
-          onChanged: (value) {},
-          onClear: () {},
-        ),
+      body: const Padding(
+        padding: EdgeInsets.all(AppSpacing.medium),
+        child: SearchTextField(),
       ),
     );
   }

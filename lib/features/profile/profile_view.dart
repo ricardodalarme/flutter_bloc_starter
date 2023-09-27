@@ -44,6 +44,11 @@ class ProfileView extends StatelessWidget {
                 onTap: () => context.push(AppPaths.settings),
               ),
               ListTile(
+                title: Text(context.l10n.privacyPolicy),
+                leading: const Icon(Icons.privacy_tip),
+                onTap: () => context.push(AppPaths.privacyPolicy),
+              ),
+              ListTile(
                 title: Text(context.l10n.logout),
                 leading: const Icon(Icons.logout),
                 onTap: () =>

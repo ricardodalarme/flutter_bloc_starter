@@ -36,5 +36,6 @@
   "settings": "Settings",
   "firstName": "First Name",
   "lastName": "Last Name",
-  "search": "Search"
+  "search": "Search",
+  "privacyPolicy": "Privacy Policy"
 }

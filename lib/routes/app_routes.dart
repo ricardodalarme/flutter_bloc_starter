@@ -6,6 +6,7 @@ import 'package:flutter_bloc_starter/features/forgot_password/forgot_password_vi
 import 'package:flutter_bloc_starter/features/home/home_view.dart';
 import 'package:flutter_bloc_starter/features/login/login_view.dart';
 import 'package:flutter_bloc_starter/features/not_found/not_found_view.dart';
+import 'package:flutter_bloc_starter/features/privacy_policy/privacy_policy_view.dart';
 import 'package:flutter_bloc_starter/features/settings/settings_view.dart';
 import 'package:flutter_bloc_starter/features/signup/signup_view.dart';
 import 'package:go_router/go_router.dart';
@@ -51,6 +52,10 @@ abstract class AppRoutes {
     GoRoute(
       path: _Paths.settings,
       builder: (context, state) => const SettingsView(),
+    ),
+    GoRoute(
+      path: _Paths.privacyPolicy,
+      builder: (context, state) => const PrivacyPolicyView(),
     ),
   ];
 }

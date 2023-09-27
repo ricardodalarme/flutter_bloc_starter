@@ -37,5 +37,6 @@
   "firstName": "First Name",
   "lastName": "Last Name",
   "search": "Search",
-  "privacyPolicy": "Privacy Policy"
+  "privacyPolicy": "Privacy Policy",
+  "termsOfUse": "Terms of Use"
 }

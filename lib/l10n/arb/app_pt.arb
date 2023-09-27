@@ -37,5 +37,6 @@
   "firstName": "Nome",
   "lastName": "Sobrenome",
   "search": "Pesquisar",
-  "privacyPolicy": "Política de Privacidade"
+  "privacyPolicy": "Política de Privacidade",
+  "termsOfUse": "Termos de Uso"
 }

@@ -9,6 +9,7 @@ import 'package:flutter_bloc_starter/features/not_found/not_found_view.dart';
 import 'package:flutter_bloc_starter/features/privacy_policy/privacy_policy_view.dart';
 import 'package:flutter_bloc_starter/features/settings/settings_view.dart';
 import 'package:flutter_bloc_starter/features/signup/signup_view.dart';
+import 'package:flutter_bloc_starter/features/terms_of_use/terms_of_use_view.dart';
 import 'package:go_router/go_router.dart';
 
 part 'app_paths.dart';
@@ -56,6 +57,10 @@ abstract class AppRoutes {
     GoRoute(
       path: _Paths.privacyPolicy,
       builder: (context, state) => const PrivacyPolicyView(),
+    ),
+    GoRoute(
+      path: _Paths.termsOfUse,
+      builder: (context, state) => const TermsOfUseView(),
     ),
   ];
 }

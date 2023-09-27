@@ -11,6 +11,7 @@ abstract class AppPaths {
   static const editProfile = _Paths.editProfile;
   static const settings = _Paths.settings;
   static const privacyPolicy = _Paths.privacyPolicy;
+  static const termsOfUse = _Paths.termsOfUse;
 }
 
 abstract class _Paths {
@@ -22,4 +23,5 @@ abstract class _Paths {
   static const editProfile = '/edit-profile';
   static const settings = '/settings';
   static const privacyPolicy = '/privacy-policy';
+  static const termsOfUse = '/terms-of-use';
 }

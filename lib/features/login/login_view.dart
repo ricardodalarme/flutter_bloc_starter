@@ -59,7 +59,7 @@ class LoginView extends StatelessWidget {
                         const EdgeInsets.symmetric(vertical: AppSpacing.large),
                     child: TextDivider(context.l10n.or.toUpperCase()),
                   ),
-                  const _SigninWithThirdPartyButtons(),
+                  const _SignInWithThirdPartyButtons(),
                   const _SignupButton(),
                 ],
               ),
@@ -121,8 +121,8 @@ class _LoginButton extends StatelessWidget {
   }
 }
 
-class _SigninWithThirdPartyButtons extends StatelessWidget {
-  const _SigninWithThirdPartyButtons();
+class _SignInWithThirdPartyButtons extends StatelessWidget {
+  const _SignInWithThirdPartyButtons();
 
   @override
   Widget build(BuildContext context) {

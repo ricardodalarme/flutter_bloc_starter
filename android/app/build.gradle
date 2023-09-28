@@ -34,7 +34,7 @@ android {
 
     defaultConfig {
         applicationId "com.ricardodalarme.flutter_bloc_starter"
-        minSdkVersion 19
+        minSdkVersion 21
         compileSdk flutter.compileSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         multiDexEnabled true

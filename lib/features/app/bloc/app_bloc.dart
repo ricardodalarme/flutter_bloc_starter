@@ -8,7 +8,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
   AppBloc({
     required AuthenticationRepository authenticationRepository,
   })  : _authenticationRepository = authenticationRepository,
-        super(AppState()) {
+        super(const AppState.unauthenticated()) {
     on<AppLogoutRequested>(_onLogoutRequested);
   }
 

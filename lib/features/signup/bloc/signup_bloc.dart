@@ -65,8 +65,8 @@ final class SignupBloc extends Bloc<SignupEvent, SignupState> {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
       await _authenticationRepository.logInWithEmailAndPassword(
-        state.email.value,
-        state.password.value,
+        email: state.email.value,
+        password: state.password.value,
       );
       emit(state.copyWith(status: FormzSubmissionStatus.success));
     } catch (error) {

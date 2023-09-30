@@ -14,7 +14,7 @@ class AnalyticsRepository {
         parameters: event.parameters,
       );
     } catch (e) {
-      throw LogEventException(e.toString());
+      throw LogEventException();
     }
   }
 
@@ -22,7 +22,7 @@ class AnalyticsRepository {
     try {
       await _analyticsService.setUserId(id: userId);
     } catch (e) {
-      throw SetUserIdException(e.toString());
+      throw SetUserIdException();
     }
   }
 }

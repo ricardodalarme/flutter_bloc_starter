@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_starter/features/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:flutter_bloc_starter/l10n/l10n.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
+import 'package:flutter_bloc_starter/widgets/base_button.dart';
 import 'package:flutter_bloc_starter/widgets/password_text_field.dart';
 
 class ForgotPasswordResetPasswordForm extends StatelessWidget {
@@ -65,10 +66,10 @@ class _SubmitButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FilledButton(
+    return BaseButton(
+      text: context.l10n.resetPassword,
       onPressed: () =>
           context.read<ForgotPasswordBloc>().add(ForgotPasswordSubmitted()),
-      child: Text(context.l10n.resetPassword),
     );
   }
 }

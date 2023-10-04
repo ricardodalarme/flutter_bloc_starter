@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc_starter/l10n/l10n.dart';
 import 'package:flutter_bloc_starter/routes/app_routes.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
+import 'package:flutter_bloc_starter/widgets/base_button.dart';
 import 'package:go_router/go_router.dart';
 
 class NotFoundView extends StatelessWidget {
@@ -23,8 +24,8 @@ class NotFoundView extends StatelessWidget {
               style: Theme.of(context).textTheme.headlineSmall,
             ),
             const SizedBox(height: AppSpacing.xxlarge),
-            FilledButton(
-              child: Text(context.l10n.goBackHome),
+            BaseButton(
+              text: context.l10n.goBackHome,
               onPressed: () => context.go(AppPaths.home),
             ),
           ],

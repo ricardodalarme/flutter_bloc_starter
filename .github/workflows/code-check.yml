@@ -26,15 +26,6 @@ jobs:
       - name: Run Flutter Test Coverage
         run: flutter test --coverage
 
-      - name: Upload Coverage to Codecov
-        if: github.event_name == 'push'
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/lcov.info
-          fail_ci_if_error: true
-          verbose: true 
-
   lint:
     name: Lint
     runs-on: ubuntu-latest

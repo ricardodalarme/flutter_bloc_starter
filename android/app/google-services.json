@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:707495094215:android:c6d6f6a305f2ca662f1be2",
         "android_client_info": {
-          "package_name": "com.ricardodalarme.flutter_bloc_starter"
+          "package_name": "com.example.quickstart_flutter_bloc"
         }
       },
       "oauth_client": [
@@ -34,7 +34,7 @@
               "client_id": "707495094215-3tpcvcqkdvsimreuq5herigf8aule918.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.lunardevs.flutterBlocStarter"
+                "bundle_id": "com.lunardevs.quickstartFlutterBloc"
               }
             }
           ]

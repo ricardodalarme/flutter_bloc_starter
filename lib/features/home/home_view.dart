@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_starter/features/feed/feed_view.dart';
-import 'package:flutter_bloc_starter/features/home/cubit/home_cubit.dart';
-import 'package:flutter_bloc_starter/features/home/widgets/navigation_bar.dart';
-import 'package:flutter_bloc_starter/features/profile/profile_view.dart';
-import 'package:flutter_bloc_starter/features/search/search_view.dart';
-import 'package:flutter_bloc_starter/l10n/l10n.dart';
+import 'package:quickstart_flutter_bloc/features/feed/feed_view.dart';
+import 'package:quickstart_flutter_bloc/features/home/cubit/home_cubit.dart';
+import 'package:quickstart_flutter_bloc/features/home/widgets/navigation_bar.dart';
+import 'package:quickstart_flutter_bloc/features/profile/profile_view.dart';
+import 'package:quickstart_flutter_bloc/features/search/search_view.dart';
+import 'package:quickstart_flutter_bloc/l10n/l10n.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

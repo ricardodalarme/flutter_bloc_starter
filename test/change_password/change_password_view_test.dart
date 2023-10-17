@@ -1,5 +1,5 @@
-import 'package:flutter_bloc_starter/features/change_password/change_password_view.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:quickstart_flutter_bloc/features/change_password/change_password_view.dart';
 
 import '../test_helpers/pump_app.dart';
 

@@ -1,5 +1,5 @@
-import 'package:flutter_bloc_starter/features/app/app.dart';
-import 'package:flutter_bloc_starter/features/app/bootstrap.dart';
+import 'package:quickstart_flutter_bloc/features/app/app.dart';
+import 'package:quickstart_flutter_bloc/features/app/bootstrap.dart';
 
 void main() {
   bootstrap(App.new);

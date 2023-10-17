@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_starter/l10n/l10n.dart';
-import 'package:flutter_bloc_starter/styling/app_spacing.dart';
+import 'package:quickstart_flutter_bloc/l10n/l10n.dart';
+import 'package:quickstart_flutter_bloc/styling/app_spacing.dart';
 
 class FeedView extends StatelessWidget {
   const FeedView({super.key});

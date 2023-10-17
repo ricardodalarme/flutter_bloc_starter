@@ -65,6 +65,6 @@ class DefaultFirebaseOptions {
     storageBucket: 'flutter-bloc-starter-f9a94.appspot.com',
     iosClientId:
         '707495094215-jjan83r1hmi5o4blt999ievoagk0rj2m.apps.googleusercontent.com',
-    iosBundleId: 'com.ricardodalarme.flutterBlocStarter',
+    iosBundleId: 'com.example.quickstartFlutterBloc',
   );
 }

@@ -16,7 +16,7 @@ if (localPropertiesFile.exists()) {
 }
 
 android {
-    namespace "com.ricardodalarme.flutter_bloc_starter"
+    namespace "com.example.quickstart_flutter_bloc"
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -33,7 +33,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.ricardodalarme.flutter_bloc_starter"
+        applicationId "com.example.quickstart_flutter_bloc"
         minSdkVersion 21
         compileSdk flutter.compileSdkVersion
         targetSdkVersion flutter.targetSdkVersion

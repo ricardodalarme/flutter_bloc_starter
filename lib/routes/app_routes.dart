@@ -1,16 +1,16 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_bloc_starter/features/change_password/change_password_view.dart';
-import 'package:flutter_bloc_starter/features/edit_profile/edit_profile_view.dart';
-import 'package:flutter_bloc_starter/features/forgot_password/forgot_password_view.dart';
-import 'package:flutter_bloc_starter/features/home/home_view.dart';
-import 'package:flutter_bloc_starter/features/login/login_view.dart';
-import 'package:flutter_bloc_starter/features/not_found/not_found_view.dart';
-import 'package:flutter_bloc_starter/features/privacy_policy/privacy_policy_view.dart';
-import 'package:flutter_bloc_starter/features/settings/settings_view.dart';
-import 'package:flutter_bloc_starter/features/signup/signup_view.dart';
-import 'package:flutter_bloc_starter/features/terms_of_use/terms_of_use_view.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quickstart_flutter_bloc/features/change_password/change_password_view.dart';
+import 'package:quickstart_flutter_bloc/features/edit_profile/edit_profile_view.dart';
+import 'package:quickstart_flutter_bloc/features/forgot_password/forgot_password_view.dart';
+import 'package:quickstart_flutter_bloc/features/home/home_view.dart';
+import 'package:quickstart_flutter_bloc/features/login/login_view.dart';
+import 'package:quickstart_flutter_bloc/features/not_found/not_found_view.dart';
+import 'package:quickstart_flutter_bloc/features/privacy_policy/privacy_policy_view.dart';
+import 'package:quickstart_flutter_bloc/features/settings/settings_view.dart';
+import 'package:quickstart_flutter_bloc/features/signup/signup_view.dart';
+import 'package:quickstart_flutter_bloc/features/terms_of_use/terms_of_use_view.dart';
 
 part 'app_paths.dart';
 

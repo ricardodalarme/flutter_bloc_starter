@@ -1,17 +1,17 @@
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_starter/features/login/bloc/login_bloc.dart';
-import 'package:flutter_bloc_starter/l10n/l10n.dart';
-import 'package:flutter_bloc_starter/routes/app_routes.dart';
-import 'package:flutter_bloc_starter/styling/app_spacing.dart';
-import 'package:flutter_bloc_starter/widgets/base_button.dart';
-import 'package:flutter_bloc_starter/widgets/base_text_field.dart';
-import 'package:flutter_bloc_starter/widgets/password_text_field.dart';
-import 'package:flutter_bloc_starter/widgets/sign_in_button.dart';
-import 'package:flutter_bloc_starter/widgets/text_divider.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quickstart_flutter_bloc/features/login/bloc/login_bloc.dart';
+import 'package:quickstart_flutter_bloc/l10n/l10n.dart';
+import 'package:quickstart_flutter_bloc/routes/app_routes.dart';
+import 'package:quickstart_flutter_bloc/styling/app_spacing.dart';
+import 'package:quickstart_flutter_bloc/widgets/base_button.dart';
+import 'package:quickstart_flutter_bloc/widgets/base_text_field.dart';
+import 'package:quickstart_flutter_bloc/widgets/password_text_field.dart';
+import 'package:quickstart_flutter_bloc/widgets/sign_in_button.dart';
+import 'package:quickstart_flutter_bloc/widgets/text_divider.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});

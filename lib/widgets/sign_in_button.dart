@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_starter/l10n/l10n.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:quickstart_flutter_bloc/l10n/l10n.dart';
 
 enum ButtonProvider {
   google('Google'),

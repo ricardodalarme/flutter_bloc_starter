@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_starter/styling/app_spacing.dart';
+import 'package:quickstart_flutter_bloc/styling/app_spacing.dart';
 
 class TextDivider extends StatelessWidget {
   const TextDivider(this.text, {super.key});

@@ -23,8 +23,10 @@ jobs:
           cache: true
           cache-key: flutter-:os:-:channel:-:version:-:arch:-:hash:-${{ hashFiles('**/pubspec.lock') }}
 
-      - name: Run Flutter Test Coverage
-        run: flutter test --coverage
+      - uses: bluefireteam/melos-action@v2
+
+      - name: Run Flutter Test
+        run: melos run test
 
   lint:
     name: Lint
@@ -38,13 +40,10 @@ jobs:
           cache: true
           cache-key: flutter-:os:-:channel:-:version:-:arch:-:hash:-${{ hashFiles('**/pubspec.lock') }}
 
-      - name: Install Dependencies
-        run: |
-          flutter pub global activate very_good_cli
-          very_good packages get --recursive
+      - uses: bluefireteam/melos-action@v2
 
       - name: Run Flutter Format
-        run: dart format --output none --set-exit-if-changed .
+        run: melos run format:no-output
 
       - name: Run Flutter Analyze
-        run: flutter analyze
+        run: melos run analyze

@@ -29,7 +29,7 @@ check_flutter_installed() {
 run_flutter_format() {
   printf '\n%b%bRunning the Flutter formatter%b\n' "$YELLOW" "$BOLD" "$NC"
 
-  if dart format --output none --set-exit-if-changed . ; then
+  if melos run format:no-output; then
     printf '%b%bSUCCESS: Flutter format run successfully with no errors.%b\n' "$GREEN" "$BOLD" "$NC"
   else
     printf '%b%bFAILED: Fix Flutter formatter errors and try again.%b\n' "$RED" "$BOLD" "$NC"
@@ -40,7 +40,7 @@ run_flutter_format() {
 run_flutter_analyzer() {
   printf "\n%b%bRunning the Flutter analyzer%b\n" "$YELLOW" "$BOLD" "$NC"
 
-  if flutter analyze ; then
+  if melos run analyze ; then
     printf '%b%bSUCCESS: Flutter analyze run successfully with no errors.%b\n' "$GREEN" "$BOLD" "$NC"
   else
     printf '%b%bFAILED: Fix Flutter analyzer errors and try again.%b\n' "$RED" "$BOLD" "$NC"
@@ -51,7 +51,7 @@ run_flutter_analyzer() {
 run_flutter_tests() {
   printf "\n%b%bRunning tests%b\n" "$YELLOW" "$BOLD" "$NC"
 
-  if flutter test ; then
+  if melos run test ; then
     printf '%b%bSUCCESS: Flutter tests run successfully with no errors.%b\n' "$GREEN" "$BOLD" "$NC"
   else
     printf '%b%bFAILED: Fix Flutter test errors and try again.%b\n' "$RED" "$BOLD" "$NC"

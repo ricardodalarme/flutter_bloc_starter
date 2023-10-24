@@ -1,0 +1,61 @@
+name: quickstart_flutter_bloc
+
+packages:
+  - .
+  - packages/*
+
+command:
+  bootstrap:
+    hooks:
+      pre: melos run hooks
+
+scripts:
+  # Flutter commands
+  lint:
+    run: melos run format:no-output && melos run analyze
+    description: Lint all packages.
+
+  analyze:
+    run: melos exec -- \
+      "flutter analyze"
+    description: Analyze all packages.
+
+  format:
+    run: melos exec -- \
+      "dart format ."
+    description: Format all packages.
+
+  format:no-output:
+    run: melos exec --fail-fast -- \
+      "dart format --output none --set-exit-if-changed ."
+    description: Run `dart format` for all packages and fail if any files need to be formatted.
+
+  test:
+    run: melos run test:single --no-select
+    description: Run all tests available.
+
+  test:single:
+    run: melos exec -- \
+      "flutter test"
+    description: Run `flutter test` for a specific package.
+    packageFilters:
+      dirExists:
+        - test
+
+  # Tool commands
+  splash_screen:
+    run: flutter pub run flutter_native_splash:create
+    description: Update the app splash screen.
+
+  launcher_icon:
+    run: flutter pub run flutter_launcher_icons:main
+    description: Update the app launcher icon.
+
+  # Git commands
+  hooks:
+    run: ./scripts/git/install-git-hooks
+    description: Install git hooks.
+
+ide:
+  intellij:
+    enabled: false

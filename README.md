@@ -11,7 +11,8 @@ Base repository for application using Flutter + Bloc
 - [Motivation](#motivation)
 - [Setup](#setup)
   - [Pre-requirements](#pre-requirements)
-  - [Install git hooks](#install-git-hooks)
+  - [Install Melos](#install-melos)
+  - [Bootstrap](#bootstrap)
 - [Running it](#running-it)
   - [Mobile App](#mobile-app)
     - [VSCode (Recommended)](#vscode-recommended)
@@ -34,12 +35,24 @@ From a console window that has the Flutter directory in the path, run the follow
 flutter doctor
 ```
 
-### Install git hooks
+### Install Melos
 
-Git Hooks are shell scripts that run automatically before or after Git executes an important command, such as *Commit* or *Push*. To install it, run the command:
+[Melos](https://github.com/invertase/melos) is a tool for managing Dart and Flutter projects featuring multiple packages. The quickstart uses it to manage the packages in the project in a easy way. To install Melos, execute the following command:
 
 ```bash
-make git_hooks
+dart pub global activate melos
+```
+
+### Bootstrap
+
+To get started, you will need to install the dependencies and the Git Hooks. 
+
+Git Hooks are shell scripts that run automatically before or after Git executes an important command, such as *Commit* or *Push*.
+
+Fortunately, Melos has a command that does this for us. To install the dependencies and Git Hooks, run the following command:
+
+```bash
+melos bootstrap
 ```
 
 ## Running it

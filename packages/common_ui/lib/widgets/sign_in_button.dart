@@ -1,5 +1,5 @@
+import 'package:common_ui/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 enum ButtonProvider {
   google('Google'),
@@ -36,8 +36,7 @@ class SignInButton extends StatelessWidget {
           icon: Container(
             padding: const EdgeInsets.all(4),
             color: Colors.white,
-            child: SvgPicture.asset(
-              'assets/logos/google.svg',
+            child: Assets.logos.google.svg(
               height: 24,
             ),
           ),
@@ -49,8 +48,7 @@ class SignInButton extends StatelessWidget {
         return SignInButtonBuilder(
           key: const ValueKey('Facebook'),
           text: buttonText,
-          icon: SvgPicture.asset(
-            'assets/logos/facebook.svg',
+          icon: Assets.logos.facebook.svg(
             height: 30,
           ),
           backgroundColor: const Color(0xFF1877f2),

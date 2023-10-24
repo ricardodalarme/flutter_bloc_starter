@@ -1,5 +1,5 @@
+import 'package:common_ui/widgets/base_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:quickstart_flutter_bloc/widgets/base_text_field.dart';
 
 class PasswordTextField extends StatefulWidget {
   const PasswordTextField({

@@ -1,6 +1,6 @@
+import 'package:common_ui/widgets/text_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:quickstart_flutter_bloc/widgets/text_divider.dart';
 
 import '../test_helpers/pump_app.dart';
 

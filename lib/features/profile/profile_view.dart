@@ -1,11 +1,11 @@
+import 'package:common_ui/styling/app_spacing.dart';
+import 'package:common_ui/widgets/profile_picture.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quickstart_flutter_bloc/features/app/bloc/app_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/l10n.dart';
 import 'package:quickstart_flutter_bloc/routes/app_routes.dart';
-import 'package:quickstart_flutter_bloc/styling/app_spacing.dart';
-import 'package:quickstart_flutter_bloc/widgets/profile_picture.dart';
 
 const _profilePictureSize = 175.0;
 

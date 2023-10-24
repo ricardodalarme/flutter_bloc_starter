@@ -1,9 +1,9 @@
+import 'package:common_ui/styling/app_spacing.dart';
+import 'package:common_ui/widgets/base_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quickstart_flutter_bloc/l10n/l10n.dart';
 import 'package:quickstart_flutter_bloc/routes/app_routes.dart';
-import 'package:quickstart_flutter_bloc/styling/app_spacing.dart';
-import 'package:quickstart_flutter_bloc/widgets/base_button.dart';
 
 class NotFoundView extends StatelessWidget {
   const NotFoundView({super.key});

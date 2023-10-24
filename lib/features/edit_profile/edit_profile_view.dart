@@ -1,12 +1,12 @@
+import 'package:common_ui/styling/app_spacing.dart';
+import 'package:common_ui/widgets/base_button.dart';
+import 'package:common_ui/widgets/base_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/bloc/edit_profile_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/l10n.dart';
-import 'package:quickstart_flutter_bloc/styling/app_spacing.dart';
-import 'package:quickstart_flutter_bloc/widgets/base_button.dart';
-import 'package:quickstart_flutter_bloc/widgets/base_text_field.dart';
 import 'package:user_repository/user_repository.dart';
 
 class EditProfileView extends StatelessWidget {

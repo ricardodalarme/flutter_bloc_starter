@@ -1,5 +1,5 @@
+import 'package:common_ui/styling/app_spacing.dart';
 import 'package:flutter/material.dart';
-import 'package:quickstart_flutter_bloc/styling/app_spacing.dart';
 
 class SearchTextField extends StatefulWidget {
   const SearchTextField({

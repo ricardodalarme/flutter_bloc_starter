@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:quickstart_flutter_bloc/l10n/l10n.dart';
 
 enum ButtonProvider {
   google('Google'),
@@ -16,20 +15,24 @@ const double _buttonMaxWidth = 220;
 class SignInButton extends StatelessWidget {
   const SignInButton(
     this.button, {
+    required this.text,
     required this.onPressed,
     super.key,
   });
 
+  final String Function(ButtonProvider) text;
   final VoidCallback onPressed;
   final ButtonProvider button;
 
   @override
   Widget build(BuildContext context) {
+    final buttonText = text(button);
+
     switch (button) {
       case ButtonProvider.google:
         return SignInButtonBuilder(
           key: const ValueKey('Google'),
-          text: context.l10n.signInWith(button.text),
+          text: buttonText,
           icon: Container(
             padding: const EdgeInsets.all(4),
             color: Colors.white,
@@ -45,7 +48,7 @@ class SignInButton extends StatelessWidget {
       case ButtonProvider.facebook:
         return SignInButtonBuilder(
           key: const ValueKey('Facebook'),
-          text: context.l10n.signInWith(button.text),
+          text: buttonText,
           icon: SvgPicture.asset(
             'assets/logos/facebook.svg',
             height: 30,

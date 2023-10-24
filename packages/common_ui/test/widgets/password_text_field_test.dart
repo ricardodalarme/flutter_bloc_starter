@@ -1,6 +1,6 @@
+import 'package:common_ui/widgets/password_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:quickstart_flutter_bloc/widgets/password_text_field.dart';
 
 import '../test_helpers/pump_app.dart';
 

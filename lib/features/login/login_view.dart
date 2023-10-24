@@ -1,4 +1,10 @@
 import 'package:authentication_repository/authentication_repository.dart';
+import 'package:common_ui/styling/app_spacing.dart';
+import 'package:common_ui/widgets/base_button.dart';
+import 'package:common_ui/widgets/base_text_field.dart';
+import 'package:common_ui/widgets/password_text_field.dart';
+import 'package:common_ui/widgets/sign_in_button.dart';
+import 'package:common_ui/widgets/text_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
@@ -6,12 +12,6 @@ import 'package:go_router/go_router.dart';
 import 'package:quickstart_flutter_bloc/features/login/bloc/login_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/l10n.dart';
 import 'package:quickstart_flutter_bloc/routes/app_routes.dart';
-import 'package:quickstart_flutter_bloc/styling/app_spacing.dart';
-import 'package:quickstart_flutter_bloc/widgets/base_button.dart';
-import 'package:quickstart_flutter_bloc/widgets/base_text_field.dart';
-import 'package:quickstart_flutter_bloc/widgets/password_text_field.dart';
-import 'package:quickstart_flutter_bloc/widgets/sign_in_button.dart';
-import 'package:quickstart_flutter_bloc/widgets/text_divider.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -130,11 +130,13 @@ class _SignInWithThirdPartyButtons extends StatelessWidget {
       children: [
         SignInButton(
           ButtonProvider.google,
+          text: (provider) => context.l10n.signInWith(provider.text),
           onPressed: () =>
               context.read<LoginBloc>().add(LoginWithGoogleSubmitted()),
         ),
         SignInButton(
           ButtonProvider.facebook,
+          text: (provider) => context.l10n.signInWith(provider.text),
           onPressed: () =>
               context.read<LoginBloc>().add(LoginWithFacebookSubmitted()),
         ),

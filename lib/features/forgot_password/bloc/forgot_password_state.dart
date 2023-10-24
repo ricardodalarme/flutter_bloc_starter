@@ -1,7 +1,6 @@
 part of 'forgot_password_bloc.dart';
 
-@immutable
-final class ForgotPasswordState {
+final class ForgotPasswordState extends Equatable {
   const ForgotPasswordState({
     this.email = '',
     this.code = '',
@@ -27,4 +26,7 @@ final class ForgotPasswordState {
       confirmPassword: confirmPassword ?? this.confirmPassword,
     );
   }
+
+  @override
+  List<Object?> get props => [email, code, password, confirmPassword];
 }

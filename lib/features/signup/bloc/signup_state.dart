@@ -1,7 +1,6 @@
 part of 'signup_bloc.dart';
 
-@immutable
-final class SignupState with FormzMixin {
+final class SignupState extends Equatable with FormzMixin {
   const SignupState({
     this.email = const EmailInput.pure(),
     this.password = const PasswordInput.pure(),
@@ -31,4 +30,7 @@ final class SignupState with FormzMixin {
   @override
   List<FormzInput<dynamic, dynamic>> get inputs =>
       [email, password, confirmPassword];
+
+  @override
+  List<Object?> get props => [email, password, confirmPassword, status];
 }

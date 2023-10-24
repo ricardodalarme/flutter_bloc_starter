@@ -1,7 +1,6 @@
 part of 'edit_profile_bloc.dart';
 
-@immutable
-final class EditProfileState with FormzMixin {
+final class EditProfileState extends Equatable with FormzMixin {
   const EditProfileState({
     this.status = FormzSubmissionStatus.initial,
     this.firstName = const NonEmptyInput.pure(),
@@ -30,4 +29,7 @@ final class EditProfileState with FormzMixin {
 
   @override
   List<FormzInput<dynamic, dynamic>> get inputs => [firstName, lastName, email];
+
+  @override
+  List<Object?> get props => [status, firstName, lastName, email];
 }

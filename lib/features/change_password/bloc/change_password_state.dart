@@ -1,7 +1,6 @@
 part of 'change_password_bloc.dart';
 
-@immutable
-final class ChangePasswordState with FormzMixin {
+final class ChangePasswordState extends Equatable with FormzMixin {
   const ChangePasswordState({
     this.currentPassword = const PasswordInput.pure(),
     this.password = const PasswordInput.pure(),
@@ -31,4 +30,8 @@ final class ChangePasswordState with FormzMixin {
   @override
   List<FormzInput<dynamic, dynamic>> get inputs =>
       [currentPassword, password, confirmPassword];
+
+  @override
+  List<Object?> get props =>
+      [currentPassword, password, confirmPassword, status];
 }

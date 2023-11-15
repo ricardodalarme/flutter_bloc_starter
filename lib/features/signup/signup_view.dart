@@ -18,7 +18,7 @@ class SignUpView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.l10n.signUp),
+        title: Text(context.l10n.signup.title),
       ),
       body: BlocProvider(
         create: (context) => SignupBloc(
@@ -59,7 +59,7 @@ class _EmailTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseTextField(
-      label: context.l10n.email,
+      label: context.l10n.common.email,
       onChanged: (email) =>
           context.read<SignupBloc>().add(SignupEmailChanged(email)),
       keyboardType: TextInputType.emailAddress,
@@ -76,7 +76,7 @@ class _PasswordTextField extends StatelessWidget {
     return PasswordTextField(
       onChanged: (password) =>
           context.read<SignupBloc>().add(SignupPasswordChanged(password)),
-      label: context.l10n.password,
+      label: context.l10n.common.password,
       textInputAction: TextInputAction.next,
     );
   }
@@ -91,7 +91,7 @@ class _ConfirmPasswordTextField extends StatelessWidget {
       onChanged: (password) => context
           .read<SignupBloc>()
           .add(SignupConfirmPasswordChanged(password)),
-      label: context.l10n.confirmPassword,
+      label: context.l10n.signup.labelConfirmPassword,
       textInputAction: TextInputAction.done,
       onSubmitted: (_) => context.read<SignupBloc>().add(SignupSubmitted()),
     );
@@ -106,7 +106,7 @@ class _SubmitButton extends StatelessWidget {
     return BlocBuilder<SignupBloc, SignupState>(
       builder: (context, state) {
         return BaseButton(
-          text: context.l10n.signUp,
+          text: context.l10n.signup.buttonSubmit,
           isLoading: state.status.isInProgress,
           isEnabled: state.isValid,
           onPressed: () => context.read<SignupBloc>().add(SignupSubmitted()),

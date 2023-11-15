@@ -9,12 +9,12 @@ class FeedView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.l10n.feed),
+        title: Text(context.l10n.feed.title),
       ),
       body: Padding(
         padding: const EdgeInsets.all(AppSpacing.medium),
         child: Center(
-          child: Text(context.l10n.feed),
+          child: Text(context.l10n.feed.title),
         ),
       ),
     );

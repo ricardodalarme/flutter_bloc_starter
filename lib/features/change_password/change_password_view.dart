@@ -17,7 +17,7 @@ class ChangePasswordView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.l10n.changePassword),
+        title: Text(context.l10n.changePassword.title),
       ),
       body: BlocProvider(
         create: (context) => ChangePasswordBloc(
@@ -61,7 +61,7 @@ class _CurrentPasswordTextField extends StatelessWidget {
       onChanged: (password) => context
           .read<ChangePasswordBloc>()
           .add(ChangePasswordCurrentPasswordChanged(password)),
-      label: context.l10n.currentPassword,
+      label: context.l10n.changePassword.labelCurrentPassword,
       textInputAction: TextInputAction.next,
     );
   }
@@ -76,7 +76,7 @@ class _NewPasswordTextField extends StatelessWidget {
       onChanged: (password) => context
           .read<ChangePasswordBloc>()
           .add(ChangePasswordNewPasswordChanged(password)),
-      label: context.l10n.newPassword,
+      label: context.l10n.changePassword.labelNewPassword,
       textInputAction: TextInputAction.next,
     );
   }
@@ -91,7 +91,7 @@ class _ConfirmPasswordTextField extends StatelessWidget {
       onChanged: (password) => context
           .read<ChangePasswordBloc>()
           .add(ChangePasswordConfirmPasswordChanged(password)),
-      label: context.l10n.confirmPassword,
+      label: context.l10n.changePassword.labelConfirmPassword,
       textInputAction: TextInputAction.done,
       onSubmitted: (_) =>
           context.read<ChangePasswordBloc>().add(ChangePasswordSubmitted()),
@@ -107,7 +107,7 @@ class _SubmitButton extends StatelessWidget {
     return BlocBuilder<ChangePasswordBloc, ChangePasswordState>(
       builder: (context, state) {
         return BaseButton(
-          text: context.l10n.save,
+          text: context.l10n.common.save,
           isLoading: state.status.isInProgress,
           isEnabled: state.isValid,
           onPressed: () =>

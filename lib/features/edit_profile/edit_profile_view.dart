@@ -16,7 +16,7 @@ class EditProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.l10n.editProfile),
+        title: Text(context.l10n.editProfile.title),
       ),
       body: BlocProvider(
         create: (context) => EditProfileBloc(
@@ -57,7 +57,7 @@ class _FirstNameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseTextField(
-      label: context.l10n.firstName,
+      label: context.l10n.common.firstName,
       textInputAction: TextInputAction.next,
     );
   }
@@ -69,7 +69,7 @@ class _LastNameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseTextField(
-      label: context.l10n.lastName,
+      label: context.l10n.common.lastName,
       textInputAction: TextInputAction.next,
     );
   }
@@ -81,7 +81,7 @@ class _EmailTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseTextField(
-      label: context.l10n.email,
+      label: context.l10n.common.email,
       textInputAction: TextInputAction.done,
       onSubmitted: (_) =>
           context.read<EditProfileBloc>().add(EditProfileSubmitted()),
@@ -97,7 +97,7 @@ class _SubmitButton extends StatelessWidget {
     return BlocBuilder<EditProfileBloc, EditProfileState>(
       builder: (context, state) {
         return BaseButton(
-          text: context.l10n.save,
+          text: context.l10n.common.save,
           isLoading: state.status.isInProgress,
           isEnabled: state.isValid,
           onPressed: () =>

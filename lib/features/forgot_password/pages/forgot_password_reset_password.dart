@@ -38,7 +38,7 @@ class _NewPasswordTextField extends StatelessWidget {
       onChanged: (value) => context
           .read<ForgotPasswordBloc>()
           .add(ForgotPasswordNewPasswordChanged(value)),
-      label: context.l10n.newPassword,
+      label: context.l10n.forgotPassword.resetPageLabelNewPassword,
       textInputAction: TextInputAction.next,
     );
   }
@@ -53,7 +53,7 @@ class _ConfirmPasswordTextField extends StatelessWidget {
       onChanged: (value) => context
           .read<ForgotPasswordBloc>()
           .add(ForgotPasswordConfirmPasswordChanged(value)),
-      label: context.l10n.confirmPassword,
+      label: context.l10n.forgotPassword.resetPageLabelConfirmPassword,
       textInputAction: TextInputAction.done,
       onSubmitted: (_) =>
           context.read<ForgotPasswordBloc>().add(ForgotPasswordSubmitted()),
@@ -67,7 +67,7 @@ class _SubmitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseButton(
-      text: context.l10n.resetPassword,
+      text: context.l10n.forgotPassword.resetPageButtonSubmit,
       onPressed: () =>
           context.read<ForgotPasswordBloc>().add(ForgotPasswordSubmitted()),
     );

@@ -13,7 +13,7 @@ class ForgotPasswordView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.l10n.recoverPassword),
+        title: Text(context.l10n.forgotPassword.title),
       ),
       body: BlocProvider(
         create: (context) => ForgotPasswordBloc(),

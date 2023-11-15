@@ -28,7 +28,7 @@ class App extends StatelessWidget {
         child: TranslationProvider(
           child: Builder(
             builder: (context) => MaterialApp.router(
-              onGenerateTitle: (context) => context.l10n.appName,
+              onGenerateTitle: (context) => context.l10n.common.appName,
               theme: ThemeData.light(useMaterial3: true),
               darkTheme: ThemeData.dark(useMaterial3: true),
               routerConfig: AppRoutes.router,

@@ -8,7 +8,7 @@ class SettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.l10n.settings),
+        title: Text(context.l10n.settings.title),
       ),
       body: const Center(
         child: Text('SettingsView'),

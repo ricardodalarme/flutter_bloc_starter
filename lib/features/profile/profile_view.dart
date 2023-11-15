@@ -16,7 +16,7 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.l10n.profile),
+        title: Text(context.l10n.profile.title),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -29,32 +29,32 @@ class ProfileView extends StatelessWidget {
               ),
               const SizedBox(height: AppSpacing.xxlarge),
               ListTile(
-                title: Text(context.l10n.editProfile),
+                title: Text(context.l10n.profile.buttonEditProfile),
                 leading: const Icon(Icons.person),
                 onTap: () => context.push(AppPaths.editProfile),
               ),
               ListTile(
-                title: Text(context.l10n.changePassword),
+                title: Text(context.l10n.profile.buttonChangePassword),
                 leading: const Icon(Icons.lock),
                 onTap: () => context.push(AppPaths.changePassword),
               ),
               ListTile(
-                title: Text(context.l10n.settings),
+                title: Text(context.l10n.profile.buttonSettings),
                 leading: const Icon(Icons.settings),
                 onTap: () => context.push(AppPaths.settings),
               ),
               ListTile(
-                title: Text(context.l10n.privacyPolicy),
+                title: Text(context.l10n.profile.buttonPrivacyPolicy),
                 leading: const Icon(Icons.privacy_tip),
                 onTap: () => context.push(AppPaths.privacyPolicy),
               ),
               ListTile(
-                title: Text(context.l10n.termsOfUse),
+                title: Text(context.l10n.profile.buttonTermsOfUse),
                 leading: const Icon(Icons.description),
                 onTap: () => context.push(AppPaths.termsOfUse),
               ),
               ListTile(
-                title: Text(context.l10n.logout),
+                title: Text(context.l10n.profile.buttonLogout),
                 leading: const Icon(Icons.logout),
                 onTap: () =>
                     context.read<AppBloc>().add(const AppLogoutRequested()),

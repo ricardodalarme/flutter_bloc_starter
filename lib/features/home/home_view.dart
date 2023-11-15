@@ -23,12 +23,18 @@ class HomeView extends StatelessWidget {
               currentIndex: selectedTab,
               onTap: (index) => context.read<HomeCubit>().setTab(index),
               items: [
-                NavBarItem(icon: Icons.home_rounded, label: context.l10n.feed),
+                NavBarItem(
+                  icon: Icons.home_rounded,
+                  label: context.l10n.feed.title,
+                ),
                 NavBarItem(
                   icon: Icons.search_rounded,
-                  label: context.l10n.search,
+                  label: context.l10n.search.title,
                 ),
-                NavBarItem(icon: Icons.person, label: context.l10n.profile),
+                NavBarItem(
+                  icon: Icons.person,
+                  label: context.l10n.profile.title,
+                ),
               ],
             ),
             body: IndexedStack(

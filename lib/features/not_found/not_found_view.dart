@@ -16,16 +16,16 @@ class NotFoundView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              context.l10n.error404,
+              context.l10n.notFound.title,
               style: Theme.of(context).textTheme.displayLarge,
             ),
             Text(
-              context.l10n.pageNotFound,
+              context.l10n.notFound.description,
               style: Theme.of(context).textTheme.headlineSmall,
             ),
             const SizedBox(height: AppSpacing.xxlarge),
             BaseButton(
-              text: context.l10n.goBackHome,
+              text: context.l10n.notFound.buttonBack,
               onPressed: () => context.go(AppPaths.home),
             ),
           ],

@@ -8,10 +8,10 @@ class TermsOfUseView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.l10n.termsOfUse),
+        title: Text(context.l10n.termsOfUse.title),
       ),
       body: Center(
-        child: Text(context.l10n.termsOfUse),
+        child: Text(context.l10n.termsOfUse.title),
       ),
     );
   }

@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 66 (33 per locale)
+/// Strings: 86 (43 per locale)
 ///
-/// Built on 2023-11-15 at 17:06 UTC
+/// Built on 2023-11-15 at 23:37 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -189,8 +189,165 @@ class _TranslationsEn implements BaseTranslations<AppLocale, _TranslationsEn> {
   late final _TranslationsEn _root = this; // ignore: unused_field
 
   // Translations
+  late final _TranslationsTermsOfUseEn termsOfUse =
+      _TranslationsTermsOfUseEn._(_root);
+  late final _TranslationsSignupEn signup = _TranslationsSignupEn._(_root);
+  late final _TranslationsPrivacyPolicyEn privacyPolicy =
+      _TranslationsPrivacyPolicyEn._(_root);
+  late final _TranslationsSettingsEn settings =
+      _TranslationsSettingsEn._(_root);
+  late final _TranslationsSearchEn search = _TranslationsSearchEn._(_root);
+  late final _TranslationsCommonEn common = _TranslationsCommonEn._(_root);
+  late final _TranslationsChangePasswordEn changePassword =
+      _TranslationsChangePasswordEn._(_root);
+  late final _TranslationsEditProfileEn editProfile =
+      _TranslationsEditProfileEn._(_root);
+  late final _TranslationsLoginEn login = _TranslationsLoginEn._(_root);
+  late final _TranslationsNotFoundEn notFound =
+      _TranslationsNotFoundEn._(_root);
+  late final _TranslationsProfileEn profile = _TranslationsProfileEn._(_root);
   late final _TranslationsFeedEn feed = _TranslationsFeedEn._(_root);
-  late final _TranslationsAppEn app = _TranslationsAppEn._(_root);
+  late final _TranslationsForgotPasswordEn forgotPassword =
+      _TranslationsForgotPasswordEn._(_root);
+}
+
+// Path: termsOfUse
+class _TranslationsTermsOfUseEn {
+  _TranslationsTermsOfUseEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Terms of Use';
+}
+
+// Path: signup
+class _TranslationsSignupEn {
+  _TranslationsSignupEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Sign Up';
+  String get labelConfirmPassword => 'Confirm Password';
+  String get buttonSubmit => 'Sign Up';
+}
+
+// Path: privacyPolicy
+class _TranslationsPrivacyPolicyEn {
+  _TranslationsPrivacyPolicyEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Privacy Policy';
+}
+
+// Path: settings
+class _TranslationsSettingsEn {
+  _TranslationsSettingsEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Settings';
+}
+
+// Path: search
+class _TranslationsSearchEn {
+  _TranslationsSearchEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Search';
+}
+
+// Path: common
+class _TranslationsCommonEn {
+  _TranslationsCommonEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+  String get appName => 'Flutter Bloc Starter';
+  String get send => 'Send';
+  String get save => 'Save';
+  String get email => 'Email';
+  String get password => 'Password';
+  String get firstName => 'First Name';
+  String get lastName => 'Last Name';
+}
+
+// Path: changePassword
+class _TranslationsChangePasswordEn {
+  _TranslationsChangePasswordEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Change Password';
+  String get labelCurrentPassword => 'Current Password';
+  String get labelNewPassword => 'New Password';
+  String get labelConfirmPassword => 'Confirm Password';
+}
+
+// Path: editProfile
+class _TranslationsEditProfileEn {
+  _TranslationsEditProfileEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Edit Profile';
+}
+
+// Path: login
+class _TranslationsLoginEn {
+  _TranslationsLoginEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Login';
+  String get buttonLogin => 'Login';
+  String get buttonForgotPassword => 'Forgot password?';
+  String buttonSignInWith({required Object provider}) =>
+      'Sign in with ${provider}';
+  TextSpan buttonNewAccount({required InlineSpanBuilder signUp}) =>
+      TextSpan(children: [
+        const TextSpan(text: 'Don\'t have an account? '),
+        signUp('Sign up'),
+      ]);
+  String get dividerOr => 'OR';
+}
+
+// Path: notFound
+class _TranslationsNotFoundEn {
+  _TranslationsNotFoundEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+  String get title => '404';
+  String get description => 'Page not found';
+  String get buttonBack => 'Go back home';
+}
+
+// Path: profile
+class _TranslationsProfileEn {
+  _TranslationsProfileEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Profile';
+  String get buttonEditProfile => 'Edit Profile';
+  String get buttonChangePassword => 'Change Password';
+  String get buttonSettings => 'Settings';
+  String get buttonPrivacyPolicy => 'Privacy Policy';
+  String get buttonTermsOfUse => 'Terms of Use';
+  String get buttonLogout => 'Logout';
 }
 
 // Path: feed
@@ -203,47 +360,22 @@ class _TranslationsFeedEn {
   String get title => 'Feed';
 }
 
-// Path: app
-class _TranslationsAppEn {
-  _TranslationsAppEn._(this._root);
+// Path: forgotPassword
+class _TranslationsForgotPasswordEn {
+  _TranslationsForgotPasswordEn._(this._root);
 
   final _TranslationsEn _root; // ignore: unused_field
 
   // Translations
-  String get appName => 'Flutter Bloc Starter';
-  String get login => 'Login';
-  String get email => 'Email';
-  String get password => 'Password';
-  String get logout => 'Logout';
-  String get dontHaveAnAccount => 'Don\'t have an account? ';
-  String get signUp => 'Sign Up';
-  String get confirmPassword => 'Confirm Password';
-  String get pageNotFound => 'Page not found';
-  String get goBackHome => 'Go back home';
-  String get error404 => '404';
-  String get forgotPassword => 'Forgot Password?';
-  String get recoverPassword => 'Recover Password';
-  String get forgotPasswordDescription =>
-      'Enter your email address and we\'ll send you a code to reset your password';
-  String get send => 'Send';
-  String get forgotPasswordPinDescription =>
-      'Enter the code sent to your email address';
-  String get resendCode => 'Resend Code';
-  String get resetPassword => 'Reset Password';
-  String get newPassword => 'New Password';
-  String get changePassword => 'Change Password';
-  String get currentPassword => 'Current Password';
-  String get save => 'Save';
-  String get or => 'Or';
-  String signInWith({required Object provider}) => 'Sign in with ${provider}';
-  String get profile => 'Profile';
-  String get editProfile => 'Edit Profile';
-  String get settings => 'Settings';
-  String get firstName => 'First Name';
-  String get lastName => 'Last Name';
-  String get search => 'Search';
-  String get privacyPolicy => 'Privacy Policy';
-  String get termsOfUse => 'Terms of Use';
+  String get title => 'Recover Password';
+  String get emailPageDescription =>
+      'Enter your email address and we\'ll send you a link to reset your password.';
+  String get confirmPageDescription =>
+      'Enter the code we sent to your email address.';
+  String get confirmPageButtonResend => 'Resend code';
+  String get resetPageLabelNewPassword => 'New password';
+  String get resetPageLabelConfirmPassword => 'Confirm password';
+  String get resetPageButtonSubmit => 'Reset password';
 }
 
 // Path: <root>
@@ -284,9 +416,245 @@ class _TranslationsPt extends _TranslationsEn {
 
   // Translations
   @override
+  late final _TranslationsTermsOfUsePt termsOfUse =
+      _TranslationsTermsOfUsePt._(_root);
+  @override
+  late final _TranslationsSignupPt signup = _TranslationsSignupPt._(_root);
+  @override
+  late final _TranslationsPrivacyPolicyPt privacyPolicy =
+      _TranslationsPrivacyPolicyPt._(_root);
+  @override
+  late final _TranslationsSettingsPt settings =
+      _TranslationsSettingsPt._(_root);
+  @override
+  late final _TranslationsSearchPt search = _TranslationsSearchPt._(_root);
+  @override
+  late final _TranslationsCommonPt common = _TranslationsCommonPt._(_root);
+  @override
+  late final _TranslationsChangePasswordPt changePassword =
+      _TranslationsChangePasswordPt._(_root);
+  @override
+  late final _TranslationsEditProfilePt editProfile =
+      _TranslationsEditProfilePt._(_root);
+  @override
+  late final _TranslationsLoginPt login = _TranslationsLoginPt._(_root);
+  @override
+  late final _TranslationsNotFoundPt notFound =
+      _TranslationsNotFoundPt._(_root);
+  @override
+  late final _TranslationsProfilePt profile = _TranslationsProfilePt._(_root);
+  @override
   late final _TranslationsFeedPt feed = _TranslationsFeedPt._(_root);
   @override
-  late final _TranslationsAppPt app = _TranslationsAppPt._(_root);
+  late final _TranslationsForgotPasswordPt forgotPassword =
+      _TranslationsForgotPasswordPt._(_root);
+}
+
+// Path: termsOfUse
+class _TranslationsTermsOfUsePt extends _TranslationsTermsOfUseEn {
+  _TranslationsTermsOfUsePt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Termos de Uso';
+}
+
+// Path: signup
+class _TranslationsSignupPt extends _TranslationsSignupEn {
+  _TranslationsSignupPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Registrar';
+  @override
+  String get labelConfirmPassword => 'Confirmar Senha';
+  @override
+  String get buttonSubmit => 'Registrar';
+}
+
+// Path: privacyPolicy
+class _TranslationsPrivacyPolicyPt extends _TranslationsPrivacyPolicyEn {
+  _TranslationsPrivacyPolicyPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Feed';
+}
+
+// Path: settings
+class _TranslationsSettingsPt extends _TranslationsSettingsEn {
+  _TranslationsSettingsPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Configurações';
+}
+
+// Path: search
+class _TranslationsSearchPt extends _TranslationsSearchEn {
+  _TranslationsSearchPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Pesquisar';
+}
+
+// Path: common
+class _TranslationsCommonPt extends _TranslationsCommonEn {
+  _TranslationsCommonPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get appName => 'Flutter Bloc Starter';
+  @override
+  String get send => 'Enviar';
+  @override
+  String get save => 'Salvar';
+  @override
+  String get email => 'Email';
+  @override
+  String get password => 'Senha';
+  @override
+  String get firstName => 'Nome';
+  @override
+  String get lastName => 'Sobrenome';
+}
+
+// Path: changePassword
+class _TranslationsChangePasswordPt extends _TranslationsChangePasswordEn {
+  _TranslationsChangePasswordPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Alterar Senha';
+  @override
+  String get labelCurrentPassword => 'Senha Atual';
+  @override
+  String get labelNewPassword => 'New Password';
+  @override
+  String get labelConfirmPassword => 'Confirmar Senha';
+}
+
+// Path: editProfile
+class _TranslationsEditProfilePt extends _TranslationsEditProfileEn {
+  _TranslationsEditProfilePt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Editar Perfil';
+}
+
+// Path: login
+class _TranslationsLoginPt extends _TranslationsLoginEn {
+  _TranslationsLoginPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Entrar';
+  @override
+  String get buttonLogin => 'Entrar';
+  @override
+  String get buttonForgotPassword => 'Esqueceu a senha?';
+  @override
+  String buttonSignInWith({required Object provider}) =>
+      'Continue com ${provider}';
+  @override
+  TextSpan buttonNewAccount({required InlineSpanBuilder signUp}) =>
+      TextSpan(children: [
+        const TextSpan(text: 'Não tem uma conta? '),
+        signUp('Cadastre-se'),
+      ]);
+  @override
+  String get dividerOr => 'OU';
+}
+
+// Path: notFound
+class _TranslationsNotFoundPt extends _TranslationsNotFoundEn {
+  _TranslationsNotFoundPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => '404';
+  @override
+  String get description => 'Página não encontrada';
+  @override
+  String get buttonBack => 'Voltar para página inicial';
+}
+
+// Path: profile
+class _TranslationsProfilePt extends _TranslationsProfileEn {
+  _TranslationsProfilePt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Perfil';
+  @override
+  String get buttonEditProfile => 'Editar Perfil';
+  @override
+  String get buttonChangePassword => 'Alterar Senha';
+  @override
+  String get buttonSettings => 'Configurações';
+  @override
+  String get buttonPrivacyPolicy => 'Política de Privacidade';
+  @override
+  String get buttonTermsOfUse => 'Termos de Uso';
+  @override
+  String get buttonLogout => 'Sair';
 }
 
 // Path: feed
@@ -303,9 +671,9 @@ class _TranslationsFeedPt extends _TranslationsFeedEn {
   String get title => 'Feed';
 }
 
-// Path: app
-class _TranslationsAppPt extends _TranslationsAppEn {
-  _TranslationsAppPt._(_TranslationsPt root)
+// Path: forgotPassword
+class _TranslationsForgotPasswordPt extends _TranslationsForgotPasswordEn {
+  _TranslationsForgotPasswordPt._(_TranslationsPt root)
       : this._root = root,
         super._(root);
 
@@ -314,71 +682,21 @@ class _TranslationsAppPt extends _TranslationsAppEn {
 
   // Translations
   @override
-  String get appName => 'Flutter Bloc Starter';
+  String get title => 'Recuperar Senha';
   @override
-  String get login => 'Login';
-  @override
-  String get email => 'Email';
-  @override
-  String get password => 'Senha';
-  @override
-  String get logout => 'Sair';
-  @override
-  String get signUp => 'Registrar';
-  @override
-  String get dontHaveAnAccount => 'Não tem uma conta? ';
-  @override
-  String get confirmPassword => 'Confirmar Senha';
-  @override
-  String get pageNotFound => 'Página não encontrada';
-  @override
-  String get goBackHome => 'Voltar para página inicial';
-  @override
-  String get error404 => '404';
-  @override
-  String get forgotPassword => 'Esqueceu a senha?';
-  @override
-  String get recoverPassword => 'Recuperar Senha';
-  @override
-  String get forgotPasswordDescription =>
+  String get emailPageDescription =>
       'Digite seu email e enviaremos um código para redefinir sua senha.';
   @override
-  String get send => 'Enviar';
-  @override
-  String get forgotPasswordPinDescription =>
+  String get confirmPageDescription =>
       'Digite o código que enviamos para seu email.';
   @override
-  String get resendCode => 'Reenviar código';
+  String get confirmPageButtonResend => 'Reenviar código';
   @override
-  String get resetPassword => 'Redefinir Senha';
+  String get resetPageLabelNewPassword => 'Nova senha';
   @override
-  String get newPassword => 'Nova Senha';
+  String get resetPageLabelConfirmPassword => 'Confirmar senha';
   @override
-  String get changePassword => 'Alterar Senha';
-  @override
-  String get currentPassword => 'Senha Atual';
-  @override
-  String get save => 'Salvar';
-  @override
-  String get or => 'Ou';
-  @override
-  String signInWith({required Object provider}) => 'Continue com ${provider}';
-  @override
-  String get profile => 'Perfil';
-  @override
-  String get editProfile => 'Editar Perfil';
-  @override
-  String get settings => 'Configurações';
-  @override
-  String get firstName => 'Nome';
-  @override
-  String get lastName => 'Sobrenome';
-  @override
-  String get search => 'Pesquisar';
-  @override
-  String get privacyPolicy => 'Política de Privacidade';
-  @override
-  String get termsOfUse => 'Termos de Uso';
+  String get resetPageButtonSubmit => 'Redefinir senha';
 }
 
 /// Flat map(s) containing all translations.
@@ -387,72 +705,95 @@ class _TranslationsAppPt extends _TranslationsAppEn {
 extension on _TranslationsEn {
   dynamic _flatMapFunction(String path) {
     switch (path) {
+      case 'termsOfUse.title':
+        return 'Terms of Use';
+      case 'signup.title':
+        return 'Sign Up';
+      case 'signup.labelConfirmPassword':
+        return 'Confirm Password';
+      case 'signup.buttonSubmit':
+        return 'Sign Up';
+      case 'privacyPolicy.title':
+        return 'Privacy Policy';
+      case 'settings.title':
+        return 'Settings';
+      case 'search.title':
+        return 'Search';
+      case 'common.appName':
+        return 'Flutter Bloc Starter';
+      case 'common.send':
+        return 'Send';
+      case 'common.save':
+        return 'Save';
+      case 'common.email':
+        return 'Email';
+      case 'common.password':
+        return 'Password';
+      case 'common.firstName':
+        return 'First Name';
+      case 'common.lastName':
+        return 'Last Name';
+      case 'changePassword.title':
+        return 'Change Password';
+      case 'changePassword.labelCurrentPassword':
+        return 'Current Password';
+      case 'changePassword.labelNewPassword':
+        return 'New Password';
+      case 'changePassword.labelConfirmPassword':
+        return 'Confirm Password';
+      case 'editProfile.title':
+        return 'Edit Profile';
+      case 'login.title':
+        return 'Login';
+      case 'login.buttonLogin':
+        return 'Login';
+      case 'login.buttonForgotPassword':
+        return 'Forgot password?';
+      case 'login.buttonSignInWith':
+        return ({required Object provider}) => 'Sign in with ${provider}';
+      case 'login.buttonNewAccount':
+        return ({required InlineSpanBuilder signUp}) => TextSpan(children: [
+              const TextSpan(text: 'Don\'t have an account? '),
+              signUp('Sign up'),
+            ]);
+      case 'login.dividerOr':
+        return 'OR';
+      case 'notFound.title':
+        return '404';
+      case 'notFound.description':
+        return 'Page not found';
+      case 'notFound.buttonBack':
+        return 'Go back home';
+      case 'profile.title':
+        return 'Profile';
+      case 'profile.buttonEditProfile':
+        return 'Edit Profile';
+      case 'profile.buttonChangePassword':
+        return 'Change Password';
+      case 'profile.buttonSettings':
+        return 'Settings';
+      case 'profile.buttonPrivacyPolicy':
+        return 'Privacy Policy';
+      case 'profile.buttonTermsOfUse':
+        return 'Terms of Use';
+      case 'profile.buttonLogout':
+        return 'Logout';
       case 'feed.title':
         return 'Feed';
-      case 'app.appName':
-        return 'Flutter Bloc Starter';
-      case 'app.login':
-        return 'Login';
-      case 'app.email':
-        return 'Email';
-      case 'app.password':
-        return 'Password';
-      case 'app.logout':
-        return 'Logout';
-      case 'app.dontHaveAnAccount':
-        return 'Don\'t have an account? ';
-      case 'app.signUp':
-        return 'Sign Up';
-      case 'app.confirmPassword':
-        return 'Confirm Password';
-      case 'app.pageNotFound':
-        return 'Page not found';
-      case 'app.goBackHome':
-        return 'Go back home';
-      case 'app.error404':
-        return '404';
-      case 'app.forgotPassword':
-        return 'Forgot Password?';
-      case 'app.recoverPassword':
+      case 'forgotPassword.title':
         return 'Recover Password';
-      case 'app.forgotPasswordDescription':
-        return 'Enter your email address and we\'ll send you a code to reset your password';
-      case 'app.send':
-        return 'Send';
-      case 'app.forgotPasswordPinDescription':
-        return 'Enter the code sent to your email address';
-      case 'app.resendCode':
-        return 'Resend Code';
-      case 'app.resetPassword':
-        return 'Reset Password';
-      case 'app.newPassword':
-        return 'New Password';
-      case 'app.changePassword':
-        return 'Change Password';
-      case 'app.currentPassword':
-        return 'Current Password';
-      case 'app.save':
-        return 'Save';
-      case 'app.or':
-        return 'Or';
-      case 'app.signInWith':
-        return ({required Object provider}) => 'Sign in with ${provider}';
-      case 'app.profile':
-        return 'Profile';
-      case 'app.editProfile':
-        return 'Edit Profile';
-      case 'app.settings':
-        return 'Settings';
-      case 'app.firstName':
-        return 'First Name';
-      case 'app.lastName':
-        return 'Last Name';
-      case 'app.search':
-        return 'Search';
-      case 'app.privacyPolicy':
-        return 'Privacy Policy';
-      case 'app.termsOfUse':
-        return 'Terms of Use';
+      case 'forgotPassword.emailPageDescription':
+        return 'Enter your email address and we\'ll send you a link to reset your password.';
+      case 'forgotPassword.confirmPageDescription':
+        return 'Enter the code we sent to your email address.';
+      case 'forgotPassword.confirmPageButtonResend':
+        return 'Resend code';
+      case 'forgotPassword.resetPageLabelNewPassword':
+        return 'New password';
+      case 'forgotPassword.resetPageLabelConfirmPassword':
+        return 'Confirm password';
+      case 'forgotPassword.resetPageButtonSubmit':
+        return 'Reset password';
       default:
         return null;
     }
@@ -462,72 +803,95 @@ extension on _TranslationsEn {
 extension on _TranslationsPt {
   dynamic _flatMapFunction(String path) {
     switch (path) {
+      case 'termsOfUse.title':
+        return 'Termos de Uso';
+      case 'signup.title':
+        return 'Registrar';
+      case 'signup.labelConfirmPassword':
+        return 'Confirmar Senha';
+      case 'signup.buttonSubmit':
+        return 'Registrar';
+      case 'privacyPolicy.title':
+        return 'Feed';
+      case 'settings.title':
+        return 'Configurações';
+      case 'search.title':
+        return 'Pesquisar';
+      case 'common.appName':
+        return 'Flutter Bloc Starter';
+      case 'common.send':
+        return 'Enviar';
+      case 'common.save':
+        return 'Salvar';
+      case 'common.email':
+        return 'Email';
+      case 'common.password':
+        return 'Senha';
+      case 'common.firstName':
+        return 'Nome';
+      case 'common.lastName':
+        return 'Sobrenome';
+      case 'changePassword.title':
+        return 'Alterar Senha';
+      case 'changePassword.labelCurrentPassword':
+        return 'Senha Atual';
+      case 'changePassword.labelNewPassword':
+        return 'New Password';
+      case 'changePassword.labelConfirmPassword':
+        return 'Confirmar Senha';
+      case 'editProfile.title':
+        return 'Editar Perfil';
+      case 'login.title':
+        return 'Entrar';
+      case 'login.buttonLogin':
+        return 'Entrar';
+      case 'login.buttonForgotPassword':
+        return 'Esqueceu a senha?';
+      case 'login.buttonSignInWith':
+        return ({required Object provider}) => 'Continue com ${provider}';
+      case 'login.buttonNewAccount':
+        return ({required InlineSpanBuilder signUp}) => TextSpan(children: [
+              const TextSpan(text: 'Não tem uma conta? '),
+              signUp('Cadastre-se'),
+            ]);
+      case 'login.dividerOr':
+        return 'OU';
+      case 'notFound.title':
+        return '404';
+      case 'notFound.description':
+        return 'Página não encontrada';
+      case 'notFound.buttonBack':
+        return 'Voltar para página inicial';
+      case 'profile.title':
+        return 'Perfil';
+      case 'profile.buttonEditProfile':
+        return 'Editar Perfil';
+      case 'profile.buttonChangePassword':
+        return 'Alterar Senha';
+      case 'profile.buttonSettings':
+        return 'Configurações';
+      case 'profile.buttonPrivacyPolicy':
+        return 'Política de Privacidade';
+      case 'profile.buttonTermsOfUse':
+        return 'Termos de Uso';
+      case 'profile.buttonLogout':
+        return 'Sair';
       case 'feed.title':
         return 'Feed';
-      case 'app.appName':
-        return 'Flutter Bloc Starter';
-      case 'app.login':
-        return 'Login';
-      case 'app.email':
-        return 'Email';
-      case 'app.password':
-        return 'Senha';
-      case 'app.logout':
-        return 'Sair';
-      case 'app.signUp':
-        return 'Registrar';
-      case 'app.dontHaveAnAccount':
-        return 'Não tem uma conta? ';
-      case 'app.confirmPassword':
-        return 'Confirmar Senha';
-      case 'app.pageNotFound':
-        return 'Página não encontrada';
-      case 'app.goBackHome':
-        return 'Voltar para página inicial';
-      case 'app.error404':
-        return '404';
-      case 'app.forgotPassword':
-        return 'Esqueceu a senha?';
-      case 'app.recoverPassword':
+      case 'forgotPassword.title':
         return 'Recuperar Senha';
-      case 'app.forgotPasswordDescription':
+      case 'forgotPassword.emailPageDescription':
         return 'Digite seu email e enviaremos um código para redefinir sua senha.';
-      case 'app.send':
-        return 'Enviar';
-      case 'app.forgotPasswordPinDescription':
+      case 'forgotPassword.confirmPageDescription':
         return 'Digite o código que enviamos para seu email.';
-      case 'app.resendCode':
+      case 'forgotPassword.confirmPageButtonResend':
         return 'Reenviar código';
-      case 'app.resetPassword':
-        return 'Redefinir Senha';
-      case 'app.newPassword':
-        return 'Nova Senha';
-      case 'app.changePassword':
-        return 'Alterar Senha';
-      case 'app.currentPassword':
-        return 'Senha Atual';
-      case 'app.save':
-        return 'Salvar';
-      case 'app.or':
-        return 'Ou';
-      case 'app.signInWith':
-        return ({required Object provider}) => 'Continue com ${provider}';
-      case 'app.profile':
-        return 'Perfil';
-      case 'app.editProfile':
-        return 'Editar Perfil';
-      case 'app.settings':
-        return 'Configurações';
-      case 'app.firstName':
-        return 'Nome';
-      case 'app.lastName':
-        return 'Sobrenome';
-      case 'app.search':
-        return 'Pesquisar';
-      case 'app.privacyPolicy':
-        return 'Política de Privacidade';
-      case 'app.termsOfUse':
-        return 'Termos de Uso';
+      case 'forgotPassword.resetPageLabelNewPassword':
+        return 'Nova senha';
+      case 'forgotPassword.resetPageLabelConfirmPassword':
+        return 'Confirmar senha';
+      case 'forgotPassword.resetPageButtonSubmit':
+        return 'Redefinir senha';
       default:
         return null;
     }

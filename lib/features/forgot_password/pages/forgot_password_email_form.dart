@@ -18,7 +18,7 @@ class ForgotPasswordEmailForm extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              context.l10n.forgotPasswordDescription,
+              context.l10n.forgotPassword.emailPageDescription,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleMedium,
             ),
@@ -39,7 +39,7 @@ class _EmailTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseTextField(
-      label: context.l10n.email,
+      label: context.l10n.common.email,
       onChanged: (value) => context
           .read<ForgotPasswordBloc>()
           .add(ForgotPasswordEmailChanged(value)),
@@ -53,7 +53,7 @@ class _SendEmailButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseButton(
-      text: context.l10n.send,
+      text: context.l10n.common.send,
       onPressed: () => context
           .read<ForgotPasswordBloc>()
           .add(ForgotPasswordSendEmailPressed()),

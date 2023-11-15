@@ -18,7 +18,7 @@ class ResetPasswordConfirmCodeForm extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              context.l10n.forgotPasswordPinDescription,
+              context.l10n.forgotPassword.confirmPageDescription,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleMedium,
             ),
@@ -55,7 +55,7 @@ class _ResendCodeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseButton(
-      text: context.l10n.resendCode,
+      text: context.l10n.forgotPassword.confirmPageButtonResend,
       onPressed: () => context
           .read<ForgotPasswordBloc>()
           .add(ForgotPasswordResendCodePressed()),

@@ -20,7 +20,7 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.l10n.login),
+        title: Text(context.l10n.login.title),
       ),
       body: BlocProvider(
         create: (context) => LoginBloc(
@@ -48,7 +48,7 @@ class LoginView extends StatelessWidget {
                         context.push(AppPaths.forgotPassword);
                       },
                       child: Text(
-                        context.l10n.forgotPassword,
+                        context.l10n.login.buttonForgotPassword,
                       ),
                     ),
                   ),
@@ -57,7 +57,7 @@ class LoginView extends StatelessWidget {
                   Padding(
                     padding:
                         const EdgeInsets.symmetric(vertical: AppSpacing.large),
-                    child: TextDivider(context.l10n.or.toUpperCase()),
+                    child: TextDivider(context.l10n.login.dividerOr),
                   ),
                   const _SignInWithThirdPartyButtons(),
                   const _SignupButton(),
@@ -77,7 +77,7 @@ class _EmailTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseTextField(
-      label: context.l10n.email,
+      label: context.l10n.common.email,
       onChanged: (email) =>
           context.read<LoginBloc>().add(LoginEmailChanged(email)),
       keyboardType: TextInputType.emailAddress,
@@ -94,7 +94,7 @@ class _PasswordTextField extends StatelessWidget {
     return PasswordTextField(
       onChanged: (password) =>
           context.read<LoginBloc>().add(LoginPasswordChanged(password)),
-      label: context.l10n.password,
+      label: context.l10n.common.password,
       textInputAction: TextInputAction.done,
       onSubmitted: (_) => context.read<LoginBloc>().add(LoginSubmitted()),
     );
@@ -109,7 +109,7 @@ class _LoginButton extends StatelessWidget {
     return BlocBuilder<LoginBloc, LoginState>(
       builder: (context, state) {
         return BaseButton(
-          text: context.l10n.login,
+          text: context.l10n.login.buttonLogin,
           isLoading: state.status.isInProgress,
           isEnabled: state.isValid,
           onPressed: () => context.read<LoginBloc>().add(LoginSubmitted()),
@@ -128,13 +128,15 @@ class _SignInWithThirdPartyButtons extends StatelessWidget {
       children: [
         SignInButton(
           ButtonProvider.google,
-          text: (provider) => context.l10n.signInWith(provider: provider.text),
+          text: (provider) =>
+              context.l10n.login.buttonSignInWith(provider: provider.text),
           onPressed: () =>
               context.read<LoginBloc>().add(LoginWithGoogleSubmitted()),
         ),
         SignInButton(
           ButtonProvider.facebook,
-          text: (provider) => context.l10n.signInWith(provider: provider.text),
+          text: (provider) =>
+              context.l10n.login.buttonSignInWith(provider: provider.text),
           onPressed: () =>
               context.read<LoginBloc>().add(LoginWithFacebookSubmitted()),
         ),
@@ -153,16 +155,13 @@ class _SignupButton extends StatelessWidget {
         await context.push(AppPaths.signup);
       },
       child: Text.rich(
-        TextSpan(
-          text: context.l10n.dontHaveAnAccount,
-          children: [
-            TextSpan(
-              text: context.l10n.signUp,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+        context.l10n.login.buttonNewAccount(
+          signUp: (text) => TextSpan(
+            text: text,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
             ),
-          ],
+          ),
         ),
       ),
     );

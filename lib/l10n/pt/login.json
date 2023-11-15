@@ -1,0 +1,8 @@
+{
+  "title": "Entrar",
+  "buttonLogin": "Entrar",
+  "buttonForgotPassword": "Esqueceu a senha?",
+  "buttonSignInWith": "Continue com {provider}",
+  "buttonNewAccount(rich)": "Não tem uma conta? {signUp(Cadastre-se)}",
+  "dividerOr": "OU"
+}

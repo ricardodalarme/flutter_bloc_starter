@@ -2,15 +2,21 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Lunch Development",
+      "name": "development",
       "request": "launch",
       "type": "dart"
     },
     {
-      "name": "Lunch Production",
+      "name": "production",
       "request": "launch",
       "type": "dart",
       "flutterMode": "release"
+    },
+    {
+      "name": "storybook",
+      "cwd": "storybook",
+      "request": "launch",
+      "type": "dart"
     }
   ]
 }

@@ -2,6 +2,7 @@ name: quickstart_flutter_bloc
 
 packages:
   - .
+  - storybook
   - packages/*
 
 command:

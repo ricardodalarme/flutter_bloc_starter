@@ -5,7 +5,7 @@ import 'package:quickstart_flutter_bloc/features/home/cubit/home_cubit.dart';
 import 'package:quickstart_flutter_bloc/features/home/widgets/navigation_bar.dart';
 import 'package:quickstart_flutter_bloc/features/profile/profile_view.dart';
 import 'package:quickstart_flutter_bloc/features/search/search_view.dart';
-import 'package:quickstart_flutter_bloc/l10n/l10n.dart';
+import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

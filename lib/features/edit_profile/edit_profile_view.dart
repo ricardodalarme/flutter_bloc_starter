@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/bloc/edit_profile_bloc.dart';
-import 'package:quickstart_flutter_bloc/l10n/l10n.dart';
+import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 import 'package:user_repository/user_repository.dart';
 
 class EditProfileView extends StatelessWidget {

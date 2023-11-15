@@ -44,6 +44,12 @@ scripts:
         - test
 
   # Tool commands
+  l10n:
+    run: dart run slang && dart format lib/l10n/translations.g.dart
+
+  l10n:analyze:
+    run: dart run slang analyze --exit-if-changed
+
   splash_screen:
     run: flutter pub run flutter_native_splash:create
     description: Update the app splash screen.

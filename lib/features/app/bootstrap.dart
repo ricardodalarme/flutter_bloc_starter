@@ -8,9 +8,12 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:quickstart_flutter_bloc/features/app/bloc_observer.dart';
 import 'package:quickstart_flutter_bloc/firebase_options.dart';
+import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  LocaleSettings.useDeviceLocale();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

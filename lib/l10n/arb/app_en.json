@@ -22,7 +22,7 @@
   "currentPassword": "Current Password",
   "save": "Save",
   "or": "Or",
-  "signInWith": "Sign in with {PROVIDER}",
+  "signInWith": "Sign in with {provider}",
   "@signInWith": {
     "placeholders": {
       "PROVIDER": {

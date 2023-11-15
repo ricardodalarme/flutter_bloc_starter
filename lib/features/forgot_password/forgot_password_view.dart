@@ -4,7 +4,7 @@ import 'package:quickstart_flutter_bloc/features/forgot_password/bloc/forgot_pas
 import 'package:quickstart_flutter_bloc/features/forgot_password/pages/forgot_password_confirm_code_form.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/pages/forgot_password_email_form.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/pages/forgot_password_reset_password.dart';
-import 'package:quickstart_flutter_bloc/l10n/l10n.dart';
+import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
 class ForgotPasswordView extends StatelessWidget {
   const ForgotPasswordView({super.key});

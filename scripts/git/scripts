@@ -26,6 +26,17 @@ check_flutter_installed() {
   fi
 }
 
+check_localization_files() {
+  printf '\n%b%bChecking localization files%b\n' "$YELLOW" "$BOLD" "$NC"
+
+  if melos run l10n:analyze ; then
+    printf '%b%bSUCCESS: Localization files are valid.%b\n' "$GREEN" "$BOLD" "$NC"
+  else
+    printf '%b%bFAILED: Fix localization files and try again.%b\n' "$RED" "$BOLD" "$NC"
+    return 1
+  fi
+}
+
 run_flutter_format() {
   printf '\n%b%bRunning the Flutter formatter%b\n' "$YELLOW" "$BOLD" "$NC"
 
@@ -58,4 +69,3 @@ run_flutter_tests() {
     return 1
   fi
 }
-

@@ -10,7 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quickstart_flutter_bloc/features/login/bloc/login_bloc.dart';
-import 'package:quickstart_flutter_bloc/l10n/l10n.dart';
+import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 import 'package:quickstart_flutter_bloc/routes/app_routes.dart';
 
 class LoginView extends StatelessWidget {
@@ -128,13 +128,13 @@ class _SignInWithThirdPartyButtons extends StatelessWidget {
       children: [
         SignInButton(
           ButtonProvider.google,
-          text: (provider) => context.l10n.signInWith(provider.text),
+          text: (provider) => context.l10n.signInWith(provider: provider.text),
           onPressed: () =>
               context.read<LoginBloc>().add(LoginWithGoogleSubmitted()),
         ),
         SignInButton(
           ButtonProvider.facebook,
-          text: (provider) => context.l10n.signInWith(provider.text),
+          text: (provider) => context.l10n.signInWith(provider: provider.text),
           onPressed: () =>
               context.read<LoginBloc>().add(LoginWithFacebookSubmitted()),
         ),

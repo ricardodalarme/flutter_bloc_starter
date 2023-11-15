@@ -4,7 +4,7 @@ import 'package:common_ui/widgets/password_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/bloc/forgot_password_bloc.dart';
-import 'package:quickstart_flutter_bloc/l10n/l10n.dart';
+import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
 class ForgotPasswordResetPasswordForm extends StatelessWidget {
   const ForgotPasswordResetPasswordForm({super.key});

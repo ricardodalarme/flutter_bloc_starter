@@ -22,7 +22,7 @@
   "currentPassword": "Senha Atual",
   "save": "Salvar",
   "or": "Ou",
-  "signInWith": "Continue com {PROVIDER}",
+  "signInWith": "Continue com {provider}",
   "@signInWith": {
     "placeholders": {
       "PROVIDER": {

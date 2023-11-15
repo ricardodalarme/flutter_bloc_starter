@@ -61,7 +61,7 @@ class _CurrentPasswordTextField extends StatelessWidget {
       onChanged: (password) => context
           .read<ChangePasswordBloc>()
           .add(ChangePasswordCurrentPasswordChanged(password)),
-      labelText: context.l10n.currentPassword,
+      label: context.l10n.currentPassword,
       textInputAction: TextInputAction.next,
     );
   }
@@ -76,7 +76,7 @@ class _NewPasswordTextField extends StatelessWidget {
       onChanged: (password) => context
           .read<ChangePasswordBloc>()
           .add(ChangePasswordNewPasswordChanged(password)),
-      labelText: context.l10n.newPassword,
+      label: context.l10n.newPassword,
       textInputAction: TextInputAction.next,
     );
   }
@@ -91,7 +91,7 @@ class _ConfirmPasswordTextField extends StatelessWidget {
       onChanged: (password) => context
           .read<ChangePasswordBloc>()
           .add(ChangePasswordConfirmPasswordChanged(password)),
-      labelText: context.l10n.confirmPassword,
+      label: context.l10n.confirmPassword,
       textInputAction: TextInputAction.done,
       onSubmitted: (_) =>
           context.read<ChangePasswordBloc>().add(ChangePasswordSubmitted()),

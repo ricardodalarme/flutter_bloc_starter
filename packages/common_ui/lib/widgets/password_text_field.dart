@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 class PasswordTextField extends StatefulWidget {
   const PasswordTextField({
-    required this.labelText,
+    required this.label,
     this.onChanged,
     this.textInputAction,
     this.onSubmitted,
     super.key,
   });
 
-  final String labelText;
+  final String label;
   final ValueChanged<String>? onChanged;
   final TextInputAction? textInputAction;
   final void Function(String)? onSubmitted;
@@ -31,15 +31,13 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
       enableSuggestions: false,
       textInputAction: widget.textInputAction,
       onSubmitted: widget.onSubmitted,
-      decoration: InputDecoration(
-        labelText: widget.labelText,
-        suffixIcon: ExcludeFocus(
-          child: IconButton(
-            icon: Icon(
-              _obscureText ? Icons.visibility : Icons.visibility_off,
-            ),
-            onPressed: () => setState(() => _obscureText = !_obscureText),
+      label: widget.label,
+      suffixIcon: ExcludeFocus(
+        child: IconButton(
+          icon: Icon(
+            _obscureText ? Icons.visibility : Icons.visibility_off,
           ),
+          onPressed: () => setState(() => _obscureText = !_obscureText),
         ),
       ),
     );

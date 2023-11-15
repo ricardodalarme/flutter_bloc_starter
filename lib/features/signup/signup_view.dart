@@ -59,11 +59,9 @@ class _EmailTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseTextField(
+      label: context.l10n.email,
       onChanged: (email) =>
           context.read<SignupBloc>().add(SignupEmailChanged(email)),
-      decoration: InputDecoration(
-        labelText: context.l10n.email,
-      ),
       keyboardType: TextInputType.emailAddress,
       textInputAction: TextInputAction.next,
     );
@@ -78,7 +76,7 @@ class _PasswordTextField extends StatelessWidget {
     return PasswordTextField(
       onChanged: (password) =>
           context.read<SignupBloc>().add(SignupPasswordChanged(password)),
-      labelText: context.l10n.password,
+      label: context.l10n.password,
       textInputAction: TextInputAction.next,
     );
   }
@@ -93,7 +91,7 @@ class _ConfirmPasswordTextField extends StatelessWidget {
       onChanged: (password) => context
           .read<SignupBloc>()
           .add(SignupConfirmPasswordChanged(password)),
-      labelText: context.l10n.confirmPassword,
+      label: context.l10n.confirmPassword,
       textInputAction: TextInputAction.done,
       onSubmitted: (_) => context.read<SignupBloc>().add(SignupSubmitted()),
     );

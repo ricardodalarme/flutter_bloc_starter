@@ -57,9 +57,7 @@ class _FirstNameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseTextField(
-      decoration: InputDecoration(
-        labelText: context.l10n.firstName,
-      ),
+      label: context.l10n.firstName,
       textInputAction: TextInputAction.next,
     );
   }
@@ -71,9 +69,7 @@ class _LastNameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseTextField(
-      decoration: InputDecoration(
-        labelText: context.l10n.lastName,
-      ),
+      label: context.l10n.lastName,
       textInputAction: TextInputAction.next,
     );
   }
@@ -85,9 +81,7 @@ class _EmailTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseTextField(
-      decoration: InputDecoration(
-        labelText: context.l10n.email,
-      ),
+      label: context.l10n.email,
       textInputAction: TextInputAction.done,
       onSubmitted: (_) =>
           context.read<EditProfileBloc>().add(EditProfileSubmitted()),

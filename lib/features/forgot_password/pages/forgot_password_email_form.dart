@@ -39,12 +39,10 @@ class _EmailTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseTextField(
+      label: context.l10n.email,
       onChanged: (value) => context
           .read<ForgotPasswordBloc>()
           .add(ForgotPasswordEmailChanged(value)),
-      decoration: InputDecoration(
-        labelText: context.l10n.email,
-      ),
     );
   }
 }

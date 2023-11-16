@@ -1,7 +1,6 @@
 # Quickstart Flutter Bloc
 
 [![Code Check](https://github.com/profusion/quickstart-flutter-bloc/actions/workflows/code-check.yml/badge.svg)](https://github.com/profusion/quickstart-flutter-bloc/actions/workflows/code-check.yml)
-[![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
 
 Base repository for application using Flutter + Bloc
 

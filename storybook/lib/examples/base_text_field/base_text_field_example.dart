@@ -19,7 +19,6 @@ final WidgetbookNode baseTextFieldExample = WidgetbookUseCase(
     ),
     obscureText: context.knobs.boolean(
       label: 'Obscure text',
-      initialValue: false,
     ),
     textInputAction: context.knobs.listOrNull(
       label: 'Text input action',

@@ -12,5 +12,5 @@ final List<WidgetbookNode> examples = [
   passwordTextFieldExample,
   profilePictureExample,
   signInButtonExample,
-  textDividerExample
+  textDividerExample,
 ];

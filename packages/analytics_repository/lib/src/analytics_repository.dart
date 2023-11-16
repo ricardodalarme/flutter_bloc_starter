@@ -3,9 +3,9 @@ import 'package:analytics_repository/src/models/analytics_event.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 
 class AnalyticsRepository {
-  final FirebaseAnalytics _analyticsService;
-
   AnalyticsRepository(this._analyticsService);
+
+  final FirebaseAnalytics _analyticsService;
 
   Future<void> logEvent(AnalyticsEvent event) async {
     try {

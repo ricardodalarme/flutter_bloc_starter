@@ -15,7 +15,6 @@ final WidgetbookNode buttonExample = WidgetbookUseCase(
     ),
     isLoading: context.knobs.boolean(
       label: 'Loading',
-      initialValue: false,
     ),
     onPressed: () => _onPressed(context),
   ),

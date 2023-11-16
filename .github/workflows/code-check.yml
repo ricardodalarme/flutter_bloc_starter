@@ -47,3 +47,6 @@ jobs:
 
       - name: Run Flutter Analyze
         run: melos run analyze
+
+      - name: Analyze Localizations
+        run: melos run l10n:analyze

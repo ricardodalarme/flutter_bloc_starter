@@ -8,7 +8,7 @@ packages:
 command:
   bootstrap:
     hooks:
-      pre: melos run hooks
+      pre: melos run hooks && cp .env.example .env
 
 scripts:
   # Flutter commands

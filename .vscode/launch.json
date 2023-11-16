@@ -2,21 +2,26 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "development",
-      "request": "launch",
-      "type": "dart"
-    },
-    {
-      "name": "production",
+      "name": "debug",
       "request": "launch",
       "type": "dart",
-      "flutterMode": "release"
+      "program": "lib/main.dart",
+      "args": ["--dart-define-from-file", ".env"]
+    },
+    {
+      "name": "release",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release",
+      "program": "lib/main.dart",
+      "args": ["--dart-define-from-file", ".env"]
     },
     {
       "name": "storybook",
       "cwd": "storybook",
       "request": "launch",
-      "type": "dart"
+      "type": "dart",
+      "program": "lib/main.dart"
     }
   ]
 }

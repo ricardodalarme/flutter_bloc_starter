@@ -26,7 +26,7 @@ jobs:
       - uses: bluefireteam/melos-action@v3
 
       - name: Run Flutter Test
-        run: melos run test
+        run: melos test
 
   lint:
     name: Lint
@@ -43,10 +43,10 @@ jobs:
       - uses: bluefireteam/melos-action@v3
 
       - name: Run Flutter Format
-        run: melos run format:no-output
+        run: melos format:no-output
 
       - name: Run Flutter Analyze
-        run: melos run analyze
+        run: melos analyze
 
       - name: Analyze Localizations
-        run: melos run l10n:analyze
+        run: melos l10n:analyze

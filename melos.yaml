@@ -8,12 +8,12 @@ packages:
 command:
   bootstrap:
     hooks:
-      pre: melos run hooks && cp .env.example .env
+      pre: melos hooks && cp .env.example .env
 
 scripts:
   # Flutter commands
   lint:
-    run: melos run format:no-output && melos run analyze
+    run: melos format:no-output && melos analyze
     description: Lint all packages.
 
   analyze:
@@ -32,7 +32,7 @@ scripts:
     description: Run `dart format` for all packages and fail if any files need to be formatted.
 
   test:
-    run: melos run test:single --no-select
+    run: melos test:single --no-select
     description: Run all tests available.
 
   test:single:

@@ -1,6 +1,5 @@
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:equatable/equatable.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:formz_inputs/formz_inputs.dart';
@@ -8,7 +7,7 @@ import 'package:formz_inputs/formz_inputs.dart';
 part 'signup_event.dart';
 part 'signup_state.dart';
 
-final class SignupBloc extends Bloc<SignupEvent, SignupState> {
+class SignupBloc extends Bloc<SignupEvent, SignupState> {
   SignupBloc({
     required AuthenticationRepository authenticationRepository,
   })  : _authenticationRepository = authenticationRepository,

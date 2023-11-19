@@ -7,7 +7,7 @@ import 'package:user_repository/user_repository.dart';
 part 'change_password_event.dart';
 part 'change_password_state.dart';
 
-final class ChangePasswordBloc
+class ChangePasswordBloc
     extends Bloc<ChangePasswordEvent, ChangePasswordState> {
   ChangePasswordBloc({
     required UserRepository userRepository,

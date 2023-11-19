@@ -40,6 +40,7 @@ dev_dependencies:
   flutter_native_splash: ^2.3.5
   flutter_test:
     sdk: flutter
+  husky: ^0.1.6
   melos: ^3.2.0
 
 flutter:

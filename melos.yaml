@@ -60,7 +60,7 @@ scripts:
 
   # Git commands
   hooks:
-    run: ./scripts/git/install-git-hooks
+    run: dart run husky install
     description: Install git hooks.
 
 ide:

@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
+@RoutePage()
 class PrivacyPolicyView extends StatelessWidget {
   const PrivacyPolicyView({super.key});
 

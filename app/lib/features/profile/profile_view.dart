@@ -1,14 +1,15 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:common_ui/styling/app_spacing.dart';
 import 'package:common_ui/widgets/profile_picture.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:quickstart_flutter_bloc/features/app/bloc/app_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
-import 'package:quickstart_flutter_bloc/routes/app_routes.dart';
+import 'package:quickstart_flutter_bloc/routes/app_router.dart';
 
 const _profilePictureSize = 175.0;
 
+@RoutePage()
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
 
@@ -31,27 +32,27 @@ class ProfileView extends StatelessWidget {
               ListTile(
                 title: Text(context.l10n.profile.buttonEditProfile),
                 leading: const Icon(Icons.person),
-                onTap: () => context.push(AppPaths.editProfile),
+                onTap: () => context.pushRoute(const EditProfileRoute()),
               ),
               ListTile(
                 title: Text(context.l10n.profile.buttonChangePassword),
                 leading: const Icon(Icons.lock),
-                onTap: () => context.push(AppPaths.changePassword),
+                onTap: () => context.pushRoute(const ChangePasswordRoute()),
               ),
               ListTile(
                 title: Text(context.l10n.profile.buttonSettings),
                 leading: const Icon(Icons.settings),
-                onTap: () => context.push(AppPaths.settings),
+                onTap: () => context.pushRoute(const SettingsRoute()),
               ),
               ListTile(
                 title: Text(context.l10n.profile.buttonPrivacyPolicy),
                 leading: const Icon(Icons.privacy_tip),
-                onTap: () => context.push(AppPaths.privacyPolicy),
+                onTap: () => context.pushRoute(const PrivacyPolicyRoute()),
               ),
               ListTile(
                 title: Text(context.l10n.profile.buttonTermsOfUse),
                 leading: const Icon(Icons.description),
-                onTap: () => context.push(AppPaths.termsOfUse),
+                onTap: () => context.pushRoute(const TermsOfUseRoute()),
               ),
               ListTile(
                 title: Text(context.l10n.profile.buttonLogout),

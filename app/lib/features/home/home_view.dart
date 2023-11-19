@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quickstart_flutter_bloc/features/feed/feed_view.dart';
@@ -7,6 +8,7 @@ import 'package:quickstart_flutter_bloc/features/profile/profile_view.dart';
 import 'package:quickstart_flutter_bloc/features/search/search_view.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
+@RoutePage()
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 

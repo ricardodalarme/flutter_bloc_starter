@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:common_ui/styling/app_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
+@RoutePage()
 class FeedView extends StatelessWidget {
   const FeedView({super.key});
 

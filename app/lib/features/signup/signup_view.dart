@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:common/common.dart';
 import 'package:common_ui/styling/app_spacing.dart';
 import 'package:common_ui/widgets/base_button.dart';
@@ -6,59 +7,48 @@ import 'package:common_ui/widgets/password_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
-import 'package:go_router/go_router.dart';
 import 'package:quickstart_flutter_bloc/features/signup/bloc/signup_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
-import 'package:quickstart_flutter_bloc/routes/app_routes.dart';
+import 'package:quickstart_flutter_bloc/routes/app_router.dart';
 
-class SignupPage extends StatelessWidget {
-  const SignupPage({super.key});
+@RoutePage()
+class SignUpView extends StatelessWidget implements AutoRouteWrapper {
+  const SignUpView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget wrappedRoute(BuildContext context) {
     return BlocProvider.value(
       value: AppInjector.instance.get<SignupBloc>(),
       child: const SignUpView(),
     );
   }
-}
-
-class SignUpView extends StatelessWidget {
-  const SignUpView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<SignupBloc, SignupState>(
-      listener: (context, state) {
-        if (state.status.isSuccess) {
-          context.go(AppPaths.home);
-        }
-      },
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(context.l10n.signup.title),
-        ),
-        body: BlocListener<SignupBloc, SignupState>(
-          listener: (context, state) {
-            if (state.status.isSuccess) {
-              context.go(AppPaths.home);
-            }
-          },
-          child: const Center(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.all(AppSpacing.large),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _EmailTextField(),
-                  SizedBox(height: AppSpacing.medium),
-                  _PasswordTextField(),
-                  SizedBox(height: AppSpacing.medium),
-                  _ConfirmPasswordTextField(),
-                  SizedBox(height: AppSpacing.large),
-                  _SubmitButton(),
-                ],
-              ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(context.l10n.signup.title),
+      ),
+      body: BlocListener<SignupBloc, SignupState>(
+        listener: (context, state) {
+          if (state.status.isSuccess) {
+            context.router.replaceAll([const HomeRoute()]);
+          }
+        },
+        child: const Center(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.all(AppSpacing.large),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _EmailTextField(),
+                SizedBox(height: AppSpacing.medium),
+                _PasswordTextField(),
+                SizedBox(height: AppSpacing.medium),
+                _ConfirmPasswordTextField(),
+                SizedBox(height: AppSpacing.large),
+                _SubmitButton(),
+              ],
             ),
           ),
         ),

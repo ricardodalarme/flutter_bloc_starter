@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:common_ui/styling/app_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:quickstart_flutter_bloc/features/search/widgets/search_text_field.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
+@RoutePage()
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
 

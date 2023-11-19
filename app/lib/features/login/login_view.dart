@@ -1,4 +1,5 @@
 import 'package:authentication_repository/authentication_repository.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:common/common.dart';
 import 'package:common_ui/styling/app_spacing.dart';
 import 'package:common_ui/widgets/base_button.dart';
@@ -9,11 +10,11 @@ import 'package:common_ui/widgets/text_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
-import 'package:go_router/go_router.dart';
 import 'package:quickstart_flutter_bloc/features/login/bloc/login_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
-import 'package:quickstart_flutter_bloc/routes/app_routes.dart';
+import 'package:quickstart_flutter_bloc/routes/app_router.dart';
 
+@RoutePage()
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
@@ -31,7 +32,7 @@ class LoginView extends StatelessWidget {
         child: BlocListener<LoginBloc, LoginState>(
           listener: (context, state) {
             if (state.status.isSuccess) {
-              context.go(AppPaths.home);
+              context.router.replaceAll([const HomeRoute()]);
             }
           },
           child: Center(
@@ -47,7 +48,7 @@ class LoginView extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: TextButton(
                       onPressed: () {
-                        context.push(AppPaths.forgotPassword);
+                        context.pushRoute(const ForgotPasswordRoute());
                       },
                       child: Text(
                         context.l10n.login.buttonForgotPassword,
@@ -154,7 +155,7 @@ class _SignupButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () async {
-        await context.push(AppPaths.signup);
+        await context.pushRoute(const SignUpRoute());
       },
       child: Text.rich(
         context.l10n.login.buttonNewAccount(

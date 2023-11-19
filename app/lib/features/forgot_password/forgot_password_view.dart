@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/bloc/forgot_password_bloc.dart';
@@ -6,6 +7,7 @@ import 'package:quickstart_flutter_bloc/features/forgot_password/pages/forgot_pa
 import 'package:quickstart_flutter_bloc/features/forgot_password/pages/forgot_password_reset_password.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
+@RoutePage()
 class ForgotPasswordView extends StatelessWidget {
   const ForgotPasswordView({super.key});
 

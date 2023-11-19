@@ -175,6 +175,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
+  common:
+    dependency: "direct main"
+    description:
+      path: "packages/common"
+      relative: true
+    source: path
+    version: "0.0.0"
   common_ui:
     dependency: "direct main"
     description:

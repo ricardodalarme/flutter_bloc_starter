@@ -11,6 +11,8 @@ dependencies:
     path: ./packages/analytics_repository
   authentication_repository:
     path: ./packages/authentication_repository
+  common:
+    path: ./packages/common
   common_ui:
     path: ./packages/common_ui
   equatable: ^2.0.5

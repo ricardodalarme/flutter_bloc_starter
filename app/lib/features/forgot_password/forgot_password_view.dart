@@ -8,8 +8,16 @@ import 'package:quickstart_flutter_bloc/features/forgot_password/pages/forgot_pa
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
 @RoutePage()
-class ForgotPasswordView extends StatelessWidget {
+class ForgotPasswordView extends StatelessWidget implements AutoRouteWrapper {
   const ForgotPasswordView({super.key});
+
+  @override
+  Widget wrappedRoute(BuildContext context) {
+    return BlocProvider(
+      create: (context) => ForgotPasswordBloc(),
+      child: const ForgotPasswordView(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +25,12 @@ class ForgotPasswordView extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.l10n.forgotPassword.title),
       ),
-      body: BlocProvider(
-        create: (context) => ForgotPasswordBloc(),
-        child: PageView(
-          children: const [
-            ForgotPasswordEmailForm(),
-            ResetPasswordConfirmCodeForm(),
-            ForgotPasswordResetPasswordForm(),
-          ],
-        ),
+      body: PageView(
+        children: const [
+          ForgotPasswordEmailForm(),
+          ResetPasswordConfirmCodeForm(),
+          ForgotPasswordResetPasswordForm(),
+        ],
       ),
     );
   }

@@ -11,8 +11,18 @@ import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 import 'package:user_repository/user_repository.dart';
 
 @RoutePage()
-class ChangePasswordView extends StatelessWidget {
+class ChangePasswordView extends StatelessWidget implements AutoRouteWrapper {
   const ChangePasswordView({super.key});
+
+  @override
+  Widget wrappedRoute(BuildContext context) {
+    return BlocProvider(
+      create: (context) => ChangePasswordBloc(
+        userRepository: AppInjector.instance.get<UserRepository>(),
+      ),
+      child: const ChangePasswordView(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,31 +30,26 @@ class ChangePasswordView extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.l10n.changePassword.title),
       ),
-      body: BlocProvider(
-        create: (context) => ChangePasswordBloc(
-          userRepository: AppInjector.instance.get<UserRepository>(),
-        ),
-        child: BlocListener<ChangePasswordBloc, ChangePasswordState>(
-          listener: (context, state) {
-            if (state.status.isSuccess) {
-              context.popRoute();
-            }
-          },
-          child: const Center(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.all(AppSpacing.large),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _CurrentPasswordTextField(),
-                  SizedBox(height: AppSpacing.medium),
-                  _NewPasswordTextField(),
-                  SizedBox(height: AppSpacing.medium),
-                  _ConfirmPasswordTextField(),
-                  SizedBox(height: AppSpacing.large),
-                  _SubmitButton(),
-                ],
-              ),
+      body: BlocListener<ChangePasswordBloc, ChangePasswordState>(
+        listener: (context, state) {
+          if (state.status.isSuccess) {
+            context.popRoute();
+          }
+        },
+        child: const Center(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.all(AppSpacing.large),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _CurrentPasswordTextField(),
+                SizedBox(height: AppSpacing.medium),
+                _NewPasswordTextField(),
+                SizedBox(height: AppSpacing.medium),
+                _ConfirmPasswordTextField(),
+                SizedBox(height: AppSpacing.large),
+                _SubmitButton(),
+              ],
             ),
           ),
         ),

@@ -9,46 +9,47 @@ import 'package:quickstart_flutter_bloc/features/search/search_view.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
 @RoutePage()
-class HomeView extends StatelessWidget {
+class HomeView extends StatelessWidget implements AutoRouteWrapper {
   const HomeView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
       create: (context) => HomeCubit(),
-      child: Builder(
-        builder: (context) {
-          final selectedTab = context.select((HomeCubit cubit) => cubit.state);
+      child: const HomeView(),
+    );
+  }
 
-          return Scaffold(
-            bottomNavigationBar: NavBar(
-              currentIndex: selectedTab,
-              onTap: (index) => context.read<HomeCubit>().setTab(index),
-              items: [
-                NavBarItem(
-                  icon: Icons.home_rounded,
-                  label: context.l10n.feed.title,
-                ),
-                NavBarItem(
-                  icon: Icons.search_rounded,
-                  label: context.l10n.search.title,
-                ),
-                NavBarItem(
-                  icon: Icons.person,
-                  label: context.l10n.profile.title,
-                ),
-              ],
-            ),
-            body: IndexedStack(
-              index: selectedTab,
-              children: const [
-                FeedView(),
-                SearchView(),
-                ProfileView(),
-              ],
-            ),
-          );
-        },
+  @override
+  Widget build(BuildContext context) {
+    final selectedTab = context.watch<HomeCubit>().state;
+
+    return Scaffold(
+      bottomNavigationBar: NavBar(
+        currentIndex: selectedTab,
+        onTap: (index) => context.read<HomeCubit>().setTab(index),
+        items: [
+          NavBarItem(
+            icon: Icons.home_rounded,
+            label: context.l10n.feed.title,
+          ),
+          NavBarItem(
+            icon: Icons.search_rounded,
+            label: context.l10n.search.title,
+          ),
+          NavBarItem(
+            icon: Icons.person,
+            label: context.l10n.profile.title,
+          ),
+        ],
+      ),
+      body: IndexedStack(
+        index: selectedTab,
+        children: const [
+          FeedView(),
+          SearchView(),
+          ProfileView(),
+        ],
       ),
     );
   }

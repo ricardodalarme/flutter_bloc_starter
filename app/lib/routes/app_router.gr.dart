@@ -18,13 +18,13 @@ abstract class _$AppRouter extends RootStackRouter {
     ChangePasswordRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ChangePasswordView(),
+        child: WrappedRoute(child: const ChangePasswordView()),
       );
     },
     EditProfileRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const EditProfileView(),
+        child: WrappedRoute(child: const EditProfileView()),
       );
     },
     FeedRoute.name: (routeData) {
@@ -36,19 +36,19 @@ abstract class _$AppRouter extends RootStackRouter {
     ForgotPasswordRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ForgotPasswordView(),
+        child: WrappedRoute(child: const ForgotPasswordView()),
       );
     },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HomeView(),
+        child: WrappedRoute(child: const HomeView()),
       );
     },
     LoginRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const LoginView(),
+        child: WrappedRoute(child: const LoginView()),
       );
     },
     NotFoundRoute.name: (routeData) {

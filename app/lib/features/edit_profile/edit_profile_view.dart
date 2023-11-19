@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:common/common.dart';
 import 'package:common_ui/styling/app_spacing.dart';
 import 'package:common_ui/widgets/base_button.dart';
 import 'package:common_ui/widgets/base_text_field.dart';
@@ -10,8 +11,18 @@ import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 import 'package:user_repository/user_repository.dart';
 
 @RoutePage()
-class EditProfileView extends StatelessWidget {
+class EditProfileView extends StatelessWidget implements AutoRouteWrapper {
   const EditProfileView({super.key});
+
+  @override
+  Widget wrappedRoute(BuildContext context) {
+    return BlocProvider(
+      create: (context) => EditProfileBloc(
+        userRepository: AppInjector.instance.get<UserRepository>(),
+      ),
+      child: const EditProfileView(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,31 +30,26 @@ class EditProfileView extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.l10n.editProfile.title),
       ),
-      body: BlocProvider(
-        create: (context) => EditProfileBloc(
-          userRepository: context.read<UserRepository>(),
-        ),
-        child: BlocListener<EditProfileBloc, EditProfileState>(
-          listener: (context, state) {
-            if (state.status.isSuccess) {
-              context.popRoute();
-            }
-          },
-          child: const Center(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.all(AppSpacing.large),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _FirstNameTextField(),
-                  SizedBox(height: AppSpacing.medium),
-                  _LastNameTextField(),
-                  SizedBox(height: AppSpacing.medium),
-                  _EmailTextField(),
-                  SizedBox(height: AppSpacing.large),
-                  _SubmitButton(),
-                ],
-              ),
+      body: BlocListener<EditProfileBloc, EditProfileState>(
+        listener: (context, state) {
+          if (state.status.isSuccess) {
+            context.popRoute();
+          }
+        },
+        child: const Center(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.all(AppSpacing.large),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _FirstNameTextField(),
+                SizedBox(height: AppSpacing.medium),
+                _LastNameTextField(),
+                SizedBox(height: AppSpacing.medium),
+                _EmailTextField(),
+                SizedBox(height: AppSpacing.large),
+                _SubmitButton(),
+              ],
             ),
           ),
         ),

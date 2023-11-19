@@ -15,8 +15,19 @@ import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 import 'package:quickstart_flutter_bloc/routes/app_router.dart';
 
 @RoutePage()
-class LoginView extends StatelessWidget {
+class LoginView extends StatelessWidget implements AutoRouteWrapper {
   const LoginView({super.key});
+
+  @override
+  Widget wrappedRoute(BuildContext context) {
+    return BlocProvider(
+      create: (context) => LoginBloc(
+        authenticationRepository:
+            AppInjector.instance.get<AuthenticationRepository>(),
+      ),
+      child: const LoginView(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,48 +35,42 @@ class LoginView extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.l10n.login.title),
       ),
-      body: BlocProvider(
-        create: (context) => LoginBloc(
-          authenticationRepository:
-              AppInjector.instance.get<AuthenticationRepository>(),
-        ),
-        child: BlocListener<LoginBloc, LoginState>(
-          listener: (context, state) {
-            if (state.status.isSuccess) {
-              context.router.replaceAll([const HomeRoute()]);
-            }
-          },
-          child: Center(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.all(AppSpacing.large),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const _EmailTextField(),
-                  const SizedBox(height: AppSpacing.medium),
-                  const _PasswordTextField(),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: TextButton(
-                      onPressed: () {
-                        context.pushRoute(const ForgotPasswordRoute());
-                      },
-                      child: Text(
-                        context.l10n.login.buttonForgotPassword,
-                      ),
+      body: BlocListener<LoginBloc, LoginState>(
+        listener: (context, state) {
+          if (state.status.isSuccess) {
+            context.router.replaceAll([const HomeRoute()]);
+          }
+        },
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(AppSpacing.large),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const _EmailTextField(),
+                const SizedBox(height: AppSpacing.medium),
+                const _PasswordTextField(),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () {
+                      context.pushRoute(const ForgotPasswordRoute());
+                    },
+                    child: Text(
+                      context.l10n.login.buttonForgotPassword,
                     ),
                   ),
-                  const SizedBox(height: AppSpacing.small),
-                  const _LoginButton(),
-                  Padding(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: AppSpacing.large),
-                    child: TextDivider(context.l10n.login.dividerOr),
-                  ),
-                  const _SignInWithThirdPartyButtons(),
-                  const _SignupButton(),
-                ],
-              ),
+                ),
+                const SizedBox(height: AppSpacing.small),
+                const _LoginButton(),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: AppSpacing.large),
+                  child: TextDivider(context.l10n.login.dividerOr),
+                ),
+                const _SignInWithThirdPartyButtons(),
+                const _SignupButton(),
+              ],
             ),
           ),
         ),

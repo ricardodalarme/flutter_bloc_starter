@@ -36,7 +36,7 @@ abstract class AppRoutes {
     ),
     GoRoute(
       path: _Paths.signup,
-      builder: (context, state) => const SignUpView(),
+      builder: (context, state) => const SignupPage(),
     ),
     GoRoute(
       path: _Paths.forgotPassword,

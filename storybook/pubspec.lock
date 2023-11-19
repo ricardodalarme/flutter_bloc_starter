@@ -84,7 +84,7 @@ packages:
   common_ui:
     dependency: "direct main"
     description:
-      path: "../packages/common_ui"
+      path: "../app/packages/common_ui"
       relative: true
     source: path
     version: "0.0.0"

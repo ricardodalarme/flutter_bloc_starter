@@ -9,6 +9,7 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
+
   - package-ecosystem: "pub"
     directory: "/"
     schedule:
@@ -18,53 +19,65 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
+
+  - package-ecosystem: "pub"
+    directory: "/app/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  - package-ecosystem: "pub"
+    directory: "/app/packages/authentication_repository"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: "pub"
+    directory: "/app/packages/user_repository"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: "pub"
+    directory: "/app/packages/analytics_repository"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: "pub"
+    directory: "/app/packages/common"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: "pub"
+    directory: "/app/packages/common_ui"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
   - package-ecosystem: "pub"
     directory: "/storybook/"
-    schedule:
-      interval: "weekly"
-    labels:
-      - ":package: dependencies"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-  - package-ecosystem: "pub"
-    directory: "/packages/authentication_repository"
-    schedule:
-      interval: "weekly"
-    labels:
-      - ":package: dependencies"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-  - package-ecosystem: "pub"
-    directory: "/packages/user_repository"
-    schedule:
-      interval: "weekly"
-    labels:
-      - ":package: dependencies"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-  - package-ecosystem: "pub"
-    directory: "/packages/analytics_repository"
-    schedule:
-      interval: "weekly"
-    labels:
-      - ":package: dependencies"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-  - package-ecosystem: "pub"
-    directory: "/packages/common"
-    schedule:
-      interval: "weekly"
-    labels:
-      - ":package: dependencies"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-  - package-ecosystem: "pub"
-    directory: "/packages/common_ui"
     schedule:
       interval: "weekly"
     labels:

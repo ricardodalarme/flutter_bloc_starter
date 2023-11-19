@@ -3,18 +3,20 @@
   "configurations": [
     {
       "name": "debug",
+      "cwd": "app",
       "request": "launch",
       "type": "dart",
       "program": "lib/main.dart",
-      "args": ["--dart-define-from-file", ".env"]
+      "args": ["--dart-define-from-file", "../.env"]
     },
     {
       "name": "release",
+      "cwd": "app",
       "request": "launch",
       "type": "dart",
       "flutterMode": "release",
       "program": "lib/main.dart",
-      "args": ["--dart-define-from-file", ".env"]
+      "args": ["--dart-define-from-file", "../.env"]
     },
     {
       "name": "storybook",

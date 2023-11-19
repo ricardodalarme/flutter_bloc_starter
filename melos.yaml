@@ -1,9 +1,9 @@
 name: quickstart_flutter_bloc
 
 packages:
-  - .
+  - app
+  - app/packages/*
   - storybook
-  - packages/*
 
 command:
   bootstrap:
@@ -43,20 +43,29 @@ scripts:
       dirExists:
         - test
 
-  # Tool commands
+  # Aopp commands
   l10n:
-    run: dart run slang && dart format lib/l10n/translations.g.dart
+    exec: dart run slang && dart format lib/l10n/translations.g.dart
+    packageFilters:
+      scope: 
+        - quickstart_flutter_bloc
 
   l10n:analyze:
-    run: dart run slang analyze --exit-if-changed
+    exec: dart run slang analyze --exit-if-changed
+    packageFilters:
+      scope: quickstart_flutter_bloc
 
   splash_screen:
-    run: flutter pub run flutter_native_splash:create
+    exec: flutter pub run flutter_native_splash:create
     description: Update the app splash screen.
+    packageFilters:
+      scope: quickstart_flutter_bloc
 
   launcher_icon:
-    run: flutter pub run flutter_launcher_icons:main
+    exec: flutter pub run flutter_launcher_icons:main
     description: Update the app launcher icon.
+    packageFilters:
+      scope: quickstart_flutter_bloc
 
   # Git commands
   hooks:

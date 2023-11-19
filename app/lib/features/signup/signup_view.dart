@@ -1,4 +1,4 @@
-import 'package:authentication_repository/authentication_repository.dart';
+import 'package:common/common.dart';
 import 'package:common_ui/styling/app_spacing.dart';
 import 'package:common_ui/widgets/base_button.dart';
 import 'package:common_ui/widgets/base_text_field.dart';
@@ -11,20 +11,34 @@ import 'package:quickstart_flutter_bloc/features/signup/bloc/signup_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 import 'package:quickstart_flutter_bloc/routes/app_routes.dart';
 
+class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider.value(
+      value: AppInjector.instance.get<SignupBloc>(),
+      child: const SignUpView(),
+    );
+  }
+}
+
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(context.l10n.signup.title),
-      ),
-      body: BlocProvider(
-        create: (context) => SignupBloc(
-          authenticationRepository: context.read<AuthenticationRepository>(),
+    return BlocListener<SignupBloc, SignupState>(
+      listener: (context, state) {
+        if (state.status.isSuccess) {
+          context.go(AppPaths.home);
+        }
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(context.l10n.signup.title),
         ),
-        child: BlocListener<SignupBloc, SignupState>(
+        body: BlocListener<SignupBloc, SignupState>(
           listener: (context, state) {
             if (state.status.isSuccess) {
               context.go(AppPaths.home);

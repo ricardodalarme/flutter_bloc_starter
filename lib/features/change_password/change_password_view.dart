@@ -1,3 +1,4 @@
+import 'package:common/common.dart';
 import 'package:common_ui/styling/app_spacing.dart';
 import 'package:common_ui/widgets/base_button.dart';
 import 'package:common_ui/widgets/password_text_field.dart';
@@ -21,7 +22,7 @@ class ChangePasswordView extends StatelessWidget {
       ),
       body: BlocProvider(
         create: (context) => ChangePasswordBloc(
-          userRepository: context.read<UserRepository>(),
+          userRepository: AppInjector.instance.get<UserRepository>(),
         ),
         child: BlocListener<ChangePasswordBloc, ChangePasswordState>(
           listener: (context, state) {

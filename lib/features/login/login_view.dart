@@ -1,4 +1,5 @@
 import 'package:authentication_repository/authentication_repository.dart';
+import 'package:common/common.dart';
 import 'package:common_ui/styling/app_spacing.dart';
 import 'package:common_ui/widgets/base_button.dart';
 import 'package:common_ui/widgets/base_text_field.dart';
@@ -24,7 +25,8 @@ class LoginView extends StatelessWidget {
       ),
       body: BlocProvider(
         create: (context) => LoginBloc(
-          authenticationRepository: context.read<AuthenticationRepository>(),
+          authenticationRepository:
+              AppInjector.instance.get<AuthenticationRepository>(),
         ),
         child: BlocListener<LoginBloc, LoginState>(
           listener: (context, state) {

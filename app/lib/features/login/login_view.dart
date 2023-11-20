@@ -1,4 +1,3 @@
-import 'package:authentication_repository/authentication_repository.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:common/common.dart';
 import 'package:common_ui/styling/app_spacing.dart';
@@ -20,11 +19,8 @@ class LoginView extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LoginBloc(
-        authenticationRepository:
-            AppInjector.instance.get<AuthenticationRepository>(),
-      ),
+    return BlocProvider.value(
+      value: AppInjector.instance.get<LoginBloc>(),
       child: const LoginView(),
     );
   }

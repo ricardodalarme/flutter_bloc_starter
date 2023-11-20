@@ -8,7 +8,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:quickstart_flutter_bloc/features/change_password/bloc/change_password_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
-import 'package:user_repository/user_repository.dart';
 
 @RoutePage()
 class ChangePasswordView extends StatelessWidget implements AutoRouteWrapper {
@@ -16,10 +15,8 @@ class ChangePasswordView extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ChangePasswordBloc(
-        userRepository: AppInjector.instance.get<UserRepository>(),
-      ),
+    return BlocProvider.value(
+      value: AppInjector.instance.get<ChangePasswordBloc>(),
       child: const ChangePasswordView(),
     );
   }

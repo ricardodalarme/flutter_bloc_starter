@@ -1,4 +1,3 @@
-import 'package:authentication_repository/authentication_repository.dart';
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,11 +14,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AppBloc(
-        authenticationRepository:
-            AppInjector.instance.get<AuthenticationRepository>(),
-      ),
+    return BlocProvider.value(
+      value: AppInjector.instance.get<AppBloc>(),
       child: TranslationProvider(
         child: Builder(
           builder: (context) => MaterialApp.router(

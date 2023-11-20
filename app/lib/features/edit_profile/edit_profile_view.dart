@@ -8,7 +8,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/bloc/edit_profile_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
-import 'package:user_repository/user_repository.dart';
 
 @RoutePage()
 class EditProfileView extends StatelessWidget implements AutoRouteWrapper {
@@ -16,10 +15,8 @@ class EditProfileView extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    return BlocProvider(
-      create: (context) => EditProfileBloc(
-        userRepository: AppInjector.instance.get<UserRepository>(),
-      ),
+    return BlocProvider.value(
+      value: AppInjector.instance.get<EditProfileBloc>(),
       child: const EditProfileView(),
     );
   }

@@ -28,10 +28,10 @@ class PostView extends StatelessWidget implements AutoRouteWrapper {
       ),
       body: BlocBuilder<PostBloc, PostState>(
         builder: (context, state) => switch (state.status) {
+          PostStatus.success => _PostSuccess(posts: state.posts),
           PostStatus.failure => const _PostError(),
           PostStatus.loading =>
             const Center(child: CircularProgressIndicator()),
-          (PostStatus.success) => _PostSuccess(posts: state.posts)
         },
       ),
     );

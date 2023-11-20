@@ -1,7 +1,9 @@
 import 'dart:async';
 
+import 'package:common/data/gql_client.dart';
 import 'package:common/di/injection_module.dart';
 import 'package:common/di/injector.dart';
+import 'package:quickstart_flutter_bloc/features/post/data/data_sources/post_data_source.dart';
 import 'package:quickstart_flutter_bloc/features/post/data/repositories/post_repository.dart';
 import 'package:quickstart_flutter_bloc/features/post/domain/repositories/post_repository.dart';
 import 'package:quickstart_flutter_bloc/features/post/presentation/bloc/post_bloc.dart';
@@ -9,8 +11,16 @@ import 'package:quickstart_flutter_bloc/features/post/presentation/bloc/post_blo
 class PostInjectionModule extends InjectionModule {
   @override
   FutureOr<void> registerDependencies({required Injector injector}) {
+    injector.registerSingleton<PostDataSource>(
+      PostDataSourceImpl(
+        graphlQLClient: injector.get<GQLClient>(),
+      ),
+    );
+
     injector.registerSingleton<PostRepository>(
-      PostRepositoryImpl(),
+      PostRepositoryImpl(
+        postDataSource: injector.get<PostDataSource>(),
+      ),
     );
 
     injector.registerFactory<PostBloc>(

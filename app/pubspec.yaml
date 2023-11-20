@@ -41,7 +41,7 @@ dev_dependencies:
   bloc_test: ^9.1.5
   build_runner: ^2.4.6
   flutter_launcher_icons: ^0.13.1
-  flutter_native_splash: ^2.3.5
+  flutter_native_splash: ^2.3.6
   flutter_test:
     sdk: flutter
   graphql_codegen: ^0.13.8

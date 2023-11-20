@@ -1,43 +1,26 @@
 {
   "project_info": {
-    "project_number": "707495094215",
-    "project_id": "flutter-bloc-starter-f9a94",
-    "storage_bucket": "flutter-bloc-starter-f9a94.appspot.com"
+    "project_number": "755918936022",
+    "project_id": "quickstart-flutter-graphql",
+    "storage_bucket": "quickstart-flutter-graphql.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:707495094215:android:c6d6f6a305f2ca662f1be2",
+        "mobilesdk_app_id": "1:755918936022:android:23547062d6ca9feb24f677",
         "android_client_info": {
           "package_name": "com.example.quickstart_flutter_bloc"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "707495094215-326cds9l33rnbmqp4ui9l3lqijaoctin.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAa8maQ8SoKkCD7FJnHm-B-urClyV6k6Xs"
+          "current_key": "AIzaSyC0DsD31Vv_3K6HkKNTPz6DawHYIr0PG0o"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "707495094215-326cds9l33rnbmqp4ui9l3lqijaoctin.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "707495094215-3tpcvcqkdvsimreuq5herigf8aule918.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.lunardevs.quickstartFlutterBloc"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

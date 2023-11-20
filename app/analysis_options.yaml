@@ -4,3 +4,4 @@ analyzer:
   exclude:
     - lib/firebase_options.dart
     - "**.g.dart"
+    - "**/generated/**.dart"

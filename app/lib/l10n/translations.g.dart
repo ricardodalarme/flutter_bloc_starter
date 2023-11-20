@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 86 (43 per locale)
 ///
-/// Built on 2023-11-15 at 23:37 UTC
+/// Built on 2023-11-20 at 00:08 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -189,6 +189,10 @@ class _TranslationsEn implements BaseTranslations<AppLocale, _TranslationsEn> {
   late final _TranslationsEn _root = this; // ignore: unused_field
 
   // Translations
+  late final _TranslationsUnusedTranslationsEn unusedTranslations =
+      _TranslationsUnusedTranslationsEn._(_root);
+  late final _TranslationsMissingTranslationsEn missingTranslations =
+      _TranslationsMissingTranslationsEn._(_root);
   late final _TranslationsTermsOfUseEn termsOfUse =
       _TranslationsTermsOfUseEn._(_root);
   late final _TranslationsSignupEn signup = _TranslationsSignupEn._(_root);
@@ -209,6 +213,30 @@ class _TranslationsEn implements BaseTranslations<AppLocale, _TranslationsEn> {
   late final _TranslationsFeedEn feed = _TranslationsFeedEn._(_root);
   late final _TranslationsForgotPasswordEn forgotPassword =
       _TranslationsForgotPasswordEn._(_root);
+}
+
+// Path: unusedTranslations
+class _TranslationsUnusedTranslationsEn {
+  _TranslationsUnusedTranslationsEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+  late final _TranslationsUnusedTranslationsEnEn en =
+      _TranslationsUnusedTranslationsEnEn._(_root);
+  late final _TranslationsUnusedTranslationsPtEn pt =
+      _TranslationsUnusedTranslationsPtEn._(_root);
+}
+
+// Path: missingTranslations
+class _TranslationsMissingTranslationsEn {
+  _TranslationsMissingTranslationsEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+  late final _TranslationsMissingTranslationsPtEn pt =
+      _TranslationsMissingTranslationsPtEn._(_root);
 }
 
 // Path: termsOfUse
@@ -376,6 +404,33 @@ class _TranslationsForgotPasswordEn {
   String get resetPageLabelNewPassword => 'New password';
   String get resetPageLabelConfirmPassword => 'Confirm password';
   String get resetPageButtonSubmit => 'Reset password';
+}
+
+// Path: unusedTranslations.en
+class _TranslationsUnusedTranslationsEnEn {
+  _TranslationsUnusedTranslationsEnEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+}
+
+// Path: unusedTranslations.pt
+class _TranslationsUnusedTranslationsPtEn {
+  _TranslationsUnusedTranslationsPtEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+}
+
+// Path: missingTranslations.pt
+class _TranslationsMissingTranslationsPtEn {
+  _TranslationsMissingTranslationsPtEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
 }
 
 // Path: <root>
@@ -565,7 +620,7 @@ class _TranslationsChangePasswordPt extends _TranslationsChangePasswordEn {
   @override
   String get labelCurrentPassword => 'Senha Atual';
   @override
-  String get labelNewPassword => 'New Password';
+  String get labelNewPassword => 'Nova Senha';
   @override
   String get labelConfirmPassword => 'Confirmar Senha';
 }
@@ -836,7 +891,7 @@ extension on _TranslationsPt {
       case 'changePassword.labelCurrentPassword':
         return 'Senha Atual';
       case 'changePassword.labelNewPassword':
-        return 'New Password';
+        return 'Nova Senha';
       case 'changePassword.labelConfirmPassword':
         return 'Confirmar Senha';
       case 'editProfile.title':

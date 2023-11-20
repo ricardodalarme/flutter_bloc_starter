@@ -1,4 +1,6 @@
 abstract class Config {
+  static const String accessToken = String.fromEnvironment('ACCESS_TOKEN');
+  static const String serverUrl = String.fromEnvironment('SERVER_URL');
   static const String firebaseMessagingSenderId =
       String.fromEnvironment('FIREBASE_MESSAGING_SENDER_ID');
   static const String firebaseProjectId =

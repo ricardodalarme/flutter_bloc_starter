@@ -27,12 +27,6 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(child: const EditProfileView()),
       );
     },
-    FeedRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const FeedView(),
-      );
-    },
     ForgotPasswordRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -55,6 +49,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const NotFoundView(),
+      );
+    },
+    PostRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const PostView()),
       );
     },
     PrivacyPolicyRoute.name: (routeData) {
@@ -125,20 +125,6 @@ class EditProfileRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [FeedView]
-class FeedRoute extends PageRouteInfo<void> {
-  const FeedRoute({List<PageRouteInfo>? children})
-      : super(
-          FeedRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'FeedRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
 /// [ForgotPasswordView]
 class ForgotPasswordRoute extends PageRouteInfo<void> {
   const ForgotPasswordRoute({List<PageRouteInfo>? children})
@@ -190,6 +176,20 @@ class NotFoundRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'NotFoundRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [PostView]
+class PostRoute extends PageRouteInfo<void> {
+  const PostRoute({List<PageRouteInfo>? children})
+      : super(
+          PostRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PostRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

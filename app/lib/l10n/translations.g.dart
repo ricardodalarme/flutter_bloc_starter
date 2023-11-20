@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 86 (43 per locale)
+/// Strings: 90 (45 per locale)
 ///
-/// Built on 2023-11-20 at 00:08 UTC
+/// Built on 2023-11-20 at 17:12 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -210,9 +210,9 @@ class _TranslationsEn implements BaseTranslations<AppLocale, _TranslationsEn> {
   late final _TranslationsNotFoundEn notFound =
       _TranslationsNotFoundEn._(_root);
   late final _TranslationsProfileEn profile = _TranslationsProfileEn._(_root);
-  late final _TranslationsFeedEn feed = _TranslationsFeedEn._(_root);
   late final _TranslationsForgotPasswordEn forgotPassword =
       _TranslationsForgotPasswordEn._(_root);
+  late final _TranslationsPostEn post = _TranslationsPostEn._(_root);
 }
 
 // Path: unusedTranslations
@@ -378,16 +378,6 @@ class _TranslationsProfileEn {
   String get buttonLogout => 'Logout';
 }
 
-// Path: feed
-class _TranslationsFeedEn {
-  _TranslationsFeedEn._(this._root);
-
-  final _TranslationsEn _root; // ignore: unused_field
-
-  // Translations
-  String get title => 'Feed';
-}
-
 // Path: forgotPassword
 class _TranslationsForgotPasswordEn {
   _TranslationsForgotPasswordEn._(this._root);
@@ -404,6 +394,18 @@ class _TranslationsForgotPasswordEn {
   String get resetPageLabelNewPassword => 'New password';
   String get resetPageLabelConfirmPassword => 'Confirm password';
   String get resetPageButtonSubmit => 'Reset password';
+}
+
+// Path: post
+class _TranslationsPostEn {
+  _TranslationsPostEn._(this._root);
+
+  final _TranslationsEn _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Feed';
+  String get textFailure => 'Failed to load feed.';
+  String get buttonRetry => 'Retry';
 }
 
 // Path: unusedTranslations.en
@@ -499,10 +501,10 @@ class _TranslationsPt extends _TranslationsEn {
   @override
   late final _TranslationsProfilePt profile = _TranslationsProfilePt._(_root);
   @override
-  late final _TranslationsFeedPt feed = _TranslationsFeedPt._(_root);
-  @override
   late final _TranslationsForgotPasswordPt forgotPassword =
       _TranslationsForgotPasswordPt._(_root);
+  @override
+  late final _TranslationsPostPt post = _TranslationsPostPt._(_root);
 }
 
 // Path: termsOfUse
@@ -712,20 +714,6 @@ class _TranslationsProfilePt extends _TranslationsProfileEn {
   String get buttonLogout => 'Sair';
 }
 
-// Path: feed
-class _TranslationsFeedPt extends _TranslationsFeedEn {
-  _TranslationsFeedPt._(_TranslationsPt root)
-      : this._root = root,
-        super._(root);
-
-  @override
-  final _TranslationsPt _root; // ignore: unused_field
-
-  // Translations
-  @override
-  String get title => 'Feed';
-}
-
 // Path: forgotPassword
 class _TranslationsForgotPasswordPt extends _TranslationsForgotPasswordEn {
   _TranslationsForgotPasswordPt._(_TranslationsPt root)
@@ -752,6 +740,24 @@ class _TranslationsForgotPasswordPt extends _TranslationsForgotPasswordEn {
   String get resetPageLabelConfirmPassword => 'Confirmar senha';
   @override
   String get resetPageButtonSubmit => 'Redefinir senha';
+}
+
+// Path: post
+class _TranslationsPostPt extends _TranslationsPostEn {
+  _TranslationsPostPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Feed';
+  @override
+  String get textFailure => 'Falha ao carregar o feed.';
+  @override
+  String get buttonRetry => 'Tentar novamente';
 }
 
 /// Flat map(s) containing all translations.
@@ -833,8 +839,6 @@ extension on _TranslationsEn {
         return 'Terms of Use';
       case 'profile.buttonLogout':
         return 'Logout';
-      case 'feed.title':
-        return 'Feed';
       case 'forgotPassword.title':
         return 'Recover Password';
       case 'forgotPassword.emailPageDescription':
@@ -849,6 +853,12 @@ extension on _TranslationsEn {
         return 'Confirm password';
       case 'forgotPassword.resetPageButtonSubmit':
         return 'Reset password';
+      case 'post.title':
+        return 'Feed';
+      case 'post.textFailure':
+        return 'Failed to load feed.';
+      case 'post.buttonRetry':
+        return 'Retry';
       default:
         return null;
     }
@@ -931,8 +941,6 @@ extension on _TranslationsPt {
         return 'Termos de Uso';
       case 'profile.buttonLogout':
         return 'Sair';
-      case 'feed.title':
-        return 'Feed';
       case 'forgotPassword.title':
         return 'Recuperar Senha';
       case 'forgotPassword.emailPageDescription':
@@ -947,6 +955,12 @@ extension on _TranslationsPt {
         return 'Confirmar senha';
       case 'forgotPassword.resetPageButtonSubmit':
         return 'Redefinir senha';
+      case 'post.title':
+        return 'Feed';
+      case 'post.textFailure':
+        return 'Falha ao carregar o feed.';
+      case 'post.buttonRetry':
+        return 'Tentar novamente';
       default:
         return null;
     }

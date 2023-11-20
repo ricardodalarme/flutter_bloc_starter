@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:quickstart_flutter_bloc/features/change_password/change_password_view.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/edit_profile_view.dart';
-import 'package:quickstart_flutter_bloc/features/feed/feed_view.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/forgot_password_view.dart';
 import 'package:quickstart_flutter_bloc/features/home/home_view.dart';
 import 'package:quickstart_flutter_bloc/features/login/login_view.dart';
 import 'package:quickstart_flutter_bloc/features/not_found/not_found_view.dart';
+import 'package:quickstart_flutter_bloc/features/post/presentation/post_view.dart';
 import 'package:quickstart_flutter_bloc/features/privacy_policy/privacy_policy_view.dart';
 import 'package:quickstart_flutter_bloc/features/profile/profile_view.dart';
 import 'package:quickstart_flutter_bloc/features/search/search_view.dart';
@@ -23,7 +23,7 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: SignUpRoute.page),
         AutoRoute(page: ForgotPasswordRoute.page),
         AutoRoute(page: HomeRoute.page),
-        AutoRoute(page: FeedRoute.page),
+        AutoRoute(page: PostRoute.page),
         AutoRoute(page: SearchRoute.page),
         AutoRoute(page: ProfileRoute.page),
         AutoRoute(page: SettingsRoute.page),

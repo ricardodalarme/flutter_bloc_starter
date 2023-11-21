@@ -58,10 +58,14 @@ scripts:
       scope: quickstart_flutter_bloc
 
   gen:
+    run: melos gen:single --no-select
+    description: Run build_runner in all packages.
+
+  gen:single:
     exec: flutter pub run build_runner build --delete-conflicting-outputs
     description: Run build_runner to generate files.
     packageFilters:
-      scope: quickstart_flutter_bloc
+      dependsOn: build_runner
 
   splash_screen:
     exec: flutter pub run flutter_native_splash:create

@@ -1,4 +1,4 @@
-import 'package:common/src/data/result.dart';
+import 'package:common/data/result.dart';
 import 'package:test/test.dart';
 
 void main() {

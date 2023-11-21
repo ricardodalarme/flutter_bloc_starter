@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:authentication_repository/authentication_repository.dart';
-import 'package:common/common.dart';
+import 'package:common/di/injection_module.dart';
+import 'package:common/di/injector.dart';
 import 'package:quickstart_flutter_bloc/features/login/bloc/login_bloc.dart';
 
 class LoginInjectionModule extends InjectionModule {

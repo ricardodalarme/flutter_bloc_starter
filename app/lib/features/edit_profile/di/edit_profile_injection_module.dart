@@ -1,6 +1,7 @@
 import 'dart:async';
 
-import 'package:common/common.dart';
+import 'package:common/di/injection_module.dart';
+import 'package:common/di/injector.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/bloc/edit_profile_bloc.dart';
 import 'package:user_repository/user_repository.dart';
 

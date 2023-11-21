@@ -1,4 +1,4 @@
-import 'package:common/src/di/injector.dart';
+import 'package:common/di/injector.dart';
 import 'package:get_it/get_it.dart';
 
 final class AppInjector implements Injector {

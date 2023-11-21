@@ -1,4 +1,5 @@
-import 'package:common/common.dart';
+import 'package:common/di/app_injector.dart';
+import 'package:common/di/injector.dart';
 import 'package:test/test.dart';
 
 void main() {

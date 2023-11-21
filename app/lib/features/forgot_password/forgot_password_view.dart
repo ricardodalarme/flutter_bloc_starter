@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:common/common.dart';
+import 'package:common/di/app_injector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/bloc/forgot_password_bloc.dart';

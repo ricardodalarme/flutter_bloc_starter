@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:common/common.dart';
+import 'package:common/di/app_injector.dart';
 import 'package:common_ui/styling/app_spacing.dart';
 import 'package:common_ui/widgets/base_button.dart';
 import 'package:common_ui/widgets/password_text_field.dart';

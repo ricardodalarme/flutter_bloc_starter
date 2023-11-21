@@ -553,14 +553,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.1-alpha+1700349941413"
-  gql_code_builder:
-    dependency: transitive
-    description:
-      name: gql_code_builder
-      sha256: "6e386a85f5d91daae82915337f566a43dfeb0a0df38caa372387fbc07d31b8c1"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.7.2"
   gql_dedupe_link:
     dependency: transitive
     description:
@@ -617,14 +609,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.2.0-beta.4"
-  graphql_codegen:
-    dependency: "direct dev"
-    description:
-      name: graphql_codegen
-      sha256: "3f6555512c2546c44722da439bf52f5d359d383926e4620c2b24a7bf21ec505b"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.13.8"
   graphs:
     dependency: transitive
     description:
@@ -953,14 +937,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.3"
-  recase:
-    dependency: transitive
-    description:
-      name: recase
-      sha256: e4eb4ec2dcdee52dcf99cb4ceabaffc631d7424ee55e56f280bc039737f89213
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.1.0"
   rxdart:
     dependency: transitive
     description:

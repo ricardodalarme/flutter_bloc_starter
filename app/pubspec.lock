@@ -350,7 +350,7 @@ packages:
     source: hosted
     version: "6.1.4"
   firebase_analytics:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: firebase_analytics
       sha256: "624f234b0cb27c4d1c983d03489570471d85d5720159512c8e080cb6917a0a2b"

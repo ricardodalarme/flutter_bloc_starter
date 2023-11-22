@@ -2,15 +2,15 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:formz_inputs/formz_inputs.dart';
-import 'package:user_repository/user_repository.dart';
+import 'package:quickstart_flutter_bloc/features/edit_profile/domain/repositories/edit_profile_repository.dart';
 
 part 'edit_profile_event.dart';
 part 'edit_profile_state.dart';
 
 class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
   EditProfileBloc({
-    required UserRepository userRepository,
-  })  : _userRepository = userRepository,
+    required EditProfileRepository editProfileRepository,
+  })  : _editProfileRepository = editProfileRepository,
         super(const EditProfileState()) {
     on<EditProfileFirstNameChanged>(_onFirstNameChanged);
     on<EditProfileLastNameChanged>(_onLastNameChanged);
@@ -18,7 +18,7 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
     on<EditProfileSubmitted>(_onSubmitted);
   }
 
-  final UserRepository _userRepository;
+  final EditProfileRepository _editProfileRepository;
 
   void _onFirstNameChanged(
     EditProfileFirstNameChanged event,
@@ -53,7 +53,7 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
   ) async {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
-      await _userRepository.updateProfile(
+      await _editProfileRepository.updateProfile(
         firstName: state.firstName.value,
         lastName: state.lastName.value,
         email: state.email.value,

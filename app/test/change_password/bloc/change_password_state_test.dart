@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:formz/formz.dart';
 import 'package:formz_inputs/formz_inputs.dart';
-import 'package:quickstart_flutter_bloc/features/change_password/bloc/change_password_bloc.dart';
+import 'package:quickstart_flutter_bloc/features/change_password/presentation/bloc/change_password_bloc.dart';
 
 void main() {
   const password = PasswordInput.dirty('password');

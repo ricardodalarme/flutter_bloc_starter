@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:quickstart_flutter_bloc/features/change_password/change_password_view.dart';
+import 'package:quickstart_flutter_bloc/features/change_password/presentation/change_password_view.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/edit_profile_view.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/forgot_password_view.dart';
 import 'package:quickstart_flutter_bloc/features/home/home_view.dart';

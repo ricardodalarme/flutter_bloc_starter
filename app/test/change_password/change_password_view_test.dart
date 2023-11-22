@@ -2,8 +2,8 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:quickstart_flutter_bloc/features/change_password/bloc/change_password_bloc.dart';
-import 'package:quickstart_flutter_bloc/features/change_password/change_password_view.dart';
+import 'package:quickstart_flutter_bloc/features/change_password/presentation/bloc/change_password_bloc.dart';
+import 'package:quickstart_flutter_bloc/features/change_password/presentation/change_password_view.dart';
 
 import '../test_helpers/pump_app.dart';
 

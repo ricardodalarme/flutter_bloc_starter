@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:formz_inputs/formz_inputs.dart';
-import 'package:user_repository/user_repository.dart';
+import 'package:quickstart_flutter_bloc/features/change_password/domain/repositories/change_password_repository.dart';
 
 part 'change_password_event.dart';
 part 'change_password_state.dart';
@@ -10,8 +10,8 @@ part 'change_password_state.dart';
 class ChangePasswordBloc
     extends Bloc<ChangePasswordEvent, ChangePasswordState> {
   ChangePasswordBloc({
-    required UserRepository userRepository,
-  })  : _userRepository = userRepository,
+    required ChangePasswordRepository changePasswordRepository,
+  })  : _changePasswordRepository = changePasswordRepository,
         super(const ChangePasswordState()) {
     on<ChangePasswordCurrentPasswordChanged>(_onCurrentPasswordChanged);
     on<ChangePasswordNewPasswordChanged>(_onNewPasswordChanged);
@@ -19,7 +19,7 @@ class ChangePasswordBloc
     on<ChangePasswordSubmitted>(_onSubmitted);
   }
 
-  final UserRepository _userRepository;
+  final ChangePasswordRepository _changePasswordRepository;
 
   void _onCurrentPasswordChanged(
     ChangePasswordCurrentPasswordChanged event,
@@ -67,9 +67,9 @@ class ChangePasswordBloc
   ) async {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
-      await _userRepository.changePassword(
-        state.currentPassword.value,
-        state.password.value,
+      await _changePasswordRepository.changePassword(
+        currentPassword: state.currentPassword.value,
+        newPassword: state.password.value,
       );
       emit(state.copyWith(status: FormzSubmissionStatus.success));
     } catch (error) {

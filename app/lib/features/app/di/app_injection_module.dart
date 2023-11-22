@@ -6,7 +6,6 @@ import 'package:common/di/injection_module.dart';
 import 'package:common/di/injector.dart';
 import 'package:quickstart_flutter_bloc/features/app/bloc/app_bloc.dart';
 import 'package:quickstart_flutter_bloc/routes/app_router.dart';
-import 'package:user_repository/user_repository.dart';
 
 class AppInjectionModule extends InjectionModule {
   @override
@@ -17,10 +16,6 @@ class AppInjectionModule extends InjectionModule {
 
     injector.registerLazySingleton<AuthenticationRepository>(
       AuthenticationRepository.new,
-    );
-
-    injector.registerLazySingleton<UserRepository>(
-      UserRepository.new,
     );
 
     injector.registerFactory<AppBloc>(

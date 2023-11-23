@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:common/di/app_injector.dart';
 import 'package:common_ui/styling/app_spacing.dart';
 import 'package:common_ui/widgets/base_button.dart';
+import 'package:common_ui/widgets/base_snack_bar.dart';
 import 'package:common_ui/widgets/base_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,11 +30,8 @@ class EditProfileView extends StatelessWidget implements AutoRouteWrapper {
         title: Text(context.l10n.editProfile.title),
       ),
       body: BlocListener<EditProfileBloc, EditProfileState>(
-        listener: (context, state) {
-          if (state.status.isSuccess) {
-            context.popRoute();
-          }
-        },
+        listenWhen: (previous, current) => previous.status != current.status,
+        listener: _handleStatus,
         child: const Center(
           child: SingleChildScrollView(
             padding: EdgeInsets.all(AppSpacing.large),
@@ -53,6 +51,24 @@ class EditProfileView extends StatelessWidget implements AutoRouteWrapper {
         ),
       ),
     );
+  }
+
+  void _handleStatus(BuildContext context, EditProfileState state) {
+    switch (state.status) {
+      case FormzSubmissionStatus.success:
+        context.router.pop();
+        context.showSnackBar(
+          message: context.l10n.editProfile.messageSuccess,
+          type: SnackBarType.success,
+        );
+      case FormzSubmissionStatus.failure:
+        context.showSnackBar(
+          message: context.l10n.common.genericError,
+          type: SnackBarType.error,
+        );
+      default:
+        return;
+    }
   }
 }
 

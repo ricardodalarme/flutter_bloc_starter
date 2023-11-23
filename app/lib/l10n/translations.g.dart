@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 94 (47 per locale)
+/// Strings: 96 (48 per locale)
 ///
-/// Built on 2023-11-23 at 21:51 UTC
+/// Built on 2023-11-23 at 23:32 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -330,6 +330,7 @@ class _TranslationsEditProfileEn {
 
   // Translations
   String get title => 'Edit Profile';
+  String get messageSuccess => 'Profile updated successfully';
 }
 
 // Path: login
@@ -645,6 +646,8 @@ class _TranslationsEditProfilePt extends _TranslationsEditProfileEn {
   // Translations
   @override
   String get title => 'Editar Perfil';
+  @override
+  String get messageSuccess => 'Perfil editado com sucesso!';
 }
 
 // Path: login
@@ -814,6 +817,8 @@ extension on _TranslationsEn {
         return 'Password changed successfully';
       case 'editProfile.title':
         return 'Edit Profile';
+      case 'editProfile.messageSuccess':
+        return 'Profile updated successfully';
       case 'login.title':
         return 'Login';
       case 'login.buttonLogin':
@@ -920,6 +925,8 @@ extension on _TranslationsPt {
         return 'Senha alterada com sucesso!';
       case 'editProfile.title':
         return 'Editar Perfil';
+      case 'editProfile.messageSuccess':
+        return 'Perfil editado com sucesso!';
       case 'login.title':
         return 'Entrar';
       case 'login.buttonLogin':

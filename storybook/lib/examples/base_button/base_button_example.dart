@@ -2,7 +2,7 @@ import 'package:common_ui/widgets/base_button.dart';
 import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 
-final WidgetbookNode buttonExample = WidgetbookUseCase(
+final WidgetbookNode baseButtonExample = WidgetbookUseCase(
   name: 'BaseButton',
   builder: (context) => BaseButton(
     text: context.knobs.string(

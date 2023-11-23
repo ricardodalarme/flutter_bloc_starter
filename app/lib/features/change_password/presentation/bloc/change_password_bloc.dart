@@ -1,3 +1,4 @@
+import 'package:common/data/result.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
@@ -65,15 +66,23 @@ class ChangePasswordBloc
     ChangePasswordSubmitted event,
     Emitter<ChangePasswordState> emit,
   ) async {
+    if (state.isNotValid) return;
+
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
-    try {
-      await _changePasswordRepository.changePassword(
-        currentPassword: state.currentPassword.value,
-        newPassword: state.password.value,
-      );
-      emit(state.copyWith(status: FormzSubmissionStatus.success));
-    } catch (error) {
-      emit(state.copyWith(status: FormzSubmissionStatus.failure));
-    }
+
+    final result = await _changePasswordRepository.changePassword(
+      currentPassword: state.currentPassword.value,
+      newPassword: state.password.value,
+    );
+    final newState = switch (result) {
+      Success() => state.copyWith(
+          status: FormzSubmissionStatus.success,
+        ),
+      Failure() => state.copyWith(
+          status: FormzSubmissionStatus.failure,
+        ),
+    };
+
+    emit(newState);
   }
 }

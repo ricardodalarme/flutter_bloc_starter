@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 90 (45 per locale)
+/// Strings: 94 (47 per locale)
 ///
-/// Built on 2023-11-20 at 17:12 UTC
+/// Built on 2023-11-23 at 21:51 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -305,6 +305,7 @@ class _TranslationsCommonEn {
   String get password => 'Password';
   String get firstName => 'First Name';
   String get lastName => 'Last Name';
+  String get genericError => 'Something went wrong';
 }
 
 // Path: changePassword
@@ -318,6 +319,7 @@ class _TranslationsChangePasswordEn {
   String get labelCurrentPassword => 'Current Password';
   String get labelNewPassword => 'New Password';
   String get labelConfirmPassword => 'Confirm Password';
+  String get messageSuccess => 'Password changed successfully';
 }
 
 // Path: editProfile
@@ -605,6 +607,8 @@ class _TranslationsCommonPt extends _TranslationsCommonEn {
   String get firstName => 'Nome';
   @override
   String get lastName => 'Sobrenome';
+  @override
+  String get genericError => 'Algo deu errado';
 }
 
 // Path: changePassword
@@ -625,6 +629,8 @@ class _TranslationsChangePasswordPt extends _TranslationsChangePasswordEn {
   String get labelNewPassword => 'Nova Senha';
   @override
   String get labelConfirmPassword => 'Confirmar Senha';
+  @override
+  String get messageSuccess => 'Senha alterada com sucesso!';
 }
 
 // Path: editProfile
@@ -794,6 +800,8 @@ extension on _TranslationsEn {
         return 'First Name';
       case 'common.lastName':
         return 'Last Name';
+      case 'common.genericError':
+        return 'Something went wrong';
       case 'changePassword.title':
         return 'Change Password';
       case 'changePassword.labelCurrentPassword':
@@ -802,6 +810,8 @@ extension on _TranslationsEn {
         return 'New Password';
       case 'changePassword.labelConfirmPassword':
         return 'Confirm Password';
+      case 'changePassword.messageSuccess':
+        return 'Password changed successfully';
       case 'editProfile.title':
         return 'Edit Profile';
       case 'login.title':
@@ -896,6 +906,8 @@ extension on _TranslationsPt {
         return 'Nome';
       case 'common.lastName':
         return 'Sobrenome';
+      case 'common.genericError':
+        return 'Algo deu errado';
       case 'changePassword.title':
         return 'Alterar Senha';
       case 'changePassword.labelCurrentPassword':
@@ -904,6 +916,8 @@ extension on _TranslationsPt {
         return 'Nova Senha';
       case 'changePassword.labelConfirmPassword':
         return 'Confirmar Senha';
+      case 'changePassword.messageSuccess':
+        return 'Senha alterada com sucesso!';
       case 'editProfile.title':
         return 'Editar Perfil';
       case 'login.title':

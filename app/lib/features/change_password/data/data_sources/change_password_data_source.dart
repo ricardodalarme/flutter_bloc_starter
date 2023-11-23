@@ -1,0 +1,43 @@
+import 'package:common/data/gql_client.dart';
+import 'package:common/schemas/generated/schema.graphql.dart';
+import 'package:common/schemas/mutations/generated/ChangePassword.graphql.dart';
+import 'package:graphql/client.dart';
+
+abstract class ChangePasswordDataSource {
+  Future<void> changePassword({
+    required String currentPassword,
+    required String newPassword,
+  });
+}
+
+class ChangePasswordDataSourceImpl implements ChangePasswordDataSource {
+  const ChangePasswordDataSourceImpl({
+    required GQLClient graphlQLClient,
+  }) : _client = graphlQLClient;
+
+  final GQLClient _client;
+
+  @override
+  Future<void> changePassword({
+    required String currentPassword,
+    required String newPassword,
+  }) async {
+    try {
+      final input = InputChangePasswordInput(
+        oldPassword: currentPassword,
+        newPassword: newPassword,
+      );
+      final response = await _client.mutate(
+        OptionsMutationChangePassword(
+          variables: VariablesMutationChangePassword(input: input),
+        ),
+      );
+
+      if (response.hasException) {
+        throw response.exception!;
+      }
+    } catch (e) {
+      throw const ServerException();
+    }
+  }
+}

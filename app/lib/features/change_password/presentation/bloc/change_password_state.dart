@@ -2,20 +2,20 @@ part of 'change_password_bloc.dart';
 
 final class ChangePasswordState extends Equatable with FormzMixin {
   const ChangePasswordState({
-    this.currentPassword = const PasswordInput.pure(),
-    this.password = const PasswordInput.pure(),
+    this.currentPassword = const NonEmptyInput.pure(),
+    this.password = const NonEmptyInput.pure(),
     this.confirmPassword = const ConfirmedPasswordInput.pure(),
     this.status = FormzSubmissionStatus.initial,
   });
 
-  final PasswordInput currentPassword;
-  final PasswordInput password;
+  final NonEmptyInput currentPassword;
+  final NonEmptyInput password;
   final ConfirmedPasswordInput confirmPassword;
   final FormzSubmissionStatus status;
 
   ChangePasswordState copyWith({
-    PasswordInput? currentPassword,
-    PasswordInput? password,
+    NonEmptyInput? currentPassword,
+    NonEmptyInput? password,
     ConfirmedPasswordInput? confirmPassword,
     FormzSubmissionStatus? status,
   }) {

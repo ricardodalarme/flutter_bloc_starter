@@ -27,7 +27,7 @@ class ChangePasswordBloc
   ) {
     emit(
       state.copyWith(
-        currentPassword: PasswordInput.dirty(event.currentPassword),
+        currentPassword: NonEmptyInput.dirty(event.currentPassword),
       ),
     );
   }
@@ -38,7 +38,7 @@ class ChangePasswordBloc
   ) {
     emit(
       state.copyWith(
-        password: PasswordInput.dirty(event.password),
+        password: NonEmptyInput.dirty(event.password),
         confirmPassword: ConfirmedPasswordInput.dirty(
           password: event.password,
           value: state.confirmPassword.value,

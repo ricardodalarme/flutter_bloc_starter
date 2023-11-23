@@ -1,5 +1,5 @@
 import 'package:common/data/gql_client.dart';
-import 'package:common/schemas/generated/GetPosts.graphql.dart';
+import 'package:common/schemas/queries/generated/GetPosts.graphql.dart';
 import 'package:graphql/client.dart';
 
 abstract class PostDataSource {

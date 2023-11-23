@@ -1,4 +1,4 @@
-import '../fragments/generated/PostFragment.graphql.dart';
+import '../../fragments/generated/PostFragment.graphql.dart';
 import 'dart:async';
 import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;

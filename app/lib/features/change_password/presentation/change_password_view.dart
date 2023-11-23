@@ -6,6 +6,7 @@ import 'package:common_ui/widgets/password_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
+import 'package:gap/gap.dart';
 import 'package:quickstart_flutter_bloc/features/change_password/presentation/bloc/change_password_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
@@ -40,11 +41,11 @@ class ChangePasswordView extends StatelessWidget implements AutoRouteWrapper {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 _CurrentPasswordTextField(),
-                SizedBox(height: AppSpacing.medium),
+                Gap(AppSpacing.medium),
                 _NewPasswordTextField(),
-                SizedBox(height: AppSpacing.medium),
+                Gap(AppSpacing.medium),
                 _ConfirmPasswordTextField(),
-                SizedBox(height: AppSpacing.large),
+                Gap(AppSpacing.large),
                 _SubmitButton(),
               ],
             ),

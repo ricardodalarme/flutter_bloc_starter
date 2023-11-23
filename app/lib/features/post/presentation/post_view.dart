@@ -3,6 +3,7 @@ import 'package:common/di/app_injector.dart';
 import 'package:common_ui/styling/app_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gap/gap.dart';
 import 'package:quickstart_flutter_bloc/features/post/domain/models/post_model.dart';
 import 'package:quickstart_flutter_bloc/features/post/presentation/bloc/post_bloc.dart';
 import 'package:quickstart_flutter_bloc/features/post/presentation/widgets/post_card.dart';
@@ -70,7 +71,7 @@ class _PostError extends StatelessWidget {
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleMedium,
           ),
-          const SizedBox(height: AppSpacing.medium),
+          const Gap(AppSpacing.medium),
           ElevatedButton(
             onPressed: () => context.read<PostBloc>().add(const PostFetched()),
             child: Text(context.l10n.post.buttonRetry),

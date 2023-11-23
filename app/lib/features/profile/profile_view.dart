@@ -3,6 +3,7 @@ import 'package:common_ui/styling/app_spacing.dart';
 import 'package:common_ui/widgets/profile_picture.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gap/gap.dart';
 import 'package:quickstart_flutter_bloc/features/app/bloc/app_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 import 'package:quickstart_flutter_bloc/routes/app_router.dart';
@@ -28,7 +29,7 @@ class ProfileView extends StatelessWidget {
                 photoUrl: null,
                 size: _profilePictureSize,
               ),
-              const SizedBox(height: AppSpacing.xxlarge),
+              const Gap(AppSpacing.xxlarge),
               ListTile(
                 title: Text(context.l10n.profile.buttonEditProfile),
                 leading: const Icon(Icons.person),

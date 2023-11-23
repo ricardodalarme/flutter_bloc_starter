@@ -3,6 +3,7 @@ import 'package:common_ui/widgets/base_button.dart';
 import 'package:common_ui/widgets/base_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gap/gap.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
@@ -22,9 +23,9 @@ class ForgotPasswordEmailForm extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleMedium,
             ),
-            const SizedBox(height: AppSpacing.xlarge),
+            const Gap(AppSpacing.xlarge),
             const _EmailTextField(),
-            const SizedBox(height: AppSpacing.large),
+            const Gap(AppSpacing.large),
             const _SendEmailButton(),
           ],
         ),

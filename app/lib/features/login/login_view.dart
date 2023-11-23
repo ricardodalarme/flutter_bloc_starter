@@ -9,6 +9,7 @@ import 'package:common_ui/widgets/text_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
+import 'package:gap/gap.dart';
 import 'package:quickstart_flutter_bloc/features/login/bloc/login_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 import 'package:quickstart_flutter_bloc/routes/app_router.dart';
@@ -44,7 +45,7 @@ class LoginView extends StatelessWidget implements AutoRouteWrapper {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const _EmailTextField(),
-                const SizedBox(height: AppSpacing.medium),
+                const Gap(AppSpacing.medium),
                 const _PasswordTextField(),
                 Align(
                   alignment: Alignment.centerRight,
@@ -57,7 +58,7 @@ class LoginView extends StatelessWidget implements AutoRouteWrapper {
                     ),
                   ),
                 ),
-                const SizedBox(height: AppSpacing.small),
+                const Gap(AppSpacing.small),
                 const _LoginButton(),
                 Padding(
                   padding:

@@ -3,7 +3,7 @@ import 'package:quickstart_flutter_bloc/features/change_password/presentation/ch
 import 'package:quickstart_flutter_bloc/features/edit_profile/presentation/edit_profile_view.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/forgot_password_view.dart';
 import 'package:quickstart_flutter_bloc/features/home/home_view.dart';
-import 'package:quickstart_flutter_bloc/features/login/login_view.dart';
+import 'package:quickstart_flutter_bloc/features/login/presentation/login_view.dart';
 import 'package:quickstart_flutter_bloc/features/not_found/not_found_view.dart';
 import 'package:quickstart_flutter_bloc/features/post/presentation/post_view.dart';
 import 'package:quickstart_flutter_bloc/features/privacy_policy/privacy_policy_view.dart';

@@ -2,10 +2,10 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:quickstart_flutter_bloc/features/login/bloc/login_bloc.dart';
-import 'package:quickstart_flutter_bloc/features/login/login_view.dart';
+import 'package:quickstart_flutter_bloc/features/login/presentation/bloc/login_bloc.dart';
+import 'package:quickstart_flutter_bloc/features/login/presentation/login_view.dart';
 
-import '../test_helpers/pump_app.dart';
+import '../../test_helpers/pump_app.dart';
 
 class MockLoginBloc extends MockBloc<LoginEvent, LoginState>
     implements LoginBloc {}

@@ -44,7 +44,7 @@ class LoginView extends StatelessWidget implements AutoRouteWrapper {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const _EmailTextField(),
+                const _UsernameTextField(),
                 const Gap(AppSpacing.medium),
                 const _PasswordTextField(),
                 Align(
@@ -76,16 +76,16 @@ class LoginView extends StatelessWidget implements AutoRouteWrapper {
   }
 }
 
-class _EmailTextField extends StatelessWidget {
-  const _EmailTextField();
+class _UsernameTextField extends StatelessWidget {
+  const _UsernameTextField();
 
   @override
   Widget build(BuildContext context) {
     return BaseTextField(
-      label: context.l10n.common.email,
-      onChanged: (email) =>
-          context.read<LoginBloc>().add(LoginEmailChanged(email)),
-      keyboardType: TextInputType.emailAddress,
+      label: context.l10n.common.username,
+      onChanged: (username) =>
+          context.read<LoginBloc>().add(LoginUsernameChanged(username)),
+      keyboardType: TextInputType.text,
       textInputAction: TextInputAction.next,
     );
   }

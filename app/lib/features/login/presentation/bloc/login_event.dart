@@ -2,10 +2,10 @@ part of 'login_bloc.dart';
 
 sealed class LoginEvent {}
 
-final class LoginEmailChanged extends LoginEvent {
-  LoginEmailChanged(this.email);
+final class LoginUsernameChanged extends LoginEvent {
+  LoginUsernameChanged(this.username);
 
-  final String email;
+  final String username;
 }
 
 final class LoginPasswordChanged extends LoginEvent {

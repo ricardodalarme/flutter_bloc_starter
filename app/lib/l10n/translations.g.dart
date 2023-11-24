@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 96 (48 per locale)
+/// Strings: 98 (49 per locale)
 ///
-/// Built on 2023-11-23 at 23:32 UTC
+/// Built on 2023-11-24 at 02:13 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -301,6 +301,7 @@ class _TranslationsCommonEn {
   String get appName => 'Flutter Bloc Starter';
   String get send => 'Send';
   String get save => 'Save';
+  String get username => 'Username';
   String get email => 'Email';
   String get password => 'Password';
   String get firstName => 'First Name';
@@ -603,6 +604,8 @@ class _TranslationsCommonPt extends _TranslationsCommonEn {
   @override
   String get email => 'Email';
   @override
+  String get username => 'Usuário';
+  @override
   String get password => 'Senha';
   @override
   String get firstName => 'Nome';
@@ -795,6 +798,8 @@ extension on _TranslationsEn {
         return 'Send';
       case 'common.save':
         return 'Save';
+      case 'common.username':
+        return 'Username';
       case 'common.email':
         return 'Email';
       case 'common.password':
@@ -905,6 +910,8 @@ extension on _TranslationsPt {
         return 'Salvar';
       case 'common.email':
         return 'Email';
+      case 'common.username':
+        return 'Usuário';
       case 'common.password':
         return 'Senha';
       case 'common.firstName':

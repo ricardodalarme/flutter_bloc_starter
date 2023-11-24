@@ -2,6 +2,7 @@
   "appName": "Flutter Bloc Starter",
   "send": "Send",
   "save": "Save",
+  "username": "Username",
   "email": "Email",
   "password": "Password",
   "firstName": "First Name",

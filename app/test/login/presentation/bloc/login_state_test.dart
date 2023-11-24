@@ -4,7 +4,7 @@ import 'package:formz_inputs/formz_inputs.dart';
 import 'package:quickstart_flutter_bloc/features/login/presentation/bloc/login_bloc.dart';
 
 void main() {
-  const email = EmailInput.dirty('email');
+  const username = NonEmptyInput.dirty('username');
   const password = PasswordInput.dirty('password');
 
   group('LoginState', () {
@@ -19,10 +19,10 @@ void main() {
       );
     });
 
-    test('returns object with updated email when email is passed', () {
+    test('returns object with updated username when username is passed', () {
       expect(
-        const LoginState().copyWith(email: email),
-        const LoginState(email: email),
+        const LoginState().copyWith(username: username),
+        const LoginState(username: username),
       );
     });
 

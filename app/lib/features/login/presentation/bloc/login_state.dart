@@ -2,30 +2,30 @@ part of 'login_bloc.dart';
 
 final class LoginState extends Equatable with FormzMixin {
   const LoginState({
-    this.email = const EmailInput.pure(),
+    this.username = const NonEmptyInput.pure(),
     this.password = const PasswordInput.pure(),
     this.status = FormzSubmissionStatus.initial,
   });
 
-  final EmailInput email;
+  final NonEmptyInput username;
   final PasswordInput password;
   final FormzSubmissionStatus status;
 
   LoginState copyWith({
-    EmailInput? email,
+    NonEmptyInput? username,
     PasswordInput? password,
     FormzSubmissionStatus? status,
   }) {
     return LoginState(
-      email: email ?? this.email,
+      username: username ?? this.username,
       password: password ?? this.password,
       status: status ?? this.status,
     );
   }
 
   @override
-  List<FormzInput<dynamic, dynamic>> get inputs => [email, password];
+  List<FormzInput<dynamic, dynamic>> get inputs => [username, password];
 
   @override
-  List<Object?> get props => [email, password, status];
+  List<Object?> get props => [username, password, status];
 }

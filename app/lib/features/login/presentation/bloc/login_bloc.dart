@@ -12,7 +12,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     required AuthenticationRepository authenticationRepository,
   })  : _authenticationRepository = authenticationRepository,
         super(const LoginState()) {
-    on<LoginEmailChanged>(_onEmailChanged);
+    on<LoginUsernameChanged>(_onUsernameChanged);
     on<LoginPasswordChanged>(_onPasswordChanged);
     on<LoginSubmitted>(_onSubmitted);
     on<LoginWithGoogleSubmitted>(_onLoginWithGoogleSubmitted);
@@ -21,12 +21,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   final AuthenticationRepository _authenticationRepository;
 
-  void _onEmailChanged(
-    LoginEmailChanged event,
+  void _onUsernameChanged(
+    LoginUsernameChanged event,
     Emitter<LoginState> emit,
   ) {
     emit(
-      state.copyWith(email: EmailInput.dirty(event.email)),
+      state.copyWith(username: NonEmptyInput.dirty(event.username)),
     );
   }
 
@@ -46,7 +46,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
       await _authenticationRepository.logInWithEmailAndPassword(
-        email: state.email.value,
+        email: state.username.value,
         password: state.password.value,
       );
       emit(state.copyWith(status: FormzSubmissionStatus.success));

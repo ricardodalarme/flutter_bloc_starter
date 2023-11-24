@@ -1,16 +1,16 @@
-import 'package:authentication_repository/authentication_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:formz_inputs/formz_inputs.dart';
+import 'package:quickstart_flutter_bloc/features/login/domain/repositories/change_password_repository.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc({
-    required AuthenticationRepository authenticationRepository,
-  })  : _authenticationRepository = authenticationRepository,
+    required LoginRepository loginRepository,
+  })  : _loginRepository = loginRepository,
         super(const LoginState()) {
     on<LoginUsernameChanged>(_onUsernameChanged);
     on<LoginPasswordChanged>(_onPasswordChanged);
@@ -19,7 +19,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     on<LoginWithFacebookSubmitted>(_onLoginWithFacebookSubmitted);
   }
 
-  final AuthenticationRepository _authenticationRepository;
+  final LoginRepository _loginRepository;
 
   void _onUsernameChanged(
     LoginUsernameChanged event,
@@ -45,8 +45,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   ) async {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
-      await _authenticationRepository.logInWithEmailAndPassword(
-        email: state.username.value,
+      await _loginRepository.logInWithUsernameAndPassword(
+        username: state.username.value,
         password: state.password.value,
       );
       emit(state.copyWith(status: FormzSubmissionStatus.success));
@@ -60,7 +60,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     Emitter<LoginState> emit,
   ) async {
     try {
-      await _authenticationRepository.logInWithGoogle();
+      await _loginRepository.logInWithGoogle();
     } catch (error) {
       // TODO: Handle error
     }
@@ -71,7 +71,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     Emitter<LoginState> emit,
   ) async {
     try {
-      await _authenticationRepository.logInWithFacebook();
+      await _loginRepository.logInWithFacebook();
     } catch (error) {
       // TODO: Handle error
     }

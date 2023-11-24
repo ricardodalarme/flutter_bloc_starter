@@ -1,4 +1,5 @@
 import 'package:common/di/app_injector.dart';
+import 'package:common/di/injection_module.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
@@ -47,7 +48,7 @@ Future<void> _setupBloc() async {
 }
 
 void _registerModules() {
-  final injectionModules = [
+  final injectionModules = <InjectionModule>[
     AppInjectionModule(),
     LoginInjectionModule(),
     SignupInjectionModule(),

@@ -1,0 +1,63 @@
+import 'package:authentication_repository/authentication_repository.dart';
+import 'package:bloc_test/bloc_test.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:formz/formz.dart';
+import 'package:formz_inputs/formz_inputs.dart';
+import 'package:mocktail/mocktail.dart';
+import 'package:quickstart_flutter_bloc/features/signup/bloc/signup_bloc.dart';
+
+class MockAuthenticationRepository extends Mock
+    implements AuthenticationRepository {}
+
+void main() {
+  group('SignupBloc', () {
+    late AuthenticationRepository authenticationRepository;
+    late SignupBloc signupBloc;
+
+    setUp(() {
+      authenticationRepository = MockAuthenticationRepository();
+      signupBloc =
+          SignupBloc(authenticationRepository: authenticationRepository);
+    });
+
+    tearDown(() {
+      signupBloc.close();
+    });
+
+    test('initial state is correct', () {
+      expect(
+        signupBloc.state,
+        const SignupState(
+          // ignore: avoid_redundant_argument_values
+          email: EmailInput.pure(),
+          // ignore: avoid_redundant_argument_values
+          password: PasswordInput.pure(),
+          // ignore: avoid_redundant_argument_values
+          confirmPassword: ConfirmedPasswordInput.pure(),
+          // ignore: avoid_redundant_argument_values
+          status: FormzSubmissionStatus.initial,
+        ),
+      );
+    });
+
+    blocTest<SignupBloc, SignupState>(
+      'emits [SignupState] when [SignupEmailChanged] is added',
+      build: () => signupBloc,
+      act: (bloc) => bloc.add(const SignupEmailChanged('john@example.com')),
+      expect: () =>
+          [const SignupState(email: EmailInput.dirty('john@example.com'))],
+    );
+
+    blocTest<SignupBloc, SignupState>(
+      'emits [SignupState] when [SignupConfirmPasswordChanged] is added',
+      build: () => signupBloc,
+      act: (bloc) => bloc.add(const SignupConfirmPasswordChanged('password')),
+      expect: () => [
+        const SignupState(
+          confirmPassword:
+              ConfirmedPasswordInput.dirty(password: '', value: 'password'),
+        ),
+      ],
+    );
+  });
+}

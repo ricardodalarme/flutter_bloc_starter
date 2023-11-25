@@ -3,17 +3,17 @@ part of 'login_bloc.dart';
 final class LoginState extends Equatable with FormzMixin {
   const LoginState({
     this.username = const NonEmptyInput.pure(),
-    this.password = const PasswordInput.pure(),
+    this.password = const NonEmptyInput.pure(),
     this.status = FormzSubmissionStatus.initial,
   });
 
   final NonEmptyInput username;
-  final PasswordInput password;
+  final NonEmptyInput password;
   final FormzSubmissionStatus status;
 
   LoginState copyWith({
     NonEmptyInput? username,
-    PasswordInput? password,
+    NonEmptyInput? password,
     FormzSubmissionStatus? status,
   }) {
     return LoginState(

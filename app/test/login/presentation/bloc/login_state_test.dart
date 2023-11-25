@@ -5,7 +5,7 @@ import 'package:quickstart_flutter_bloc/features/login/presentation/bloc/login_b
 
 void main() {
   const username = NonEmptyInput.dirty('username');
-  const password = PasswordInput.dirty('password');
+  const password = NonEmptyInput.dirty('password');
 
   group('LoginState', () {
     test('returns same object when no properties are passed', () {

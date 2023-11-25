@@ -26,11 +26,8 @@ void main() {
       expect(
         loginBloc.state,
         const LoginState(
-          // ignore: avoid_redundant_argument_values
           username: NonEmptyInput.pure(),
-          // ignore: avoid_redundant_argument_values
           password: NonEmptyInput.pure(),
-          // ignore: avoid_redundant_argument_values
           status: FormzSubmissionStatus.initial,
         ),
       );

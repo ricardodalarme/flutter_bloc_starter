@@ -27,13 +27,9 @@ void main() {
       expect(
         editProfileBloc.state,
         const EditProfileState(
-          // ignore: avoid_redundant_argument_values
           firstName: NonEmptyInput.pure(),
-          // ignore: avoid_redundant_argument_values
           lastName: NonEmptyInput.pure(),
-          // ignore: avoid_redundant_argument_values
           email: EmailInput.pure(),
-          // ignore: avoid_redundant_argument_values
           status: FormzSubmissionStatus.initial,
         ),
       );

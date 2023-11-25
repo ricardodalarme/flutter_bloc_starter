@@ -28,13 +28,9 @@ void main() {
       expect(
         signupBloc.state,
         const SignupState(
-          // ignore: avoid_redundant_argument_values
           email: EmailInput.pure(),
-          // ignore: avoid_redundant_argument_values
           password: PasswordInput.pure(),
-          // ignore: avoid_redundant_argument_values
           confirmPassword: ConfirmedPasswordInput.pure(),
-          // ignore: avoid_redundant_argument_values
           status: FormzSubmissionStatus.initial,
         ),
       );

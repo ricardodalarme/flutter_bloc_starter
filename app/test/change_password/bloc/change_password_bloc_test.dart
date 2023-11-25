@@ -29,13 +29,9 @@ void main() {
       expect(
         changePasswordBloc.state,
         const ChangePasswordState(
-          // ignore: avoid_redundant_argument_values
           currentPassword: NonEmptyInput.pure(),
-          // ignore: avoid_redundant_argument_values
           password: NonEmptyInput.pure(),
-          // ignore: avoid_redundant_argument_values
           confirmPassword: ConfirmedPasswordInput.pure(),
-          // ignore: avoid_redundant_argument_values
           status: FormzSubmissionStatus.initial,
         ),
       );

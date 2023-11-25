@@ -1,0 +1,5 @@
+include: ../packages/lint/analysis_options.yaml
+
+linter:
+  rules:
+    avoid_redundant_argument_values: false

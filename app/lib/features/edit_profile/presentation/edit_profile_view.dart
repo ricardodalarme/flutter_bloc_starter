@@ -105,7 +105,7 @@ class _EmailTextField extends StatelessWidget {
       label: context.l10n.common.email,
       textInputAction: TextInputAction.done,
       onSubmitted: (_) =>
-          context.read<EditProfileBloc>().add(EditProfileSubmitted()),
+          context.read<EditProfileBloc>().add(const EditProfileSubmitted()),
     );
   }
 }
@@ -122,7 +122,7 @@ class _SubmitButton extends StatelessWidget {
           isLoading: state.status.isInProgress,
           isEnabled: state.isValid,
           onPressed: () =>
-              context.read<EditProfileBloc>().add(EditProfileSubmitted()),
+              context.read<EditProfileBloc>().add(const EditProfileSubmitted()),
         );
       },
     );

@@ -57,7 +57,7 @@ class _SendEmailButton extends StatelessWidget {
       text: context.l10n.common.send,
       onPressed: () => context
           .read<ForgotPasswordBloc>()
-          .add(ForgotPasswordSendEmailPressed()),
+          .add(const ForgotPasswordSendEmailPressed()),
     );
   }
 }

@@ -56,8 +56,9 @@ class _ConfirmPasswordTextField extends StatelessWidget {
           .add(ForgotPasswordConfirmPasswordChanged(value)),
       label: context.l10n.forgotPassword.resetPageLabelConfirmPassword,
       textInputAction: TextInputAction.done,
-      onSubmitted: (_) =>
-          context.read<ForgotPasswordBloc>().add(ForgotPasswordSubmitted()),
+      onSubmitted: (_) => context
+          .read<ForgotPasswordBloc>()
+          .add(const ForgotPasswordSubmitted()),
     );
   }
 }
@@ -69,8 +70,9 @@ class _SubmitButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BaseButton(
       text: context.l10n.forgotPassword.resetPageButtonSubmit,
-      onPressed: () =>
-          context.read<ForgotPasswordBloc>().add(ForgotPasswordSubmitted()),
+      onPressed: () => context
+          .read<ForgotPasswordBloc>()
+          .add(const ForgotPasswordSubmitted()),
     );
   }
 }

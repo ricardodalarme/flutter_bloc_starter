@@ -98,7 +98,8 @@ class _ConfirmPasswordTextField extends StatelessWidget {
           .add(SignupConfirmPasswordChanged(password)),
       label: context.l10n.signup.labelConfirmPassword,
       textInputAction: TextInputAction.done,
-      onSubmitted: (_) => context.read<SignupBloc>().add(SignupSubmitted()),
+      onSubmitted: (_) =>
+          context.read<SignupBloc>().add(const SignupSubmitted()),
     );
   }
 }
@@ -114,7 +115,8 @@ class _SubmitButton extends StatelessWidget {
           text: context.l10n.signup.buttonSubmit,
           isLoading: state.status.isInProgress,
           isEnabled: state.isValid,
-          onPressed: () => context.read<SignupBloc>().add(SignupSubmitted()),
+          onPressed: () =>
+              context.read<SignupBloc>().add(const SignupSubmitted()),
         );
       },
     );

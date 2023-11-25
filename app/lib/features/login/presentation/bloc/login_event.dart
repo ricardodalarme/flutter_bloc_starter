@@ -1,21 +1,29 @@
 part of 'login_bloc.dart';
 
-sealed class LoginEvent {}
+sealed class LoginEvent {
+  const LoginEvent();
+}
 
 final class LoginUsernameChanged extends LoginEvent {
-  LoginUsernameChanged(this.username);
+  const LoginUsernameChanged(this.username);
 
   final String username;
 }
 
 final class LoginPasswordChanged extends LoginEvent {
-  LoginPasswordChanged(this.password);
+  const LoginPasswordChanged(this.password);
 
   final String password;
 }
 
-final class LoginSubmitted extends LoginEvent {}
+final class LoginSubmitted extends LoginEvent {
+  const LoginSubmitted();
+}
 
-final class LoginWithGoogleSubmitted extends LoginEvent {}
+final class LoginWithGoogleSubmitted extends LoginEvent {
+  const LoginWithGoogleSubmitted();
+}
 
-final class LoginWithFacebookSubmitted extends LoginEvent {}
+final class LoginWithFacebookSubmitted extends LoginEvent {
+  const LoginWithFacebookSubmitted();
+}

@@ -101,7 +101,7 @@ class _PasswordTextField extends StatelessWidget {
           context.read<LoginBloc>().add(LoginPasswordChanged(password)),
       label: context.l10n.common.password,
       textInputAction: TextInputAction.done,
-      onSubmitted: (_) => context.read<LoginBloc>().add(LoginSubmitted()),
+      onSubmitted: (_) => context.read<LoginBloc>().add(const LoginSubmitted()),
     );
   }
 }
@@ -117,7 +117,8 @@ class _LoginButton extends StatelessWidget {
           text: context.l10n.login.buttonLogin,
           isLoading: state.status.isInProgress,
           isEnabled: state.isValid,
-          onPressed: () => context.read<LoginBloc>().add(LoginSubmitted()),
+          onPressed: () =>
+              context.read<LoginBloc>().add(const LoginSubmitted()),
         );
       },
     );
@@ -136,14 +137,14 @@ class _SignInWithThirdPartyButtons extends StatelessWidget {
           text: (provider) =>
               context.l10n.login.buttonSignInWith(provider: provider.text),
           onPressed: () =>
-              context.read<LoginBloc>().add(LoginWithGoogleSubmitted()),
+              context.read<LoginBloc>().add(const LoginWithGoogleSubmitted()),
         ),
         SignInButton(
           ButtonProvider.facebook,
           text: (provider) =>
               context.l10n.login.buttonSignInWith(provider: provider.text),
           onPressed: () =>
-              context.read<LoginBloc>().add(LoginWithFacebookSubmitted()),
+              context.read<LoginBloc>().add(const LoginWithFacebookSubmitted()),
         ),
       ],
     );

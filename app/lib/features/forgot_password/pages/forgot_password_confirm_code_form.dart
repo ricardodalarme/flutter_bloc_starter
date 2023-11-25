@@ -45,7 +45,7 @@ class _PinCodeInput extends StatelessWidget {
           .add(ForgotPasswordCodeChanged(value)),
       onSubmitted: (value) => context
           .read<ForgotPasswordBloc>()
-          .add(ForgotPasswordConfirmCodeSubmitted()),
+          .add(const ForgotPasswordConfirmCodeSubmitted()),
     );
   }
 }
@@ -59,7 +59,7 @@ class _ResendCodeButton extends StatelessWidget {
       text: context.l10n.forgotPassword.confirmPageButtonResend,
       onPressed: () => context
           .read<ForgotPasswordBloc>()
-          .add(ForgotPasswordResendCodePressed()),
+          .add(const ForgotPasswordResendCodePressed()),
     );
   }
 }

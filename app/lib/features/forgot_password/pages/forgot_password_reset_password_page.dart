@@ -7,8 +7,8 @@ import 'package:gap/gap.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
-class ForgotPasswordResetPasswordForm extends StatelessWidget {
-  const ForgotPasswordResetPasswordForm({super.key});
+class ForgotPasswordResetPasswordPage extends StatelessWidget {
+  const ForgotPasswordResetPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {

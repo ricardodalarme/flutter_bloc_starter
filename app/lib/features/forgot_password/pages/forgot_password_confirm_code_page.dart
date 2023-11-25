@@ -1,14 +1,14 @@
 import 'package:common_ui/styling/app_spacing.dart';
 import 'package:common_ui/widgets/base_button.dart';
-import 'package:common_ui/widgets/base_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:pinput/pinput.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
-class ForgotPasswordEmailForm extends StatelessWidget {
-  const ForgotPasswordEmailForm({super.key});
+class ForgotPasswordConfirmCodePage extends StatelessWidget {
+  const ForgotPasswordConfirmCodePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +19,14 @@ class ForgotPasswordEmailForm extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              context.l10n.forgotPassword.emailPageDescription,
+              context.l10n.forgotPassword.confirmPageDescription,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const Gap(AppSpacing.xlarge),
-            const _EmailTextField(),
+            const _PinCodeInput(),
             const Gap(AppSpacing.large),
-            const _SendEmailButton(),
+            const _ResendCodeButton(),
           ],
         ),
       ),
@@ -34,30 +34,32 @@ class ForgotPasswordEmailForm extends StatelessWidget {
   }
 }
 
-class _EmailTextField extends StatelessWidget {
-  const _EmailTextField();
+class _PinCodeInput extends StatelessWidget {
+  const _PinCodeInput();
 
   @override
   Widget build(BuildContext context) {
-    return BaseTextField(
-      label: context.l10n.common.email,
+    return Pinput(
       onChanged: (value) => context
           .read<ForgotPasswordBloc>()
-          .add(ForgotPasswordEmailChanged(value)),
+          .add(ForgotPasswordCodeChanged(value)),
+      onSubmitted: (value) => context
+          .read<ForgotPasswordBloc>()
+          .add(const ForgotPasswordConfirmCodeSubmitted()),
     );
   }
 }
 
-class _SendEmailButton extends StatelessWidget {
-  const _SendEmailButton();
+class _ResendCodeButton extends StatelessWidget {
+  const _ResendCodeButton();
 
   @override
   Widget build(BuildContext context) {
     return BaseButton(
-      text: context.l10n.common.send,
+      text: context.l10n.forgotPassword.confirmPageButtonResend,
       onPressed: () => context
           .read<ForgotPasswordBloc>()
-          .add(const ForgotPasswordSendEmailPressed()),
+          .add(const ForgotPasswordResendCodePressed()),
     );
   }
 }

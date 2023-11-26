@@ -12,7 +12,7 @@ PODS:
   - Firebase/Performance (10.18.0):
     - Firebase/CoreOnly
     - FirebasePerformance (~> 10.18.0)
-  - firebase_analytics (10.7.0):
+  - firebase_analytics (10.7.1):
     - Firebase/Analytics (= 10.18.0)
     - firebase_core
     - Flutter
@@ -216,7 +216,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Firebase: 414ad272f8d02dfbf12662a9d43f4bba9bec2a06
-  firebase_analytics: e16a84055b26f7b03c3621dae3d91b528ca47a46
+  firebase_analytics: 3e5dba777bb51d1e0358b5a37adefa69746a94bd
   firebase_core: 29d66baf806970cda37c93621b27cd369b27db1b
   firebase_crashlytics: d568dbe2dfb06c3f3ba985c7f6a59f2961288512
   firebase_performance: 1e20a3545d88a86ba2a50f45f890017f243583ae

@@ -1,9 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:formz/formz.dart';
 import 'package:formz_inputs/formz_inputs.dart';
-import 'package:quickstart_flutter_bloc/features/signup/bloc/signup_bloc.dart';
+import 'package:quickstart_flutter_bloc/features/signup/presentation/bloc/signup_bloc.dart';
 
 void main() {
+  const username = NonEmptyInput.dirty('username');
   const email = EmailInput.dirty('email');
   const password = PasswordInput.dirty('password');
   const confirmPassword = ConfirmedPasswordInput.dirty(
@@ -19,6 +20,13 @@ void main() {
       expect(
         const SignupState().copyWith(status: FormzSubmissionStatus.initial),
         const SignupState(),
+      );
+    });
+
+    test('returns object with updated username when username is passed', () {
+      expect(
+        const SignupState().copyWith(username: username),
+        const SignupState(username: username),
       );
     });
 

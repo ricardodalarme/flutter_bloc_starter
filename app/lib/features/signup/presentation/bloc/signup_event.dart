@@ -4,6 +4,12 @@ sealed class SignupEvent {
   const SignupEvent();
 }
 
+final class SignupUsernameChanged extends SignupEvent {
+  const SignupUsernameChanged(this.username);
+
+  final String username;
+}
+
 final class SignupEmailChanged extends SignupEvent {
   const SignupEmailChanged(this.email);
 

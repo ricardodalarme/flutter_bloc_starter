@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:formz/formz.dart';
 import 'package:formz_inputs/formz_inputs.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:quickstart_flutter_bloc/features/signup/bloc/signup_bloc.dart';
+import 'package:quickstart_flutter_bloc/features/signup/presentation/bloc/signup_bloc.dart';
 
 class MockAuthenticationRepository extends Mock
     implements AuthenticationRepository {}
@@ -35,6 +35,13 @@ void main() {
         ),
       );
     });
+
+    blocTest<SignupBloc, SignupState>(
+      'emits [SignupState] when [SignupUsernameChanged] is added',
+      build: () => signupBloc,
+      act: (bloc) => bloc.add(const SignupUsernameChanged('john')),
+      expect: () => [const SignupState(username: NonEmptyInput.dirty('john'))],
+    );
 
     blocTest<SignupBloc, SignupState>(
       'emits [SignupState] when [SignupEmailChanged] is added',

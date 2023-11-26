@@ -12,6 +12,7 @@ class SignupBloc extends Bloc<SignupEvent, SignupState> {
     required AuthenticationRepository authenticationRepository,
   })  : _authenticationRepository = authenticationRepository,
         super(const SignupState()) {
+    on<SignupUsernameChanged>(_onUsernameChanged);
     on<SignupEmailChanged>(_onEmailChanged);
     on<SignupPasswordChanged>(_onPasswordChanged);
     on<SignupConfirmPasswordChanged>(_onConfirmPasswordChanged);
@@ -19,6 +20,15 @@ class SignupBloc extends Bloc<SignupEvent, SignupState> {
   }
 
   final AuthenticationRepository _authenticationRepository;
+
+  void _onUsernameChanged(
+    SignupUsernameChanged event,
+    Emitter<SignupState> emit,
+  ) {
+    emit(
+      state.copyWith(username: NonEmptyInput.dirty(event.username)),
+    );
+  }
 
   void _onEmailChanged(
     SignupEmailChanged event,

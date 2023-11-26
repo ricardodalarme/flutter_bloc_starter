@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:gap/gap.dart';
-import 'package:quickstart_flutter_bloc/features/signup/bloc/signup_bloc.dart';
+import 'package:quickstart_flutter_bloc/features/signup/presentation/bloc/signup_bloc.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 import 'package:quickstart_flutter_bloc/routes/app_router.dart';
 
@@ -42,6 +42,8 @@ class SignUpView extends StatelessWidget implements AutoRouteWrapper {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                _UsernameTextField(),
+                Gap(AppSpacing.medium),
                 _EmailTextField(),
                 Gap(AppSpacing.medium),
                 _PasswordTextField(),
@@ -54,6 +56,21 @@ class SignUpView extends StatelessWidget implements AutoRouteWrapper {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _UsernameTextField extends StatelessWidget {
+  const _UsernameTextField();
+
+  @override
+  Widget build(BuildContext context) {
+    return BaseTextField(
+      label: context.l10n.common.username,
+      onChanged: (username) =>
+          context.read<SignupBloc>().add(SignupUsernameChanged(username)),
+      keyboardType: TextInputType.name,
+      textInputAction: TextInputAction.next,
     );
   }
 }

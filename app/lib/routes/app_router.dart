@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:quickstart_flutter_bloc/features/change_password/presentation/change_password_view.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/presentation/edit_profile_view.dart';
-import 'package:quickstart_flutter_bloc/features/forgot_password/forgot_password_view.dart';
+import 'package:quickstart_flutter_bloc/features/forgot_password/presentation/forgot_password_view.dart';
 import 'package:quickstart_flutter_bloc/features/home/home_view.dart';
 import 'package:quickstart_flutter_bloc/features/login/presentation/login_view.dart';
 import 'package:quickstart_flutter_bloc/features/not_found/not_found_view.dart';

@@ -1,10 +1,9 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:quickstart_flutter_bloc/features/forgot_password/bloc/forgot_password_bloc.dart';
-import 'package:quickstart_flutter_bloc/features/forgot_password/pages/forgot_password_confirm_code_page.dart';
+import 'package:quickstart_flutter_bloc/features/forgot_password/presentation/bloc/forgot_password_bloc.dart';
+import 'package:quickstart_flutter_bloc/features/forgot_password/presentation/forgot_password_view.dart';
 
 import '../../test_helpers/pump_app.dart';
 
@@ -13,7 +12,7 @@ class MockForgotPasswordBloc
     implements ForgotPasswordBloc {}
 
 void main() {
-  group('ForgotPasswordConfirmCodePage', () {
+  group('ForgotPasswordView', () {
     late ForgotPasswordBloc forgotPasswordBloc;
 
     setUp(() {
@@ -22,16 +21,16 @@ void main() {
           .thenReturn(const ForgotPasswordState());
     });
 
-    testWidgets('renders page', (tester) async {
+    testWidgets('renders view', (tester) async {
       await tester.pumpApp(
         BlocProvider.value(
           value: forgotPasswordBloc,
-          child: const Scaffold(body: ForgotPasswordConfirmCodePage()),
+          child: const ForgotPasswordView(),
         ),
       );
       await tester.pump();
 
-      expect(find.byType(ForgotPasswordConfirmCodePage), findsOneWidget);
+      expect(find.byType(ForgotPasswordView), findsOneWidget);
     });
   });
 }

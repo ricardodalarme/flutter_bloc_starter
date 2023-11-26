@@ -1,0 +1,84 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:common/di/app_injector.dart';
+import 'package:common_ui/styling/app_spacing.dart';
+import 'package:common_ui/widgets/base_button.dart';
+import 'package:common_ui/widgets/base_text_field.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:formz/formz.dart';
+import 'package:gap/gap.dart';
+import 'package:quickstart_flutter_bloc/features/forgot_password/presentation/bloc/forgot_password_bloc.dart';
+import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
+
+@RoutePage()
+class ForgotPasswordView extends StatelessWidget implements AutoRouteWrapper {
+  const ForgotPasswordView({super.key});
+
+  @override
+  Widget wrappedRoute(BuildContext context) {
+    return BlocProvider.value(
+      value: AppInjector.instance.get<ForgotPasswordBloc>(),
+      child: const ForgotPasswordView(),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(context.l10n.forgotPassword.title),
+      ),
+      body: Center(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(AppSpacing.large),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                context.l10n.forgotPassword.description,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const Gap(AppSpacing.xlarge),
+              const _EmailTextField(),
+              const Gap(AppSpacing.large),
+              const _SubmitButton(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _EmailTextField extends StatelessWidget {
+  const _EmailTextField();
+
+  @override
+  Widget build(BuildContext context) {
+    return BaseTextField(
+      label: context.l10n.common.email,
+      onChanged: (value) => context
+          .read<ForgotPasswordBloc>()
+          .add(ForgotPasswordEmailChanged(value)),
+    );
+  }
+}
+
+class _SubmitButton extends StatelessWidget {
+  const _SubmitButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<ForgotPasswordBloc, ForgotPasswordState>(
+      builder: (context, state) => BaseButton(
+        text: context.l10n.common.send,
+        isEnabled: state.isValid,
+        isLoading: state.status.isInProgress,
+        onPressed: () => context
+            .read<ForgotPasswordBloc>()
+            .add(const ForgotPasswordSendEmailPressed()),
+      ),
+    );
+  }
+}

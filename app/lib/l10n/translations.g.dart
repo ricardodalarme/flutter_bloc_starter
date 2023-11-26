@@ -390,14 +390,8 @@ class _TranslationsForgotPasswordEn {
 
   // Translations
   String get title => 'Recover Password';
-  String get emailPageDescription =>
+  String get description =>
       'Enter your email address and we\'ll send you a link to reset your password.';
-  String get confirmPageDescription =>
-      'Enter the code we sent to your email address.';
-  String get confirmPageButtonResend => 'Resend code';
-  String get resetPageLabelNewPassword => 'New password';
-  String get resetPageLabelConfirmPassword => 'Confirm password';
-  String get resetPageButtonSubmit => 'Reset password';
 }
 
 // Path: post
@@ -739,19 +733,8 @@ class _TranslationsForgotPasswordPt extends _TranslationsForgotPasswordEn {
   @override
   String get title => 'Recuperar Senha';
   @override
-  String get emailPageDescription =>
-      'Digite seu email e enviaremos um código para redefinir sua senha.';
-  @override
-  String get confirmPageDescription =>
-      'Digite o código que enviamos para seu email.';
-  @override
-  String get confirmPageButtonResend => 'Reenviar código';
-  @override
-  String get resetPageLabelNewPassword => 'Nova senha';
-  @override
-  String get resetPageLabelConfirmPassword => 'Confirmar senha';
-  @override
-  String get resetPageButtonSubmit => 'Redefinir senha';
+  String get description =>
+      'Digite seu email e enviaremos um link para você redefinir a sua senha.';
 }
 
 // Path: post
@@ -861,18 +844,8 @@ extension on _TranslationsEn {
         return 'Logout';
       case 'forgotPassword.title':
         return 'Recover Password';
-      case 'forgotPassword.emailPageDescription':
+      case 'forgotPassword.description':
         return 'Enter your email address and we\'ll send you a link to reset your password.';
-      case 'forgotPassword.confirmPageDescription':
-        return 'Enter the code we sent to your email address.';
-      case 'forgotPassword.confirmPageButtonResend':
-        return 'Resend code';
-      case 'forgotPassword.resetPageLabelNewPassword':
-        return 'New password';
-      case 'forgotPassword.resetPageLabelConfirmPassword':
-        return 'Confirm password';
-      case 'forgotPassword.resetPageButtonSubmit':
-        return 'Reset password';
       case 'post.title':
         return 'Feed';
       case 'post.textFailure':
@@ -971,18 +944,8 @@ extension on _TranslationsPt {
         return 'Sair';
       case 'forgotPassword.title':
         return 'Recuperar Senha';
-      case 'forgotPassword.emailPageDescription':
-        return 'Digite seu email e enviaremos um código para redefinir sua senha.';
-      case 'forgotPassword.confirmPageDescription':
-        return 'Digite o código que enviamos para seu email.';
-      case 'forgotPassword.confirmPageButtonResend':
-        return 'Reenviar código';
-      case 'forgotPassword.resetPageLabelNewPassword':
-        return 'Nova senha';
-      case 'forgotPassword.resetPageLabelConfirmPassword':
-        return 'Confirmar senha';
-      case 'forgotPassword.resetPageButtonSubmit':
-        return 'Redefinir senha';
+      case 'forgotPassword.description':
+        return 'Digite seu email e enviaremos um link para você redefinir a sua senha.';
       case 'post.title':
         return 'Feed';
       case 'post.textFailure':

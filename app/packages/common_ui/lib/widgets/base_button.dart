@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+const _loadingSize = 24.0;
+const _loadingStrokeWidth = 2.0;
+
 class BaseButton extends StatelessWidget {
   const BaseButton({
     required this.text,
@@ -26,7 +29,25 @@ class BaseButton extends StatelessWidget {
       width: double.infinity,
       child: FilledButton(
         onPressed: callback,
-        child: isLoading ? const CircularProgressIndicator() : Text(text),
+        child: isLoading ? const _LoadingIndicator() : Text(text),
+      ),
+    );
+  }
+}
+
+class _LoadingIndicator extends StatelessWidget {
+  const _LoadingIndicator();
+
+  @override
+  Widget build(BuildContext context) {
+    return ConstrainedBox(
+      constraints: const BoxConstraints(
+        maxHeight: _loadingSize,
+        maxWidth: _loadingSize,
+      ),
+      child: const CircularProgressIndicator(
+        strokeWidth: _loadingStrokeWidth,
+        color: Colors.white,
       ),
     );
   }

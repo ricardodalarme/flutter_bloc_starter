@@ -301,6 +301,7 @@ class _TranslationsCommonEn {
   String get appName => 'Flutter Bloc Starter';
   String get send => 'Send';
   String get save => 'Save';
+  String get retry => 'Retry';
   String get username => 'Username';
   String get email => 'Email';
   String get password => 'Password';
@@ -403,7 +404,6 @@ class _TranslationsPostEn {
   // Translations
   String get title => 'Feed';
   String get textFailure => 'Failed to load feed.';
-  String get buttonRetry => 'Retry';
 }
 
 // Path: unusedTranslations.en
@@ -596,6 +596,8 @@ class _TranslationsCommonPt extends _TranslationsCommonEn {
   @override
   String get save => 'Salvar';
   @override
+  String get retry => 'Tentar novamente';
+  @override
   String get email => 'Email';
   @override
   String get username => 'Usuário';
@@ -751,8 +753,6 @@ class _TranslationsPostPt extends _TranslationsPostEn {
   String get title => 'Feed';
   @override
   String get textFailure => 'Falha ao carregar o feed.';
-  @override
-  String get buttonRetry => 'Tentar novamente';
 }
 
 /// Flat map(s) containing all translations.
@@ -781,6 +781,8 @@ extension on _TranslationsEn {
         return 'Send';
       case 'common.save':
         return 'Save';
+      case 'common.retry':
+        return 'Retry';
       case 'common.username':
         return 'Username';
       case 'common.email':
@@ -850,8 +852,6 @@ extension on _TranslationsEn {
         return 'Feed';
       case 'post.textFailure':
         return 'Failed to load feed.';
-      case 'post.buttonRetry':
-        return 'Retry';
       default:
         return null;
     }
@@ -881,6 +881,8 @@ extension on _TranslationsPt {
         return 'Enviar';
       case 'common.save':
         return 'Salvar';
+      case 'common.retry':
+        return 'Tentar novamente';
       case 'common.email':
         return 'Email';
       case 'common.username':
@@ -950,8 +952,6 @@ extension on _TranslationsPt {
         return 'Feed';
       case 'post.textFailure':
         return 'Falha ao carregar o feed.';
-      case 'post.buttonRetry':
-        return 'Tentar novamente';
       default:
         return null;
     }

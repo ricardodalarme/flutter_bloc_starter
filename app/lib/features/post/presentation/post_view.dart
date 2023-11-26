@@ -74,7 +74,7 @@ class _PostError extends StatelessWidget {
           const Gap(AppSpacing.medium),
           ElevatedButton(
             onPressed: () => context.read<PostBloc>().add(const PostFetched()),
-            child: Text(context.l10n.post.buttonRetry),
+            child: Text(context.l10n.common.retry),
           ),
         ],
       ),

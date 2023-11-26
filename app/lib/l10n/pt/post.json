@@ -1,5 +1,4 @@
 {
   "title": "Feed",
-  "textFailure": "Falha ao carregar o feed.",
-  "buttonRetry": "Tentar novamente"
+  "textFailure": "Falha ao carregar o feed."
 }

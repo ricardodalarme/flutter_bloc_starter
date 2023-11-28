@@ -1,4 +1,4 @@
-name: analytics_repository
+name: analytics_service
 publish_to: "none"
 
 environment:

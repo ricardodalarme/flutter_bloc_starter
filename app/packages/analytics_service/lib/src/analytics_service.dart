@@ -1,5 +1,5 @@
-import 'package:analytics_repository/src/exceptions.dart';
-import 'package:analytics_repository/src/models/analytics_event.dart';
+import 'package:analytics_service/src/exceptions.dart';
+import 'package:analytics_service/src/models/analytics_event.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 
 class AnalyticsRepository {

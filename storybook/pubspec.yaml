@@ -10,7 +10,7 @@ dependencies:
     path: ../app/packages/common_ui
   flutter:
     sdk: flutter
-  widgetbook: ^3.4.1
+  widgetbook: ^3.5.0
 
 flutter:
   uses-material-design: true

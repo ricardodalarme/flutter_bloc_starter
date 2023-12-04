@@ -22,7 +22,7 @@ class LoginView extends StatelessWidget implements AutoRouteWrapper {
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider.value(
       value: AppInjector.instance.get<LoginBloc>(),
-      child: const LoginView(),
+      child: this,
     );
   }
 

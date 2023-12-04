@@ -19,7 +19,7 @@ class ChangePasswordView extends StatelessWidget implements AutoRouteWrapper {
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider.value(
       value: AppInjector.instance.get<ChangePasswordBloc>(),
-      child: const ChangePasswordView(),
+      child: this,
     );
   }
 

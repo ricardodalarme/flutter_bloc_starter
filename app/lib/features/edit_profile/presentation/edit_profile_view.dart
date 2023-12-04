@@ -19,7 +19,7 @@ class EditProfileView extends StatelessWidget implements AutoRouteWrapper {
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider.value(
       value: AppInjector.instance.get<EditProfileBloc>(),
-      child: const EditProfileView(),
+      child: this,
     );
   }
 

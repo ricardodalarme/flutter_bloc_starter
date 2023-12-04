@@ -18,7 +18,7 @@ class ForgotPasswordView extends StatelessWidget implements AutoRouteWrapper {
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider.value(
       value: AppInjector.instance.get<ForgotPasswordBloc>(),
-      child: const ForgotPasswordView(),
+      child: this,
     );
   }
 

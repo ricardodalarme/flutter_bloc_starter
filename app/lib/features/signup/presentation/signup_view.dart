@@ -20,7 +20,7 @@ class SignUpView extends StatelessWidget implements AutoRouteWrapper {
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider.value(
       value: AppInjector.instance.get<SignupBloc>(),
-      child: const SignUpView(),
+      child: this,
     );
   }
 

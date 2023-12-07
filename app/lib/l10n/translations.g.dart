@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 98 (49 per locale)
+/// Strings: 88 (44 per locale)
 ///
-/// Built on 2023-11-24 at 02:13 UTC
+/// Built on 2023-12-07 at 14:05 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -24,8 +24,8 @@ const AppLocale _baseLocale = AppLocale.en;
 /// - LocaleSettings.setLocale(AppLocale.en) // set locale
 /// - Locale locale = AppLocale.en.flutterLocale // get flutter locale from enum
 /// - if (LocaleSettings.currentLocale == AppLocale.en) // locale check
-enum AppLocale with BaseAppLocale<AppLocale, _TranslationsEn> {
-  en(languageCode: 'en', build: _TranslationsEn.build),
+enum AppLocale with BaseAppLocale<AppLocale, Translations> {
+  en(languageCode: 'en', build: Translations.build),
   pt(languageCode: 'pt', build: _TranslationsPt.build);
 
   const AppLocale(
@@ -41,10 +41,10 @@ enum AppLocale with BaseAppLocale<AppLocale, _TranslationsEn> {
   @override
   final String? countryCode;
   @override
-  final TranslationBuilder<AppLocale, _TranslationsEn> build;
+  final TranslationBuilder<AppLocale, Translations> build;
 
   /// Gets current instance managed by [LocaleSettings].
-  _TranslationsEn get translations =>
+  Translations get translations =>
       LocaleSettings.instance.translationMap[this]!;
 }
 
@@ -57,7 +57,7 @@ enum AppLocale with BaseAppLocale<AppLocale, _TranslationsEn> {
 /// Usage:
 /// String a = l10n.someKey.anotherKey;
 /// String b = l10n['someKey.anotherKey']; // Only for edge cases!
-_TranslationsEn get l10n => LocaleSettings.instance.currentTranslations;
+Translations get l10n => LocaleSettings.instance.currentTranslations;
 
 /// Method B: Advanced
 ///
@@ -74,22 +74,14 @@ _TranslationsEn get l10n => LocaleSettings.instance.currentTranslations;
 /// final l10n = Translations.of(context); // Get l10n variable.
 /// String a = l10n.someKey.anotherKey; // Use l10n variable.
 /// String b = l10n['someKey.anotherKey']; // Only for edge cases!
-class Translations {
-  Translations._(); // no constructor
-
-  static _TranslationsEn of(BuildContext context) =>
-      InheritedLocaleData.of<AppLocale, _TranslationsEn>(context).translations;
-}
-
-/// The provider for method B
 class TranslationProvider
-    extends BaseTranslationProvider<AppLocale, _TranslationsEn> {
+    extends BaseTranslationProvider<AppLocale, Translations> {
   TranslationProvider({required super.child})
       : super(settings: LocaleSettings.instance);
 
-  static InheritedLocaleData<AppLocale, _TranslationsEn> of(
+  static InheritedLocaleData<AppLocale, Translations> of(
           BuildContext context) =>
-      InheritedLocaleData.of<AppLocale, _TranslationsEn>(context);
+      InheritedLocaleData.of<AppLocale, Translations>(context);
 }
 
 /// Method B shorthand via [BuildContext] extension method.
@@ -98,12 +90,12 @@ class TranslationProvider
 /// Usage (e.g. in a widget's build method):
 /// context.l10n.someKey.anotherKey
 extension BuildContextTranslationsExtension on BuildContext {
-  _TranslationsEn get l10n => TranslationProvider.of(this).translations;
+  Translations get l10n => TranslationProvider.of(this).translations;
 }
 
 /// Manages all translation instances and the current locale
 class LocaleSettings
-    extends BaseFlutterLocaleSettings<AppLocale, _TranslationsEn> {
+    extends BaseFlutterLocaleSettings<AppLocale, Translations> {
   LocaleSettings._() : super(utils: AppLocaleUtils.instance);
 
   static final instance = LocaleSettings._();
@@ -137,7 +129,7 @@ class LocaleSettings
 }
 
 /// Provides utility functions without any side effects.
-class AppLocaleUtils extends BaseAppLocaleUtils<AppLocale, _TranslationsEn> {
+class AppLocaleUtils extends BaseAppLocaleUtils<AppLocale, Translations> {
   AppLocaleUtils._()
       : super(baseLocale: _baseLocale, locales: AppLocale.values);
 
@@ -161,10 +153,17 @@ class AppLocaleUtils extends BaseAppLocaleUtils<AppLocale, _TranslationsEn> {
 // translations
 
 // Path: <root>
-class _TranslationsEn implements BaseTranslations<AppLocale, _TranslationsEn> {
+class Translations implements BaseTranslations<AppLocale, Translations> {
+  /// Returns the current translations of the given [context].
+  ///
+  /// Usage:
+  /// final l10n = Translations.of(context);
+  static Translations of(BuildContext context) =>
+      InheritedLocaleData.of<AppLocale, Translations>(context).translations;
+
   /// You can call this constructor and build your own translation instance of this locale.
   /// Constructing via the enum [AppLocale.build] is preferred.
-  _TranslationsEn.build(
+  Translations.build(
       {Map<String, Node>? overrides,
       PluralResolver? cardinalResolver,
       PluralResolver? ordinalResolver})
@@ -181,12 +180,12 @@ class _TranslationsEn implements BaseTranslations<AppLocale, _TranslationsEn> {
 
   /// Metadata for the translations of <en>.
   @override
-  final TranslationMetadata<AppLocale, _TranslationsEn> $meta;
+  final TranslationMetadata<AppLocale, Translations> $meta;
 
   /// Access flat map
   dynamic operator [](String key) => $meta.getTranslation(key);
 
-  late final _TranslationsEn _root = this; // ignore: unused_field
+  late final Translations _root = this; // ignore: unused_field
 
   // Translations
   late final _TranslationsUnusedTranslationsEn unusedTranslations =
@@ -219,7 +218,7 @@ class _TranslationsEn implements BaseTranslations<AppLocale, _TranslationsEn> {
 class _TranslationsUnusedTranslationsEn {
   _TranslationsUnusedTranslationsEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   late final _TranslationsUnusedTranslationsEnEn en =
@@ -232,7 +231,7 @@ class _TranslationsUnusedTranslationsEn {
 class _TranslationsMissingTranslationsEn {
   _TranslationsMissingTranslationsEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   late final _TranslationsMissingTranslationsPtEn pt =
@@ -243,7 +242,7 @@ class _TranslationsMissingTranslationsEn {
 class _TranslationsTermsOfUseEn {
   _TranslationsTermsOfUseEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   String get title => 'Terms of Use';
@@ -253,7 +252,7 @@ class _TranslationsTermsOfUseEn {
 class _TranslationsSignupEn {
   _TranslationsSignupEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   String get title => 'Sign Up';
@@ -265,7 +264,7 @@ class _TranslationsSignupEn {
 class _TranslationsPrivacyPolicyEn {
   _TranslationsPrivacyPolicyEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   String get title => 'Privacy Policy';
@@ -275,7 +274,7 @@ class _TranslationsPrivacyPolicyEn {
 class _TranslationsSettingsEn {
   _TranslationsSettingsEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   String get title => 'Settings';
@@ -285,7 +284,7 @@ class _TranslationsSettingsEn {
 class _TranslationsSearchEn {
   _TranslationsSearchEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   String get title => 'Search';
@@ -295,7 +294,7 @@ class _TranslationsSearchEn {
 class _TranslationsCommonEn {
   _TranslationsCommonEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   String get appName => 'Flutter Bloc Starter';
@@ -314,7 +313,7 @@ class _TranslationsCommonEn {
 class _TranslationsChangePasswordEn {
   _TranslationsChangePasswordEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   String get title => 'Change Password';
@@ -328,7 +327,7 @@ class _TranslationsChangePasswordEn {
 class _TranslationsEditProfileEn {
   _TranslationsEditProfileEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   String get title => 'Edit Profile';
@@ -339,7 +338,7 @@ class _TranslationsEditProfileEn {
 class _TranslationsLoginEn {
   _TranslationsLoginEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   String get title => 'Login';
@@ -359,7 +358,7 @@ class _TranslationsLoginEn {
 class _TranslationsNotFoundEn {
   _TranslationsNotFoundEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   String get title => '404';
@@ -371,7 +370,7 @@ class _TranslationsNotFoundEn {
 class _TranslationsProfileEn {
   _TranslationsProfileEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   String get title => 'Profile';
@@ -387,7 +386,7 @@ class _TranslationsProfileEn {
 class _TranslationsForgotPasswordEn {
   _TranslationsForgotPasswordEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   String get title => 'Recover Password';
@@ -399,7 +398,7 @@ class _TranslationsForgotPasswordEn {
 class _TranslationsPostEn {
   _TranslationsPostEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
   String get title => 'Feed';
@@ -410,7 +409,7 @@ class _TranslationsPostEn {
 class _TranslationsUnusedTranslationsEnEn {
   _TranslationsUnusedTranslationsEnEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
 }
@@ -419,7 +418,7 @@ class _TranslationsUnusedTranslationsEnEn {
 class _TranslationsUnusedTranslationsPtEn {
   _TranslationsUnusedTranslationsPtEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
 }
@@ -428,13 +427,13 @@ class _TranslationsUnusedTranslationsPtEn {
 class _TranslationsMissingTranslationsPtEn {
   _TranslationsMissingTranslationsPtEn._(this._root);
 
-  final _TranslationsEn _root; // ignore: unused_field
+  final Translations _root; // ignore: unused_field
 
   // Translations
 }
 
 // Path: <root>
-class _TranslationsPt extends _TranslationsEn {
+class _TranslationsPt extends Translations {
   /// You can call this constructor and build your own translation instance of this locale.
   /// Constructing via the enum [AppLocale.build] is preferred.
   _TranslationsPt.build(
@@ -459,7 +458,7 @@ class _TranslationsPt extends _TranslationsEn {
 
   /// Metadata for the translations of <pt>.
   @override
-  final TranslationMetadata<AppLocale, _TranslationsEn> $meta;
+  final TranslationMetadata<AppLocale, Translations> $meta;
 
   /// Access flat map
   @override
@@ -758,7 +757,7 @@ class _TranslationsPostPt extends _TranslationsPostEn {
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
-extension on _TranslationsEn {
+extension on Translations {
   dynamic _flatMapFunction(String path) {
     switch (path) {
       case 'termsOfUse.title':

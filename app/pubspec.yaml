@@ -16,7 +16,7 @@ dependencies:
   common_ui:
     path: ./packages/common_ui
   equatable: ^2.0.5
-  firebase_core: ^2.24.1
+  firebase_core: ^2.24.2
   firebase_crashlytics: ^3.4.7
   firebase_performance: ^0.9.3+7
   flutter:

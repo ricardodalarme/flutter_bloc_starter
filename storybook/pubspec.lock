@@ -483,10 +483,10 @@ packages:
     dependency: "direct main"
     description:
       name: widgetbook
-      sha256: "37bb71322ed2b024b4b321f9ac0791f6b4510a9abcd42a108c11bec97ac4688a"
+      sha256: bdbfdc517923218394f11ad4e004a7e3d45672047e9d87f52833ac294366232d
       url: "https://pub.dev"
     source: hosted
-    version: "3.5.0"
+    version: "3.7.0"
   win32:
     dependency: transitive
     description:

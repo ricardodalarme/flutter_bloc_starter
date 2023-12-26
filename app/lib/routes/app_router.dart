@@ -11,7 +11,7 @@ import 'package:quickstart_flutter_bloc/features/profile/profile_view.dart';
 import 'package:quickstart_flutter_bloc/features/search/search_view.dart';
 import 'package:quickstart_flutter_bloc/features/settings/settings_view.dart';
 import 'package:quickstart_flutter_bloc/features/signup/presentation/signup_view.dart';
-import 'package:quickstart_flutter_bloc/features/terms_of_use/terms_of_use_view.dart';
+import 'package:quickstart_flutter_bloc/features/terms/presentation/terms_view.dart';
 
 part 'app_router.gr.dart';
 
@@ -34,7 +34,7 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: EditProfileRoute.page),
         AutoRoute(page: ChangePasswordRoute.page),
         AutoRoute(page: PrivacyPolicyRoute.page),
-        AutoRoute(page: TermsOfUseRoute.page),
+        AutoRoute(page: TermsRoute.page),
         AutoRoute(path: '*', page: NotFoundRoute.page),
       ];
 }

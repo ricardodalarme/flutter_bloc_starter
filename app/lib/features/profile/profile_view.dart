@@ -51,9 +51,9 @@ class ProfileView extends StatelessWidget {
                 onTap: () => context.pushRoute(const PrivacyPolicyRoute()),
               ),
               ListTile(
-                title: Text(context.l10n.profile.buttonTermsOfUse),
+                title: Text(context.l10n.profile.buttonTerms),
                 leading: const Icon(Icons.description),
-                onTap: () => context.pushRoute(const TermsOfUseRoute()),
+                onTap: () => context.pushRoute(const TermsRoute()),
               ),
               ListTile(
                 title: Text(context.l10n.profile.buttonLogout),

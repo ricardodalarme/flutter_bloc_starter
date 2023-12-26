@@ -87,10 +87,10 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(child: const SignUpView()),
       );
     },
-    TermsOfUseRoute.name: (routeData) {
+    TermsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const TermsOfUseView(),
+        child: const TermsView(),
       );
     },
   };
@@ -265,15 +265,15 @@ class SignUpRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [TermsOfUseView]
-class TermsOfUseRoute extends PageRouteInfo<void> {
-  const TermsOfUseRoute({List<PageRouteInfo>? children})
+/// [TermsView]
+class TermsRoute extends PageRouteInfo<void> {
+  const TermsRoute({List<PageRouteInfo>? children})
       : super(
-          TermsOfUseRoute.name,
+          TermsRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'TermsOfUseRoute';
+  static const String name = 'TermsRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

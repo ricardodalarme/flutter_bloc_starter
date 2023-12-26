@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 88 (44 per locale)
 ///
-/// Built on 2023-12-07 at 14:05 UTC
+/// Built on 2023-12-26 at 18:38 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -192,8 +192,6 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
       _TranslationsUnusedTranslationsEn._(_root);
   late final _TranslationsMissingTranslationsEn missingTranslations =
       _TranslationsMissingTranslationsEn._(_root);
-  late final _TranslationsTermsOfUseEn termsOfUse =
-      _TranslationsTermsOfUseEn._(_root);
   late final _TranslationsSignupEn signup = _TranslationsSignupEn._(_root);
   late final _TranslationsPrivacyPolicyEn privacyPolicy =
       _TranslationsPrivacyPolicyEn._(_root);
@@ -208,6 +206,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
   late final _TranslationsLoginEn login = _TranslationsLoginEn._(_root);
   late final _TranslationsNotFoundEn notFound =
       _TranslationsNotFoundEn._(_root);
+  late final _TranslationsTermsEn terms = _TranslationsTermsEn._(_root);
   late final _TranslationsProfileEn profile = _TranslationsProfileEn._(_root);
   late final _TranslationsForgotPasswordEn forgotPassword =
       _TranslationsForgotPasswordEn._(_root);
@@ -236,16 +235,6 @@ class _TranslationsMissingTranslationsEn {
   // Translations
   late final _TranslationsMissingTranslationsPtEn pt =
       _TranslationsMissingTranslationsPtEn._(_root);
-}
-
-// Path: termsOfUse
-class _TranslationsTermsOfUseEn {
-  _TranslationsTermsOfUseEn._(this._root);
-
-  final Translations _root; // ignore: unused_field
-
-  // Translations
-  String get title => 'Terms of Use';
 }
 
 // Path: signup
@@ -366,6 +355,16 @@ class _TranslationsNotFoundEn {
   String get buttonBack => 'Go back home';
 }
 
+// Path: terms
+class _TranslationsTermsEn {
+  _TranslationsTermsEn._(this._root);
+
+  final Translations _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Terms';
+}
+
 // Path: profile
 class _TranslationsProfileEn {
   _TranslationsProfileEn._(this._root);
@@ -378,7 +377,7 @@ class _TranslationsProfileEn {
   String get buttonChangePassword => 'Change Password';
   String get buttonSettings => 'Settings';
   String get buttonPrivacyPolicy => 'Privacy Policy';
-  String get buttonTermsOfUse => 'Terms of Use';
+  String get buttonTerms => 'Terms';
   String get buttonLogout => 'Logout';
 }
 
@@ -470,9 +469,6 @@ class _TranslationsPt extends Translations {
 
   // Translations
   @override
-  late final _TranslationsTermsOfUsePt termsOfUse =
-      _TranslationsTermsOfUsePt._(_root);
-  @override
   late final _TranslationsSignupPt signup = _TranslationsSignupPt._(_root);
   @override
   late final _TranslationsPrivacyPolicyPt privacyPolicy =
@@ -496,26 +492,14 @@ class _TranslationsPt extends Translations {
   late final _TranslationsNotFoundPt notFound =
       _TranslationsNotFoundPt._(_root);
   @override
+  late final _TranslationsTermsPt terms = _TranslationsTermsPt._(_root);
+  @override
   late final _TranslationsProfilePt profile = _TranslationsProfilePt._(_root);
   @override
   late final _TranslationsForgotPasswordPt forgotPassword =
       _TranslationsForgotPasswordPt._(_root);
   @override
   late final _TranslationsPostPt post = _TranslationsPostPt._(_root);
-}
-
-// Path: termsOfUse
-class _TranslationsTermsOfUsePt extends _TranslationsTermsOfUseEn {
-  _TranslationsTermsOfUsePt._(_TranslationsPt root)
-      : this._root = root,
-        super._(root);
-
-  @override
-  final _TranslationsPt _root; // ignore: unused_field
-
-  // Translations
-  @override
-  String get title => 'Termos de Uso';
 }
 
 // Path: signup
@@ -695,6 +679,20 @@ class _TranslationsNotFoundPt extends _TranslationsNotFoundEn {
   String get buttonBack => 'Voltar para página inicial';
 }
 
+// Path: terms
+class _TranslationsTermsPt extends _TranslationsTermsEn {
+  _TranslationsTermsPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Termos';
+}
+
 // Path: profile
 class _TranslationsProfilePt extends _TranslationsProfileEn {
   _TranslationsProfilePt._(_TranslationsPt root)
@@ -716,7 +714,7 @@ class _TranslationsProfilePt extends _TranslationsProfileEn {
   @override
   String get buttonPrivacyPolicy => 'Política de Privacidade';
   @override
-  String get buttonTermsOfUse => 'Termos de Uso';
+  String get buttonTerms => 'Termos';
   @override
   String get buttonLogout => 'Sair';
 }
@@ -760,8 +758,6 @@ class _TranslationsPostPt extends _TranslationsPostEn {
 extension on Translations {
   dynamic _flatMapFunction(String path) {
     switch (path) {
-      case 'termsOfUse.title':
-        return 'Terms of Use';
       case 'signup.title':
         return 'Sign Up';
       case 'signup.labelConfirmPassword':
@@ -829,6 +825,8 @@ extension on Translations {
         return 'Page not found';
       case 'notFound.buttonBack':
         return 'Go back home';
+      case 'terms.title':
+        return 'Terms';
       case 'profile.title':
         return 'Profile';
       case 'profile.buttonEditProfile':
@@ -839,8 +837,8 @@ extension on Translations {
         return 'Settings';
       case 'profile.buttonPrivacyPolicy':
         return 'Privacy Policy';
-      case 'profile.buttonTermsOfUse':
-        return 'Terms of Use';
+      case 'profile.buttonTerms':
+        return 'Terms';
       case 'profile.buttonLogout':
         return 'Logout';
       case 'forgotPassword.title':
@@ -860,8 +858,6 @@ extension on Translations {
 extension on _TranslationsPt {
   dynamic _flatMapFunction(String path) {
     switch (path) {
-      case 'termsOfUse.title':
-        return 'Termos de Uso';
       case 'signup.title':
         return 'Registrar';
       case 'signup.labelConfirmPassword':
@@ -929,6 +925,8 @@ extension on _TranslationsPt {
         return 'Página não encontrada';
       case 'notFound.buttonBack':
         return 'Voltar para página inicial';
+      case 'terms.title':
+        return 'Termos';
       case 'profile.title':
         return 'Perfil';
       case 'profile.buttonEditProfile':
@@ -939,8 +937,8 @@ extension on _TranslationsPt {
         return 'Configurações';
       case 'profile.buttonPrivacyPolicy':
         return 'Política de Privacidade';
-      case 'profile.buttonTermsOfUse':
-        return 'Termos de Uso';
+      case 'profile.buttonTerms':
+        return 'Termos';
       case 'profile.buttonLogout':
         return 'Sair';
       case 'forgotPassword.title':

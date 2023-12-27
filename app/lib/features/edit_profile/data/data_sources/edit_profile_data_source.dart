@@ -1,7 +1,7 @@
 import 'package:common/data/gql_client.dart';
-import 'package:common/schemas/generated/schema.graphql.dart';
-import 'package:common/schemas/mutations/generated/UpdateUser.graphql.dart';
 import 'package:graphql/client.dart';
+import 'package:schemas/generated/schema.graphql.dart';
+import 'package:schemas/mutations/generated/UpdateUser.graphql.dart';
 
 abstract class EditProfileDataSource {
   Future<void> updateUser({

@@ -1,7 +1,7 @@
 import 'package:common/data/gql_client.dart';
-import 'package:common/schemas/generated/schema.graphql.dart';
-import 'package:common/schemas/mutations/generated/Login.graphql.dart';
 import 'package:graphql/client.dart';
+import 'package:schemas/generated/schema.graphql.dart';
+import 'package:schemas/mutations/generated/Login.graphql.dart';
 
 abstract class LoginDataSource {
   Future<void> logInWithUsernameAndPassword({

@@ -1,6 +1,6 @@
 import 'package:common/data/gql_client.dart';
-import 'package:common/schemas/queries/generated/GetPosts.graphql.dart';
 import 'package:graphql/client.dart';
+import 'package:schemas/queries/generated/GetPosts.graphql.dart';
 
 abstract class PostDataSource {
   Future<QueryGetPostsposts> getPosts();

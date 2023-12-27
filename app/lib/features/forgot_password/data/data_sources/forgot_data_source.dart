@@ -1,7 +1,7 @@
 import 'package:common/data/gql_client.dart';
-import 'package:common/schemas/generated/schema.graphql.dart';
-import 'package:common/schemas/mutations/generated/ResetPassword.graphql.dart';
 import 'package:graphql/client.dart';
+import 'package:schemas/generated/schema.graphql.dart';
+import 'package:schemas/mutations/generated/ResetPassword.graphql.dart';
 
 abstract class ForgotPasswordDataSource {
   Future<void> forgotPassword({

@@ -21,9 +21,11 @@ Future<void> bootstrap(Widget Function() builder) async {
   WidgetsFlutterBinding.ensureInitialized();
   LocaleSettings.useDeviceLocale();
 
-  await _setupFirebase();
-  await _setupBloc();
-  _registerModules();
+  await Future.wait([
+    _setupFirebase(),
+    _setupBloc(),
+    _registerModules(),
+  ]);
 
   runApp(builder());
 }
@@ -47,7 +49,7 @@ Future<void> _setupBloc() async {
   }
 }
 
-void _registerModules() {
+Future<void> _registerModules() async {
   final injectionModules = <InjectionModule>[
     AppInjectionModule(),
     LoginInjectionModule(),
@@ -61,6 +63,6 @@ void _registerModules() {
   final injector = AppInjector.instance;
 
   for (final injectionModule in injectionModules) {
-    injectionModule.registerDependencies(injector: injector);
+    await injectionModule.registerDependencies(injector: injector);
   }
 }

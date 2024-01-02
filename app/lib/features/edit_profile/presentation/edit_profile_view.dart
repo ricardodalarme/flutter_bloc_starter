@@ -77,9 +77,13 @@ class _FirstNameTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseTextField(
-      label: context.l10n.common.firstName,
-      textInputAction: TextInputAction.next,
+    return BlocBuilder<EditProfileBloc, EditProfileState>(
+      buildWhen: (previous, current) => previous.firstName != current.firstName,
+      builder: (context, state) => BaseTextField(
+        text: context.read<EditProfileBloc>().state.firstName.value,
+        label: context.l10n.common.firstName,
+        textInputAction: TextInputAction.next,
+      ),
     );
   }
 }
@@ -89,9 +93,13 @@ class _LastNameTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseTextField(
-      label: context.l10n.common.lastName,
-      textInputAction: TextInputAction.next,
+    return BlocBuilder<EditProfileBloc, EditProfileState>(
+      buildWhen: (previous, current) => previous.lastName != current.lastName,
+      builder: (context, state) => BaseTextField(
+        text: state.lastName.value,
+        label: context.l10n.common.lastName,
+        textInputAction: TextInputAction.next,
+      ),
     );
   }
 }
@@ -101,11 +109,15 @@ class _EmailTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseTextField(
-      label: context.l10n.common.email,
-      textInputAction: TextInputAction.done,
-      onSubmitted: (_) =>
-          context.read<EditProfileBloc>().add(const EditProfileSubmitted()),
+    return BlocBuilder<EditProfileBloc, EditProfileState>(
+      buildWhen: (previous, current) => previous.email != current.email,
+      builder: (context, state) => BaseTextField(
+        text: state.email.value,
+        label: context.l10n.common.email,
+        textInputAction: TextInputAction.done,
+        onSubmitted: (_) =>
+            context.read<EditProfileBloc>().add(const EditProfileSubmitted()),
+      ),
     );
   }
 }

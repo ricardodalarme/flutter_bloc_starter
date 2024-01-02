@@ -8,7 +8,7 @@ void main() {
   group('BaseTextField', () {
     testWidgets('renders widget', (tester) async {
       await tester.pumpApp(
-        const Material(child: BaseTextField()),
+        const Material(child: BaseTextField(text: 'Text')),
       );
       await tester.pump();
 

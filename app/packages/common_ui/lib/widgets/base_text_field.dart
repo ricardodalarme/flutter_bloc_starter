@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class BaseTextField extends StatelessWidget {
+class BaseTextField extends StatefulWidget {
   const BaseTextField({
+    required this.text,
     super.key,
     this.label,
     this.autocorrect = true,
@@ -14,6 +15,7 @@ class BaseTextField extends StatelessWidget {
     this.suffixIcon,
   });
 
+  final String text;
   final String? label;
   final TextInputAction? textInputAction;
   final TextInputType? keyboardType;
@@ -25,19 +27,42 @@ class BaseTextField extends StatelessWidget {
   final void Function(String)? onSubmitted;
 
   @override
+  State<BaseTextField> createState() => _BaseTextFieldState();
+}
+
+class _BaseTextFieldState extends State<BaseTextField> {
+  late TextEditingController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController(text: widget.text);
+  }
+
+  @override
+  void didUpdateWidget(covariant BaseTextField oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.text != widget.text) {
+      _controller.text = widget.text;
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return TextField(
-      autocorrect: autocorrect,
+      controller: _controller,
+      autocorrect: widget.autocorrect,
       decoration: InputDecoration(
-        labelText: label,
-        suffixIcon: suffixIcon,
+        labelText: widget.label,
+        suffixIcon: widget.suffixIcon,
       ),
-      enableSuggestions: enableSuggestions,
-      obscureText: obscureText,
-      onChanged: onChanged,
-      onSubmitted: onSubmitted,
-      textInputAction: textInputAction,
-      keyboardType: keyboardType,
+      enableSuggestions: widget.enableSuggestions,
+      obscureText: widget.obscureText,
+      onChanged: widget.onChanged,
+      onSubmitted: widget.onSubmitted,
+      textInputAction: widget.textInputAction,
+      keyboardType: widget.keyboardType,
     );
   }
 }

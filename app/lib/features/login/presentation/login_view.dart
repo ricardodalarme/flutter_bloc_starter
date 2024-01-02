@@ -81,12 +81,16 @@ class _UsernameTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseTextField(
-      label: context.l10n.common.username,
-      onChanged: (username) =>
-          context.read<LoginBloc>().add(LoginUsernameChanged(username)),
-      keyboardType: TextInputType.text,
-      textInputAction: TextInputAction.next,
+    return BlocBuilder<LoginBloc, LoginState>(
+      buildWhen: (previous, current) => previous.username != current.username,
+      builder: (context, state) => BaseTextField(
+        text: state.username.value,
+        label: context.l10n.common.username,
+        onChanged: (username) =>
+            context.read<LoginBloc>().add(LoginUsernameChanged(username)),
+        keyboardType: TextInputType.text,
+        textInputAction: TextInputAction.next,
+      ),
     );
   }
 }
@@ -96,12 +100,17 @@ class _PasswordTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PasswordTextField(
-      onChanged: (password) =>
-          context.read<LoginBloc>().add(LoginPasswordChanged(password)),
-      label: context.l10n.common.password,
-      textInputAction: TextInputAction.done,
-      onSubmitted: (_) => context.read<LoginBloc>().add(const LoginSubmitted()),
+    return BlocBuilder<LoginBloc, LoginState>(
+      buildWhen: (previous, current) => previous.password != current.password,
+      builder: (context, state) => PasswordTextField(
+        text: state.password.value,
+        onChanged: (password) =>
+            context.read<LoginBloc>().add(LoginPasswordChanged(password)),
+        label: context.l10n.common.password,
+        textInputAction: TextInputAction.done,
+        onSubmitted: (_) =>
+            context.read<LoginBloc>().add(const LoginSubmitted()),
+      ),
     );
   }
 }
@@ -112,15 +121,12 @@ class _LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<LoginBloc, LoginState>(
-      builder: (context, state) {
-        return BaseButton(
-          text: context.l10n.login.buttonLogin,
-          isLoading: state.status.isInProgress,
-          isEnabled: state.isValid,
-          onPressed: () =>
-              context.read<LoginBloc>().add(const LoginSubmitted()),
-        );
-      },
+      builder: (context, state) => BaseButton(
+        text: context.l10n.login.buttonLogin,
+        isLoading: state.status.isInProgress,
+        isEnabled: state.isValid,
+        onPressed: () => context.read<LoginBloc>().add(const LoginSubmitted()),
+      ),
     );
   }
 }

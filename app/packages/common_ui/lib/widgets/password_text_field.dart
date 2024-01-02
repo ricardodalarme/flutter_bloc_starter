@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 
 class PasswordTextField extends StatefulWidget {
   const PasswordTextField({
-    required this.label,
+    required this.text,
+    this.label,
     this.onChanged,
     this.textInputAction,
     this.onSubmitted,
     super.key,
   });
 
-  final String label;
+  final String text;
+  final String? label;
   final ValueChanged<String>? onChanged;
   final TextInputAction? textInputAction;
   final void Function(String)? onSubmitted;
@@ -25,6 +27,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
   @override
   Widget build(BuildContext context) {
     return BaseTextField(
+      text: widget.text,
       obscureText: _obscureText,
       onChanged: widget.onChanged,
       autocorrect: false,

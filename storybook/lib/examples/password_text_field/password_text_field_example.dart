@@ -5,6 +5,9 @@ import 'package:widgetbook/widgetbook.dart';
 final WidgetbookNode passwordTextFieldExample = WidgetbookUseCase(
   name: 'PasswordTextField',
   builder: (context) => PasswordTextField(
+    text: context.knobs.string(
+      label: 'Text',
+    ),
     label: context.knobs.string(
       label: 'Label',
       initialValue: 'Password',

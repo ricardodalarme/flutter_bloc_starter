@@ -77,12 +77,17 @@ class _CurrentPasswordTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PasswordTextField(
-      onChanged: (password) => context
-          .read<ChangePasswordBloc>()
-          .add(ChangePasswordCurrentPasswordChanged(password)),
-      label: context.l10n.changePassword.labelCurrentPassword,
-      textInputAction: TextInputAction.next,
+    return BlocBuilder<ChangePasswordBloc, ChangePasswordState>(
+      buildWhen: (previous, current) =>
+          previous.currentPassword != current.currentPassword,
+      builder: (context, state) => PasswordTextField(
+        text: state.currentPassword.value,
+        onChanged: (password) => context
+            .read<ChangePasswordBloc>()
+            .add(ChangePasswordCurrentPasswordChanged(password)),
+        label: context.l10n.changePassword.labelCurrentPassword,
+        textInputAction: TextInputAction.next,
+      ),
     );
   }
 }
@@ -92,12 +97,16 @@ class _NewPasswordTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PasswordTextField(
-      onChanged: (password) => context
-          .read<ChangePasswordBloc>()
-          .add(ChangePasswordNewPasswordChanged(password)),
-      label: context.l10n.changePassword.labelNewPassword,
-      textInputAction: TextInputAction.next,
+    return BlocBuilder<ChangePasswordBloc, ChangePasswordState>(
+      buildWhen: (previous, current) => previous.password != current.password,
+      builder: (context, state) => PasswordTextField(
+        text: state.password.value,
+        onChanged: (password) => context
+            .read<ChangePasswordBloc>()
+            .add(ChangePasswordNewPasswordChanged(password)),
+        label: context.l10n.changePassword.labelNewPassword,
+        textInputAction: TextInputAction.next,
+      ),
     );
   }
 }
@@ -107,15 +116,20 @@ class _ConfirmPasswordTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PasswordTextField(
-      onChanged: (password) => context
-          .read<ChangePasswordBloc>()
-          .add(ChangePasswordConfirmPasswordChanged(password)),
-      label: context.l10n.changePassword.labelConfirmPassword,
-      textInputAction: TextInputAction.done,
-      onSubmitted: (_) => context
-          .read<ChangePasswordBloc>()
-          .add(const ChangePasswordSubmitted()),
+    return BlocBuilder<ChangePasswordBloc, ChangePasswordState>(
+      buildWhen: (previous, current) =>
+          previous.confirmPassword != current.confirmPassword,
+      builder: (context, state) => PasswordTextField(
+        text: state.confirmPassword.value,
+        onChanged: (password) => context
+            .read<ChangePasswordBloc>()
+            .add(ChangePasswordConfirmPasswordChanged(password)),
+        label: context.l10n.changePassword.labelConfirmPassword,
+        textInputAction: TextInputAction.done,
+        onSubmitted: (_) => context
+            .read<ChangePasswordBloc>()
+            .add(const ChangePasswordSubmitted()),
+      ),
     );
   }
 }
@@ -126,16 +140,14 @@ class _SubmitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ChangePasswordBloc, ChangePasswordState>(
-      builder: (context, state) {
-        return BaseButton(
-          text: context.l10n.common.save,
-          isLoading: state.status.isInProgress,
-          isEnabled: state.isValid,
-          onPressed: () => context
-              .read<ChangePasswordBloc>()
-              .add(const ChangePasswordSubmitted()),
-        );
-      },
+      builder: (context, state) => BaseButton(
+        text: context.l10n.common.save,
+        isLoading: state.status.isInProgress,
+        isEnabled: state.isValid,
+        onPressed: () => context
+            .read<ChangePasswordBloc>()
+            .add(const ChangePasswordSubmitted()),
+      ),
     );
   }
 }

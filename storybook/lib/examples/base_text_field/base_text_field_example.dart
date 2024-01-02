@@ -5,6 +5,9 @@ import 'package:widgetbook/widgetbook.dart';
 final WidgetbookNode baseTextFieldExample = WidgetbookUseCase(
   name: 'BaseTextField',
   builder: (context) => BaseTextField(
+    text: context.knobs.string(
+      label: 'Text',
+    ),
     label: context.knobs.string(
       label: 'Label',
       initialValue: 'Label',

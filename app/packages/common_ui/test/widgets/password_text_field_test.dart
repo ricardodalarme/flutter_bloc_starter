@@ -8,7 +8,7 @@ void main() {
   group('PasswordTextField', () {
     testWidgets('renders widget', (tester) async {
       await tester.pumpApp(
-        const Material(child: PasswordTextField(label: 'Password')),
+        const Material(child: PasswordTextField(text: 'Password')),
       );
       await tester.pump();
 
@@ -17,7 +17,7 @@ void main() {
 
     testWidgets('change obscureText state on suffixIcon press', (tester) async {
       await tester.pumpApp(
-        const Material(child: PasswordTextField(label: 'Password')),
+        const Material(child: PasswordTextField(text: 'Password')),
       );
       await tester.pump();
 

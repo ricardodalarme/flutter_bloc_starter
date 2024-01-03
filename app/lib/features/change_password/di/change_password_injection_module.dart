@@ -1,8 +1,6 @@
 import 'dart:async';
 
-import 'package:common/data/gql_client.dart';
-import 'package:common/di/injection_module.dart';
-import 'package:common/di/injector.dart';
+import 'package:common/common.dart';
 import 'package:quickstart_flutter_bloc/features/change_password/data/data_sources/change_password_data_source.dart';
 import 'package:quickstart_flutter_bloc/features/change_password/data/repositories/change_password_repository.dart';
 import 'package:quickstart_flutter_bloc/features/change_password/domain/repositories/change_password_repository.dart';

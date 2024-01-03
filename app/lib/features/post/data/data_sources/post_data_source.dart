@@ -1,4 +1,4 @@
-import 'package:common/data/gql_client.dart';
+import 'package:common/common.dart';
 import 'package:graphql/client.dart';
 import 'package:schemas/queries/generated/GetPosts.graphql.dart';
 

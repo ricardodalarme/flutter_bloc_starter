@@ -1,4 +1,4 @@
-import 'package:common/data/gql_client.dart';
+import 'package:common/common.dart';
 import 'package:graphql/client.dart';
 import 'package:schemas/generated/schema.graphql.dart';
 import 'package:schemas/mutations/generated/Login.graphql.dart';

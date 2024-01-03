@@ -1,4 +1,4 @@
-import 'package:common/data/result.dart';
+import 'package:common/common.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quickstart_flutter_bloc/features/post/domain/models/post_model.dart';

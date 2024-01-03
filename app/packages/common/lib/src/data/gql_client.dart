@@ -1,4 +1,4 @@
-import 'package:common/config.dart';
+import 'package:common/common.dart';
 import 'package:graphql/client.dart';
 
 abstract class GQLClient {

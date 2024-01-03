@@ -1,8 +1,6 @@
 import 'dart:async';
 
-import 'package:common/data/gql_client.dart';
-import 'package:common/di/injection_module.dart';
-import 'package:common/di/injector.dart';
+import 'package:common/common.dart';
 import 'package:quickstart_flutter_bloc/features/post/data/data_sources/post_data_source.dart';
 import 'package:quickstart_flutter_bloc/features/post/data/repositories/post_repository.dart';
 import 'package:quickstart_flutter_bloc/features/post/domain/repositories/post_repository.dart';

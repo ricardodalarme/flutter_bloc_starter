@@ -1,4 +1,4 @@
-import 'package:common/data/result.dart';
+import 'package:common/common.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/data/data_sources/forgot_data_source.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/domain/repositories/forgot_password_repository.dart';
 

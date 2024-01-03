@@ -1,4 +1,4 @@
-import 'package:common/data/result.dart';
+import 'package:common/common.dart';
 
 abstract class LoginRepository {
   Future<Result<void, Exception>> logInWithUsernameAndPassword({

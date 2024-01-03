@@ -1,8 +1,6 @@
 import 'dart:async';
 
-import 'package:common/data/gql_client.dart';
-import 'package:common/di/injection_module.dart';
-import 'package:common/di/injector.dart';
+import 'package:common/common.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/data/data_sources/edit_profile_data_source.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/data/repositories/edit_profile_repository.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/domain/repositories/edit_profile_repository.dart';

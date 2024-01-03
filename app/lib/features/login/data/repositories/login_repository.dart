@@ -1,4 +1,4 @@
-import 'package:common/data/result.dart';
+import 'package:common/common.dart';
 import 'package:quickstart_flutter_bloc/features/login/data/data_sources/login_data_source.dart';
 import 'package:quickstart_flutter_bloc/features/login/domain/repositories/change_password_repository.dart';
 

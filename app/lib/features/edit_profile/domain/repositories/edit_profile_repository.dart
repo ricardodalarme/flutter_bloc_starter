@@ -1,4 +1,4 @@
-import 'package:common/data/result.dart';
+import 'package:common/common.dart';
 
 abstract class EditProfileRepository {
   Future<Result<void, Exception>> updateProfile({

@@ -1,5 +1,4 @@
-import 'package:common/di/app_injector.dart';
-import 'package:common/di/injection_module.dart';
+import 'package:common/common.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';

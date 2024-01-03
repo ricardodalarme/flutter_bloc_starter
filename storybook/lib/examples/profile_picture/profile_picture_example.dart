@@ -1,4 +1,4 @@
-import 'package:common_ui/widgets/profile_picture.dart';
+import 'package:common_ui/common_ui.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 final WidgetbookNode profilePictureExample = WidgetbookUseCase(

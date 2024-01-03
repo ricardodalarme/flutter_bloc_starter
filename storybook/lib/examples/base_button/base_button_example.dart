@@ -1,4 +1,4 @@
-import 'package:common_ui/widgets/base_button.dart';
+import 'package:common_ui/common_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 

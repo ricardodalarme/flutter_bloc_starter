@@ -1,4 +1,4 @@
-import 'package:common_ui/widgets/profile_picture.dart';
+import 'package:common_ui/src/widgets/profile_picture.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

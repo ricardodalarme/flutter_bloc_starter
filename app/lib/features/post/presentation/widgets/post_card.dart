@@ -1,4 +1,4 @@
-import 'package:common_ui/widgets/profile_picture.dart';
+import 'package:common_ui/common_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:quickstart_flutter_bloc/features/post/domain/models/post_model.dart';
 

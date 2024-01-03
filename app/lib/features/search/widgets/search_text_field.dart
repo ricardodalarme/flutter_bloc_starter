@@ -1,4 +1,4 @@
-import 'package:common_ui/styling/app_spacing.dart';
+import 'package:common_ui/common_ui.dart';
 import 'package:flutter/material.dart';
 
 class SearchTextField extends StatefulWidget {

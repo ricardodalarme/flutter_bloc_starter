@@ -1,4 +1,4 @@
-import 'package:common_ui/generated/assets.gen.dart';
+import 'package:common_ui/src/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 enum ButtonProvider {

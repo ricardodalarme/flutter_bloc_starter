@@ -1,4 +1,4 @@
-import 'package:common_ui/widgets/password_text_field.dart';
+import 'package:common_ui/common_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 

@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:common/di/app_injector.dart';
-import 'package:common_ui/styling/app_spacing.dart';
+import 'package:common_ui/common_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';

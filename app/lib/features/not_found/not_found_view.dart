@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:common_ui/styling/app_spacing.dart';
-import 'package:common_ui/widgets/base_button.dart';
+import 'package:common_ui/common_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';

@@ -516,11 +516,10 @@ packages:
   formz_inputs:
     dependency: "direct main"
     description:
-      name: formz_inputs
-      sha256: effcfb25671638b51c54670cc07fc742cf0097918e633d3c6dbdc52b692175ca
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.1"
+      path: "packages/formz_inputs"
+      relative: true
+    source: path
+    version: "0.0.0"
   frontend_server_client:
     dependency: transitive
     description:

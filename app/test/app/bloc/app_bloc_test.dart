@@ -1,8 +1,9 @@
-import 'package:authentication_repository/authentication_repository.dart';
 import 'package:bloc_test/bloc_test.dart';
+import 'package:common/common.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:quickstart_flutter_bloc/features/app/bloc/app_bloc.dart';
+import 'package:quickstart_flutter_bloc/features/authentication/domain/repositories/authentication_repository.dart';
 
 class MockAuthenticationRepository extends Mock
     implements AuthenticationRepository {}
@@ -10,13 +11,14 @@ class MockAuthenticationRepository extends Mock
 void main() {
   group('AppBloc', () {
     late AppBloc appBloc;
-    late AuthenticationRepository mockAuthRepository;
+    late AuthenticationRepository mockAuthenticationRepository;
 
     setUp(() {
-      mockAuthRepository = MockAuthenticationRepository();
-      when(() => mockAuthRepository.logOut()).thenAnswer((_) async {});
+      mockAuthenticationRepository = MockAuthenticationRepository();
+      when(() => mockAuthenticationRepository.logOut())
+          .thenAnswer((_) async => const Success(null));
 
-      appBloc = AppBloc(authenticationRepository: mockAuthRepository);
+      appBloc = AppBloc(authenticationRepository: mockAuthenticationRepository);
     });
 
     tearDown(() {
@@ -32,7 +34,7 @@ void main() {
       build: () => appBloc,
       act: (bloc) => bloc.add(const AppLogoutRequested()),
       verify: (_) {
-        verify(() => mockAuthRepository.logOut()).called(1);
+        verify(() => mockAuthenticationRepository.logOut()).called(1);
       },
     );
   });

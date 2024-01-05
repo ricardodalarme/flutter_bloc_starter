@@ -3,19 +3,20 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:formz/formz.dart';
 import 'package:formz_inputs/formz_inputs.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:quickstart_flutter_bloc/features/login/domain/repositories/change_password_repository.dart';
+import 'package:quickstart_flutter_bloc/features/authentication/domain/repositories/authentication_repository.dart';
 import 'package:quickstart_flutter_bloc/features/login/presentation/bloc/login_bloc.dart';
 
-class MockLoginRepository extends Mock implements LoginRepository {}
+class MockAuthenticationRepository extends Mock
+    implements AuthenticationRepository {}
 
 void main() {
   group('LoginBloc', () {
-    late LoginRepository loginRepository;
+    late AuthenticationRepository authenticationRepository;
     late LoginBloc loginBloc;
 
     setUp(() {
-      loginRepository = MockLoginRepository();
-      loginBloc = LoginBloc(loginRepository: loginRepository);
+      authenticationRepository = MockAuthenticationRepository();
+      loginBloc = LoginBloc(authenticationRepository: authenticationRepository);
     });
 
     tearDown(() {

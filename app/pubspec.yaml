@@ -8,8 +8,6 @@ environment:
 dependencies:
   analytics_service:
     path: ./packages/analytics_service
-  authentication_repository:
-    path: ./packages/authentication_repository
   auto_route: ^7.8.4
   common:
     path: ./packages/common

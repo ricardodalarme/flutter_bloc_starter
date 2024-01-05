@@ -3,15 +3,15 @@ import 'package:graphql/client.dart';
 import 'package:schemas/generated/schema.graphql.dart';
 import 'package:schemas/mutations/generated/Login.graphql.dart';
 
-abstract class LoginDataSource {
+abstract class AuthenticationDataSource {
   Future<void> logInWithUsernameAndPassword({
     required String username,
     required String password,
   });
 }
 
-class LoginDataSourceImpl implements LoginDataSource {
-  const LoginDataSourceImpl({
+class AuthenticationDataSourceImpl implements AuthenticationDataSource {
+  const AuthenticationDataSourceImpl({
     required GQLClient graphlQLClient,
   }) : _client = graphlQLClient;
 

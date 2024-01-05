@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:common_ui/common_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
@@ -8,10 +9,8 @@ class PrivacyPolicyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(context.l10n.privacyPolicy.title),
-      ),
+    return BaseView(
+      title: context.l10n.privacyPolicy.title,
       body: Center(
         child: Text(context.l10n.privacyPolicy.title),
       ),

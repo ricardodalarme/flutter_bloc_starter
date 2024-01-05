@@ -22,10 +22,8 @@ class ForgotPasswordView extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(context.l10n.forgotPassword.title),
-      ),
+    return BaseView(
+      title: context.l10n.forgotPassword.title,
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(AppSpacing.large),

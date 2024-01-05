@@ -23,10 +23,8 @@ class SignUpView extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(context.l10n.signup.title),
-      ),
+    return BaseView(
+      title: context.l10n.signup.title,
       body: BlocListener<SignupBloc, SignupState>(
         listener: (context, state) {
           if (state.status.isSuccess) {

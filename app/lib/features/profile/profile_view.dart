@@ -15,10 +15,8 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(context.l10n.profile.title),
-      ),
+    return BaseView(
+      title: context.l10n.profile.title,
       body: Center(
         child: SingleChildScrollView(
           child: Column(

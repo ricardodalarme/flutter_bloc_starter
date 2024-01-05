@@ -10,10 +10,8 @@ class SearchView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(context.l10n.search.title),
-      ),
+    return BaseView(
+      title: context.l10n.search.title,
       body: const Padding(
         padding: EdgeInsets.all(AppSpacing.medium),
         child: SearchTextField(),

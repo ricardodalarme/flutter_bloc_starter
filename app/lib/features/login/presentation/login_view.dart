@@ -23,10 +23,8 @@ class LoginView extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(context.l10n.login.title),
-      ),
+    return BaseView(
+      title: context.l10n.login.title,
       body: BlocListener<LoginBloc, LoginState>(
         listener: (context, state) {
           if (state.status.isSuccess) {

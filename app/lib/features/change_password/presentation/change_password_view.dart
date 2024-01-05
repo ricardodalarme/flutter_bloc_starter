@@ -22,10 +22,8 @@ class ChangePasswordView extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(context.l10n.changePassword.title),
-      ),
+    return BaseView(
+      title: context.l10n.changePassword.title,
       body: BlocListener<ChangePasswordBloc, ChangePasswordState>(
         listenWhen: (previous, current) => previous.status != current.status,
         listener: _handleStatus,

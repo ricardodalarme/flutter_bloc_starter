@@ -22,10 +22,8 @@ class EditProfileView extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(context.l10n.editProfile.title),
-      ),
+    return BaseView(
+      title: context.l10n.editProfile.title,
       body: BlocListener<EditProfileBloc, EditProfileState>(
         listenWhen: (previous, current) => previous.status != current.status,
         listener: _handleStatus,

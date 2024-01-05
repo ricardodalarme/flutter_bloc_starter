@@ -23,10 +23,8 @@ class PostView extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(context.l10n.post.title),
-      ),
+    return BaseView(
+      title: context.l10n.post.title,
       body: BlocBuilder<PostBloc, PostState>(
         builder: (context, state) => switch (state.status) {
           PostStatus.success => _PostSuccess(posts: state.posts),

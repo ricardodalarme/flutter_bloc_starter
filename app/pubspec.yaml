@@ -31,8 +31,12 @@ dependencies:
   path_provider: ^2.1.1
   schemas:
     path: ./packages/schemas
+  secure_storage:
+    path: ./packages/storage/secure_storage
   slang: ^3.28.0
   slang_flutter: ^3.28.0
+  storage:
+    path: ./packages/storage/storage
 
 dev_dependencies:
   auto_route_generator: ^7.3.2

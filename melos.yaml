@@ -3,6 +3,7 @@ name: quickstart_flutter_bloc
 packages:
   - app
   - app/packages/*
+  - app/packages/storage/*
   - storybook
 
 command:

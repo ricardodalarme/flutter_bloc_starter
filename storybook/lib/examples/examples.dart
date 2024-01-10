@@ -9,8 +9,9 @@ import 'package:widgetbook/widgetbook.dart';
 
 final List<WidgetbookNode> examples = [
   baseButtonExample,
-  baseTextFieldExample,
   baseSnackBarExample,
+  baseTextFieldExample,
+  loadingIndicatorExample,
   passwordTextFieldExample,
   profilePictureExample,
   signInButtonExample,

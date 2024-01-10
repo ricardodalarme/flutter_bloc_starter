@@ -18,86 +18,86 @@ abstract class _$AppRouter extends RootStackRouter {
     ChangePasswordRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const ChangePasswordView()),
+        child: WrappedRoute(child: const ChangePasswordPage()),
       );
     },
     EditProfileRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const EditProfileView()),
+        child: WrappedRoute(child: const EditProfilePage()),
       );
     },
     ForgotPasswordRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const ForgotPasswordView()),
+        child: WrappedRoute(child: const ForgotPasswordPage()),
       );
     },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HomeView(),
+        child: const HomePage(),
       );
     },
     LoginRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const LoginView()),
+        child: WrappedRoute(child: const LoginPage()),
       );
     },
     NotFoundRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const NotFoundView(),
+        child: const NotFoundPage(),
       );
     },
     PostRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const PostView()),
+        child: WrappedRoute(child: const PostPage()),
       );
     },
     PrivacyPolicyRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const PrivacyPolicyView(),
+        child: const PrivacyPolicyPage(),
       );
     },
     ProfileRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ProfileView(),
+        child: const ProfilePage(),
       );
     },
     SearchRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const SearchView(),
+        child: const SearchPage(),
       );
     },
     SettingsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const SettingsView(),
+        child: const SettingsPage(),
       );
     },
     SignUpRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const SignUpView()),
+        child: WrappedRoute(child: const SignUpPage()),
       );
     },
     TermsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const TermsView(),
+        child: const TermsPage(),
       );
     },
   };
 }
 
 /// generated route for
-/// [ChangePasswordView]
+/// [ChangePasswordPage]
 class ChangePasswordRoute extends PageRouteInfo<void> {
   const ChangePasswordRoute({List<PageRouteInfo>? children})
       : super(
@@ -111,7 +111,7 @@ class ChangePasswordRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [EditProfileView]
+/// [EditProfilePage]
 class EditProfileRoute extends PageRouteInfo<void> {
   const EditProfileRoute({List<PageRouteInfo>? children})
       : super(
@@ -125,7 +125,7 @@ class EditProfileRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [ForgotPasswordView]
+/// [ForgotPasswordPage]
 class ForgotPasswordRoute extends PageRouteInfo<void> {
   const ForgotPasswordRoute({List<PageRouteInfo>? children})
       : super(
@@ -139,7 +139,7 @@ class ForgotPasswordRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [HomeView]
+/// [HomePage]
 class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
       : super(
@@ -153,7 +153,7 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [LoginView]
+/// [LoginPage]
 class LoginRoute extends PageRouteInfo<void> {
   const LoginRoute({List<PageRouteInfo>? children})
       : super(
@@ -167,7 +167,7 @@ class LoginRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [NotFoundView]
+/// [NotFoundPage]
 class NotFoundRoute extends PageRouteInfo<void> {
   const NotFoundRoute({List<PageRouteInfo>? children})
       : super(
@@ -181,7 +181,7 @@ class NotFoundRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [PostView]
+/// [PostPage]
 class PostRoute extends PageRouteInfo<void> {
   const PostRoute({List<PageRouteInfo>? children})
       : super(
@@ -195,7 +195,7 @@ class PostRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [PrivacyPolicyView]
+/// [PrivacyPolicyPage]
 class PrivacyPolicyRoute extends PageRouteInfo<void> {
   const PrivacyPolicyRoute({List<PageRouteInfo>? children})
       : super(
@@ -209,7 +209,7 @@ class PrivacyPolicyRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [ProfileView]
+/// [ProfilePage]
 class ProfileRoute extends PageRouteInfo<void> {
   const ProfileRoute({List<PageRouteInfo>? children})
       : super(
@@ -223,7 +223,7 @@ class ProfileRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [SearchView]
+/// [SearchPage]
 class SearchRoute extends PageRouteInfo<void> {
   const SearchRoute({List<PageRouteInfo>? children})
       : super(
@@ -237,7 +237,7 @@ class SearchRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [SettingsView]
+/// [SettingsPage]
 class SettingsRoute extends PageRouteInfo<void> {
   const SettingsRoute({List<PageRouteInfo>? children})
       : super(
@@ -251,7 +251,7 @@ class SettingsRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [SignUpView]
+/// [SignUpPage]
 class SignUpRoute extends PageRouteInfo<void> {
   const SignUpRoute({List<PageRouteInfo>? children})
       : super(
@@ -265,7 +265,7 @@ class SignUpRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [TermsView]
+/// [TermsPage]
 class TermsRoute extends PageRouteInfo<void> {
   const TermsRoute({List<PageRouteInfo>? children})
       : super(

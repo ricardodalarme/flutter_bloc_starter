@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/presentation/bloc/forgot_password_bloc.dart';
-import 'package:quickstart_flutter_bloc/features/forgot_password/presentation/forgot_password_view.dart';
+import 'package:quickstart_flutter_bloc/features/forgot_password/presentation/forgot_password_page.dart';
 
 import '../../test_helpers/pump_app.dart';
 
@@ -12,7 +12,7 @@ class MockForgotPasswordBloc
     implements ForgotPasswordBloc {}
 
 void main() {
-  group('ForgotPasswordView', () {
+  group('ForgotPasswordPage', () {
     late ForgotPasswordBloc forgotPasswordBloc;
 
     setUp(() {
@@ -21,16 +21,16 @@ void main() {
           .thenReturn(const ForgotPasswordState());
     });
 
-    testWidgets('renders view', (tester) async {
+    testWidgets('renders page', (tester) async {
       await tester.pumpApp(
         BlocProvider.value(
           value: forgotPasswordBloc,
-          child: const ForgotPasswordView(),
+          child: const ForgotPasswordPage(),
         ),
       );
       await tester.pump();
 
-      expect(find.byType(ForgotPasswordView), findsOneWidget);
+      expect(find.byType(ForgotPasswordPage), findsOneWidget);
     });
   });
 }

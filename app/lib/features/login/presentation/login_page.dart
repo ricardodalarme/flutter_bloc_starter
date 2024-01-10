@@ -10,8 +10,8 @@ import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 import 'package:quickstart_flutter_bloc/routes/app_router.dart';
 
 @RoutePage()
-class LoginView extends StatelessWidget implements AutoRouteWrapper {
-  const LoginView({super.key});
+class LoginPage extends StatelessWidget implements AutoRouteWrapper {
+  const LoginPage({super.key});
 
   @override
   Widget wrappedRoute(BuildContext context) {

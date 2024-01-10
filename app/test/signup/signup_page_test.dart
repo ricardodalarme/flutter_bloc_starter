@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:quickstart_flutter_bloc/features/signup/presentation/bloc/signup_bloc.dart';
-import 'package:quickstart_flutter_bloc/features/signup/presentation/signup_view.dart';
+import 'package:quickstart_flutter_bloc/features/signup/presentation/signup_page.dart';
 
 import '../test_helpers/pump_app.dart';
 
@@ -11,7 +11,7 @@ class MockSignupBloc extends MockBloc<SignupEvent, SignupState>
     implements SignupBloc {}
 
 void main() {
-  group('SignUpView', () {
+  group('SignUpPage', () {
     late SignupBloc signupBloc;
 
     setUp(() {
@@ -19,15 +19,15 @@ void main() {
       when(() => signupBloc.state).thenReturn(const SignupState());
     });
 
-    testWidgets('renders view', (tester) async {
+    testWidgets('renders page', (tester) async {
       await tester.pumpApp(
         BlocProvider.value(
           value: signupBloc,
-          child: const SignUpView(),
+          child: const SignUpPage(),
         ),
       );
 
-      expect(find.byType(SignUpView), findsOneWidget);
+      expect(find.byType(SignUpPage), findsOneWidget);
     });
   });
 }

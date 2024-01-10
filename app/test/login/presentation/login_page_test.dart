@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:quickstart_flutter_bloc/features/login/presentation/bloc/login_bloc.dart';
-import 'package:quickstart_flutter_bloc/features/login/presentation/login_view.dart';
+import 'package:quickstart_flutter_bloc/features/login/presentation/login_page.dart';
 
 import '../../test_helpers/pump_app.dart';
 
@@ -11,7 +11,7 @@ class MockLoginBloc extends MockBloc<LoginEvent, LoginState>
     implements LoginBloc {}
 
 void main() {
-  group('LoginView', () {
+  group('LoginPage', () {
     late LoginBloc loginBloc;
 
     setUp(() {
@@ -19,16 +19,16 @@ void main() {
       when(() => loginBloc.state).thenReturn(const LoginState());
     });
 
-    testWidgets('renders view', (tester) async {
+    testWidgets('renders page', (tester) async {
       await tester.pumpApp(
         BlocProvider.value(
           value: loginBloc,
-          child: const LoginView(),
+          child: const LoginPage(),
         ),
       );
       await tester.pump();
 
-      expect(find.byType(LoginView), findsOneWidget);
+      expect(find.byType(LoginPage), findsOneWidget);
     });
   });
 }

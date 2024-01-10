@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/presentation/bloc/edit_profile_bloc.dart';
-import 'package:quickstart_flutter_bloc/features/edit_profile/presentation/edit_profile_view.dart';
+import 'package:quickstart_flutter_bloc/features/edit_profile/presentation/edit_profile_page.dart';
 
 import '../test_helpers/pump_app.dart';
 
@@ -11,7 +11,7 @@ class MockEditProfileBloc extends MockBloc<EditProfileEvent, EditProfileState>
     implements EditProfileBloc {}
 
 void main() {
-  group('EditProfileView', () {
+  group('EditProfilePage', () {
     late EditProfileBloc editProfileBloc;
 
     setUp(() {
@@ -19,16 +19,16 @@ void main() {
       when(() => editProfileBloc.state).thenReturn(const EditProfileState());
     });
 
-    testWidgets('renders view', (tester) async {
+    testWidgets('renders page', (tester) async {
       await tester.pumpApp(
         BlocProvider.value(
           value: editProfileBloc,
-          child: const EditProfileView(),
+          child: const EditProfilePage(),
         ),
       );
       await tester.pump();
 
-      expect(find.byType(EditProfileView), findsOneWidget);
+      expect(find.byType(EditProfilePage), findsOneWidget);
     });
   });
 }

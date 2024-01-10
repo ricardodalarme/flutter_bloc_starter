@@ -9,8 +9,8 @@ import 'package:quickstart_flutter_bloc/features/edit_profile/presentation/bloc/
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
 @RoutePage()
-class EditProfileView extends StatelessWidget implements AutoRouteWrapper {
-  const EditProfileView({super.key});
+class EditProfilePage extends StatelessWidget implements AutoRouteWrapper {
+  const EditProfilePage({super.key});
 
   @override
   Widget wrappedRoute(BuildContext context) {

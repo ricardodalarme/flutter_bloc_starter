@@ -5,8 +5,8 @@ import 'package:quickstart_flutter_bloc/features/search/widgets/search_text_fiel
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
 @RoutePage()
-class SearchView extends StatelessWidget {
-  const SearchView({super.key});
+class SearchPage extends StatelessWidget {
+  const SearchPage({super.key});
 
   @override
   Widget build(BuildContext context) {

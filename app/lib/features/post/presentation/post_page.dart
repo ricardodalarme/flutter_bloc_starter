@@ -9,8 +9,8 @@ import 'package:quickstart_flutter_bloc/features/post/presentation/widgets/post_
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
 @RoutePage()
-class PostView extends StatelessWidget implements AutoRouteWrapper {
-  const PostView({super.key});
+class PostPage extends StatelessWidget implements AutoRouteWrapper {
+  const PostPage({super.key});
 
   @override
   Widget wrappedRoute(BuildContext context) {

@@ -5,8 +5,8 @@ import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 import 'package:quickstart_flutter_bloc/routes/app_router.dart';
 
 @RoutePage()
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {

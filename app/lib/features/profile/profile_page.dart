@@ -10,8 +10,8 @@ import 'package:quickstart_flutter_bloc/routes/app_router.dart';
 const _profilePictureSize = 175.0;
 
 @RoutePage()
-class ProfileView extends StatelessWidget {
-  const ProfileView({super.key});
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {

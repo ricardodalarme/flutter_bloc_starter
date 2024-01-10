@@ -9,8 +9,8 @@ import 'package:quickstart_flutter_bloc/features/forgot_password/presentation/bl
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
 @RoutePage()
-class ForgotPasswordView extends StatelessWidget implements AutoRouteWrapper {
-  const ForgotPasswordView({super.key});
+class ForgotPasswordPage extends StatelessWidget implements AutoRouteWrapper {
+  const ForgotPasswordPage({super.key});
 
   @override
   Widget wrappedRoute(BuildContext context) {

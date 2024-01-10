@@ -9,8 +9,8 @@ import 'package:quickstart_flutter_bloc/features/change_password/presentation/bl
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
 @RoutePage()
-class ChangePasswordView extends StatelessWidget implements AutoRouteWrapper {
-  const ChangePasswordView({super.key});
+class ChangePasswordPage extends StatelessWidget implements AutoRouteWrapper {
+  const ChangePasswordPage({super.key});
 
   @override
   Widget wrappedRoute(BuildContext context) {

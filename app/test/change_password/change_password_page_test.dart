@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:quickstart_flutter_bloc/features/change_password/presentation/bloc/change_password_bloc.dart';
-import 'package:quickstart_flutter_bloc/features/change_password/presentation/change_password_view.dart';
+import 'package:quickstart_flutter_bloc/features/change_password/presentation/change_password_page.dart';
 
 import '../test_helpers/pump_app.dart';
 
@@ -12,7 +12,7 @@ class MockChangePasswordBloc
     implements ChangePasswordBloc {}
 
 void main() {
-  group('ChangePasswordView', () {
+  group('ChangePasswordPage', () {
     late ChangePasswordBloc changePasswordBloc;
 
     setUp(() {
@@ -21,16 +21,16 @@ void main() {
           .thenReturn(const ChangePasswordState());
     });
 
-    testWidgets('renders view', (tester) async {
+    testWidgets('renders page', (tester) async {
       await tester.pumpApp(
         BlocProvider.value(
           value: changePasswordBloc,
-          child: const ChangePasswordView(),
+          child: const ChangePasswordPage(),
         ),
       );
       await tester.pump();
 
-      expect(find.byType(ChangePasswordView), findsOneWidget);
+      expect(find.byType(ChangePasswordPage), findsOneWidget);
     });
   });
 }

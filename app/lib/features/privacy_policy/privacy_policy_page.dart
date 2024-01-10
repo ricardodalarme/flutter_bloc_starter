@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
 @RoutePage()
-class SettingsView extends StatelessWidget {
-  const SettingsView({super.key});
+class PrivacyPolicyPage extends StatelessWidget {
+  const PrivacyPolicyPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BaseView(
-      title: context.l10n.settings.title,
-      body: const Center(
-        child: Text('SettingsView'),
+      title: context.l10n.privacyPolicy.title,
+      body: Center(
+        child: Text(context.l10n.privacyPolicy.title),
       ),
     );
   }

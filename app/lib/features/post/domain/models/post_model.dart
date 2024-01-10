@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-final class PostModel extends Equatable {
+final class PostModel with EquatableMixin {
   const PostModel({
     required this.id,
     required this.title,

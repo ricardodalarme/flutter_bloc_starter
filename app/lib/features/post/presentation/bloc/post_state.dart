@@ -6,7 +6,7 @@ enum PostStatus {
   failure,
 }
 
-final class PostState extends Equatable {
+final class PostState with EquatableMixin {
   const PostState({
     this.status = PostStatus.loading,
     this.posts = const <PostModel>[],

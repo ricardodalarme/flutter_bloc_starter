@@ -1,6 +1,6 @@
 part of 'forgot_password_bloc.dart';
 
-final class ForgotPasswordState extends Equatable with FormzMixin {
+final class ForgotPasswordState with EquatableMixin, FormzMixin {
   const ForgotPasswordState({
     this.email = const EmailInput.pure(),
     this.status = FormzSubmissionStatus.initial,

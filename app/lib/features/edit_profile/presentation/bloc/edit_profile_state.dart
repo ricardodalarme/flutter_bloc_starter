@@ -1,6 +1,6 @@
 part of 'edit_profile_bloc.dart';
 
-final class EditProfileState extends Equatable with FormzMixin {
+final class EditProfileState with EquatableMixin, FormzMixin {
   const EditProfileState({
     this.status = FormzSubmissionStatus.initial,
     this.firstName = const NonEmptyInput.pure(),

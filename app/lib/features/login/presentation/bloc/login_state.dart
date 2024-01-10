@@ -1,6 +1,6 @@
 part of 'login_bloc.dart';
 
-final class LoginState extends Equatable with FormzMixin {
+final class LoginState with EquatableMixin, FormzMixin {
   const LoginState({
     this.username = const NonEmptyInput.pure(),
     this.password = const NonEmptyInput.pure(),

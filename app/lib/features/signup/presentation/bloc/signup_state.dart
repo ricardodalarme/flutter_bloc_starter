@@ -1,6 +1,6 @@
 part of 'signup_bloc.dart';
 
-final class SignupState extends Equatable with FormzMixin {
+final class SignupState with EquatableMixin, FormzMixin {
   const SignupState({
     this.username = const NonEmptyInput.pure(),
     this.email = const EmailInput.pure(),

@@ -2,7 +2,7 @@ part of 'app_bloc.dart';
 
 enum AppStatus { authenticated, unauthenticated }
 
-final class AppState extends Equatable {
+final class AppState with EquatableMixin {
   const AppState._({
     required this.status,
   });

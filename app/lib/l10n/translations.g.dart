@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 88 (44 per locale)
 ///
-/// Built on 2023-12-26 at 18:38 UTC
+/// Built on 2024-01-10 at 12:19 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -531,7 +531,7 @@ class _TranslationsPrivacyPolicyPt extends _TranslationsPrivacyPolicyEn {
 
   // Translations
   @override
-  String get title => 'Feed';
+  String get title => 'Politíca de Privacidade';
 }
 
 // Path: settings
@@ -865,7 +865,7 @@ extension on _TranslationsPt {
       case 'signup.buttonSubmit':
         return 'Registrar';
       case 'privacyPolicy.title':
-        return 'Feed';
+        return 'Politíca de Privacidade';
       case 'settings.title':
         return 'Configurações';
       case 'search.title':

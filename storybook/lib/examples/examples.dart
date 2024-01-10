@@ -1,6 +1,8 @@
 import 'package:storybook/examples/base_button/base_button_example.dart';
 import 'package:storybook/examples/base_snack_bar/base_snack_bar_example.dart';
 import 'package:storybook/examples/base_text_field/base_text_field_example.dart';
+import 'package:storybook/examples/error_indicator/error_indicator_example.dart';
+import 'package:storybook/examples/loading_indicator/loading_indicator_example.dart';
 import 'package:storybook/examples/password_text_field/password_text_field_example.dart';
 import 'package:storybook/examples/profile_picture/profile_picture_example.dart';
 import 'package:storybook/examples/sign_in_button/sign_in_button_example.dart';
@@ -11,6 +13,7 @@ final List<WidgetbookNode> examples = [
   baseButtonExample,
   baseSnackBarExample,
   baseTextFieldExample,
+  errorIndicatorExample,
   loadingIndicatorExample,
   passwordTextFieldExample,
   profilePictureExample,

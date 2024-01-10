@@ -3,7 +3,6 @@ import 'package:common/common.dart';
 import 'package:common_ui/common_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gap/gap.dart';
 import 'package:quickstart_flutter_bloc/features/post/domain/models/post_model.dart';
 import 'package:quickstart_flutter_bloc/features/post/presentation/bloc/post_bloc.dart';
 import 'package:quickstart_flutter_bloc/features/post/presentation/widgets/post_card.dart';
@@ -25,12 +24,21 @@ class PostView extends StatelessWidget implements AutoRouteWrapper {
   Widget build(BuildContext context) {
     return BaseView(
       title: context.l10n.post.title,
-      body: BlocBuilder<PostBloc, PostState>(
-        builder: (context, state) => switch (state.status) {
-          PostStatus.success => _PostSuccess(posts: state.posts),
-          PostStatus.failure => const _PostError(),
-          PostStatus.loading => const LoadingIndicator(),
-        },
+      body: Padding(
+        padding: const EdgeInsets.all(AppSpacing.large),
+        child: BlocBuilder<PostBloc, PostState>(
+          builder: (context, state) => switch (state.status) {
+            PostStatus.success => _PostSuccess(posts: state.posts),
+            PostStatus.loading => const LoadingIndicator(),
+            PostStatus.failure => ErrorIndicator(
+                title: context.l10n.common.genericError,
+                buttonText: context.l10n.common.retry,
+                message: context.l10n.post.textFailure,
+                onButtonPressed: () =>
+                    context.read<PostBloc>().add(const PostFetched()),
+              ),
+          },
+        ),
       ),
     );
   }
@@ -44,36 +52,10 @@ class _PostSuccess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: const EdgeInsets.all(AppSpacing.medium),
       itemCount: posts.length,
       itemBuilder: (context, index) => PostCard(
         key: ValueKey(posts[index].id),
         post: posts[index],
-      ),
-    );
-  }
-}
-
-class _PostError extends StatelessWidget {
-  const _PostError();
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            context.l10n.post.textFailure,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          const Gap(AppSpacing.medium),
-          ElevatedButton(
-            onPressed: () => context.read<PostBloc>().add(const PostFetched()),
-            child: Text(context.l10n.common.retry),
-          ),
-        ],
       ),
     );
   }

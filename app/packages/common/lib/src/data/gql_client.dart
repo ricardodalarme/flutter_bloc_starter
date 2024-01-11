@@ -1,5 +1,6 @@
 import 'package:common/common.dart';
 import 'package:graphql/client.dart';
+import 'package:storage/storage.dart';
 
 abstract class GQLClient {
   Future<QueryResult<T>> query<T>(QueryOptions<T> options);
@@ -8,10 +9,16 @@ abstract class GQLClient {
 }
 
 class GQLClientImpl implements GQLClient {
-  factory GQLClientImpl() {
+  factory GQLClientImpl({
+    required Storage storage,
+  }) {
     final httpLink = HttpLink(Config.serverUrl);
     final authLink = AuthLink(
-      getToken: () async => 'Bearer ${Config.accessToken}',
+      getToken: () async {
+        final token = await storage.read(key: StorageKeys.accessToken);
+        if (token == null) return null;
+        return 'Bearer $token';
+      },
     );
     final link = Link.from([authLink, httpLink]);
 

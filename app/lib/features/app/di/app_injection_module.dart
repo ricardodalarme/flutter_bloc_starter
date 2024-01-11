@@ -19,7 +19,9 @@ class AppInjectionModule extends InjectionModule {
     );
 
     injector.registerLazySingleton<GQLClient>(
-      GQLClientImpl.new,
+      () => GQLClientImpl(
+        storage: injector.get<SecureStorage>(),
+      ),
     );
 
     injector.registerFactory<AppBloc>(

@@ -10,7 +10,7 @@ class ForgotPasswordRepositoryImpl implements ForgotPasswordRepository {
   final ForgotPasswordDataSource _forgotPasswordDataSource;
 
   @override
-  Future<Result<void, Exception>> forgotPassword({
+  Future<Result<void>> forgotPassword({
     required String email,
   }) async {
     try {

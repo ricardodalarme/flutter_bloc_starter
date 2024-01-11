@@ -10,7 +10,7 @@ class EditProfileRepositoryImpl implements EditProfileRepository {
   final EditProfileDataSource _editProfileDataSource;
 
   @override
-  Future<Result<void, Exception>> updateProfile({
+  Future<Result<void>> updateProfile({
     required String firstName,
     required String lastName,
     required String email,

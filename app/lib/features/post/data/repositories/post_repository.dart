@@ -12,7 +12,7 @@ class PostRepositoryImpl implements PostRepository {
   final PostDataSource _postDataSource;
 
   @override
-  Future<Result<List<PostModel>, Exception>> getPosts() async {
+  Future<Result<List<PostModel>>> getPosts() async {
     try {
       final result = await _postDataSource.getPosts();
       final parsedResult = result.nodes

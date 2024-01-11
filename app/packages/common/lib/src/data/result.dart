@@ -2,13 +2,12 @@ import 'package:meta/meta.dart';
 
 /// Base Result class
 /// [S] represents the type of the success value
-/// [E] should be [Exception] or a subclass of it
-sealed class Result<S, E extends Exception> {
+sealed class Result<S> {
   const Result();
 }
 
 @immutable
-final class Success<S, E extends Exception> extends Result<S, E> {
+final class Success<S> extends Result<S> {
   const Success(this.value);
 
   final S value;
@@ -24,10 +23,10 @@ final class Success<S, E extends Exception> extends Result<S, E> {
 }
 
 @immutable
-final class Failure<E extends Exception> extends Result<Never, E> {
+final class Failure extends Result<Never> {
   const Failure(this.exception);
 
-  final E exception;
+  final Exception exception;
 
   @override
   bool operator ==(Object other) =>

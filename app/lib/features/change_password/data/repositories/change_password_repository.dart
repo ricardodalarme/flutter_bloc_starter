@@ -10,7 +10,7 @@ class ChangePasswordRepositoryImpl implements ChangePasswordRepository {
   final ChangePasswordDataSource _changePasswordDataSource;
 
   @override
-  Future<Result<void, Exception>> changePassword({
+  Future<Result<void>> changePassword({
     required String currentPassword,
     required String newPassword,
   }) async {

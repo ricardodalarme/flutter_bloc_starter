@@ -3,15 +3,15 @@ import 'dart:async';
 import 'package:common/common.dart';
 
 abstract class AuthenticationRepository {
-  Future<Result<void, Exception>> logInWithUsernameAndPassword({
+  Future<Result<void>> logInWithUsernameAndPassword({
     required String username,
     required String password,
   });
 
-  Future<Result<void, Exception>> logInWithGoogle();
-  Future<Result<void, Exception>> logInWithFacebook();
+  Future<Result<void>> logInWithGoogle();
+  Future<Result<void>> logInWithFacebook();
 
-  Future<Result<void, Exception>> signUp({
+  Future<Result<void>> signUp({
     required String email,
     required String password,
   });

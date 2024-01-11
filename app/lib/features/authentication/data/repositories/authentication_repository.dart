@@ -14,7 +14,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   final Storage _storage;
 
   @override
-  Future<Result<void, Exception>> logInWithUsernameAndPassword({
+  Future<Result<void>> logInWithUsernameAndPassword({
     required String username,
     required String password,
   }) async {
@@ -37,12 +37,12 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   @override
-  Future<Result<void, Exception>> logInWithGoogle() async {
+  Future<Result<void>> logInWithGoogle() async {
     return Failure(Exception());
   }
 
   @override
-  Future<Result<void, Exception>> logInWithFacebook() async {
+  Future<Result<void>> logInWithFacebook() async {
     return Failure(Exception());
   }
 
@@ -54,7 +54,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   @override
-  Future<Result<void, Exception>> signUp({
+  Future<Result<void>> signUp({
     required String email,
     required String password,
   }) async {

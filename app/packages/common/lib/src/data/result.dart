@@ -1,3 +1,4 @@
+import 'package:common/common.dart';
 import 'package:meta/meta.dart';
 
 /// Base Result class
@@ -26,7 +27,12 @@ final class Success<S> extends Result<S> {
 final class Failure extends Result<Never> {
   const Failure(this.exception);
 
-  final Exception exception;
+  factory Failure.fromObject(Object object) => switch (object) {
+        L10nPlaceholderException() => Failure(object),
+        _ => const Failure(UnknownException()),
+      };
+
+  final L10nPlaceholderException exception;
 
   @override
   bool operator ==(Object other) =>

@@ -46,20 +46,20 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       _authenticationStreamController.add(true);
 
       return const Success(null);
-    } on Exception catch (exception) {
+    } catch (exception) {
       _authenticationStreamController.add(false);
-      return Failure(exception);
+      return Failure.fromObject(exception);
     }
   }
 
   @override
   Future<Result<void>> logInWithGoogle() async {
-    return Failure(Exception());
+    return const Failure(UnknownException());
   }
 
   @override
   Future<Result<void>> logInWithFacebook() async {
-    return Failure(Exception());
+    return const Failure(UnknownException());
   }
 
   @override
@@ -75,6 +75,6 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
     required String email,
     required String password,
   }) async {
-    return Failure(Exception());
+    return const Failure(UnknownException());
   }
 }

@@ -18,8 +18,8 @@ class ForgotPasswordRepositoryImpl implements ForgotPasswordRepository {
         email: email,
       );
       return const Success(null);
-    } on Exception catch (exception) {
-      return Failure(exception);
+    } catch (exception) {
+      return Failure.fromObject(exception);
     }
   }
 }

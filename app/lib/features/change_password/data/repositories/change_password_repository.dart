@@ -20,8 +20,8 @@ class ChangePasswordRepositoryImpl implements ChangePasswordRepository {
         newPassword: newPassword,
       );
       return const Success(null);
-    } on Exception catch (exception) {
-      return Failure(exception);
+    } catch (exception) {
+      return Failure.fromObject(exception);
     }
   }
 }

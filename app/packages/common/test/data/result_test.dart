@@ -1,6 +1,11 @@
 import 'package:common/common.dart';
 import 'package:test/test.dart';
 
+final class MockException extends L10nPlaceholderException {
+  const MockException(String l10nPlaceholder)
+      : super(l10nPlaceholder: l10nPlaceholder);
+}
+
 void main() {
   group('Result', () {
     test('Success equality', () {
@@ -13,10 +18,10 @@ void main() {
     });
 
     test('Failure equality', () {
-      final exception = Exception('error message');
-      final failure1 = Failure(exception);
-      final failure2 = Failure(exception);
-      final failure3 = Failure(Exception('different_message'));
+      const exception = MockException('error message');
+      const failure1 = Failure(exception);
+      const failure2 = Failure(exception);
+      const failure3 = Failure(MockException('different_message'));
 
       expect(failure1, equals(failure2));
       expect(failure1, isNot(equals(failure3)));

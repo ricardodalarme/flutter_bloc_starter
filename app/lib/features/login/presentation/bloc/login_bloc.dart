@@ -1,3 +1,4 @@
+import 'package:common/common.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
@@ -44,36 +45,31 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     Emitter<LoginState> emit,
   ) async {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
-    try {
-      await _authenticationRepository.logInWithUsernameAndPassword(
-        username: state.username.value,
-        password: state.password.value,
-      );
-      emit(state.copyWith(status: FormzSubmissionStatus.success));
-    } catch (error) {
-      emit(state.copyWith(status: FormzSubmissionStatus.failure));
-    }
+
+    final result = await _authenticationRepository.logInWithUsernameAndPassword(
+      username: state.username.value,
+      password: state.password.value,
+    );
+
+    final newState = switch (result) {
+      Success() => state.copyWith(status: FormzSubmissionStatus.success),
+      Failure() => state.copyWith(status: FormzSubmissionStatus.failure),
+    };
+
+    emit(newState);
   }
 
   Future<void> _onLoginWithGoogleSubmitted(
     LoginWithGoogleSubmitted event,
     Emitter<LoginState> emit,
   ) async {
-    try {
-      await _authenticationRepository.logInWithGoogle();
-    } catch (error) {
-      // TODO: Handle error
-    }
+    await _authenticationRepository.logInWithGoogle();
   }
 
   Future<void> _onLoginWithFacebookSubmitted(
     LoginWithFacebookSubmitted event,
     Emitter<LoginState> emit,
   ) async {
-    try {
-      await _authenticationRepository.logInWithFacebook();
-    } catch (error) {
-      // TODO: Handle error
-    }
+    await _authenticationRepository.logInWithFacebook();
   }
 }

@@ -1,3 +1,4 @@
+import 'package:common/common.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
@@ -73,14 +74,17 @@ class SignupBloc extends Bloc<SignupEvent, SignupState> {
     Emitter<SignupState> emit,
   ) async {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
-    try {
-      await _authenticationRepository.signUp(
-        email: state.email.value,
-        password: state.password.value,
-      );
-      emit(state.copyWith(status: FormzSubmissionStatus.success));
-    } catch (error) {
-      emit(state.copyWith(status: FormzSubmissionStatus.failure));
-    }
+
+    final result = await _authenticationRepository.signUp(
+      email: state.email.value,
+      password: state.password.value,
+    );
+
+    final newState = switch (result) {
+      Success() => state.copyWith(status: FormzSubmissionStatus.success),
+      Failure() => state.copyWith(status: FormzSubmissionStatus.failure),
+    };
+
+    emit(newState);
   }
 }

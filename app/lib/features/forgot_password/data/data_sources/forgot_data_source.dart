@@ -1,5 +1,4 @@
 import 'package:common/common.dart';
-import 'package:graphql/client.dart';
 import 'package:schemas/generated/schema.graphql.dart';
 import 'package:schemas/mutations/generated/ResetPassword.graphql.dart';
 
@@ -34,7 +33,7 @@ class ForgotPasswordDataSourceImpl implements ForgotPasswordDataSource {
         throw response.exception!;
       }
     } catch (e) {
-      throw const ServerException();
+      throw Exception();
     }
   }
 }

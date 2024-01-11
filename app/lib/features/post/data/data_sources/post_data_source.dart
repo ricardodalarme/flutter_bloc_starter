@@ -1,5 +1,4 @@
 import 'package:common/common.dart';
-import 'package:graphql/client.dart';
 import 'package:schemas/queries/generated/GetPosts.graphql.dart';
 
 abstract class PostDataSource {
@@ -22,11 +21,11 @@ class PostDataSourceImpl implements PostDataSource {
       final data = response.parsedData?.posts;
 
       if (data == null) {
-        throw const ServerException();
+        throw Exception();
       }
       return data;
     } catch (e) {
-      throw const ServerException();
+      throw Exception();
     }
   }
 }

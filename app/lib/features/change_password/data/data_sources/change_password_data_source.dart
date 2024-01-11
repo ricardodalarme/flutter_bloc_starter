@@ -1,5 +1,4 @@
 import 'package:common/common.dart';
-import 'package:graphql/client.dart';
 import 'package:schemas/generated/schema.graphql.dart';
 import 'package:schemas/mutations/generated/ChangePassword.graphql.dart';
 
@@ -37,7 +36,7 @@ class ChangePasswordDataSourceImpl implements ChangePasswordDataSource {
         throw response.exception!;
       }
     } catch (e) {
-      throw const ServerException();
+      throw Exception();
     }
   }
 }

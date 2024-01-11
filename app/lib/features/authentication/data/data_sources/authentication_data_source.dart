@@ -1,5 +1,4 @@
 import 'package:common/common.dart';
-import 'package:graphql/client.dart';
 import 'package:schemas/fragments/generated/TokenFragment.graphql.dart';
 import 'package:schemas/generated/schema.graphql.dart';
 import 'package:schemas/mutations/generated/Login.graphql.dart';
@@ -48,7 +47,7 @@ class AuthenticationDataSourceImpl implements AuthenticationDataSource {
       }
       return (data.accessToken, data.refreshToken);
     } catch (e) {
-      throw const ServerException();
+      throw Exception();
     }
   }
 }

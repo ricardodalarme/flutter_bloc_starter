@@ -73,6 +73,8 @@ class SignupBloc extends Bloc<SignupEvent, SignupState> {
     SignupSubmitted event,
     Emitter<SignupState> emit,
   ) async {
+    if (state.isNotValid) return;
+
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
 
     final result = await _authenticationRepository.signUp(

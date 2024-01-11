@@ -1,10 +1,16 @@
 import 'package:common/common.dart';
 import 'package:graphql/client.dart';
+import 'package:schemas/fragments/generated/TokenFragment.graphql.dart';
 import 'package:schemas/generated/schema.graphql.dart';
 import 'package:schemas/mutations/generated/Login.graphql.dart';
 
+typedef _TokensRecord = (
+  FragmentTokenFragment accessToken,
+  FragmentTokenFragment refreshToken,
+);
+
 abstract class AuthenticationDataSource {
-  Future<void> logInWithUsernameAndPassword({
+  Future<_TokensRecord> logInWithUsernameAndPassword({
     required String username,
     required String password,
   });
@@ -18,7 +24,7 @@ class AuthenticationDataSourceImpl implements AuthenticationDataSource {
   final GQLClient _client;
 
   @override
-  Future<void> logInWithUsernameAndPassword({
+  Future<_TokensRecord> logInWithUsernameAndPassword({
     required String username,
     required String password,
   }) async {
@@ -35,9 +41,12 @@ class AuthenticationDataSourceImpl implements AuthenticationDataSource {
         ),
       );
 
-      if (response.hasException) {
+      final data = response.parsedData?.login;
+
+      if (response.hasException || data == null) {
         throw response.exception!;
       }
+      return (data.accessToken, data.refreshToken);
     } catch (e) {
       throw const ServerException();
     }

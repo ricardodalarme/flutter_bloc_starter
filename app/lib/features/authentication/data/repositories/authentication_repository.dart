@@ -47,8 +47,10 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   @override
-  Future<Result<void, Exception>> logOut() async {
-    return Failure(Exception());
+  Future<void> logOut() async {
+    await _storage.delete(
+      key: StorageKeys.accessToken,
+    );
   }
 
   @override

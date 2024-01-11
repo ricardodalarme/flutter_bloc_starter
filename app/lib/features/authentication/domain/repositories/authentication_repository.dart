@@ -3,6 +3,10 @@ import 'dart:async';
 import 'package:common/common.dart';
 
 abstract class AuthenticationRepository {
+  Stream<bool> get isAuthenticated;
+
+  void dispose();
+
   Future<Result<void>> logInWithUsernameAndPassword({
     required String username,
     required String password,

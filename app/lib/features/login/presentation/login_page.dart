@@ -25,43 +25,35 @@ class LoginPage extends StatelessWidget implements AutoRouteWrapper {
   Widget build(BuildContext context) {
     return BaseView(
       title: context.l10n.login.title,
-      body: BlocListener<LoginBloc, LoginState>(
-        listener: (context, state) {
-          if (state.status.isSuccess) {
-            context.router.replaceAll([const HomeRoute()]);
-          }
-        },
-        child: Center(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(AppSpacing.large),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const _UsernameTextField(),
-                const Gap(AppSpacing.medium),
-                const _PasswordTextField(),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () {
-                      context.pushRoute(const ForgotPasswordRoute());
-                    },
-                    child: Text(
-                      context.l10n.login.buttonForgotPassword,
-                    ),
+      body: Center(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(AppSpacing.large),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const _UsernameTextField(),
+              const Gap(AppSpacing.medium),
+              const _PasswordTextField(),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () {
+                    context.pushRoute(const ForgotPasswordRoute());
+                  },
+                  child: Text(
+                    context.l10n.login.buttonForgotPassword,
                   ),
                 ),
-                const Gap(AppSpacing.small),
-                const _LoginButton(),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: AppSpacing.large),
-                  child: TextDivider(context.l10n.login.dividerOr),
-                ),
-                const _SignInWithThirdPartyButtons(),
-                const _SignupButton(),
-              ],
-            ),
+              ),
+              const Gap(AppSpacing.small),
+              const _LoginButton(),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: AppSpacing.large),
+                child: TextDivider(context.l10n.login.dividerOr),
+              ),
+              const _SignInWithThirdPartyButtons(),
+              const _SignupButton(),
+            ],
           ),
         ),
       ),

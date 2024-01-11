@@ -1,17 +1,30 @@
+import 'dart:async';
+
 import 'package:common/common.dart';
 import 'package:quickstart_flutter_bloc/features/authentication/data/data_sources/authentication_data_source.dart';
 import 'package:quickstart_flutter_bloc/features/authentication/domain/repositories/authentication_repository.dart';
 import 'package:storage/storage.dart';
 
 class AuthenticationRepositoryImpl implements AuthenticationRepository {
-  const AuthenticationRepositoryImpl({
+  AuthenticationRepositoryImpl({
     required AuthenticationDataSource loginDataSource,
     required Storage storage,
   })  : _loginDataSource = loginDataSource,
-        _storage = storage;
+        _storage = storage {
+    _authenticationStreamController = StreamController<bool>.broadcast();
+  }
 
   final AuthenticationDataSource _loginDataSource;
   final Storage _storage;
+  late final StreamController<bool> _authenticationStreamController;
+
+  @override
+  Stream<bool> get isAuthenticated => _authenticationStreamController.stream;
+
+  @override
+  void dispose() {
+    _authenticationStreamController.close();
+  }
 
   @override
   Future<Result<void>> logInWithUsernameAndPassword({
@@ -30,8 +43,11 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
         value: accessToken.token,
       );
 
+      _authenticationStreamController.add(true);
+
       return const Success(null);
     } on Exception catch (exception) {
+      _authenticationStreamController.add(false);
       return Failure(exception);
     }
   }
@@ -48,6 +64,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
 
   @override
   Future<void> logOut() async {
+    _authenticationStreamController.add(false);
     await _storage.delete(
       key: StorageKeys.accessToken,
     );

@@ -33,7 +33,7 @@ dependencies:
   secure_storage:
     path: ./packages/storage/secure_storage
   slang: ^3.29.0
-  slang_flutter: ^3.28.0
+  slang_flutter: ^3.29.0
   storage:
     path: ./packages/storage/storage
 

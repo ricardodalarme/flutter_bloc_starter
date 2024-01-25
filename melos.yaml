@@ -14,8 +14,7 @@ command:
 scripts:
   # Flutter commands
   get:
-    run: melos exec -- \
-      "flutter pub get"
+    exec: flutter pub get
     description: Get all dependencies.
 
   lint:
@@ -23,18 +22,15 @@ scripts:
     description: Lint all packages.
 
   analyze:
-    run: melos exec -- \
-      "flutter analyze"
+    exec: flutter analyze
     description: Analyze all packages.
 
   format:
-    run: melos exec -- \
-      "dart format ."
+    exec: dart format .
     description: Format all packages.
 
   format:no-output:
-    run: melos exec --fail-fast -- \
-      "dart format --output none --set-exit-if-changed ."
+    exec: dart format --output none --set-exit-if-changed .
     description: Run `dart format` for all packages and fail if any files need to be formatted.
 
   test:
@@ -42,14 +38,13 @@ scripts:
     description: Run all tests available.
 
   test:single:
-    run: melos exec -- \
-      "flutter test"
+    exec: flutter test
     description: Run `flutter test` for a specific package.
     packageFilters:
       dirExists:
         - test
 
-  # Aopp commands
+  # App commands
   l10n:
     exec: dart run slang && dart format lib/l10n/translations.g.dart
     description: Generate localization files.

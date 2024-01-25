@@ -3,16 +3,38 @@ name: Code Check
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - "**.md"
   pull_request:
     types:
       - opened
       - synchronize
       - reopened
       - ready_for_review
+    paths-ignore:
+      - "**.md"
+
+concurrency:
+  group: ${{github.workflow}}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
+  check-commits-authors:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    if: github.event.pull_request.draft == false || github.event_name == 'push'
+    steps:
+      - name: "Checking commits authors email domain"
+        uses: semcelik/commit-author-action@master
+        with:
+          email_domain: "profusion.mobi"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          ## dependabot is an exception, ignore error if the PR is opened by it
+          error_on_fail: ${{ (github.actor == 'dependabot[bot]') }}
+
   test:
-    name: Test
+    needs: check-commits-authors
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,7 +43,7 @@ jobs:
         with:
           channel: "stable"
           cache: true
-          cache-key: flutter-:os:-:channel:-:version:-:arch:-:hash:-${{ hashFiles('**/pubspec.lock') }}
+          cache-key: "flutter-:os:-:channel:-:version:-:arch:-:hash:"
 
       - uses: bluefireteam/melos-action@v3
 
@@ -29,7 +51,7 @@ jobs:
         run: melos test
 
   lint:
-    name: Lint
+    needs: check-commits-authors
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -38,7 +60,7 @@ jobs:
         with:
           channel: "stable"
           cache: true
-          cache-key: flutter-:os:-:channel:-:version:-:arch:-:hash:-${{ hashFiles('**/pubspec.lock') }}
+          cache-key: "flutter-:os:-:channel:-:version:-:arch:-:hash:"
 
       - uses: bluefireteam/melos-action@v3
 

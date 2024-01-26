@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyCLVS6CxRvcwH-l5CZv2Mz2jzswL8GaNNM</string>
+	<string>AIzaSyCe887B8J7bzQD51Wwbf3LsmFEauC4p_14</string>
 	<key>GCM_SENDER_ID</key>
-	<string>755918936022</string>
+	<string>221476091197</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.quickstartFlutterBloc</string>
 	<key>PROJECT_ID</key>
-	<string>quickstart-flutter-graphql</string>
+	<string>qs-flutter-development</string>
 	<key>STORAGE_BUCKET</key>
-	<string>quickstart-flutter-graphql.appspot.com</string>
+	<string>qs-flutter-development.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:755918936022:ios:9987b046cdbc3bcc24f677</string>
+	<string>1:221476091197:ios:4be42730d9f3aa48a40154</string>
 </dict>
 </plist>

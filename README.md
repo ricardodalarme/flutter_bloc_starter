@@ -73,6 +73,7 @@ Now everything is set. Let's run it!
 
 ## Documentation
 
-- [Contributing](docs/CONTRIBUTING.md)
-- [Code Guidelines](docs/CODE_GUIDELINES.md)
-- [Troubleshooting](docs/troubleshooting.md)
+- [Contributing](https://github.com/profusion/quickstart-flutter-bloc/wiki/Contributing)
+- [Code Guidelines](https://github.com/profusion/quickstart-flutter-bloc/wiki/Code-Guidelines)
+- [Environment Variables](https://github.com/profusion/quickstart-flutter-bloc/wiki/Environment-Variables)
+- [Troubleshooting](https://github.com/profusion/quickstart-flutter-bloc/wiki/Troubleshooting)

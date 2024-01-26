@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "755918936022",
-    "project_id": "quickstart-flutter-graphql",
-    "storage_bucket": "quickstart-flutter-graphql.appspot.com"
+    "project_number": "731036601810",
+    "project_id": "qs-flutter-production",
+    "storage_bucket": "qs-flutter-production.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:755918936022:android:23547062d6ca9feb24f677",
+        "mobilesdk_app_id": "1:731036601810:android:70b283b46db96688a68c0b",
         "android_client_info": {
           "package_name": "com.example.quickstart_flutter_bloc"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC0DsD31Vv_3K6HkKNTPz6DawHYIr0PG0o"
+          "current_key": "AIzaSyD1dfrVPNdFVN4AObmLd2wQQCJW4Z3faxs"
         }
       ],
       "services": {

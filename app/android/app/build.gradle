@@ -42,6 +42,20 @@ android {
         versionName '1.0'
     }
 
+    flavorDimensions "default"
+    productFlavors { 
+        development {
+            dimension "default"
+            applicationIdSuffix "dev"
+            manifestPlaceholders = [appName: "QS-Flutter [DEV]"]
+        } 
+        production {
+            dimension "default"
+            applicationIdSuffix ""
+            manifestPlaceholders = [appName: "QS-Flutter"]
+        } 
+    }
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.

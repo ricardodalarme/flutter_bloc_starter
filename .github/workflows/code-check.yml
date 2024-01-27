@@ -3,10 +3,9 @@ name: Code Check
 on:
   pull_request:
     types:
-      - opened
-      - synchronize
-      - reopened
-      - ready_for_review
+      - labeled
+    branches:
+      - main
 
 jobs:
   test:
@@ -17,8 +16,45 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - uses: ricardodalarme/bump-pubspec-version@main
         with:
-          mode: "major" # major, minor, patch
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - run: echo "Running tests"
+
+      - name: Get labels
+        id: get_labels
+        run: echo "::set-output name=labels::${{ join(github.event.pull_request.labels.*.name, ',') }}"
+
+      - name: Set bump mode
+        id: set_bump_mode
+        run: |
+          if [[ "${{ steps.get_labels.outputs.labels }}" =~ major ]]; then
+            echo "Setting bump mode to major"
+            echo "::set-output name=bump_mode::major"
+          elif [[ "${{ steps.get_labels.outputs.labels }}" =~ minor ]]; then
+            echo "Setting bump mode to minor"
+            echo "::set-output name=bump_mode::minor"
+          elif [[ "${{ steps.get_labels.outputs.labels }}" =~ patch ]]; then
+            echo "Setting bump mode to patch"
+            echo "::set-output name=bump_mode::patch"
+          else
+            echo "No version bump label found. Skipping CI."
+            echo "::set-output name=skip_ci::true"
+          fi
+
+      - name: Check if CI should be skipped
+        if: steps.set_bump_mode.outputs.skip_ci == 'true'
+        run: exit 0 # Skip the rest of the steps
+
+      - name: Bump pubspec version
+        id: bump
+        uses: ricardodalarme/bump-pubspec-version@main
+        with:
+          mode: "${{ steps.set_bump_mode.outputs.bump_mode }}"
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          committer_name: Bumper Bot
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+          message: "chore: bump pubspec version to ${{ steps.bump.outputs.new_version }}"
+          tag: ${{ steps.bump.outputs.new_version }}

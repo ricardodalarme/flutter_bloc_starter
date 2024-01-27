@@ -1,14 +1,16 @@
 name: Code Check
 
 on:
-  push:
-    branches: [main]
   pull_request:
     types:
       - opened
       - synchronize
       - reopened
       - ready_for_review
+
+permissions:
+  packages: write
+  contents: read
 
 jobs:
   test:
@@ -17,43 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: subosito/flutter-action@v2
+      - uses: ricardodalarme/bump-pubspec-version@main
         with:
-          channel: "stable"
-          cache: true
-          cache-key: flutter-:os:-:channel:-:version:-:arch:-:hash:-${{ hashFiles('**/pubspec.lock') }}
-
-      - name: Run Flutter Test Coverage
-        run: flutter test --coverage
-
-      - name: Upload Coverage to Codecov
-        if: github.event_name == 'push'
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/lcov.info
-          fail_ci_if_error: true
-          verbose: true 
-
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: "stable"
-          cache: true
-          cache-key: flutter-:os:-:channel:-:version:-:arch:-:hash:-${{ hashFiles('**/pubspec.lock') }}
-
-      - name: Install Dependencies
-        run: |
-          flutter pub global activate very_good_cli
-          very_good packages get --recursive
-
-      - name: Run Flutter Format
-        run: dart format --output none --set-exit-if-changed .
-
-      - name: Run Flutter Analyze
-        run: flutter analyze
+          mode: "major" # major, minor, patch
+          github_token: ${{ secrets.GITHUB_TOKEN }}

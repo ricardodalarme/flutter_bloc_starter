@@ -8,12 +8,11 @@ Base repository for application using Flutter + Bloc
 
 ## Table of Contents
 
-- [flutter\_bloc\_starter](#flutter_bloc_starter)
-  - [Table of Contents](#table-of-contents)
-  - [Setup](#setup)
-    - [Install git hooks](#install-git-hooks)
+- [Table of Contents](#table-of-contents)
+- [Setupasd](#setupasd)
+  - [Install git hooks](#install-git-hooks)
 
-## Setup
+## Setupasd
 
 ### Install git hooks
 

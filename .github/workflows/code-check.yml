@@ -8,14 +8,13 @@ on:
       - reopened
       - ready_for_review
 
-permissions:
-  packages: write
-  contents: read
-
 jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
 

@@ -4,6 +4,7 @@ import 'package:flutter_bloc_starter/features/app/bloc/app_bloc.dart';
 import 'package:flutter_bloc_starter/l10n/l10n.dart';
 import 'package:flutter_bloc_starter/routes/app_routes.dart';
 import 'package:flutter_bloc_starter/styling/app_spacing.dart';
+import 'package:flutter_bloc_starter/widgets/image_picker_dialog.dart';
 import 'package:flutter_bloc_starter/widgets/profile_picture.dart';
 import 'package:go_router/go_router.dart';
 
@@ -23,9 +24,15 @@ class ProfileView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const ProfilePicture(
+              ProfilePicture(
                 photoUrl: null,
                 size: _profilePictureSize,
+                onTap: () async {
+                  await showDialog<void>(
+                    context: context,
+                    builder: (context) => const ImagePickerDialog(),
+                  );
+                },
               ),
               const SizedBox(height: AppSpacing.xxlarge),
               ListTile(

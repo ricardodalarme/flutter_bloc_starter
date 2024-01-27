@@ -5,11 +5,13 @@ class ProfilePicture extends StatelessWidget {
   const ProfilePicture({
     required this.photoUrl,
     required this.size,
+    this.onTap,
     super.key,
   });
 
   final String? photoUrl;
   final double size;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -19,20 +21,23 @@ class ProfilePicture extends StatelessWidget {
       color: Colors.white,
     );
 
-    return CircleAvatar(
-      radius: size / 2,
-      backgroundColor: Theme.of(context).colorScheme.secondary,
-      child: photoUrl != null
-          ? ClipOval(
-              child: CachedNetworkImage(
-                imageUrl: photoUrl!,
-                width: size,
-                height: size,
-                fit: BoxFit.cover,
-                errorWidget: (context, url, error) => fallbackAvatar,
-              ),
-            )
-          : fallbackAvatar,
+    return GestureDetector(
+      onTap: onTap,
+      child: CircleAvatar(
+        radius: size / 2,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+        child: photoUrl != null
+            ? ClipOval(
+                child: CachedNetworkImage(
+                  imageUrl: photoUrl!,
+                  width: size,
+                  height: size,
+                  fit: BoxFit.cover,
+                  errorWidget: (context, url, error) => fallbackAvatar,
+                ),
+              )
+            : fallbackAvatar,
+      ),
     );
   }
 }

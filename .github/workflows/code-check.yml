@@ -10,6 +10,10 @@ on:
       - reopened
       - ready_for_review
 
+concurrency:
+  group: ${{github.workflow}}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     name: Test
@@ -33,7 +37,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./coverage/lcov.info
           fail_ci_if_error: true
-          verbose: true 
+          verbose: true
 
   lint:
     name: Lint

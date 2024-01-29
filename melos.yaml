@@ -80,6 +80,13 @@ scripts:
     packageFilters:
       scope: quickstart_flutter_bloc
 
+  build:android:
+    exec: flutter build appbundle --flavor production
+    description: Build the Android app.
+    packageFilters:
+      scope:
+        - quickstart_flutter_bloc
+
   # Git commands
   hooks:
     run: dart run husky install

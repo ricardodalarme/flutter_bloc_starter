@@ -6,13 +6,13 @@ import 'package:mocktail/mocktail.dart';
 class MockFirebaseAnalytics extends Mock implements FirebaseAnalytics {}
 
 void main() {
-  group('AnalyticsRepository', () {
+  group('AnalyticsService', () {
     late FirebaseAnalytics firebaseAnalytics;
-    late AnalyticsRepository analyticsRepository;
+    late AnalyticsService analyticsService;
 
     setUp(() {
       firebaseAnalytics = MockFirebaseAnalytics();
-      analyticsRepository = AnalyticsRepository(firebaseAnalytics);
+      analyticsService = AnalyticsService(firebaseAnalytics);
 
       when(
         () => firebaseAnalytics.logEvent(
@@ -27,7 +27,7 @@ void main() {
     });
 
     test('creates FirebaseAnalytics instance internally when not injected', () {
-      expect(() => analyticsRepository, isNot(throwsException));
+      expect(() => analyticsService, isNot(throwsException));
     });
 
     group('track', () {
@@ -37,7 +37,7 @@ void main() {
           parameters: {'test-key': 'mock-id'},
         );
 
-        analyticsRepository.logEvent(event);
+        analyticsService.logEvent(event);
 
         verify(
           () => firebaseAnalytics.logEvent(
@@ -66,7 +66,7 @@ void main() {
         );
 
         expect(
-          () => analyticsRepository.logEvent(event),
+          () => analyticsService.logEvent(event),
           throwsA(isA<LogEventException>()),
         );
       });
@@ -76,7 +76,7 @@ void main() {
       test('sets user identifier successfully', () {
         const userId = 'userId';
 
-        analyticsRepository.setUserId(userId);
+        analyticsService.setUserId(userId);
 
         verify(
           () => firebaseAnalytics.setUserId(id: userId),
@@ -91,7 +91,7 @@ void main() {
         ).thenThrow(Exception());
 
         expect(
-          () => analyticsRepository.setUserId('userId'),
+          () => analyticsService.setUserId('userId'),
           throwsA(isA<SetUserIdException>()),
         );
       });

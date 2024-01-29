@@ -2,8 +2,8 @@ import 'package:analytics_service/src/exceptions.dart';
 import 'package:analytics_service/src/models/analytics_event.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 
-class AnalyticsRepository {
-  AnalyticsRepository(this._analyticsService);
+class AnalyticsService {
+  const AnalyticsService(this._analyticsService);
 
   final FirebaseAnalytics _analyticsService;
 

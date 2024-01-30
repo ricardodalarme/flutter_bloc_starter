@@ -13,13 +13,13 @@ class FragmentTokenFragment {
     final l$token = json['token'];
     final l$$__typename = json['__typename'];
     return FragmentTokenFragment(
-      expires: (l$expires as String),
+      expires: DateTime.parse((l$expires as String)),
       token: (l$token as String),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final String expires;
+  final DateTime expires;
 
   final String token;
 
@@ -28,7 +28,7 @@ class FragmentTokenFragment {
   Map<String, dynamic> toJson() {
     final _resultData = <String, dynamic>{};
     final l$expires = expires;
-    _resultData['expires'] = l$expires;
+    _resultData['expires'] = l$expires.toIso8601String();
     final l$token = token;
     _resultData['token'] = l$token;
     final l$$__typename = $__typename;
@@ -93,7 +93,7 @@ abstract class CopyWithFragmentTokenFragment<TRes> {
       _CopyWithStubImplFragmentTokenFragment;
 
   TRes call({
-    String? expires,
+    DateTime? expires,
     String? token,
     String? $__typename,
   });
@@ -120,7 +120,7 @@ class _CopyWithImplFragmentTokenFragment<TRes>
       _then(FragmentTokenFragment(
         expires: expires == _undefined || expires == null
             ? _instance.expires
-            : (expires as String),
+            : (expires as DateTime),
         token: token == _undefined || token == null
             ? _instance.token
             : (token as String),
@@ -137,7 +137,7 @@ class _CopyWithStubImplFragmentTokenFragment<TRes>
   TRes _res;
 
   call({
-    String? expires,
+    DateTime? expires,
     String? token,
     String? $__typename,
   }) =>

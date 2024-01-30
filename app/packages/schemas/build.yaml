@@ -7,3 +7,8 @@ targets:
             - graphql
           namingSeparator: ""
           outputDirectory: generated
+          scalars:
+            DateTime:
+              type: DateTime
+            JSONObject:
+              type: Map<String, dynamic>

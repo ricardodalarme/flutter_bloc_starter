@@ -600,11 +600,11 @@ class _CopyWithStubImplInputStringFilterInput<TRes>
 class InputDateTimeFilterInput {
   factory InputDateTimeFilterInput({
     InputDateTimeRangeFilterInput? between,
-    String? equals,
-    String? greaterThan,
-    String? greaterThanOrEqual,
-    String? lessThan,
-    String? lessThanOrEqual,
+    DateTime? equals,
+    DateTime? greaterThan,
+    DateTime? greaterThanOrEqual,
+    DateTime? lessThan,
+    DateTime? lessThanOrEqual,
   }) =>
       InputDateTimeFilterInput._({
         if (between != null) r'between': between,
@@ -629,23 +629,31 @@ class InputDateTimeFilterInput {
     }
     if (data.containsKey('equals')) {
       final l$equals = data['equals'];
-      result$data['equals'] = (l$equals as String?);
+      result$data['equals'] =
+          l$equals == null ? null : DateTime.parse((l$equals as String));
     }
     if (data.containsKey('greaterThan')) {
       final l$greaterThan = data['greaterThan'];
-      result$data['greaterThan'] = (l$greaterThan as String?);
+      result$data['greaterThan'] = l$greaterThan == null
+          ? null
+          : DateTime.parse((l$greaterThan as String));
     }
     if (data.containsKey('greaterThanOrEqual')) {
       final l$greaterThanOrEqual = data['greaterThanOrEqual'];
-      result$data['greaterThanOrEqual'] = (l$greaterThanOrEqual as String?);
+      result$data['greaterThanOrEqual'] = l$greaterThanOrEqual == null
+          ? null
+          : DateTime.parse((l$greaterThanOrEqual as String));
     }
     if (data.containsKey('lessThan')) {
       final l$lessThan = data['lessThan'];
-      result$data['lessThan'] = (l$lessThan as String?);
+      result$data['lessThan'] =
+          l$lessThan == null ? null : DateTime.parse((l$lessThan as String));
     }
     if (data.containsKey('lessThanOrEqual')) {
       final l$lessThanOrEqual = data['lessThanOrEqual'];
-      result$data['lessThanOrEqual'] = (l$lessThanOrEqual as String?);
+      result$data['lessThanOrEqual'] = l$lessThanOrEqual == null
+          ? null
+          : DateTime.parse((l$lessThanOrEqual as String));
     }
     return InputDateTimeFilterInput._(result$data);
   }
@@ -655,15 +663,16 @@ class InputDateTimeFilterInput {
   InputDateTimeRangeFilterInput? get between =>
       (_$data['between'] as InputDateTimeRangeFilterInput?);
 
-  String? get equals => (_$data['equals'] as String?);
+  DateTime? get equals => (_$data['equals'] as DateTime?);
 
-  String? get greaterThan => (_$data['greaterThan'] as String?);
+  DateTime? get greaterThan => (_$data['greaterThan'] as DateTime?);
 
-  String? get greaterThanOrEqual => (_$data['greaterThanOrEqual'] as String?);
+  DateTime? get greaterThanOrEqual =>
+      (_$data['greaterThanOrEqual'] as DateTime?);
 
-  String? get lessThan => (_$data['lessThan'] as String?);
+  DateTime? get lessThan => (_$data['lessThan'] as DateTime?);
 
-  String? get lessThanOrEqual => (_$data['lessThanOrEqual'] as String?);
+  DateTime? get lessThanOrEqual => (_$data['lessThanOrEqual'] as DateTime?);
 
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
@@ -673,23 +682,24 @@ class InputDateTimeFilterInput {
     }
     if (_$data.containsKey('equals')) {
       final l$equals = equals;
-      result$data['equals'] = l$equals;
+      result$data['equals'] = l$equals?.toIso8601String();
     }
     if (_$data.containsKey('greaterThan')) {
       final l$greaterThan = greaterThan;
-      result$data['greaterThan'] = l$greaterThan;
+      result$data['greaterThan'] = l$greaterThan?.toIso8601String();
     }
     if (_$data.containsKey('greaterThanOrEqual')) {
       final l$greaterThanOrEqual = greaterThanOrEqual;
-      result$data['greaterThanOrEqual'] = l$greaterThanOrEqual;
+      result$data['greaterThanOrEqual'] =
+          l$greaterThanOrEqual?.toIso8601String();
     }
     if (_$data.containsKey('lessThan')) {
       final l$lessThan = lessThan;
-      result$data['lessThan'] = l$lessThan;
+      result$data['lessThan'] = l$lessThan?.toIso8601String();
     }
     if (_$data.containsKey('lessThanOrEqual')) {
       final l$lessThanOrEqual = lessThanOrEqual;
-      result$data['lessThanOrEqual'] = l$lessThanOrEqual;
+      result$data['lessThanOrEqual'] = l$lessThanOrEqual?.toIso8601String();
     }
     return result$data;
   }
@@ -796,11 +806,11 @@ abstract class CopyWithInputDateTimeFilterInput<TRes> {
 
   TRes call({
     InputDateTimeRangeFilterInput? between,
-    String? equals,
-    String? greaterThan,
-    String? greaterThanOrEqual,
-    String? lessThan,
-    String? lessThanOrEqual,
+    DateTime? equals,
+    DateTime? greaterThan,
+    DateTime? greaterThanOrEqual,
+    DateTime? lessThan,
+    DateTime? lessThanOrEqual,
   });
   CopyWithInputDateTimeRangeFilterInput<TRes> get between;
 }
@@ -830,13 +840,14 @@ class _CopyWithImplInputDateTimeFilterInput<TRes>
         ..._instance._$data,
         if (between != _undefined)
           'between': (between as InputDateTimeRangeFilterInput?),
-        if (equals != _undefined) 'equals': (equals as String?),
-        if (greaterThan != _undefined) 'greaterThan': (greaterThan as String?),
+        if (equals != _undefined) 'equals': (equals as DateTime?),
+        if (greaterThan != _undefined)
+          'greaterThan': (greaterThan as DateTime?),
         if (greaterThanOrEqual != _undefined)
-          'greaterThanOrEqual': (greaterThanOrEqual as String?),
-        if (lessThan != _undefined) 'lessThan': (lessThan as String?),
+          'greaterThanOrEqual': (greaterThanOrEqual as DateTime?),
+        if (lessThan != _undefined) 'lessThan': (lessThan as DateTime?),
         if (lessThanOrEqual != _undefined)
-          'lessThanOrEqual': (lessThanOrEqual as String?),
+          'lessThanOrEqual': (lessThanOrEqual as DateTime?),
       }));
 
   CopyWithInputDateTimeRangeFilterInput<TRes> get between {
@@ -856,11 +867,11 @@ class _CopyWithStubImplInputDateTimeFilterInput<TRes>
 
   call({
     InputDateTimeRangeFilterInput? between,
-    String? equals,
-    String? greaterThan,
-    String? greaterThanOrEqual,
-    String? lessThan,
-    String? lessThanOrEqual,
+    DateTime? equals,
+    DateTime? greaterThan,
+    DateTime? greaterThanOrEqual,
+    DateTime? lessThan,
+    DateTime? lessThanOrEqual,
   }) =>
       _res;
 
@@ -870,8 +881,8 @@ class _CopyWithStubImplInputDateTimeFilterInput<TRes>
 
 class InputDateTimeRangeFilterInput {
   factory InputDateTimeRangeFilterInput({
-    String? end,
-    String? start,
+    DateTime? end,
+    DateTime? start,
   }) =>
       InputDateTimeRangeFilterInput._({
         if (end != null) r'end': end,
@@ -884,30 +895,32 @@ class InputDateTimeRangeFilterInput {
     final result$data = <String, dynamic>{};
     if (data.containsKey('end')) {
       final l$end = data['end'];
-      result$data['end'] = (l$end as String?);
+      result$data['end'] =
+          l$end == null ? null : DateTime.parse((l$end as String));
     }
     if (data.containsKey('start')) {
       final l$start = data['start'];
-      result$data['start'] = (l$start as String?);
+      result$data['start'] =
+          l$start == null ? null : DateTime.parse((l$start as String));
     }
     return InputDateTimeRangeFilterInput._(result$data);
   }
 
   Map<String, dynamic> _$data;
 
-  String? get end => (_$data['end'] as String?);
+  DateTime? get end => (_$data['end'] as DateTime?);
 
-  String? get start => (_$data['start'] as String?);
+  DateTime? get start => (_$data['start'] as DateTime?);
 
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('end')) {
       final l$end = end;
-      result$data['end'] = l$end;
+      result$data['end'] = l$end?.toIso8601String();
     }
     if (_$data.containsKey('start')) {
       final l$start = start;
-      result$data['start'] = l$start;
+      result$data['start'] = l$start?.toIso8601String();
     }
     return result$data;
   }
@@ -967,8 +980,8 @@ abstract class CopyWithInputDateTimeRangeFilterInput<TRes> {
       _CopyWithStubImplInputDateTimeRangeFilterInput;
 
   TRes call({
-    String? end,
-    String? start,
+    DateTime? end,
+    DateTime? start,
   });
 }
 
@@ -991,8 +1004,8 @@ class _CopyWithImplInputDateTimeRangeFilterInput<TRes>
   }) =>
       _then(InputDateTimeRangeFilterInput._({
         ..._instance._$data,
-        if (end != _undefined) 'end': (end as String?),
-        if (start != _undefined) 'start': (start as String?),
+        if (end != _undefined) 'end': (end as DateTime?),
+        if (start != _undefined) 'start': (start as DateTime?),
       }));
 }
 
@@ -1003,8 +1016,8 @@ class _CopyWithStubImplInputDateTimeRangeFilterInput<TRes>
   TRes _res;
 
   call({
-    String? end,
-    String? start,
+    DateTime? end,
+    DateTime? start,
   }) =>
       _res;
 }
@@ -6459,7 +6472,7 @@ class InputTriggerWebhookEvent {
   factory InputTriggerWebhookEvent({
     required EnumSubscribableEvents triggerEvent,
     required String webhookId,
-    required String webhookJsonData,
+    required Map<String, dynamic> webhookJsonData,
   }) =>
       InputTriggerWebhookEvent._({
         r'triggerEvent': triggerEvent,
@@ -6477,7 +6490,8 @@ class InputTriggerWebhookEvent {
     final l$webhookId = data['webhookId'];
     result$data['webhookId'] = (l$webhookId as String);
     final l$webhookJsonData = data['webhookJsonData'];
-    result$data['webhookJsonData'] = (l$webhookJsonData as String);
+    result$data['webhookJsonData'] =
+        (l$webhookJsonData as Map<String, dynamic>);
     return InputTriggerWebhookEvent._(result$data);
   }
 
@@ -6488,7 +6502,8 @@ class InputTriggerWebhookEvent {
 
   String get webhookId => (_$data['webhookId'] as String);
 
-  String get webhookJsonData => (_$data['webhookJsonData'] as String);
+  Map<String, dynamic> get webhookJsonData =>
+      (_$data['webhookJsonData'] as Map<String, dynamic>);
 
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
@@ -6559,7 +6574,7 @@ abstract class CopyWithInputTriggerWebhookEvent<TRes> {
   TRes call({
     EnumSubscribableEvents? triggerEvent,
     String? webhookId,
-    String? webhookJsonData,
+    Map<String, dynamic>? webhookJsonData,
   });
 }
 
@@ -6588,7 +6603,7 @@ class _CopyWithImplInputTriggerWebhookEvent<TRes>
         if (webhookId != _undefined && webhookId != null)
           'webhookId': (webhookId as String),
         if (webhookJsonData != _undefined && webhookJsonData != null)
-          'webhookJsonData': (webhookJsonData as String),
+          'webhookJsonData': (webhookJsonData as Map<String, dynamic>),
       }));
 }
 
@@ -6601,7 +6616,7 @@ class _CopyWithStubImplInputTriggerWebhookEvent<TRes>
   call({
     EnumSubscribableEvents? triggerEvent,
     String? webhookId,
-    String? webhookJsonData,
+    Map<String, dynamic>? webhookJsonData,
   }) =>
       _res;
 }

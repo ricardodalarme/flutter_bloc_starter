@@ -17,6 +17,10 @@ scripts:
     exec: flutter pub get
     description: Get all dependencies.
 
+  upgrade:
+    exec: flutter pub upgrade
+    description: Upgrade all dependencies.
+
   lint:
     run: melos format:no-output && melos analyze
     description: Lint all packages.

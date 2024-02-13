@@ -547,7 +547,7 @@ packages:
     source: sdk
     version: "0.0.0"
   formz:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: formz
       sha256: df8301299601139de7e653e68a07c332fd2db7cec65745eca1a1ea73fb711e06

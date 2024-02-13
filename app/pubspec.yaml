@@ -22,7 +22,6 @@ dependencies:
   flutter_bloc: ^8.1.4
   flutter_localizations:
     sdk: flutter
-  formz: ^0.6.1
   formz_inputs:
     path: ./packages/formz_inputs
   gap: ^3.0.1

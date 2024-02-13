@@ -1,4 +1,13 @@
 {
   "title": "Edit Profile",
-  "messageSuccess": "Profile updated successfully"
+  "messageSuccess": "Profile updated successfully",
+  "firstNameErrors(map)": {
+    "empty": "First name is required"
+  },
+  "lastNameErrors(map)": {
+    "empty": "Last name is required"
+  },
+  "emailErrors(map)": {
+    "invalid": "Email is invalid"
+  }
 }

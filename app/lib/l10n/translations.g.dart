@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 108 (54 per locale)
+/// Strings: 114 (57 per locale)
 ///
-/// Built on 2024-02-13 at 20:33 UTC
+/// Built on 2024-02-13 at 20:42 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -344,6 +344,15 @@ class _TranslationsEditProfileEn {
   // Translations
   String get title => 'Edit Profile';
   String get messageSuccess => 'Profile updated successfully';
+  Map<String, String> get firstNameErrors => {
+        'empty': 'First name is required',
+      };
+  Map<String, String> get lastNameErrors => {
+        'empty': 'Last name is required',
+      };
+  Map<String, String> get emailErrors => {
+        'invalid': 'Email is invalid',
+      };
 }
 
 // Path: login
@@ -692,6 +701,18 @@ class _TranslationsEditProfilePt extends _TranslationsEditProfileEn {
   String get title => 'Editar Perfil';
   @override
   String get messageSuccess => 'Perfil editado com sucesso!';
+  @override
+  Map<String, String> get firstNameErrors => {
+        'empty': 'Nome é obrigatório',
+      };
+  @override
+  Map<String, String> get lastNameErrors => {
+        'empty': 'Sobrenome é obrigatório',
+      };
+  @override
+  Map<String, String> get emailErrors => {
+        'invalid': 'Email inválido',
+      };
 }
 
 // Path: login
@@ -892,6 +913,12 @@ extension on Translations {
         return 'Edit Profile';
       case 'editProfile.messageSuccess':
         return 'Profile updated successfully';
+      case 'editProfile.firstNameErrors.empty':
+        return 'First name is required';
+      case 'editProfile.lastNameErrors.empty':
+        return 'Last name is required';
+      case 'editProfile.emailErrors.invalid':
+        return 'Email is invalid';
       case 'login.title':
         return 'Login';
       case 'login.buttonLogin':
@@ -1012,6 +1039,12 @@ extension on _TranslationsPt {
         return 'Editar Perfil';
       case 'editProfile.messageSuccess':
         return 'Perfil editado com sucesso!';
+      case 'editProfile.firstNameErrors.empty':
+        return 'Nome é obrigatório';
+      case 'editProfile.lastNameErrors.empty':
+        return 'Sobrenome é obrigatório';
+      case 'editProfile.emailErrors.invalid':
+        return 'Email inválido';
       case 'login.title':
         return 'Entrar';
       case 'login.buttonLogin':

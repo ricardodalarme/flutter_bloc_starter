@@ -1,4 +1,13 @@
 {
   "title": "Editar Perfil",
-  "messageSuccess": "Perfil editado com sucesso!"
+  "messageSuccess": "Perfil editado com sucesso!",
+  "firstNameErrors(map)": {
+    "empty": "Nome é obrigatório"
+  },
+  "lastNameErrors(map)": {
+    "empty": "Sobrenome é obrigatório"
+  },
+  "emailErrors(map)": {
+    "invalid": "Email inválido"
+  }
 }

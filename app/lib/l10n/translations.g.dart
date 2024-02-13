@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 88 (44 per locale)
+/// Strings: 92 (46 per locale)
 ///
-/// Built on 2024-01-10 at 12:19 UTC
+/// Built on 2024-02-13 at 20:14 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -341,6 +341,12 @@ class _TranslationsLoginEn {
         signUp('Sign up'),
       ]);
   String get dividerOr => 'OR';
+  Map<String, String> get usernameErrors => {
+        'empty': 'Username is required',
+      };
+  Map<String, String> get passwordErrors => {
+        'empty': 'Password is required',
+      };
 }
 
 // Path: notFound
@@ -659,6 +665,14 @@ class _TranslationsLoginPt extends _TranslationsLoginEn {
       ]);
   @override
   String get dividerOr => 'OU';
+  @override
+  Map<String, String> get usernameErrors => {
+        'empty': 'O nome de usuário é obrigatório',
+      };
+  @override
+  Map<String, String> get passwordErrors => {
+        'empty': 'A senha é obrigatória',
+      };
 }
 
 // Path: notFound
@@ -819,6 +833,10 @@ extension on Translations {
             ]);
       case 'login.dividerOr':
         return 'OR';
+      case 'login.usernameErrors.empty':
+        return 'Username is required';
+      case 'login.passwordErrors.empty':
+        return 'Password is required';
       case 'notFound.title':
         return '404';
       case 'notFound.description':
@@ -919,6 +937,10 @@ extension on _TranslationsPt {
             ]);
       case 'login.dividerOr':
         return 'OU';
+      case 'login.usernameErrors.empty':
+        return 'O nome de usuário é obrigatório';
+      case 'login.passwordErrors.empty':
+        return 'A senha é obrigatória';
       case 'notFound.title':
         return '404';
       case 'notFound.description':

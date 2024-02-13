@@ -71,6 +71,8 @@ class _UsernameTextField extends StatelessWidget {
       builder: (context, state) => BaseTextField(
         text: state.username.value,
         label: context.l10n.common.username,
+        errorText: context
+            .l10n.login.usernameErrors[state.username.displayError?.name],
         onChanged: (username) =>
             context.read<LoginBloc>().add(LoginUsernameChanged(username)),
         keyboardType: TextInputType.text,
@@ -89,6 +91,8 @@ class _PasswordTextField extends StatelessWidget {
       buildWhen: (previous, current) => previous.password != current.password,
       builder: (context, state) => PasswordTextField(
         text: state.password.value,
+        errorText: context
+            .l10n.login.passwordErrors[state.password.displayError?.name],
         onChanged: (password) =>
             context.read<LoginBloc>().add(LoginPasswordChanged(password)),
         label: context.l10n.common.password,

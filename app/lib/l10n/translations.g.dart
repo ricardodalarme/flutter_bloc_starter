@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 92 (46 per locale)
+/// Strings: 98 (49 per locale)
 ///
-/// Built on 2024-02-13 at 20:14 UTC
+/// Built on 2024-02-13 at 20:16 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -310,6 +310,16 @@ class _TranslationsChangePasswordEn {
   String get labelNewPassword => 'New Password';
   String get labelConfirmPassword => 'Confirm Password';
   String get messageSuccess => 'Password changed successfully';
+  Map<String, String> get currentPasswordErrors => {
+        'empty': 'Current password is required',
+      };
+  Map<String, String> get newPasswordErrors => {
+        'weak':
+            'New password must be at least 8 characters long and contain at least one letter and one number',
+      };
+  Map<String, String> get confirmPasswordErrors => {
+        'invalid': 'Passwords do not match',
+      };
 }
 
 // Path: editProfile
@@ -620,6 +630,19 @@ class _TranslationsChangePasswordPt extends _TranslationsChangePasswordEn {
   String get labelConfirmPassword => 'Confirmar Senha';
   @override
   String get messageSuccess => 'Senha alterada com sucesso!';
+  @override
+  Map<String, String> get currentPasswordErrors => {
+        'empty': 'Senha atual é obrigatória',
+      };
+  @override
+  Map<String, String> get newPasswordErrors => {
+        'weak':
+            'A nova senha deve ter pelo menos 8 caracteres e conter pelo menos uma letra e um número',
+      };
+  @override
+  Map<String, String> get confirmPasswordErrors => {
+        'invalid': 'As senhas não coincidem',
+      };
 }
 
 // Path: editProfile
@@ -814,6 +837,12 @@ extension on Translations {
         return 'Confirm Password';
       case 'changePassword.messageSuccess':
         return 'Password changed successfully';
+      case 'changePassword.currentPasswordErrors.empty':
+        return 'Current password is required';
+      case 'changePassword.newPasswordErrors.weak':
+        return 'New password must be at least 8 characters long and contain at least one letter and one number';
+      case 'changePassword.confirmPasswordErrors.invalid':
+        return 'Passwords do not match';
       case 'editProfile.title':
         return 'Edit Profile';
       case 'editProfile.messageSuccess':
@@ -918,6 +947,12 @@ extension on _TranslationsPt {
         return 'Confirmar Senha';
       case 'changePassword.messageSuccess':
         return 'Senha alterada com sucesso!';
+      case 'changePassword.currentPasswordErrors.empty':
+        return 'Senha atual é obrigatória';
+      case 'changePassword.newPasswordErrors.weak':
+        return 'A nova senha deve ter pelo menos 8 caracteres e conter pelo menos uma letra e um número';
+      case 'changePassword.confirmPasswordErrors.invalid':
+        return 'As senhas não coincidem';
       case 'editProfile.title':
         return 'Editar Perfil';
       case 'editProfile.messageSuccess':

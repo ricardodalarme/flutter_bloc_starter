@@ -8,3 +8,5 @@ output_file_name: translations.g.dart
 string_interpolation: braces
 translate_var: l10n
 key_case: camel
+timestamp: false
+statistics: false

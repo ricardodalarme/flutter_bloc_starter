@@ -2,11 +2,6 @@
 ///
 /// Original: lib/l10n
 /// To regenerate, run: `dart run slang`
-///
-/// Locales: 2
-/// Strings: 114 (57 per locale)
-///
-/// Built on 2024-02-13 at 20:42 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint

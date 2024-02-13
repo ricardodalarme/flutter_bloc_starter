@@ -79,7 +79,7 @@ class _SubmitButton extends StatelessWidget {
         isLoading: state.status.isInProgress,
         onPressed: () => context
             .read<ForgotPasswordBloc>()
-            .add(const ForgotPasswordSendEmailPressed()),
+            .add(const ForgotPasswordSubmitted()),
       ),
     );
   }

@@ -3,7 +3,8 @@ import 'package:formz_inputs/formz_inputs.dart';
 import 'package:quickstart_flutter_bloc/features/change_password/presentation/bloc/change_password_bloc.dart';
 
 void main() {
-  const password = NonEmptyInput.dirty('password');
+  const currentPassword = NonEmptyInput.dirty('password');
+  const newPassword = PasswordInput.dirty('password');
   const confirmPassword = ConfirmedPasswordInput.dirty(password: 'password');
 
   group('ChangePasswordState', () {
@@ -26,15 +27,15 @@ void main() {
         'returns object with updated currentPassword when currentPassword is passed',
         () {
       expect(
-        const ChangePasswordState().copyWith(currentPassword: password),
-        const ChangePasswordState(currentPassword: password),
+        const ChangePasswordState().copyWith(currentPassword: currentPassword),
+        const ChangePasswordState(currentPassword: currentPassword),
       );
     });
 
     test('returns object with updated password when valid is passed', () {
       expect(
-        const ChangePasswordState().copyWith(password: password),
-        const ChangePasswordState(password: password),
+        const ChangePasswordState().copyWith(password: newPassword),
+        const ChangePasswordState(password: newPassword),
       );
     });
 

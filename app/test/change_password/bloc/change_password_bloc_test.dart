@@ -29,7 +29,7 @@ void main() {
         changePasswordBloc.state,
         const ChangePasswordState(
           currentPassword: NonEmptyInput.pure(),
-          password: NonEmptyInput.pure(),
+          password: PasswordInput.pure(),
           confirmPassword: ConfirmedPasswordInput.pure(),
           status: FormzSubmissionStatus.initial,
         ),
@@ -55,7 +55,7 @@ void main() {
           bloc.add(const ChangePasswordNewPasswordChanged('password')),
       expect: () => [
         const ChangePasswordState(
-          password: NonEmptyInput.dirty('password'),
+          password: PasswordInput.dirty('password'),
           confirmPassword: ConfirmedPasswordInput.dirty(
             password: 'password',
           ),

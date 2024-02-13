@@ -7,12 +7,14 @@ class PasswordTextField extends StatefulWidget {
     this.label,
     this.onChanged,
     this.textInputAction,
+    this.errorText,
     this.onSubmitted,
     super.key,
   });
 
   final String text;
   final String? label;
+  final String? errorText;
   final ValueChanged<String>? onChanged;
   final TextInputAction? textInputAction;
   final void Function(String)? onSubmitted;
@@ -35,6 +37,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
       textInputAction: widget.textInputAction,
       onSubmitted: widget.onSubmitted,
       label: widget.label,
+      errorText: widget.errorText,
       suffixIcon: ExcludeFocus(
         child: IconButton(
           icon: Icon(

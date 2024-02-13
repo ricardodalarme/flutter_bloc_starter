@@ -5,6 +5,7 @@ class BaseTextField extends StatefulWidget {
     required this.text,
     super.key,
     this.label,
+    this.errorText,
     this.autocorrect = true,
     this.enableSuggestions = true,
     this.obscureText = false,
@@ -17,6 +18,7 @@ class BaseTextField extends StatefulWidget {
 
   final String text;
   final String? label;
+  final String? errorText;
   final TextInputAction? textInputAction;
   final TextInputType? keyboardType;
   final ValueChanged<String>? onChanged;
@@ -56,6 +58,7 @@ class _BaseTextFieldState extends State<BaseTextField> {
       decoration: InputDecoration(
         labelText: widget.label,
         suffixIcon: widget.suffixIcon,
+        errorText: widget.errorText,
       ),
       enableSuggestions: widget.enableSuggestions,
       obscureText: widget.obscureText,

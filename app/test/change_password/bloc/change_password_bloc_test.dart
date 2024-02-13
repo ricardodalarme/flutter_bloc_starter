@@ -56,7 +56,7 @@ void main() {
       expect: () => [
         const ChangePasswordState(
           password: PasswordInput.dirty('password'),
-          confirmPassword: ConfirmedPasswordInput.dirty(
+          confirmPassword: ConfirmedPasswordInput.pure(
             password: 'password',
           ),
         ),

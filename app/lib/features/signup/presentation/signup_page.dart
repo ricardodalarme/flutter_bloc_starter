@@ -65,6 +65,8 @@ class _UsernameTextField extends StatelessWidget {
       builder: (context, state) => BaseTextField(
         text: state.username.value,
         label: context.l10n.common.username,
+        errorText: context
+            .l10n.signup.usernameErrors[state.username.displayError?.name],
         onChanged: (username) =>
             context.read<SignupBloc>().add(SignupUsernameChanged(username)),
         keyboardType: TextInputType.name,
@@ -84,6 +86,8 @@ class _EmailTextField extends StatelessWidget {
       builder: (context, state) => BaseTextField(
         text: state.email.value,
         label: context.l10n.common.email,
+        errorText:
+            context.l10n.signup.emailErrors[state.email.displayError?.name],
         onChanged: (email) =>
             context.read<SignupBloc>().add(SignupEmailChanged(email)),
         keyboardType: TextInputType.emailAddress,
@@ -102,9 +106,11 @@ class _PasswordTextField extends StatelessWidget {
       buildWhen: (previous, current) => previous.password != current.password,
       builder: (context, state) => PasswordTextField(
         text: state.password.value,
+        label: context.l10n.common.password,
+        errorText: context
+            .l10n.signup.passwordErrors[state.password.displayError?.name],
         onChanged: (password) =>
             context.read<SignupBloc>().add(SignupPasswordChanged(password)),
-        label: context.l10n.common.password,
         textInputAction: TextInputAction.next,
       ),
     );
@@ -121,10 +127,12 @@ class _ConfirmPasswordTextField extends StatelessWidget {
           previous.confirmPassword != current.confirmPassword,
       builder: (context, state) => PasswordTextField(
         text: state.confirmPassword.value,
+        label: context.l10n.signup.labelConfirmPassword,
+        errorText: context.l10n.signup
+            .confirmPasswordErrors[state.confirmPassword.displayError?.name],
         onChanged: (password) => context
             .read<SignupBloc>()
             .add(SignupConfirmPasswordChanged(password)),
-        label: context.l10n.signup.labelConfirmPassword,
         textInputAction: TextInputAction.done,
         onSubmitted: (_) =>
             context.read<SignupBloc>().add(const SignupSubmitted()),

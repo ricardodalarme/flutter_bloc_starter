@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 100 (50 per locale)
+/// Strings: 108 (54 per locale)
 ///
-/// Built on 2024-02-13 at 20:26 UTC
+/// Built on 2024-02-13 at 20:33 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -247,6 +247,19 @@ class _TranslationsSignupEn {
   String get title => 'Sign Up';
   String get labelConfirmPassword => 'Confirm Password';
   String get buttonSubmit => 'Sign Up';
+  Map<String, String> get usernameErrors => {
+        'empty': 'Username is required',
+      };
+  Map<String, String> get emailErrors => {
+        'invalid': 'Email is invalid',
+      };
+  Map<String, String> get passwordErrors => {
+        'weak':
+            'Password must be at least 8 characters long and contain at least one letter and one number',
+      };
+  Map<String, String> get confirmPasswordErrors => {
+        'invalid': 'Passwords do not match',
+      };
 }
 
 // Path: privacyPolicy
@@ -537,6 +550,23 @@ class _TranslationsSignupPt extends _TranslationsSignupEn {
   String get labelConfirmPassword => 'Confirmar Senha';
   @override
   String get buttonSubmit => 'Registrar';
+  @override
+  Map<String, String> get usernameErrors => {
+        'empty': 'Nome de usuário é obrigatório',
+      };
+  @override
+  Map<String, String> get emailErrors => {
+        'invalid': 'Email é inválido',
+      };
+  @override
+  Map<String, String> get passwordErrors => {
+        'weak':
+            'Senha deve ter pelo menos 8 caracteres e conter pelo menos uma letra e um número',
+      };
+  @override
+  Map<String, String> get confirmPasswordErrors => {
+        'invalid': 'Senhas não coincidem',
+      };
 }
 
 // Path: privacyPolicy
@@ -808,6 +838,14 @@ extension on Translations {
         return 'Confirm Password';
       case 'signup.buttonSubmit':
         return 'Sign Up';
+      case 'signup.usernameErrors.empty':
+        return 'Username is required';
+      case 'signup.emailErrors.invalid':
+        return 'Email is invalid';
+      case 'signup.passwordErrors.weak':
+        return 'Password must be at least 8 characters long and contain at least one letter and one number';
+      case 'signup.confirmPasswordErrors.invalid':
+        return 'Passwords do not match';
       case 'privacyPolicy.title':
         return 'Privacy Policy';
       case 'settings.title':
@@ -920,6 +958,14 @@ extension on _TranslationsPt {
         return 'Confirmar Senha';
       case 'signup.buttonSubmit':
         return 'Registrar';
+      case 'signup.usernameErrors.empty':
+        return 'Nome de usuário é obrigatório';
+      case 'signup.emailErrors.invalid':
+        return 'Email é inválido';
+      case 'signup.passwordErrors.weak':
+        return 'Senha deve ter pelo menos 8 caracteres e conter pelo menos uma letra e um número';
+      case 'signup.confirmPasswordErrors.invalid':
+        return 'Senhas não coincidem';
       case 'privacyPolicy.title':
         return 'Politíca de Privacidade';
       case 'settings.title':

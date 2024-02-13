@@ -57,6 +57,8 @@ class _EmailTextField extends StatelessWidget {
       builder: (context, state) => BaseTextField(
         text: state.email.value,
         label: context.l10n.common.email,
+        errorText: context
+            .l10n.forgotPassword.emailErrors[state.email.displayError?.name],
         onChanged: (value) => context
             .read<ForgotPasswordBloc>()
             .add(ForgotPasswordEmailChanged(value)),

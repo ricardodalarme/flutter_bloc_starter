@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 98 (49 per locale)
+/// Strings: 100 (50 per locale)
 ///
-/// Built on 2024-02-13 at 20:16 UTC
+/// Built on 2024-02-13 at 20:26 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -407,6 +407,9 @@ class _TranslationsForgotPasswordEn {
   String get title => 'Recover Password';
   String get description =>
       'Enter your email address and we\'ll send you a link to reset your password.';
+  Map<String, String> get emailErrors => {
+        'invalid': 'Invalid email',
+      };
 }
 
 // Path: post
@@ -771,6 +774,10 @@ class _TranslationsForgotPasswordPt extends _TranslationsForgotPasswordEn {
   @override
   String get description =>
       'Digite seu email e enviaremos um link para você redefinir a sua senha.';
+  @override
+  Map<String, String> get emailErrors => {
+        'invalid': 'Email inválido',
+      };
 }
 
 // Path: post
@@ -892,6 +899,8 @@ extension on Translations {
         return 'Recover Password';
       case 'forgotPassword.description':
         return 'Enter your email address and we\'ll send you a link to reset your password.';
+      case 'forgotPassword.emailErrors.invalid':
+        return 'Invalid email';
       case 'post.title':
         return 'Feed';
       case 'post.textFailure':
@@ -1002,6 +1011,8 @@ extension on _TranslationsPt {
         return 'Recuperar Senha';
       case 'forgotPassword.description':
         return 'Digite seu email e enviaremos um link para você redefinir a sua senha.';
+      case 'forgotPassword.emailErrors.invalid':
+        return 'Email inválido';
       case 'post.title':
         return 'Feed';
       case 'post.textFailure':

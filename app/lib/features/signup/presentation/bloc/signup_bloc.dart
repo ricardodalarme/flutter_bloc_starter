@@ -46,7 +46,7 @@ class SignupBloc extends Bloc<SignupEvent, SignupState> {
     emit(
       state.copyWith(
         password: PasswordInput.dirty(event.password),
-        confirmPassword: ConfirmedPasswordInput.dirty(
+        confirmPassword: ConfirmedPasswordInput.pure(
           password: event.password,
           value: state.confirmPassword.value,
         ),

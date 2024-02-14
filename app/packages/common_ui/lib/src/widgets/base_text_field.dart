@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const _errorMaxLines = 2;
+
 class BaseTextField extends StatefulWidget {
   const BaseTextField({
     required this.text,
@@ -59,6 +61,7 @@ class _BaseTextFieldState extends State<BaseTextField> {
         labelText: widget.label,
         suffixIcon: widget.suffixIcon,
         errorText: widget.errorText,
+        errorMaxLines: _errorMaxLines,
       ),
       enableSuggestions: widget.enableSuggestions,
       obscureText: widget.obscureText,

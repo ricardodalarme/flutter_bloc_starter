@@ -23,5 +23,5 @@ final class ForgotPasswordState with EquatableMixin, FormzMixin {
   List<FormzInput<dynamic, dynamic>> get inputs => [email];
 
   @override
-  List<Object?> get props => [email];
+  List<Object?> get props => [email, status];
 }

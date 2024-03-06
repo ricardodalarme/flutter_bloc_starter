@@ -8,7 +8,7 @@ import 'package:quickstart_flutter_bloc/features/not_found/presentation/not_foun
 import 'package:quickstart_flutter_bloc/features/post/presentation/post_page.dart';
 import 'package:quickstart_flutter_bloc/features/privacy_policy/presentation/privacy_policy_page.dart';
 import 'package:quickstart_flutter_bloc/features/profile/profile_page.dart';
-import 'package:quickstart_flutter_bloc/features/search/search_page.dart';
+import 'package:quickstart_flutter_bloc/features/search/presentation/search_page.dart';
 import 'package:quickstart_flutter_bloc/features/settings/presentation/settings_page.dart';
 import 'package:quickstart_flutter_bloc/features/signup/presentation/signup_page.dart';
 import 'package:quickstart_flutter_bloc/features/terms/presentation/terms_page.dart';

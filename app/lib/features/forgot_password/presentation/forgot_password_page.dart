@@ -71,6 +71,7 @@ class _EmailTextField extends StatelessWidget {
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) => BaseTextField(
         text: state.email.value,
+        keyboardType: TextInputType.emailAddress,
         label: context.l10n.common.email,
         errorText: context
             .l10n.forgotPassword.emailErrors[state.email.displayError?.name],

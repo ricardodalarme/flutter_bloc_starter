@@ -10,7 +10,7 @@ import 'package:quickstart_flutter_bloc/features/app/observers/bloc_observer.dar
 import 'package:quickstart_flutter_bloc/features/authentication/di/authentication_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/change_password/di/change_password_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/di/edit_profile_injection_module.dart';
-import 'package:quickstart_flutter_bloc/features/forgot_password/di/forgot_passowrd_injection_module.dart';
+import 'package:quickstart_flutter_bloc/features/forgot_password/di/forgot_password_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/login/di/login_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/post/di/post_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/signup/di/signup_injection_module.dart';

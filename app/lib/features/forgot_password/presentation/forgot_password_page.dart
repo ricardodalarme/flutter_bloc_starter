@@ -24,26 +24,41 @@ class ForgotPasswordPage extends StatelessWidget implements AutoRouteWrapper {
   Widget build(BuildContext context) {
     return BaseView(
       title: context.l10n.forgotPassword.title,
-      body: Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(AppSpacing.large),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                context.l10n.forgotPassword.description,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              const Gap(AppSpacing.xlarge),
-              const _EmailTextField(),
-              const Gap(AppSpacing.large),
-              const _SubmitButton(),
-            ],
+      body: BlocListener<ForgotPasswordBloc, ForgotPasswordState>(
+        listener: _handleStatus,
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(AppSpacing.large),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  context.l10n.forgotPassword.description,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const Gap(AppSpacing.xlarge),
+                const _EmailTextField(),
+                const Gap(AppSpacing.large),
+                const _SubmitButton(),
+              ],
+            ),
           ),
         ),
       ),
     );
+  }
+
+  void _handleStatus(BuildContext context, ForgotPasswordState state) {
+    switch (state.status) {
+      case FormzSubmissionStatus.success:
+        context.showSnackBar(
+          message: context.l10n.forgotPassword.messageSuccess,
+          type: SnackBarType.success,
+        );
+      default:
+        return;
+    }
   }
 }
 

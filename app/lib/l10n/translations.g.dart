@@ -424,6 +424,8 @@ class _TranslationsForgotPasswordEn {
   String get title => 'Recover Password';
   String get description =>
       'Enter your email address and we\'ll send you a link to reset your password.';
+  String get messageSuccess =>
+      'We\'ve sent you an email with a link to reset your password.';
   Map<String, String> get emailErrors => {
         'invalid': 'Invalid email',
       };
@@ -821,6 +823,9 @@ class _TranslationsForgotPasswordPt extends _TranslationsForgotPasswordEn {
   String get description =>
       'Digite seu email e enviaremos um link para você redefinir a sua senha.';
   @override
+  String get messageSuccess =>
+      'Enviamos um email com um link para você redefinir a sua senha.';
+  @override
   Map<String, String> get emailErrors => {
         'invalid': 'Email inválido',
       };
@@ -959,6 +964,8 @@ extension on Translations {
         return 'Recover Password';
       case 'forgotPassword.description':
         return 'Enter your email address and we\'ll send you a link to reset your password.';
+      case 'forgotPassword.messageSuccess':
+        return 'We\'ve sent you an email with a link to reset your password.';
       case 'forgotPassword.emailErrors.invalid':
         return 'Invalid email';
       case 'post.title':
@@ -1085,6 +1092,8 @@ extension on _TranslationsPt {
         return 'Recuperar Senha';
       case 'forgotPassword.description':
         return 'Digite seu email e enviaremos um link para você redefinir a sua senha.';
+      case 'forgotPassword.messageSuccess':
+        return 'Enviamos um email com um link para você redefinir a sua senha.';
       case 'forgotPassword.emailErrors.invalid':
         return 'Email inválido';
       case 'post.title':

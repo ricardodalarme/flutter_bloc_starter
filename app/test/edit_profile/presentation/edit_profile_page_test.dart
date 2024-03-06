@@ -5,7 +5,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/presentation/bloc/edit_profile_bloc.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/presentation/edit_profile_page.dart';
 
-import '../test_helpers/pump_app.dart';
+import '../../test_helpers/pump_app.dart';
 
 class MockEditProfileBloc extends MockBloc<EditProfileEvent, EditProfileState>
     implements EditProfileBloc {}

@@ -5,7 +5,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:quickstart_flutter_bloc/features/change_password/presentation/bloc/change_password_bloc.dart';
 import 'package:quickstart_flutter_bloc/features/change_password/presentation/change_password_page.dart';
 
-import '../test_helpers/pump_app.dart';
+import '../../test_helpers/pump_app.dart';
 
 class MockChangePasswordBloc
     extends MockBloc<ChangePasswordEvent, ChangePasswordState>

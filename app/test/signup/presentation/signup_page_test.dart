@@ -5,7 +5,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:quickstart_flutter_bloc/features/signup/presentation/bloc/signup_bloc.dart';
 import 'package:quickstart_flutter_bloc/features/signup/presentation/signup_page.dart';
 
-import '../test_helpers/pump_app.dart';
+import '../../test_helpers/pump_app.dart';
 
 class MockSignupBloc extends MockBloc<SignupEvent, SignupState>
     implements SignupBloc {}

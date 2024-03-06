@@ -4,7 +4,7 @@ import 'package:quickstart_flutter_bloc/features/edit_profile/presentation/edit_
 import 'package:quickstart_flutter_bloc/features/forgot_password/presentation/forgot_password_page.dart';
 import 'package:quickstart_flutter_bloc/features/home/presentation/home_page.dart';
 import 'package:quickstart_flutter_bloc/features/login/presentation/login_page.dart';
-import 'package:quickstart_flutter_bloc/features/not_found/not_found_page.dart';
+import 'package:quickstart_flutter_bloc/features/not_found/presentation/not_found_page.dart';
 import 'package:quickstart_flutter_bloc/features/post/presentation/post_page.dart';
 import 'package:quickstart_flutter_bloc/features/privacy_policy/privacy_policy_page.dart';
 import 'package:quickstart_flutter_bloc/features/profile/profile_page.dart';

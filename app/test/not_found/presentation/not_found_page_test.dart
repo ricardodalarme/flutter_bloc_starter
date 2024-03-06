@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:quickstart_flutter_bloc/features/not_found/not_found_page.dart';
+import 'package:quickstart_flutter_bloc/features/not_found/presentation/not_found_page.dart';
 
-import '../test_helpers/pump_app.dart';
+import '../../test_helpers/pump_app.dart';
 
 void main() {
   group('NotFoundPage', () {

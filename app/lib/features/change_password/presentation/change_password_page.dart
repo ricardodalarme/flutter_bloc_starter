@@ -52,7 +52,7 @@ class ChangePasswordPage extends StatelessWidget implements AutoRouteWrapper {
   void _handleStatus(BuildContext context, ChangePasswordState state) {
     switch (state.status) {
       case FormzSubmissionStatus.success:
-        context.router.pop();
+        context.router.maybePop();
         context.showSnackBar(
           message: context.l10n.changePassword.messageSuccess,
           type: SnackBarType.success,

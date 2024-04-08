@@ -52,7 +52,7 @@ class EditProfilePage extends StatelessWidget implements AutoRouteWrapper {
   void _handleStatus(BuildContext context, EditProfileState state) {
     switch (state.status) {
       case FormzSubmissionStatus.success:
-        context.router.pop();
+        context.router.maybePop();
         context.showSnackBar(
           message: context.l10n.editProfile.messageSuccess,
           type: SnackBarType.success,

@@ -26,4 +26,4 @@ jobs:
       - uses: bluefireteam/melos-action@v3
 
       - name: Build Android appbundle
-        run: melos build:android
+        run: melos build:android-dev

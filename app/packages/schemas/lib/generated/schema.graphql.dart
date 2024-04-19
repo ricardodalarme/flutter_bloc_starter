@@ -7389,7 +7389,20 @@ class _CopyWithStubImplInputUpdateUserInput<TRes>
       _res;
 }
 
-enum EnumHomeElementTextKind { h1, h2, h3, h4, h5, h6, $unknown }
+enum EnumHomeElementTextKind {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  $unknown;
+
+  factory EnumHomeElementTextKind.fromJson(String value) =>
+      fromJsonEnumHomeElementTextKind(value);
+
+  String toJson() => toJsonEnumHomeElementTextKind(this);
+}
 
 String toJsonEnumHomeElementTextKind(EnumHomeElementTextKind e) {
   switch (e) {
@@ -7438,7 +7451,12 @@ enum EnumOrderableTermVersionFields {
   IS_PUBLISHED,
   UPDATED_AT,
   VERSION,
-  $unknown
+  $unknown;
+
+  factory EnumOrderableTermVersionFields.fromJson(String value) =>
+      fromJsonEnumOrderableTermVersionFields(value);
+
+  String toJson() => toJsonEnumOrderableTermVersionFields(this);
 }
 
 String toJsonEnumOrderableTermVersionFields(EnumOrderableTermVersionFields e) {
@@ -7488,7 +7506,16 @@ EnumOrderableTermVersionFields fromJsonEnumOrderableTermVersionFields(
   }
 }
 
-enum EnumOrderInput { ASC, DESC, $unknown }
+enum EnumOrderInput {
+  ASC,
+  DESC,
+  $unknown;
+
+  factory EnumOrderInput.fromJson(String value) =>
+      fromJsonEnumOrderInput(value);
+
+  String toJson() => toJsonEnumOrderInput(this);
+}
 
 String toJsonEnumOrderInput(EnumOrderInput e) {
   switch (e) {
@@ -7512,7 +7539,16 @@ EnumOrderInput fromJsonEnumOrderInput(String value) {
   }
 }
 
-enum EnumOrganizationStatus { ACTIVE, INACTIVE, $unknown }
+enum EnumOrganizationStatus {
+  ACTIVE,
+  INACTIVE,
+  $unknown;
+
+  factory EnumOrganizationStatus.fromJson(String value) =>
+      fromJsonEnumOrganizationStatus(value);
+
+  String toJson() => toJsonEnumOrganizationStatus(this);
+}
 
 String toJsonEnumOrganizationStatus(EnumOrganizationStatus e) {
   switch (e) {
@@ -7536,7 +7572,16 @@ EnumOrganizationStatus fromJsonEnumOrganizationStatus(String value) {
   }
 }
 
-enum EnumUserOrganizationEdgeStatus { ACTIVE, INACTIVE, $unknown }
+enum EnumUserOrganizationEdgeStatus {
+  ACTIVE,
+  INACTIVE,
+  $unknown;
+
+  factory EnumUserOrganizationEdgeStatus.fromJson(String value) =>
+      fromJsonEnumUserOrganizationEdgeStatus(value);
+
+  String toJson() => toJsonEnumUserOrganizationEdgeStatus(this);
+}
 
 String toJsonEnumUserOrganizationEdgeStatus(EnumUserOrganizationEdgeStatus e) {
   switch (e) {
@@ -7561,7 +7606,16 @@ EnumUserOrganizationEdgeStatus fromJsonEnumUserOrganizationEdgeStatus(
   }
 }
 
-enum EnumUserOrganizationRole { ADMIN, USER, $unknown }
+enum EnumUserOrganizationRole {
+  ADMIN,
+  USER,
+  $unknown;
+
+  factory EnumUserOrganizationRole.fromJson(String value) =>
+      fromJsonEnumUserOrganizationRole(value);
+
+  String toJson() => toJsonEnumUserOrganizationRole(this);
+}
 
 String toJsonEnumUserOrganizationRole(EnumUserOrganizationRole e) {
   switch (e) {
@@ -7594,7 +7648,12 @@ enum EnumOrderableOrganizationFields {
   NAME,
   TAGS,
   TRADING_NAME,
-  $unknown
+  $unknown;
+
+  factory EnumOrderableOrganizationFields.fromJson(String value) =>
+      fromJsonEnumOrderableOrganizationFields(value);
+
+  String toJson() => toJsonEnumOrderableOrganizationFields(this);
 }
 
 String toJsonEnumOrderableOrganizationFields(
@@ -7645,7 +7704,18 @@ EnumOrderableOrganizationFields fromJsonEnumOrderableOrganizationFields(
   }
 }
 
-enum EnumOrderableTermFields { DESCRIPTION, ID, TAGS, TITLE, $unknown }
+enum EnumOrderableTermFields {
+  DESCRIPTION,
+  ID,
+  TAGS,
+  TITLE,
+  $unknown;
+
+  factory EnumOrderableTermFields.fromJson(String value) =>
+      fromJsonEnumOrderableTermFields(value);
+
+  String toJson() => toJsonEnumOrderableTermFields(this);
+}
 
 String toJsonEnumOrderableTermFields(EnumOrderableTermFields e) {
   switch (e) {
@@ -7680,7 +7750,12 @@ EnumOrderableTermFields fromJsonEnumOrderableTermFields(String value) {
 enum EnumSubscribableEvents {
   ADD_USER_TO_ORGANIZATION,
   REMOVE_USER_FROM_ORGANIZATION,
-  $unknown
+  $unknown;
+
+  factory EnumSubscribableEvents.fromJson(String value) =>
+      fromJsonEnumSubscribableEvents(value);
+
+  String toJson() => toJsonEnumSubscribableEvents(this);
 }
 
 String toJsonEnumSubscribableEvents(EnumSubscribableEvents e) {
@@ -7705,7 +7780,16 @@ EnumSubscribableEvents fromJsonEnumSubscribableEvents(String value) {
   }
 }
 
-enum EnumWebhookRequestMethod { POST, PUT, $unknown }
+enum EnumWebhookRequestMethod {
+  POST,
+  PUT,
+  $unknown;
+
+  factory EnumWebhookRequestMethod.fromJson(String value) =>
+      fromJsonEnumWebhookRequestMethod(value);
+
+  String toJson() => toJsonEnumWebhookRequestMethod(this);
+}
 
 String toJsonEnumWebhookRequestMethod(EnumWebhookRequestMethod e) {
   switch (e) {
@@ -7729,7 +7813,16 @@ EnumWebhookRequestMethod fromJsonEnumWebhookRequestMethod(String value) {
   }
 }
 
-enum EnumForeignNodeIdValidateDirectivePolicy { RESOLVER, THROW, $unknown }
+enum EnumForeignNodeIdValidateDirectivePolicy {
+  RESOLVER,
+  THROW,
+  $unknown;
+
+  factory EnumForeignNodeIdValidateDirectivePolicy.fromJson(String value) =>
+      fromJsonEnumForeignNodeIdValidateDirectivePolicy(value);
+
+  String toJson() => toJsonEnumForeignNodeIdValidateDirectivePolicy(this);
+}
 
 String toJsonEnumForeignNodeIdValidateDirectivePolicy(
     EnumForeignNodeIdValidateDirectivePolicy e) {
@@ -7755,7 +7848,16 @@ EnumForeignNodeIdValidateDirectivePolicy
   }
 }
 
-enum EnumHasPermissionsDirectivePolicy { RESOLVER, THROW, $unknown }
+enum EnumHasPermissionsDirectivePolicy {
+  RESOLVER,
+  THROW,
+  $unknown;
+
+  factory EnumHasPermissionsDirectivePolicy.fromJson(String value) =>
+      fromJsonEnumHasPermissionsDirectivePolicy(value);
+
+  String toJson() => toJsonEnumHasPermissionsDirectivePolicy(this);
+}
 
 String toJsonEnumHasPermissionsDirectivePolicy(
     EnumHasPermissionsDirectivePolicy e) {
@@ -7781,7 +7883,16 @@ EnumHasPermissionsDirectivePolicy fromJsonEnumHasPermissionsDirectivePolicy(
   }
 }
 
-enum EnumListLengthValidateDirectivePolicy { RESOLVER, THROW, $unknown }
+enum EnumListLengthValidateDirectivePolicy {
+  RESOLVER,
+  THROW,
+  $unknown;
+
+  factory EnumListLengthValidateDirectivePolicy.fromJson(String value) =>
+      fromJsonEnumListLengthValidateDirectivePolicy(value);
+
+  String toJson() => toJsonEnumListLengthValidateDirectivePolicy(this);
+}
 
 String toJsonEnumListLengthValidateDirectivePolicy(
     EnumListLengthValidateDirectivePolicy e) {
@@ -7807,7 +7918,16 @@ EnumListLengthValidateDirectivePolicy
   }
 }
 
-enum EnumPatternValidateDirectivePolicy { RESOLVER, THROW, $unknown }
+enum EnumPatternValidateDirectivePolicy {
+  RESOLVER,
+  THROW,
+  $unknown;
+
+  factory EnumPatternValidateDirectivePolicy.fromJson(String value) =>
+      fromJsonEnumPatternValidateDirectivePolicy(value);
+
+  String toJson() => toJsonEnumPatternValidateDirectivePolicy(this);
+}
 
 String toJsonEnumPatternValidateDirectivePolicy(
     EnumPatternValidateDirectivePolicy e) {
@@ -7833,7 +7953,16 @@ EnumPatternValidateDirectivePolicy fromJsonEnumPatternValidateDirectivePolicy(
   }
 }
 
-enum EnumRangeValidateDirectivePolicy { RESOLVER, THROW, $unknown }
+enum EnumRangeValidateDirectivePolicy {
+  RESOLVER,
+  THROW,
+  $unknown;
+
+  factory EnumRangeValidateDirectivePolicy.fromJson(String value) =>
+      fromJsonEnumRangeValidateDirectivePolicy(value);
+
+  String toJson() => toJsonEnumRangeValidateDirectivePolicy(this);
+}
 
 String toJsonEnumRangeValidateDirectivePolicy(
     EnumRangeValidateDirectivePolicy e) {
@@ -7859,7 +7988,16 @@ EnumRangeValidateDirectivePolicy fromJsonEnumRangeValidateDirectivePolicy(
   }
 }
 
-enum EnumSelfNodeIdValidateDirectivePolicy { RESOLVER, THROW, $unknown }
+enum EnumSelfNodeIdValidateDirectivePolicy {
+  RESOLVER,
+  THROW,
+  $unknown;
+
+  factory EnumSelfNodeIdValidateDirectivePolicy.fromJson(String value) =>
+      fromJsonEnumSelfNodeIdValidateDirectivePolicy(value);
+
+  String toJson() => toJsonEnumSelfNodeIdValidateDirectivePolicy(this);
+}
 
 String toJsonEnumSelfNodeIdValidateDirectivePolicy(
     EnumSelfNodeIdValidateDirectivePolicy e) {
@@ -7885,7 +8023,16 @@ EnumSelfNodeIdValidateDirectivePolicy
   }
 }
 
-enum EnumStringLengthValidateDirectivePolicy { RESOLVER, THROW, $unknown }
+enum EnumStringLengthValidateDirectivePolicy {
+  RESOLVER,
+  THROW,
+  $unknown;
+
+  factory EnumStringLengthValidateDirectivePolicy.fromJson(String value) =>
+      fromJsonEnumStringLengthValidateDirectivePolicy(value);
+
+  String toJson() => toJsonEnumStringLengthValidateDirectivePolicy(this);
+}
 
 String toJsonEnumStringLengthValidateDirectivePolicy(
     EnumStringLengthValidateDirectivePolicy e) {
@@ -7920,7 +8067,12 @@ enum Enum__TypeKind {
   INPUT_OBJECT,
   LIST,
   NON_NULL,
-  $unknown
+  $unknown;
+
+  factory Enum__TypeKind.fromJson(String value) =>
+      fromJsonEnum__TypeKind(value);
+
+  String toJson() => toJsonEnum__TypeKind(this);
 }
 
 String toJsonEnum__TypeKind(Enum__TypeKind e) {
@@ -7989,7 +8141,12 @@ enum Enum__DirectiveLocation {
   ENUM_VALUE,
   INPUT_OBJECT,
   INPUT_FIELD_DEFINITION,
-  $unknown
+  $unknown;
+
+  factory Enum__DirectiveLocation.fromJson(String value) =>
+      fromJsonEnum__DirectiveLocation(value);
+
+  String toJson() => toJsonEnum__DirectiveLocation(this);
 }
 
 String toJsonEnum__DirectiveLocation(Enum__DirectiveLocation e) {

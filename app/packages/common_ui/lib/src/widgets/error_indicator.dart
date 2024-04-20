@@ -1,5 +1,5 @@
 import 'package:common_ui/common_ui.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 
 class ErrorIndicator extends StatelessWidget {
@@ -25,13 +25,13 @@ class ErrorIndicator extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.titleMedium,
+            style: context.typography.titleMedium,
           ),
           const Gap(AppSpacing.medium),
           Text(
             message,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: context.typography.bodyMedium,
           ),
           const Gap(AppSpacing.large),
           BaseButton(

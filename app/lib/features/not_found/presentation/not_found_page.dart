@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:common_ui/common_ui.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 import 'package:quickstart_flutter_bloc/routes/app_router.dart';
@@ -18,11 +18,11 @@ class NotFoundPage extends StatelessWidget {
           children: [
             Text(
               context.l10n.notFound.title,
-              style: Theme.of(context).textTheme.displayLarge,
+              style: context.typography.displayLarge,
             ),
             Text(
               context.l10n.notFound.description,
-              style: Theme.of(context).textTheme.headlineSmall,
+              style: context.typography.headlineSmall,
             ),
             const Gap(AppSpacing.xxlarge),
             BaseButton(

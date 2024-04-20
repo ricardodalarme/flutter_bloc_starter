@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:common_ui/common_ui.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePicture extends StatelessWidget {
@@ -21,7 +22,7 @@ class ProfilePicture extends StatelessWidget {
 
     return CircleAvatar(
       radius: size / 2,
-      backgroundColor: Theme.of(context).colorScheme.secondary,
+      backgroundColor: context.colors.secondary,
       child: photoUrl != null
           ? ClipOval(
               child: CachedNetworkImage(

@@ -1,7 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:common/common.dart';
 import 'package:common_ui/common_ui.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz_inputs/formz_inputs.dart';
 import 'package:gap/gap.dart';
@@ -35,7 +36,7 @@ class ForgotPasswordPage extends StatelessWidget implements AutoRouteWrapper {
                 Text(
                   context.l10n.forgotPassword.description,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: context.typography.titleMedium,
                 ),
                 const Gap(AppSpacing.xlarge),
                 const _EmailTextField(),

@@ -15,8 +15,6 @@ class PostCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-
     return Card(
       child: ListTile(
         leading: const ProfilePicture(
@@ -26,7 +24,7 @@ class PostCard extends StatelessWidget {
         isThreeLine: true,
         title: Text(
           post.title,
-          style: textTheme.titleLarge,
+          style: context.typography.titleLarge,
         ),
         subtitle: Text(
           post.body,

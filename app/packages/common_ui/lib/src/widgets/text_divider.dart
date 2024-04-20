@@ -1,4 +1,4 @@
-import 'package:common_ui/src/styling/app_spacing.dart';
+import 'package:common_ui/common_ui.dart';
 import 'package:flutter/material.dart';
 
 class TextDivider extends StatelessWidget {
@@ -12,7 +12,7 @@ class TextDivider extends StatelessWidget {
       children: [
         Expanded(
           child: Divider(
-            color: Theme.of(context).colorScheme.onSurface,
+            color: context.colors.onSurface,
           ),
         ),
         Padding(
@@ -21,12 +21,12 @@ class TextDivider extends StatelessWidget {
           ),
           child: Text(
             text,
-            style: Theme.of(context).textTheme.bodySmall,
+            style: context.typography.bodySmall,
           ),
         ),
         Expanded(
           child: Divider(
-            color: Theme.of(context).colorScheme.onSurface,
+            color: context.colors.onSurface,
           ),
         ),
       ],

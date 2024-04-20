@@ -27,10 +27,10 @@ class PostPage extends StatelessWidget implements AutoRouteWrapper {
       body: Padding(
         padding: const EdgeInsets.all(AppSpacing.large),
         child: BlocBuilder<PostBloc, PostState>(
-          builder: (context, state) => switch (state.status) {
-            PostStatus.success => _PostSuccess(posts: state.posts),
-            PostStatus.loading => const LoadingIndicator(),
-            PostStatus.failure => ErrorIndicator(
+          builder: (context, state) => switch (state.posts) {
+            Success(:final value) => _PostSuccess(posts: value),
+            Loading() => const LoadingIndicator(),
+            Failure() => ErrorIndicator(
                 title: context.l10n.common.genericError,
                 buttonText: context.l10n.common.retry,
                 message: context.l10n.post.textFailure,

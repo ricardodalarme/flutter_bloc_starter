@@ -1,3 +1,4 @@
+import 'package:common/common.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:quickstart_flutter_bloc/features/post/domain/models/post_model.dart';
 import 'package:quickstart_flutter_bloc/features/post/presentation/bloc/post_bloc.dart';
@@ -16,17 +17,10 @@ void main() {
       expect(const PostState().copyWith(), const PostState());
     });
 
-    test('returns object with updated status when status is passed', () {
-      expect(
-        const PostState().copyWith(status: PostStatus.success),
-        const PostState(status: PostStatus.success),
-      );
-    });
-
     test('returns object with updated posts when posts is passed', () {
       expect(
-        const PostState().copyWith(posts: posts),
-        const PostState(posts: posts),
+        const PostState().copyWith(posts: const Success(posts)),
+        const PostState(posts: Success(posts)),
       );
     });
   });

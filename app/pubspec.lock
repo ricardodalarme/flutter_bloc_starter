@@ -672,6 +672,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.2.0-beta.7"
+  graphql_query_compress:
+    dependency: transitive
+    description:
+      name: graphql_query_compress
+      sha256: e279684d32cd78d3ad2e0b56c244a4f63f9ea9c3ba79c82f8faebd2aa8ee889e
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   graphs:
     dependency: transitive
     description:

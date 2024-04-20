@@ -1,7 +1,5 @@
-import 'package:common/common.dart';
-
 abstract class ForgotPasswordRepository {
-  Future<Result<void>> forgotPassword({
+  Future<void> forgotPassword({
     required String email,
   });
 }

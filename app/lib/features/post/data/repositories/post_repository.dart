@@ -1,4 +1,3 @@
-import 'package:common/common.dart';
 import 'package:quickstart_flutter_bloc/features/post/data/data_sources/post_data_source.dart';
 import 'package:quickstart_flutter_bloc/features/post/domain/models/post_model.dart';
 import 'package:quickstart_flutter_bloc/features/post/domain/repositories/post_repository.dart';
@@ -12,23 +11,19 @@ class PostRepositoryImpl implements PostRepository {
   final PostDataSource _postDataSource;
 
   @override
-  Future<Result<List<PostModel>>> getPosts() async {
-    try {
-      final result = await _postDataSource.getPosts();
-      final parsedResult = result.nodes
-          .whereType<QueryGetPostspostsnodesPost>()
-          .map(
-            (element) => PostModel(
-              id: element.id,
-              title: element.title,
-              body: element.body,
-            ),
-          )
-          .toList();
+  Future<List<PostModel>> getPosts() async {
+    final result = await _postDataSource.getPosts();
+    final parsedResult = result.nodes
+        .whereType<QueryGetPostspostsnodesPost>()
+        .map(
+          (element) => PostModel(
+            id: element.id,
+            title: element.title,
+            body: element.body,
+          ),
+        )
+        .toList();
 
-      return Success(parsedResult);
-    } catch (exception) {
-      return Failure.fromObject(exception);
-    }
+    return parsedResult;
   }
 }

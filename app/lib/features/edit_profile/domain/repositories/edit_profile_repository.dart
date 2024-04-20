@@ -1,7 +1,5 @@
-import 'package:common/common.dart';
-
 abstract class EditProfileRepository {
-  Future<Result<void>> updateProfile({
+  Future<void> updateProfile({
     required String firstName,
     required String lastName,
     required String email,

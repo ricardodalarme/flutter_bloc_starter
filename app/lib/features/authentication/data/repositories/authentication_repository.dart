@@ -27,7 +27,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   @override
-  Future<Result<void>> logInWithUsernameAndPassword({
+  Future<void> logInWithUsernameAndPassword({
     required String username,
     required String password,
   }) async {
@@ -44,22 +44,20 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       );
 
       _authenticationStreamController.add(true);
-
-      return const Success(null);
-    } catch (exception) {
+    } catch (_) {
       _authenticationStreamController.add(false);
-      return Failure.fromObject(exception);
+      rethrow;
     }
   }
 
   @override
-  Future<Result<void>> logInWithGoogle() async {
-    return const Failure(UnknownException());
+  Future<void> logInWithGoogle() async {
+    throw UnimplementedError();
   }
 
   @override
-  Future<Result<void>> logInWithFacebook() async {
-    return const Failure(UnknownException());
+  Future<void> logInWithFacebook() async {
+    throw UnimplementedError();
   }
 
   @override
@@ -71,10 +69,10 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   @override
-  Future<Result<void>> signUp({
+  Future<void> signUp({
     required String email,
     required String password,
   }) async {
-    return const Failure(UnknownException());
+    throw UnimplementedError();
   }
 }

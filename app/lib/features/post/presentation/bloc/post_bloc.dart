@@ -1,4 +1,3 @@
-import 'package:common/common.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quickstart_flutter_bloc/features/post/domain/models/post_model.dart';
@@ -23,17 +22,16 @@ class PostBloc extends Bloc<PostEvent, PostState> {
   ) async {
     emit(state.copyWith(status: PostStatus.loading));
 
-    final result = await _postRepository.getPosts();
-    final newState = switch (result) {
-      Success(value: final posts) => state.copyWith(
+    try {
+      final result = await _postRepository.getPosts();
+      emit(
+        state.copyWith(
           status: PostStatus.success,
-          posts: posts,
+          posts: result,
         ),
-      Failure() => state.copyWith(
-          status: PostStatus.failure,
-        ),
-    };
-
-    emit(newState);
+      );
+    } catch (_) {
+      emit(state.copyWith(status: PostStatus.failure));
+    }
   }
 }

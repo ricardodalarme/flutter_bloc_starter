@@ -1,4 +1,3 @@
-import 'package:common/common.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz_inputs/formz_inputs.dart';
@@ -47,17 +46,16 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
 
-    final result = await _authenticationRepository.logInWithUsernameAndPassword(
-      username: state.username.value,
-      password: state.password.value,
-    );
+    try {
+      await _authenticationRepository.logInWithUsernameAndPassword(
+        username: state.username.value,
+        password: state.password.value,
+      );
 
-    final newState = switch (result) {
-      Success() => state.copyWith(status: FormzSubmissionStatus.success),
-      Failure() => state.copyWith(status: FormzSubmissionStatus.failure),
-    };
-
-    emit(newState);
+      emit(state.copyWith(status: FormzSubmissionStatus.success));
+    } catch (_) {
+      emit(state.copyWith(status: FormzSubmissionStatus.failure));
+    }
   }
 
   Future<void> _onLoginWithGoogleSubmitted(

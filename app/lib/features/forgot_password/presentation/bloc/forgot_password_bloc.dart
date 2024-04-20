@@ -1,4 +1,3 @@
-import 'package:common/common.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz_inputs/formz_inputs.dart';
@@ -38,18 +37,14 @@ class ForgotPasswordBloc
 
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
 
-    final result = await _forgotPasswordRepository.forgotPassword(
-      email: state.email.value,
-    );
-    final newState = switch (result) {
-      Success() => state.copyWith(
-          status: FormzSubmissionStatus.success,
-        ),
-      Failure() => state.copyWith(
-          status: FormzSubmissionStatus.failure,
-        ),
-    };
+    try {
+      await _forgotPasswordRepository.forgotPassword(
+        email: state.email.value,
+      );
 
-    emit(newState);
+      emit(state.copyWith(status: FormzSubmissionStatus.success));
+    } catch (_) {
+      emit(state.copyWith(status: FormzSubmissionStatus.failure));
+    }
   }
 }

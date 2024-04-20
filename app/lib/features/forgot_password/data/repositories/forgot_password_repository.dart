@@ -1,4 +1,3 @@
-import 'package:common/common.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/data/data_sources/forgot_password_data_source.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/domain/repositories/forgot_password_repository.dart';
 
@@ -10,16 +9,11 @@ class ForgotPasswordRepositoryImpl implements ForgotPasswordRepository {
   final ForgotPasswordDataSource _forgotPasswordDataSource;
 
   @override
-  Future<Result<void>> forgotPassword({
+  Future<void> forgotPassword({
     required String email,
   }) async {
-    try {
-      await _forgotPasswordDataSource.forgotPassword(
-        email: email,
-      );
-      return const Success(null);
-    } catch (exception) {
-      return Failure.fromObject(exception);
-    }
+    await _forgotPasswordDataSource.forgotPassword(
+      email: email,
+    );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:common/common.dart';
+import 'package:common_data/common_data.dart';
 import 'package:schemas/queries/generated/GetPosts.graphql.dart';
 
 abstract class PostDataSource {

@@ -11,6 +11,8 @@ dependencies:
   auto_route: ^8.0.3
   common:
     path: ./packages/common
+  common_data:
+    path: ./packages/common_data
   common_ui:
     path: ./packages/common_ui
   equatable: ^2.0.5

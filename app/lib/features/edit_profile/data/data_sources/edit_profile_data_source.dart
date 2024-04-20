@@ -1,4 +1,4 @@
-import 'package:common/common.dart';
+import 'package:common_data/common_data.dart';
 import 'package:schemas/generated/schema.graphql.dart';
 import 'package:schemas/mutations/generated/UpdateUser.graphql.dart';
 

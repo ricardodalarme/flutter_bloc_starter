@@ -247,6 +247,13 @@ packages:
       relative: true
     source: path
     version: "0.0.0"
+  common_data:
+    dependency: "direct main"
+    description:
+      path: "packages/common_data"
+      relative: true
+    source: path
+    version: "0.0.0"
   common_ui:
     dependency: "direct main"
     description:

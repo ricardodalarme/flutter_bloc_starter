@@ -1,5 +1,6 @@
 abstract class Config {
   static const String serverUrl = String.fromEnvironment('SERVER_URL');
+  static const String restServerUrl = String.fromEnvironment('REST_SERVER_URL');
   static const String firebaseMessagingSenderId =
       String.fromEnvironment('FIREBASE_MESSAGING_SENDER_ID');
   static const String firebaseProjectId =

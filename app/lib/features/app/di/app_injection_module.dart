@@ -25,6 +25,10 @@ class AppInjectionModule extends InjectionModule {
       ),
     );
 
+    injector.registerLazySingleton<RestClient>(
+      RestClientImpl.new,
+    );
+
     injector.registerFactory<AppBloc>(
       () => AppBloc(
         authenticationRepository: injector.get<AuthenticationRepository>(),

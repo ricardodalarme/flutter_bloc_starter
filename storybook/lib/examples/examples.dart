@@ -7,6 +7,7 @@ import 'package:storybook/examples/components/password_text_field_example.dart';
 import 'package:storybook/examples/components/profile_picture_example.dart';
 import 'package:storybook/examples/components/sign_in_button_example.dart';
 import 'package:storybook/examples/components/text_divider_example.dart';
+import 'package:storybook/examples/theme/typography_example.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 final List<WidgetbookNode> examples = [
@@ -22,6 +23,12 @@ final List<WidgetbookNode> examples = [
       profilePictureExample,
       signInButtonExample,
       textDividerExample,
+    ],
+  ),
+  WidgetbookFolder(
+    name: 'Theme',
+    children: [
+      typographyExample,
     ],
   ),
 ];

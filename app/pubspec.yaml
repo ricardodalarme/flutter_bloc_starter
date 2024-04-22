@@ -8,7 +8,7 @@ environment:
 dependencies:
   analytics_service:
     path: ./packages/analytics_service
-  auto_route: ^8.0.3
+  auto_route: ^8.1.1
   common:
     path: ./packages/common
   common_data:

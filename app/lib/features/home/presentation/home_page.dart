@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
       ],
       bottomNavigationBuilder: (_, tabsRouter) => NavBar(
         currentIndex: tabsRouter.activeIndex,
-        onTap: tabsRouter.setActiveIndex,
+        onDestinationSelected: tabsRouter.setActiveIndex,
         items: [
           NavBarItem(
             icon: Icons.home_rounded,

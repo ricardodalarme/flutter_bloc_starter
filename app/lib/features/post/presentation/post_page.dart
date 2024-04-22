@@ -1,61 +1,18 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:common/common.dart';
 import 'package:common_ui/common_ui.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quickstart_flutter_bloc/features/post/domain/models/post_model.dart';
-import 'package:quickstart_flutter_bloc/features/post/presentation/bloc/post_bloc.dart';
-import 'package:quickstart_flutter_bloc/features/post/presentation/widgets/post_card.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 
 @RoutePage()
-class PostPage extends StatelessWidget implements AutoRouteWrapper {
+class PostPage extends StatelessWidget {
   const PostPage({super.key});
-
-  @override
-  Widget wrappedRoute(BuildContext context) {
-    return BlocProvider.value(
-      value: AppInjector.instance.get<PostBloc>()..add(const PostFetched()),
-      child: this,
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
     return BaseView(
       title: context.l10n.post.title,
-      body: Padding(
-        padding: const EdgeInsets.all(AppSpacing.large),
-        child: BlocBuilder<PostBloc, PostState>(
-          builder: (context, state) => switch (state.posts) {
-            Success(:final value) => _PostSuccess(posts: value),
-            Loading() => const LoadingIndicator(),
-            Failure() => ErrorIndicator(
-                title: context.l10n.common.genericError,
-                buttonText: context.l10n.common.retry,
-                message: context.l10n.post.textFailure,
-                onButtonPressed: () =>
-                    context.read<PostBloc>().add(const PostFetched()),
-              ),
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class _PostSuccess extends StatelessWidget {
-  const _PostSuccess({required this.posts});
-
-  final List<PostModel> posts;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: posts.length,
-      itemBuilder: (context, index) => PostCard(
-        key: ValueKey(posts[index].id),
-        post: posts[index],
+      body: Center(
+        child: Text(context.l10n.post.title),
       ),
     );
   }

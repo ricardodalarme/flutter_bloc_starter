@@ -17,7 +17,7 @@ class ProfilePicture extends StatelessWidget {
     final fallbackAvatar = Icon(
       Icons.person,
       size: size,
-      color: Colors.white,
+      color: context.colors.onSurface,
     );
 
     return CircleAvatar(

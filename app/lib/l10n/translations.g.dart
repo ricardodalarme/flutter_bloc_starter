@@ -412,6 +412,9 @@ class _TranslationsProfileEn {
   String get buttonPrivacyPolicy => 'Privacy Policy';
   String get buttonTerms => 'Terms';
   String get buttonLogout => 'Logout';
+  String get buttonChangePicture => 'Change Picture';
+  String get buttonPickImageFromCamera => 'Camera';
+  String get buttonPickImageFromGallery => 'Gallery';
 }
 
 // Path: forgotPassword
@@ -816,6 +819,12 @@ class _TranslationsProfilePt extends _TranslationsProfileEn {
   String get buttonTerms => 'Termos';
   @override
   String get buttonLogout => 'Sair';
+  @override
+  String get buttonChangePicture => 'Alterar Foto';
+  @override
+  String get buttonPickImageFromCamera => 'Câmera';
+  @override
+  String get buttonPickImageFromGallery => 'Galeria';
 }
 
 // Path: forgotPassword
@@ -971,6 +980,12 @@ extension on Translations {
         return 'Terms';
       case 'profile.buttonLogout':
         return 'Logout';
+      case 'profile.buttonChangePicture':
+        return 'Change Picture';
+      case 'profile.buttonPickImageFromCamera':
+        return 'Camera';
+      case 'profile.buttonPickImageFromGallery':
+        return 'Gallery';
       case 'forgotPassword.title':
         return 'Recover Password';
       case 'forgotPassword.description':
@@ -1097,6 +1112,12 @@ extension on _TranslationsPt {
         return 'Termos';
       case 'profile.buttonLogout':
         return 'Sair';
+      case 'profile.buttonChangePicture':
+        return 'Alterar Foto';
+      case 'profile.buttonPickImageFromCamera':
+        return 'Câmera';
+      case 'profile.buttonPickImageFromGallery':
+        return 'Galeria';
       case 'forgotPassword.title':
         return 'Recuperar Senha';
       case 'forgotPassword.description':

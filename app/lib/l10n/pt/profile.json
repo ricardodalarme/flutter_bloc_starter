@@ -5,5 +5,8 @@
   "buttonSettings": "Configurações",
   "buttonPrivacyPolicy": "Política de Privacidade",
   "buttonTerms": "Termos",
-  "buttonLogout": "Sair"
+  "buttonLogout": "Sair",
+  "buttonChangePicture": "Alterar Foto",
+  "buttonPickImageFromCamera": "Câmera",
+  "buttonPickImageFromGallery": "Galeria"
 }

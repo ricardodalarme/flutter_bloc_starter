@@ -67,12 +67,4 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       key: StorageKeys.accessToken,
     );
   }
-
-  @override
-  Future<void> signUp({
-    required String email,
-    required String password,
-  }) async {
-    throw UnimplementedError();
-  }
 }

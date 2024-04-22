@@ -13,10 +13,5 @@ abstract class AuthenticationRepository {
   Future<void> logInWithGoogle();
   Future<void> logInWithFacebook();
 
-  Future<void> signUp({
-    required String email,
-    required String password,
-  });
-
   Future<void> logOut();
 }

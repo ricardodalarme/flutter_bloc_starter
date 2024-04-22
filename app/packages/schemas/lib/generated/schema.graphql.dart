@@ -101,6 +101,564 @@ class _CopyWithStubImplInputAppFilterInput<TRes>
   call({String? clientId}) => _res;
 }
 
+class InputChannelMessagesStatisticsFilterInput {
+  factory InputChannelMessagesStatisticsFilterInput({
+    DateTime? beginDate,
+    String? channel,
+    DateTime? finalDate,
+  }) =>
+      InputChannelMessagesStatisticsFilterInput._({
+        if (beginDate != null) r'beginDate': beginDate,
+        if (channel != null) r'channel': channel,
+        if (finalDate != null) r'finalDate': finalDate,
+      });
+
+  InputChannelMessagesStatisticsFilterInput._(this._$data);
+
+  factory InputChannelMessagesStatisticsFilterInput.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('beginDate')) {
+      final l$beginDate = data['beginDate'];
+      result$data['beginDate'] =
+          l$beginDate == null ? null : DateTime.parse((l$beginDate as String));
+    }
+    if (data.containsKey('channel')) {
+      final l$channel = data['channel'];
+      result$data['channel'] = (l$channel as String?);
+    }
+    if (data.containsKey('finalDate')) {
+      final l$finalDate = data['finalDate'];
+      result$data['finalDate'] =
+          l$finalDate == null ? null : DateTime.parse((l$finalDate as String));
+    }
+    return InputChannelMessagesStatisticsFilterInput._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  DateTime? get beginDate => (_$data['beginDate'] as DateTime?);
+
+  String? get channel => (_$data['channel'] as String?);
+
+  DateTime? get finalDate => (_$data['finalDate'] as DateTime?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('beginDate')) {
+      final l$beginDate = beginDate;
+      result$data['beginDate'] = l$beginDate?.toIso8601String();
+    }
+    if (_$data.containsKey('channel')) {
+      final l$channel = channel;
+      result$data['channel'] = l$channel;
+    }
+    if (_$data.containsKey('finalDate')) {
+      final l$finalDate = finalDate;
+      result$data['finalDate'] = l$finalDate?.toIso8601String();
+    }
+    return result$data;
+  }
+
+  CopyWithInputChannelMessagesStatisticsFilterInput<
+          InputChannelMessagesStatisticsFilterInput>
+      get copyWith => CopyWithInputChannelMessagesStatisticsFilterInput(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is InputChannelMessagesStatisticsFilterInput) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$beginDate = beginDate;
+    final lOther$beginDate = other.beginDate;
+    if (_$data.containsKey('beginDate') !=
+        other._$data.containsKey('beginDate')) {
+      return false;
+    }
+    if (l$beginDate != lOther$beginDate) {
+      return false;
+    }
+    final l$channel = channel;
+    final lOther$channel = other.channel;
+    if (_$data.containsKey('channel') != other._$data.containsKey('channel')) {
+      return false;
+    }
+    if (l$channel != lOther$channel) {
+      return false;
+    }
+    final l$finalDate = finalDate;
+    final lOther$finalDate = other.finalDate;
+    if (_$data.containsKey('finalDate') !=
+        other._$data.containsKey('finalDate')) {
+      return false;
+    }
+    if (l$finalDate != lOther$finalDate) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$beginDate = beginDate;
+    final l$channel = channel;
+    final l$finalDate = finalDate;
+    return Object.hashAll([
+      _$data.containsKey('beginDate') ? l$beginDate : const {},
+      _$data.containsKey('channel') ? l$channel : const {},
+      _$data.containsKey('finalDate') ? l$finalDate : const {},
+    ]);
+  }
+}
+
+abstract class CopyWithInputChannelMessagesStatisticsFilterInput<TRes> {
+  factory CopyWithInputChannelMessagesStatisticsFilterInput(
+    InputChannelMessagesStatisticsFilterInput instance,
+    TRes Function(InputChannelMessagesStatisticsFilterInput) then,
+  ) = _CopyWithImplInputChannelMessagesStatisticsFilterInput;
+
+  factory CopyWithInputChannelMessagesStatisticsFilterInput.stub(TRes res) =
+      _CopyWithStubImplInputChannelMessagesStatisticsFilterInput;
+
+  TRes call({
+    DateTime? beginDate,
+    String? channel,
+    DateTime? finalDate,
+  });
+}
+
+class _CopyWithImplInputChannelMessagesStatisticsFilterInput<TRes>
+    implements CopyWithInputChannelMessagesStatisticsFilterInput<TRes> {
+  _CopyWithImplInputChannelMessagesStatisticsFilterInput(
+    this._instance,
+    this._then,
+  );
+
+  final InputChannelMessagesStatisticsFilterInput _instance;
+
+  final TRes Function(InputChannelMessagesStatisticsFilterInput) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? beginDate = _undefined,
+    Object? channel = _undefined,
+    Object? finalDate = _undefined,
+  }) =>
+      _then(InputChannelMessagesStatisticsFilterInput._({
+        ..._instance._$data,
+        if (beginDate != _undefined) 'beginDate': (beginDate as DateTime?),
+        if (channel != _undefined) 'channel': (channel as String?),
+        if (finalDate != _undefined) 'finalDate': (finalDate as DateTime?),
+      }));
+}
+
+class _CopyWithStubImplInputChannelMessagesStatisticsFilterInput<TRes>
+    implements CopyWithInputChannelMessagesStatisticsFilterInput<TRes> {
+  _CopyWithStubImplInputChannelMessagesStatisticsFilterInput(this._res);
+
+  TRes _res;
+
+  call({
+    DateTime? beginDate,
+    String? channel,
+    DateTime? finalDate,
+  }) =>
+      _res;
+}
+
+class InputUserBiasedMessagesFilterInput {
+  factory InputUserBiasedMessagesFilterInput({
+    DateTime? beginDate,
+    String? channel,
+    DateTime? finalDate,
+    required String userName,
+  }) =>
+      InputUserBiasedMessagesFilterInput._({
+        if (beginDate != null) r'beginDate': beginDate,
+        if (channel != null) r'channel': channel,
+        if (finalDate != null) r'finalDate': finalDate,
+        r'userName': userName,
+      });
+
+  InputUserBiasedMessagesFilterInput._(this._$data);
+
+  factory InputUserBiasedMessagesFilterInput.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('beginDate')) {
+      final l$beginDate = data['beginDate'];
+      result$data['beginDate'] =
+          l$beginDate == null ? null : DateTime.parse((l$beginDate as String));
+    }
+    if (data.containsKey('channel')) {
+      final l$channel = data['channel'];
+      result$data['channel'] = (l$channel as String?);
+    }
+    if (data.containsKey('finalDate')) {
+      final l$finalDate = data['finalDate'];
+      result$data['finalDate'] =
+          l$finalDate == null ? null : DateTime.parse((l$finalDate as String));
+    }
+    final l$userName = data['userName'];
+    result$data['userName'] = (l$userName as String);
+    return InputUserBiasedMessagesFilterInput._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  DateTime? get beginDate => (_$data['beginDate'] as DateTime?);
+
+  String? get channel => (_$data['channel'] as String?);
+
+  DateTime? get finalDate => (_$data['finalDate'] as DateTime?);
+
+  String get userName => (_$data['userName'] as String);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('beginDate')) {
+      final l$beginDate = beginDate;
+      result$data['beginDate'] = l$beginDate?.toIso8601String();
+    }
+    if (_$data.containsKey('channel')) {
+      final l$channel = channel;
+      result$data['channel'] = l$channel;
+    }
+    if (_$data.containsKey('finalDate')) {
+      final l$finalDate = finalDate;
+      result$data['finalDate'] = l$finalDate?.toIso8601String();
+    }
+    final l$userName = userName;
+    result$data['userName'] = l$userName;
+    return result$data;
+  }
+
+  CopyWithInputUserBiasedMessagesFilterInput<InputUserBiasedMessagesFilterInput>
+      get copyWith => CopyWithInputUserBiasedMessagesFilterInput(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is InputUserBiasedMessagesFilterInput) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$beginDate = beginDate;
+    final lOther$beginDate = other.beginDate;
+    if (_$data.containsKey('beginDate') !=
+        other._$data.containsKey('beginDate')) {
+      return false;
+    }
+    if (l$beginDate != lOther$beginDate) {
+      return false;
+    }
+    final l$channel = channel;
+    final lOther$channel = other.channel;
+    if (_$data.containsKey('channel') != other._$data.containsKey('channel')) {
+      return false;
+    }
+    if (l$channel != lOther$channel) {
+      return false;
+    }
+    final l$finalDate = finalDate;
+    final lOther$finalDate = other.finalDate;
+    if (_$data.containsKey('finalDate') !=
+        other._$data.containsKey('finalDate')) {
+      return false;
+    }
+    if (l$finalDate != lOther$finalDate) {
+      return false;
+    }
+    final l$userName = userName;
+    final lOther$userName = other.userName;
+    if (l$userName != lOther$userName) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$beginDate = beginDate;
+    final l$channel = channel;
+    final l$finalDate = finalDate;
+    final l$userName = userName;
+    return Object.hashAll([
+      _$data.containsKey('beginDate') ? l$beginDate : const {},
+      _$data.containsKey('channel') ? l$channel : const {},
+      _$data.containsKey('finalDate') ? l$finalDate : const {},
+      l$userName,
+    ]);
+  }
+}
+
+abstract class CopyWithInputUserBiasedMessagesFilterInput<TRes> {
+  factory CopyWithInputUserBiasedMessagesFilterInput(
+    InputUserBiasedMessagesFilterInput instance,
+    TRes Function(InputUserBiasedMessagesFilterInput) then,
+  ) = _CopyWithImplInputUserBiasedMessagesFilterInput;
+
+  factory CopyWithInputUserBiasedMessagesFilterInput.stub(TRes res) =
+      _CopyWithStubImplInputUserBiasedMessagesFilterInput;
+
+  TRes call({
+    DateTime? beginDate,
+    String? channel,
+    DateTime? finalDate,
+    String? userName,
+  });
+}
+
+class _CopyWithImplInputUserBiasedMessagesFilterInput<TRes>
+    implements CopyWithInputUserBiasedMessagesFilterInput<TRes> {
+  _CopyWithImplInputUserBiasedMessagesFilterInput(
+    this._instance,
+    this._then,
+  );
+
+  final InputUserBiasedMessagesFilterInput _instance;
+
+  final TRes Function(InputUserBiasedMessagesFilterInput) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? beginDate = _undefined,
+    Object? channel = _undefined,
+    Object? finalDate = _undefined,
+    Object? userName = _undefined,
+  }) =>
+      _then(InputUserBiasedMessagesFilterInput._({
+        ..._instance._$data,
+        if (beginDate != _undefined) 'beginDate': (beginDate as DateTime?),
+        if (channel != _undefined) 'channel': (channel as String?),
+        if (finalDate != _undefined) 'finalDate': (finalDate as DateTime?),
+        if (userName != _undefined && userName != null)
+          'userName': (userName as String),
+      }));
+}
+
+class _CopyWithStubImplInputUserBiasedMessagesFilterInput<TRes>
+    implements CopyWithInputUserBiasedMessagesFilterInput<TRes> {
+  _CopyWithStubImplInputUserBiasedMessagesFilterInput(this._res);
+
+  TRes _res;
+
+  call({
+    DateTime? beginDate,
+    String? channel,
+    DateTime? finalDate,
+    String? userName,
+  }) =>
+      _res;
+}
+
+class InputUserMessagesStatisticsFilterInput {
+  factory InputUserMessagesStatisticsFilterInput({
+    DateTime? beginDate,
+    String? channel,
+    DateTime? finalDate,
+    required String userName,
+  }) =>
+      InputUserMessagesStatisticsFilterInput._({
+        if (beginDate != null) r'beginDate': beginDate,
+        if (channel != null) r'channel': channel,
+        if (finalDate != null) r'finalDate': finalDate,
+        r'userName': userName,
+      });
+
+  InputUserMessagesStatisticsFilterInput._(this._$data);
+
+  factory InputUserMessagesStatisticsFilterInput.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('beginDate')) {
+      final l$beginDate = data['beginDate'];
+      result$data['beginDate'] =
+          l$beginDate == null ? null : DateTime.parse((l$beginDate as String));
+    }
+    if (data.containsKey('channel')) {
+      final l$channel = data['channel'];
+      result$data['channel'] = (l$channel as String?);
+    }
+    if (data.containsKey('finalDate')) {
+      final l$finalDate = data['finalDate'];
+      result$data['finalDate'] =
+          l$finalDate == null ? null : DateTime.parse((l$finalDate as String));
+    }
+    final l$userName = data['userName'];
+    result$data['userName'] = (l$userName as String);
+    return InputUserMessagesStatisticsFilterInput._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  DateTime? get beginDate => (_$data['beginDate'] as DateTime?);
+
+  String? get channel => (_$data['channel'] as String?);
+
+  DateTime? get finalDate => (_$data['finalDate'] as DateTime?);
+
+  String get userName => (_$data['userName'] as String);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('beginDate')) {
+      final l$beginDate = beginDate;
+      result$data['beginDate'] = l$beginDate?.toIso8601String();
+    }
+    if (_$data.containsKey('channel')) {
+      final l$channel = channel;
+      result$data['channel'] = l$channel;
+    }
+    if (_$data.containsKey('finalDate')) {
+      final l$finalDate = finalDate;
+      result$data['finalDate'] = l$finalDate?.toIso8601String();
+    }
+    final l$userName = userName;
+    result$data['userName'] = l$userName;
+    return result$data;
+  }
+
+  CopyWithInputUserMessagesStatisticsFilterInput<
+          InputUserMessagesStatisticsFilterInput>
+      get copyWith => CopyWithInputUserMessagesStatisticsFilterInput(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is InputUserMessagesStatisticsFilterInput) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$beginDate = beginDate;
+    final lOther$beginDate = other.beginDate;
+    if (_$data.containsKey('beginDate') !=
+        other._$data.containsKey('beginDate')) {
+      return false;
+    }
+    if (l$beginDate != lOther$beginDate) {
+      return false;
+    }
+    final l$channel = channel;
+    final lOther$channel = other.channel;
+    if (_$data.containsKey('channel') != other._$data.containsKey('channel')) {
+      return false;
+    }
+    if (l$channel != lOther$channel) {
+      return false;
+    }
+    final l$finalDate = finalDate;
+    final lOther$finalDate = other.finalDate;
+    if (_$data.containsKey('finalDate') !=
+        other._$data.containsKey('finalDate')) {
+      return false;
+    }
+    if (l$finalDate != lOther$finalDate) {
+      return false;
+    }
+    final l$userName = userName;
+    final lOther$userName = other.userName;
+    if (l$userName != lOther$userName) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$beginDate = beginDate;
+    final l$channel = channel;
+    final l$finalDate = finalDate;
+    final l$userName = userName;
+    return Object.hashAll([
+      _$data.containsKey('beginDate') ? l$beginDate : const {},
+      _$data.containsKey('channel') ? l$channel : const {},
+      _$data.containsKey('finalDate') ? l$finalDate : const {},
+      l$userName,
+    ]);
+  }
+}
+
+abstract class CopyWithInputUserMessagesStatisticsFilterInput<TRes> {
+  factory CopyWithInputUserMessagesStatisticsFilterInput(
+    InputUserMessagesStatisticsFilterInput instance,
+    TRes Function(InputUserMessagesStatisticsFilterInput) then,
+  ) = _CopyWithImplInputUserMessagesStatisticsFilterInput;
+
+  factory CopyWithInputUserMessagesStatisticsFilterInput.stub(TRes res) =
+      _CopyWithStubImplInputUserMessagesStatisticsFilterInput;
+
+  TRes call({
+    DateTime? beginDate,
+    String? channel,
+    DateTime? finalDate,
+    String? userName,
+  });
+}
+
+class _CopyWithImplInputUserMessagesStatisticsFilterInput<TRes>
+    implements CopyWithInputUserMessagesStatisticsFilterInput<TRes> {
+  _CopyWithImplInputUserMessagesStatisticsFilterInput(
+    this._instance,
+    this._then,
+  );
+
+  final InputUserMessagesStatisticsFilterInput _instance;
+
+  final TRes Function(InputUserMessagesStatisticsFilterInput) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? beginDate = _undefined,
+    Object? channel = _undefined,
+    Object? finalDate = _undefined,
+    Object? userName = _undefined,
+  }) =>
+      _then(InputUserMessagesStatisticsFilterInput._({
+        ..._instance._$data,
+        if (beginDate != _undefined) 'beginDate': (beginDate as DateTime?),
+        if (channel != _undefined) 'channel': (channel as String?),
+        if (finalDate != _undefined) 'finalDate': (finalDate as DateTime?),
+        if (userName != _undefined && userName != null)
+          'userName': (userName as String),
+      }));
+}
+
+class _CopyWithStubImplInputUserMessagesStatisticsFilterInput<TRes>
+    implements CopyWithInputUserMessagesStatisticsFilterInput<TRes> {
+  _CopyWithStubImplInputUserMessagesStatisticsFilterInput(this._res);
+
+  TRes _res;
+
+  call({
+    DateTime? beginDate,
+    String? channel,
+    DateTime? finalDate,
+    String? userName,
+  }) =>
+      _res;
+}
+
 class InputTermVersionFilterInput {
   factory InputTermVersionFilterInput({
     InputStringFilterInput? body,
@@ -5476,6 +6034,103 @@ class _CopyWithStubImplInputLoginInput<TRes>
       _res;
 }
 
+class InputModerateTextInput {
+  factory InputModerateTextInput({required String message}) =>
+      InputModerateTextInput._({
+        r'message': message,
+      });
+
+  InputModerateTextInput._(this._$data);
+
+  factory InputModerateTextInput.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$message = data['message'];
+    result$data['message'] = (l$message as String);
+    return InputModerateTextInput._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String get message => (_$data['message'] as String);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$message = message;
+    result$data['message'] = l$message;
+    return result$data;
+  }
+
+  CopyWithInputModerateTextInput<InputModerateTextInput> get copyWith =>
+      CopyWithInputModerateTextInput(
+        this,
+        (i) => i,
+      );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is InputModerateTextInput) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$message = message;
+    final lOther$message = other.message;
+    if (l$message != lOther$message) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$message = message;
+    return Object.hashAll([l$message]);
+  }
+}
+
+abstract class CopyWithInputModerateTextInput<TRes> {
+  factory CopyWithInputModerateTextInput(
+    InputModerateTextInput instance,
+    TRes Function(InputModerateTextInput) then,
+  ) = _CopyWithImplInputModerateTextInput;
+
+  factory CopyWithInputModerateTextInput.stub(TRes res) =
+      _CopyWithStubImplInputModerateTextInput;
+
+  TRes call({String? message});
+}
+
+class _CopyWithImplInputModerateTextInput<TRes>
+    implements CopyWithInputModerateTextInput<TRes> {
+  _CopyWithImplInputModerateTextInput(
+    this._instance,
+    this._then,
+  );
+
+  final InputModerateTextInput _instance;
+
+  final TRes Function(InputModerateTextInput) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({Object? message = _undefined}) => _then(InputModerateTextInput._({
+        ..._instance._$data,
+        if (message != _undefined && message != null)
+          'message': (message as String),
+      }));
+}
+
+class _CopyWithStubImplInputModerateTextInput<TRes>
+    implements CopyWithInputModerateTextInput<TRes> {
+  _CopyWithStubImplInputModerateTextInput(this._res);
+
+  TRes _res;
+
+  call({String? message}) => _res;
+}
+
 class InputPublishTermVersionInput {
   factory InputPublishTermVersionInput({
     required String ifMatchesETag,
@@ -7389,6 +8044,114 @@ class _CopyWithStubImplInputUpdateUserInput<TRes>
       _res;
 }
 
+enum EnumCategoryNameType {
+  DEATH_HARM_TRAGEDY,
+  DEFAULT,
+  DEROGATORY,
+  FINANCE,
+  FIREARMS_WEAPONS,
+  HEALTH,
+  ILLICIT_DRUGS,
+  INSULT,
+  LEGAL,
+  POLITICS,
+  PROFANITY,
+  PUBLIC_SAFETY,
+  RELIGION_BELIEF,
+  SEXUAL,
+  TOXIC,
+  VIOLENT,
+  WAR_CONFLICT,
+  $unknown;
+
+  factory EnumCategoryNameType.fromJson(String value) =>
+      fromJsonEnumCategoryNameType(value);
+
+  String toJson() => toJsonEnumCategoryNameType(this);
+}
+
+String toJsonEnumCategoryNameType(EnumCategoryNameType e) {
+  switch (e) {
+    case EnumCategoryNameType.DEATH_HARM_TRAGEDY:
+      return r'DEATH_HARM_TRAGEDY';
+    case EnumCategoryNameType.DEFAULT:
+      return r'DEFAULT';
+    case EnumCategoryNameType.DEROGATORY:
+      return r'DEROGATORY';
+    case EnumCategoryNameType.FINANCE:
+      return r'FINANCE';
+    case EnumCategoryNameType.FIREARMS_WEAPONS:
+      return r'FIREARMS_WEAPONS';
+    case EnumCategoryNameType.HEALTH:
+      return r'HEALTH';
+    case EnumCategoryNameType.ILLICIT_DRUGS:
+      return r'ILLICIT_DRUGS';
+    case EnumCategoryNameType.INSULT:
+      return r'INSULT';
+    case EnumCategoryNameType.LEGAL:
+      return r'LEGAL';
+    case EnumCategoryNameType.POLITICS:
+      return r'POLITICS';
+    case EnumCategoryNameType.PROFANITY:
+      return r'PROFANITY';
+    case EnumCategoryNameType.PUBLIC_SAFETY:
+      return r'PUBLIC_SAFETY';
+    case EnumCategoryNameType.RELIGION_BELIEF:
+      return r'RELIGION_BELIEF';
+    case EnumCategoryNameType.SEXUAL:
+      return r'SEXUAL';
+    case EnumCategoryNameType.TOXIC:
+      return r'TOXIC';
+    case EnumCategoryNameType.VIOLENT:
+      return r'VIOLENT';
+    case EnumCategoryNameType.WAR_CONFLICT:
+      return r'WAR_CONFLICT';
+    case EnumCategoryNameType.$unknown:
+      return r'$unknown';
+  }
+}
+
+EnumCategoryNameType fromJsonEnumCategoryNameType(String value) {
+  switch (value) {
+    case r'DEATH_HARM_TRAGEDY':
+      return EnumCategoryNameType.DEATH_HARM_TRAGEDY;
+    case r'DEFAULT':
+      return EnumCategoryNameType.DEFAULT;
+    case r'DEROGATORY':
+      return EnumCategoryNameType.DEROGATORY;
+    case r'FINANCE':
+      return EnumCategoryNameType.FINANCE;
+    case r'FIREARMS_WEAPONS':
+      return EnumCategoryNameType.FIREARMS_WEAPONS;
+    case r'HEALTH':
+      return EnumCategoryNameType.HEALTH;
+    case r'ILLICIT_DRUGS':
+      return EnumCategoryNameType.ILLICIT_DRUGS;
+    case r'INSULT':
+      return EnumCategoryNameType.INSULT;
+    case r'LEGAL':
+      return EnumCategoryNameType.LEGAL;
+    case r'POLITICS':
+      return EnumCategoryNameType.POLITICS;
+    case r'PROFANITY':
+      return EnumCategoryNameType.PROFANITY;
+    case r'PUBLIC_SAFETY':
+      return EnumCategoryNameType.PUBLIC_SAFETY;
+    case r'RELIGION_BELIEF':
+      return EnumCategoryNameType.RELIGION_BELIEF;
+    case r'SEXUAL':
+      return EnumCategoryNameType.SEXUAL;
+    case r'TOXIC':
+      return EnumCategoryNameType.TOXIC;
+    case r'VIOLENT':
+      return EnumCategoryNameType.VIOLENT;
+    case r'WAR_CONFLICT':
+      return EnumCategoryNameType.WAR_CONFLICT;
+    default:
+      return EnumCategoryNameType.$unknown;
+  }
+}
+
 enum EnumHomeElementTextKind {
   h1,
   h2,
@@ -7704,6 +8467,44 @@ EnumOrderableOrganizationFields fromJsonEnumOrderableOrganizationFields(
   }
 }
 
+enum EnumVideoStatus {
+  ERROR,
+  PROCESSING,
+  READY,
+  $unknown;
+
+  factory EnumVideoStatus.fromJson(String value) =>
+      fromJsonEnumVideoStatus(value);
+
+  String toJson() => toJsonEnumVideoStatus(this);
+}
+
+String toJsonEnumVideoStatus(EnumVideoStatus e) {
+  switch (e) {
+    case EnumVideoStatus.ERROR:
+      return r'ERROR';
+    case EnumVideoStatus.PROCESSING:
+      return r'PROCESSING';
+    case EnumVideoStatus.READY:
+      return r'READY';
+    case EnumVideoStatus.$unknown:
+      return r'$unknown';
+  }
+}
+
+EnumVideoStatus fromJsonEnumVideoStatus(String value) {
+  switch (value) {
+    case r'ERROR':
+      return EnumVideoStatus.ERROR;
+    case r'PROCESSING':
+      return EnumVideoStatus.PROCESSING;
+    case r'READY':
+      return EnumVideoStatus.READY;
+    default:
+      return EnumVideoStatus.$unknown;
+  }
+}
+
 enum EnumOrderableTermFields {
   DESCRIPTION,
   ID,
@@ -7810,6 +8611,187 @@ EnumWebhookRequestMethod fromJsonEnumWebhookRequestMethod(String value) {
       return EnumWebhookRequestMethod.PUT;
     default:
       return EnumWebhookRequestMethod.$unknown;
+  }
+}
+
+enum Enum__TypeKind {
+  SCALAR,
+  OBJECT,
+  INTERFACE,
+  UNION,
+  ENUM,
+  INPUT_OBJECT,
+  LIST,
+  NON_NULL,
+  $unknown;
+
+  factory Enum__TypeKind.fromJson(String value) =>
+      fromJsonEnum__TypeKind(value);
+
+  String toJson() => toJsonEnum__TypeKind(this);
+}
+
+String toJsonEnum__TypeKind(Enum__TypeKind e) {
+  switch (e) {
+    case Enum__TypeKind.SCALAR:
+      return r'SCALAR';
+    case Enum__TypeKind.OBJECT:
+      return r'OBJECT';
+    case Enum__TypeKind.INTERFACE:
+      return r'INTERFACE';
+    case Enum__TypeKind.UNION:
+      return r'UNION';
+    case Enum__TypeKind.ENUM:
+      return r'ENUM';
+    case Enum__TypeKind.INPUT_OBJECT:
+      return r'INPUT_OBJECT';
+    case Enum__TypeKind.LIST:
+      return r'LIST';
+    case Enum__TypeKind.NON_NULL:
+      return r'NON_NULL';
+    case Enum__TypeKind.$unknown:
+      return r'$unknown';
+  }
+}
+
+Enum__TypeKind fromJsonEnum__TypeKind(String value) {
+  switch (value) {
+    case r'SCALAR':
+      return Enum__TypeKind.SCALAR;
+    case r'OBJECT':
+      return Enum__TypeKind.OBJECT;
+    case r'INTERFACE':
+      return Enum__TypeKind.INTERFACE;
+    case r'UNION':
+      return Enum__TypeKind.UNION;
+    case r'ENUM':
+      return Enum__TypeKind.ENUM;
+    case r'INPUT_OBJECT':
+      return Enum__TypeKind.INPUT_OBJECT;
+    case r'LIST':
+      return Enum__TypeKind.LIST;
+    case r'NON_NULL':
+      return Enum__TypeKind.NON_NULL;
+    default:
+      return Enum__TypeKind.$unknown;
+  }
+}
+
+enum Enum__DirectiveLocation {
+  QUERY,
+  MUTATION,
+  SUBSCRIPTION,
+  FIELD,
+  FRAGMENT_DEFINITION,
+  FRAGMENT_SPREAD,
+  INLINE_FRAGMENT,
+  VARIABLE_DEFINITION,
+  SCHEMA,
+  SCALAR,
+  OBJECT,
+  FIELD_DEFINITION,
+  ARGUMENT_DEFINITION,
+  INTERFACE,
+  UNION,
+  ENUM,
+  ENUM_VALUE,
+  INPUT_OBJECT,
+  INPUT_FIELD_DEFINITION,
+  $unknown;
+
+  factory Enum__DirectiveLocation.fromJson(String value) =>
+      fromJsonEnum__DirectiveLocation(value);
+
+  String toJson() => toJsonEnum__DirectiveLocation(this);
+}
+
+String toJsonEnum__DirectiveLocation(Enum__DirectiveLocation e) {
+  switch (e) {
+    case Enum__DirectiveLocation.QUERY:
+      return r'QUERY';
+    case Enum__DirectiveLocation.MUTATION:
+      return r'MUTATION';
+    case Enum__DirectiveLocation.SUBSCRIPTION:
+      return r'SUBSCRIPTION';
+    case Enum__DirectiveLocation.FIELD:
+      return r'FIELD';
+    case Enum__DirectiveLocation.FRAGMENT_DEFINITION:
+      return r'FRAGMENT_DEFINITION';
+    case Enum__DirectiveLocation.FRAGMENT_SPREAD:
+      return r'FRAGMENT_SPREAD';
+    case Enum__DirectiveLocation.INLINE_FRAGMENT:
+      return r'INLINE_FRAGMENT';
+    case Enum__DirectiveLocation.VARIABLE_DEFINITION:
+      return r'VARIABLE_DEFINITION';
+    case Enum__DirectiveLocation.SCHEMA:
+      return r'SCHEMA';
+    case Enum__DirectiveLocation.SCALAR:
+      return r'SCALAR';
+    case Enum__DirectiveLocation.OBJECT:
+      return r'OBJECT';
+    case Enum__DirectiveLocation.FIELD_DEFINITION:
+      return r'FIELD_DEFINITION';
+    case Enum__DirectiveLocation.ARGUMENT_DEFINITION:
+      return r'ARGUMENT_DEFINITION';
+    case Enum__DirectiveLocation.INTERFACE:
+      return r'INTERFACE';
+    case Enum__DirectiveLocation.UNION:
+      return r'UNION';
+    case Enum__DirectiveLocation.ENUM:
+      return r'ENUM';
+    case Enum__DirectiveLocation.ENUM_VALUE:
+      return r'ENUM_VALUE';
+    case Enum__DirectiveLocation.INPUT_OBJECT:
+      return r'INPUT_OBJECT';
+    case Enum__DirectiveLocation.INPUT_FIELD_DEFINITION:
+      return r'INPUT_FIELD_DEFINITION';
+    case Enum__DirectiveLocation.$unknown:
+      return r'$unknown';
+  }
+}
+
+Enum__DirectiveLocation fromJsonEnum__DirectiveLocation(String value) {
+  switch (value) {
+    case r'QUERY':
+      return Enum__DirectiveLocation.QUERY;
+    case r'MUTATION':
+      return Enum__DirectiveLocation.MUTATION;
+    case r'SUBSCRIPTION':
+      return Enum__DirectiveLocation.SUBSCRIPTION;
+    case r'FIELD':
+      return Enum__DirectiveLocation.FIELD;
+    case r'FRAGMENT_DEFINITION':
+      return Enum__DirectiveLocation.FRAGMENT_DEFINITION;
+    case r'FRAGMENT_SPREAD':
+      return Enum__DirectiveLocation.FRAGMENT_SPREAD;
+    case r'INLINE_FRAGMENT':
+      return Enum__DirectiveLocation.INLINE_FRAGMENT;
+    case r'VARIABLE_DEFINITION':
+      return Enum__DirectiveLocation.VARIABLE_DEFINITION;
+    case r'SCHEMA':
+      return Enum__DirectiveLocation.SCHEMA;
+    case r'SCALAR':
+      return Enum__DirectiveLocation.SCALAR;
+    case r'OBJECT':
+      return Enum__DirectiveLocation.OBJECT;
+    case r'FIELD_DEFINITION':
+      return Enum__DirectiveLocation.FIELD_DEFINITION;
+    case r'ARGUMENT_DEFINITION':
+      return Enum__DirectiveLocation.ARGUMENT_DEFINITION;
+    case r'INTERFACE':
+      return Enum__DirectiveLocation.INTERFACE;
+    case r'UNION':
+      return Enum__DirectiveLocation.UNION;
+    case r'ENUM':
+      return Enum__DirectiveLocation.ENUM;
+    case r'ENUM_VALUE':
+      return Enum__DirectiveLocation.ENUM_VALUE;
+    case r'INPUT_OBJECT':
+      return Enum__DirectiveLocation.INPUT_OBJECT;
+    case r'INPUT_FIELD_DEFINITION':
+      return Enum__DirectiveLocation.INPUT_FIELD_DEFINITION;
+    default:
+      return Enum__DirectiveLocation.$unknown;
   }
 }
 
@@ -8058,187 +9040,6 @@ EnumStringLengthValidateDirectivePolicy
   }
 }
 
-enum Enum__TypeKind {
-  SCALAR,
-  OBJECT,
-  INTERFACE,
-  UNION,
-  ENUM,
-  INPUT_OBJECT,
-  LIST,
-  NON_NULL,
-  $unknown;
-
-  factory Enum__TypeKind.fromJson(String value) =>
-      fromJsonEnum__TypeKind(value);
-
-  String toJson() => toJsonEnum__TypeKind(this);
-}
-
-String toJsonEnum__TypeKind(Enum__TypeKind e) {
-  switch (e) {
-    case Enum__TypeKind.SCALAR:
-      return r'SCALAR';
-    case Enum__TypeKind.OBJECT:
-      return r'OBJECT';
-    case Enum__TypeKind.INTERFACE:
-      return r'INTERFACE';
-    case Enum__TypeKind.UNION:
-      return r'UNION';
-    case Enum__TypeKind.ENUM:
-      return r'ENUM';
-    case Enum__TypeKind.INPUT_OBJECT:
-      return r'INPUT_OBJECT';
-    case Enum__TypeKind.LIST:
-      return r'LIST';
-    case Enum__TypeKind.NON_NULL:
-      return r'NON_NULL';
-    case Enum__TypeKind.$unknown:
-      return r'$unknown';
-  }
-}
-
-Enum__TypeKind fromJsonEnum__TypeKind(String value) {
-  switch (value) {
-    case r'SCALAR':
-      return Enum__TypeKind.SCALAR;
-    case r'OBJECT':
-      return Enum__TypeKind.OBJECT;
-    case r'INTERFACE':
-      return Enum__TypeKind.INTERFACE;
-    case r'UNION':
-      return Enum__TypeKind.UNION;
-    case r'ENUM':
-      return Enum__TypeKind.ENUM;
-    case r'INPUT_OBJECT':
-      return Enum__TypeKind.INPUT_OBJECT;
-    case r'LIST':
-      return Enum__TypeKind.LIST;
-    case r'NON_NULL':
-      return Enum__TypeKind.NON_NULL;
-    default:
-      return Enum__TypeKind.$unknown;
-  }
-}
-
-enum Enum__DirectiveLocation {
-  QUERY,
-  MUTATION,
-  SUBSCRIPTION,
-  FIELD,
-  FRAGMENT_DEFINITION,
-  FRAGMENT_SPREAD,
-  INLINE_FRAGMENT,
-  VARIABLE_DEFINITION,
-  SCHEMA,
-  SCALAR,
-  OBJECT,
-  FIELD_DEFINITION,
-  ARGUMENT_DEFINITION,
-  INTERFACE,
-  UNION,
-  ENUM,
-  ENUM_VALUE,
-  INPUT_OBJECT,
-  INPUT_FIELD_DEFINITION,
-  $unknown;
-
-  factory Enum__DirectiveLocation.fromJson(String value) =>
-      fromJsonEnum__DirectiveLocation(value);
-
-  String toJson() => toJsonEnum__DirectiveLocation(this);
-}
-
-String toJsonEnum__DirectiveLocation(Enum__DirectiveLocation e) {
-  switch (e) {
-    case Enum__DirectiveLocation.QUERY:
-      return r'QUERY';
-    case Enum__DirectiveLocation.MUTATION:
-      return r'MUTATION';
-    case Enum__DirectiveLocation.SUBSCRIPTION:
-      return r'SUBSCRIPTION';
-    case Enum__DirectiveLocation.FIELD:
-      return r'FIELD';
-    case Enum__DirectiveLocation.FRAGMENT_DEFINITION:
-      return r'FRAGMENT_DEFINITION';
-    case Enum__DirectiveLocation.FRAGMENT_SPREAD:
-      return r'FRAGMENT_SPREAD';
-    case Enum__DirectiveLocation.INLINE_FRAGMENT:
-      return r'INLINE_FRAGMENT';
-    case Enum__DirectiveLocation.VARIABLE_DEFINITION:
-      return r'VARIABLE_DEFINITION';
-    case Enum__DirectiveLocation.SCHEMA:
-      return r'SCHEMA';
-    case Enum__DirectiveLocation.SCALAR:
-      return r'SCALAR';
-    case Enum__DirectiveLocation.OBJECT:
-      return r'OBJECT';
-    case Enum__DirectiveLocation.FIELD_DEFINITION:
-      return r'FIELD_DEFINITION';
-    case Enum__DirectiveLocation.ARGUMENT_DEFINITION:
-      return r'ARGUMENT_DEFINITION';
-    case Enum__DirectiveLocation.INTERFACE:
-      return r'INTERFACE';
-    case Enum__DirectiveLocation.UNION:
-      return r'UNION';
-    case Enum__DirectiveLocation.ENUM:
-      return r'ENUM';
-    case Enum__DirectiveLocation.ENUM_VALUE:
-      return r'ENUM_VALUE';
-    case Enum__DirectiveLocation.INPUT_OBJECT:
-      return r'INPUT_OBJECT';
-    case Enum__DirectiveLocation.INPUT_FIELD_DEFINITION:
-      return r'INPUT_FIELD_DEFINITION';
-    case Enum__DirectiveLocation.$unknown:
-      return r'$unknown';
-  }
-}
-
-Enum__DirectiveLocation fromJsonEnum__DirectiveLocation(String value) {
-  switch (value) {
-    case r'QUERY':
-      return Enum__DirectiveLocation.QUERY;
-    case r'MUTATION':
-      return Enum__DirectiveLocation.MUTATION;
-    case r'SUBSCRIPTION':
-      return Enum__DirectiveLocation.SUBSCRIPTION;
-    case r'FIELD':
-      return Enum__DirectiveLocation.FIELD;
-    case r'FRAGMENT_DEFINITION':
-      return Enum__DirectiveLocation.FRAGMENT_DEFINITION;
-    case r'FRAGMENT_SPREAD':
-      return Enum__DirectiveLocation.FRAGMENT_SPREAD;
-    case r'INLINE_FRAGMENT':
-      return Enum__DirectiveLocation.INLINE_FRAGMENT;
-    case r'VARIABLE_DEFINITION':
-      return Enum__DirectiveLocation.VARIABLE_DEFINITION;
-    case r'SCHEMA':
-      return Enum__DirectiveLocation.SCHEMA;
-    case r'SCALAR':
-      return Enum__DirectiveLocation.SCALAR;
-    case r'OBJECT':
-      return Enum__DirectiveLocation.OBJECT;
-    case r'FIELD_DEFINITION':
-      return Enum__DirectiveLocation.FIELD_DEFINITION;
-    case r'ARGUMENT_DEFINITION':
-      return Enum__DirectiveLocation.ARGUMENT_DEFINITION;
-    case r'INTERFACE':
-      return Enum__DirectiveLocation.INTERFACE;
-    case r'UNION':
-      return Enum__DirectiveLocation.UNION;
-    case r'ENUM':
-      return Enum__DirectiveLocation.ENUM;
-    case r'ENUM_VALUE':
-      return Enum__DirectiveLocation.ENUM_VALUE;
-    case r'INPUT_OBJECT':
-      return Enum__DirectiveLocation.INPUT_OBJECT;
-    case r'INPUT_FIELD_DEFINITION':
-      return Enum__DirectiveLocation.INPUT_FIELD_DEFINITION;
-    default:
-      return Enum__DirectiveLocation.$unknown;
-  }
-}
-
 const possibleTypesMap = <String, Set<String>>{
   'Node': {
     'App',
@@ -8248,6 +9049,7 @@ const possibleTypesMap = <String, Set<String>>{
     'TermVersion',
     'Organization',
     'Post',
+    'Playlist',
     'Video',
     'Webhook',
   },

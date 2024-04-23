@@ -12,6 +12,9 @@ PODS:
   - Firebase/Performance (10.24.0):
     - Firebase/CoreOnly
     - FirebasePerformance (~> 10.24.0)
+  - Firebase/RemoteConfig (10.24.0):
+    - Firebase/CoreOnly
+    - FirebaseRemoteConfig (~> 10.24.0)
   - firebase_analytics (10.10.2):
     - Firebase/Analytics (= 10.24.0)
     - firebase_core
@@ -25,6 +28,10 @@ PODS:
     - Flutter
   - firebase_performance (0.9.4-2):
     - Firebase/Performance (= 10.24.0)
+    - firebase_core
+    - Flutter
+  - firebase_remote_config (4.4.2):
+    - Firebase/RemoteConfig (= 10.24.0)
     - firebase_core
     - Flutter
   - FirebaseABTesting (10.24.0):
@@ -176,6 +183,7 @@ DEPENDENCIES:
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_crashlytics (from `.symlinks/plugins/firebase_crashlytics/ios`)
   - firebase_performance (from `.symlinks/plugins/firebase_performance/ios`)
+  - firebase_remote_config (from `.symlinks/plugins/firebase_remote_config/ios`)
   - Flutter (from `Flutter`)
   - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
   - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
@@ -213,6 +221,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_crashlytics/ios"
   firebase_performance:
     :path: ".symlinks/plugins/firebase_performance/ios"
+  firebase_remote_config:
+    :path: ".symlinks/plugins/firebase_remote_config/ios"
   Flutter:
     :path: Flutter
   flutter_native_splash:
@@ -230,6 +240,7 @@ SPEC CHECKSUMS:
   firebase_core: 66b99b4fb4e5d7cc4e88d4c195fe986681f3466a
   firebase_crashlytics: 7ccf6bc9a3310a5c53bca1150203f9b91b42732a
   firebase_performance: 4bdbe886cfe21e2a8705c35863ff8049ee775e44
+  firebase_remote_config: 42902611d62a925c8c0e58a7cd5b453a3b3423e5
   FirebaseABTesting: 4431c2c56ac6e56f463b9cab05cc111078639f99
   FirebaseAnalytics: b5efc493eb0f40ec560b04a472e3e1a15d39ca13
   FirebaseCore: 11dc8a16dfb7c5e3c3f45ba0e191a33ac4f50894

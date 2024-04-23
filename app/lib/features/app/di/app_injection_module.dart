@@ -6,6 +6,7 @@ import 'package:common_data/common_data.dart';
 import 'package:quickstart_flutter_bloc/features/app/bloc/app_bloc.dart';
 import 'package:quickstart_flutter_bloc/features/authentication/domain/repositories/authentication_repository.dart';
 import 'package:quickstart_flutter_bloc/routes/app_router.dart';
+import 'package:remote_config_service/remote_config_service.dart';
 import 'package:secure_storage/secure_storage.dart';
 
 class AppInjectionModule extends InjectionModule {
@@ -27,6 +28,10 @@ class AppInjectionModule extends InjectionModule {
 
     injector.registerLazySingleton<RestClient>(
       RestClientImpl.new,
+    );
+
+    injector.registerSingleton<RemoteConfigService>(
+      RemoteConfigServiceImpl(),
     );
 
     injector.registerFactory<AppBloc>(

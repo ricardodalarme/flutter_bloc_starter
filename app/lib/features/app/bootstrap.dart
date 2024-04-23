@@ -19,8 +19,8 @@ Future<void> bootstrap(Widget Function() builder) async {
   WidgetsFlutterBinding.ensureInitialized();
   LocaleSettings.useDeviceLocale();
 
+  await _setupFirebase();
   await Future.wait([
-    _setupFirebase(),
     _setupBloc(),
     _registerModules(),
   ]);

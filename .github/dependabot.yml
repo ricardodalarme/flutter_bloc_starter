@@ -1,5 +1,6 @@
 version: 2
 updates:
+  # Actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -10,6 +11,7 @@ updates:
       prefix: "chore"
       include: "scope"
 
+  # Root
   - package-ecosystem: "pub"
     directory: "/"
     schedule:
@@ -20,6 +22,7 @@ updates:
       prefix: "chore"
       include: "scope"
 
+  # App
   - package-ecosystem: "pub"
     directory: "/app/"
     schedule:
@@ -30,17 +33,9 @@ updates:
       prefix: "chore"
       include: "scope"
 
+  # Packages
   - package-ecosystem: "pub"
     directory: "/app/packages/authentication_repository"
-    schedule:
-      interval: "weekly"
-    labels:
-      - ":package: dependencies"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-  - package-ecosystem: "pub"
-    directory: "/app/packages/services/analytics_service"
     schedule:
       interval: "weekly"
     labels:
@@ -59,6 +54,15 @@ updates:
       include: "scope"
   - package-ecosystem: "pub"
     directory: "/app/packages/common_ui"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: "pub"
+    directory: "/app/packages/common_data"
     schedule:
       interval: "weekly"
     labels:
@@ -95,6 +99,16 @@ updates:
       prefix: "chore"
       include: "scope"
 
+  # Services
+  - package-ecosystem: "pub"
+    directory: "/app/packages/services/analytics"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
   - package-ecosystem: "pub"
     directory: "/app/packages/services/remote_config"
     schedule:

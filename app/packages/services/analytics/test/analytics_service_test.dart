@@ -12,7 +12,7 @@ void main() {
 
     setUp(() {
       firebaseAnalytics = MockFirebaseAnalytics();
-      analyticsService = AnalyticsService(firebaseAnalytics);
+      analyticsService = AnalyticsServiceImpl(firebaseAnalytics);
 
       when(
         () => firebaseAnalytics.logEvent(

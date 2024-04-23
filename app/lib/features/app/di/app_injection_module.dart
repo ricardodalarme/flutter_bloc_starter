@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:analytics_service/analytics_service.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:common/common.dart';
 import 'package:common_data/common_data.dart';
@@ -28,6 +29,10 @@ class AppInjectionModule extends InjectionModule {
 
     injector.registerLazySingleton<RestClient>(
       RestClientImpl.new,
+    );
+
+    injector.registerSingleton<AnalyticsService>(
+      AnalyticsServiceImpl(),
     );
 
     injector.registerSingleton<RemoteConfigService>(

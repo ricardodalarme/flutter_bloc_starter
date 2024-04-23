@@ -20,7 +20,7 @@ packages:
   analytics_service:
     dependency: "direct main"
     description:
-      path: "packages/services/analytics_service"
+      path: "packages/services/analytics"
       relative: true
     source: path
     version: "0.0.0"

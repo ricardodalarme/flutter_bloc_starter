@@ -27,7 +27,6 @@ dependencies:
     sdk: flutter
   formz_inputs:
     path: ./packages/formz_inputs
-  gap: ^3.0.1
   path_provider: ^2.1.3
   remote_config_service:
     path: ./packages/services/remote_config

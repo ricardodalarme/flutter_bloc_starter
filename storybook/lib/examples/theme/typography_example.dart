@@ -1,5 +1,4 @@
 import 'package:common_ui/common_ui.dart';
-import 'package:flutter/widgets.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 final WidgetbookNode typographyExample = WidgetbookUseCase(

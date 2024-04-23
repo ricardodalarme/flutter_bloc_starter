@@ -1,5 +1,8 @@
 library common_ui;
 
+export 'package:flutter/widgets.dart';
+export 'package:gap/gap.dart';
+
 export 'src/generated/assets.gen.dart';
 export 'src/styling/app_spacing.dart';
 export 'src/theme/theme_extensions.dart';

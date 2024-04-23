@@ -1,6 +1,4 @@
 import 'package:common_ui/common_ui.dart';
-import 'package:flutter/widgets.dart';
-import 'package:gap/gap.dart';
 
 class ErrorIndicator extends StatelessWidget {
   const ErrorIndicator({

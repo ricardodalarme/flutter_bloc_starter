@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:common_ui/common_ui.dart';
-import 'package:flutter/widgets.dart';
 import 'package:quickstart_flutter_bloc/features/search/presentation/widgets/search_text_field.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
 

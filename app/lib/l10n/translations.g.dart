@@ -297,7 +297,6 @@ class _TranslationsCommonEn {
   String get appName => 'Flutter Bloc Starter';
   String get send => 'Send';
   String get save => 'Save';
-  String get retry => 'Retry';
   String get username => 'Username';
   String get email => 'Email';
   String get password => 'Password';
@@ -648,8 +647,6 @@ class _TranslationsCommonPt extends _TranslationsCommonEn {
   @override
   String get save => 'Salvar';
   @override
-  String get retry => 'Tentar novamente';
-  @override
   String get email => 'Email';
   @override
   String get username => 'Usuário';
@@ -899,8 +896,6 @@ extension on Translations {
         return 'Send';
       case 'common.save':
         return 'Save';
-      case 'common.retry':
-        return 'Retry';
       case 'common.username':
         return 'Username';
       case 'common.email':
@@ -1031,8 +1026,6 @@ extension on _TranslationsPt {
         return 'Enviar';
       case 'common.save':
         return 'Salvar';
-      case 'common.retry':
-        return 'Tentar novamente';
       case 'common.email':
         return 'Email';
       case 'common.username':

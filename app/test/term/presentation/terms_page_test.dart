@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:quickstart_flutter_bloc/features/terms/presentation/terms_page.dart';
+import 'package:quickstart_flutter_bloc/features/term/presentation/terms_page.dart';
 
 import '../../test_helpers/pump_app.dart';
 

@@ -11,7 +11,7 @@ import 'package:quickstart_flutter_bloc/features/profile/presentation/profile_pa
 import 'package:quickstart_flutter_bloc/features/search/presentation/search_page.dart';
 import 'package:quickstart_flutter_bloc/features/settings/presentation/settings_page.dart';
 import 'package:quickstart_flutter_bloc/features/signup/presentation/signup_page.dart';
-import 'package:quickstart_flutter_bloc/features/terms/presentation/terms_page.dart';
+import 'package:quickstart_flutter_bloc/features/term/presentation/terms_page.dart';
 
 part 'app_router.gr.dart';
 

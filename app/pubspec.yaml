@@ -33,12 +33,12 @@ dependencies:
     path: ./packages/services/remote_config
   schemas:
     path: ./packages/schemas
-  secure_storage:
-    path: ./packages/storage/secure_storage
+  secure_storage_service:
+    path: ./packages/services/storage/secure_storage
   slang: ^3.30.2
   slang_flutter: ^3.30.0
-  storage:
-    path: ./packages/storage/storage
+  storage_service:
+    path: ./packages/services/storage/storage
 
 dev_dependencies:
   auto_route_generator: ^8.0.0

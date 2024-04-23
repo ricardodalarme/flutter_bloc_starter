@@ -4,7 +4,7 @@ packages:
   - app
   - app/packages/*
   - app/packages/services/*
-  - app/packages/storage/*
+  - app/packages/services/storage/*
   - storybook
 
 command:

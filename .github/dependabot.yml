@@ -80,25 +80,6 @@ updates:
       prefix: "chore"
       include: "scope"
 
-  - package-ecosystem: "pub"
-    directory: "/app/packages/storage/storage"
-    schedule:
-      interval: "weekly"
-    labels:
-      - ":package: dependencies"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-  - package-ecosystem: "pub"
-    directory: "/app/packages/storage/secure_storage"
-    schedule:
-      interval: "weekly"
-    labels:
-      - ":package: dependencies"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-
   # Services
   - package-ecosystem: "pub"
     directory: "/app/packages/services/analytics"
@@ -120,6 +101,24 @@ updates:
       include: "scope"
   - package-ecosystem: "pub"
     directory: "/app/packages/services/remote_config"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: "pub"
+    directory: "/app/packages/services/storage/storage"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: "pub"
+    directory: "/app/packages/services/storage/secure_storage"
     schedule:
       interval: "weekly"
     labels:

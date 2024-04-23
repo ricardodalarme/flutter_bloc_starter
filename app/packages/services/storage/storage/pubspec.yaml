@@ -1,5 +1,4 @@
-name: storage
-description: A Key/Value Storage Client for Dart.
+name: storage_service
 publish_to: none
 
 environment:

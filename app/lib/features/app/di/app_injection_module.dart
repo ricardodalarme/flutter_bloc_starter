@@ -9,7 +9,7 @@ import 'package:quickstart_flutter_bloc/features/app/bloc/app_bloc.dart';
 import 'package:quickstart_flutter_bloc/features/authentication/domain/repositories/authentication_repository.dart';
 import 'package:quickstart_flutter_bloc/routes/app_router.dart';
 import 'package:remote_config_service/remote_config_service.dart';
-import 'package:secure_storage/secure_storage.dart';
+import 'package:secure_storage_service/secure_storage_service.dart';
 
 class AppInjectionModule extends InjectionModule {
   @override
@@ -18,13 +18,13 @@ class AppInjectionModule extends InjectionModule {
       AppRouter.new,
     );
 
-    injector.registerLazySingleton<SecureStorage>(
-      SecureStorage.new,
+    injector.registerLazySingleton<SecureStorageService>(
+      SecureStorageService.new,
     );
 
     injector.registerLazySingleton<GQLClient>(
       () => GQLClientImpl(
-        storage: injector.get<SecureStorage>(),
+        storage: injector.get<SecureStorageService>(),
       ),
     );
 

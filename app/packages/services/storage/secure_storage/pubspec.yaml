@@ -1,5 +1,4 @@
-name: secure_storage
-description: A Key/Value Secure Storage Client
+name: secure_storage_service
 publish_to: none
 
 environment:
@@ -9,7 +8,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_secure_storage: ^9.0.0
-  storage:
+  storage_service:
     path: ../storage
 
 dev_dependencies:

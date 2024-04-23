@@ -1,7 +1,7 @@
 import 'package:common/common.dart';
 import 'package:graphql/client.dart';
 import 'package:graphql_query_compress/graphql_query_compress.dart';
-import 'package:storage/storage.dart';
+import 'package:storage_service/storage_service.dart';
 
 abstract class GQLClient {
   Future<QueryResult<T>> query<T>(QueryOptions<T> options);
@@ -11,7 +11,7 @@ abstract class GQLClient {
 
 class GQLClientImpl implements GQLClient {
   factory GQLClientImpl({
-    required Storage storage,
+    required StorageService storage,
   }) {
     final httpLink = HttpLink(
       Config.serverUrl,

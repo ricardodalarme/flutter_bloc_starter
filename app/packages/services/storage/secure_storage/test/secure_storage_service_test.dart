@@ -1,8 +1,8 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:secure_storage/secure_storage.dart';
-import 'package:storage/storage.dart';
+import 'package:secure_storage_service/secure_storage_service.dart';
+import 'package:storage_service/storage_service.dart';
 
 class MockFlutterSecureStorage extends Mock implements FlutterSecureStorage {}
 
@@ -13,16 +13,19 @@ void main() {
 
   group('SecureStorage', () {
     late FlutterSecureStorage flutterSecureStorage;
-    late SecureStorage secureStorage;
+    late SecureStorageService secureStorage;
 
     setUp(() {
       flutterSecureStorage = MockFlutterSecureStorage();
-      secureStorage = SecureStorage(flutterSecureStorage);
+      secureStorage = SecureStorageService(flutterSecureStorage);
     });
 
     group('constructor', () {
       test('defaults to internal FlutterSecureStorage if none is provided', () {
-        expect(() => const SecureStorage(), isNot(throwsA(isA<Exception>())));
+        expect(
+          () => const SecureStorageService(),
+          isNot(throwsA(isA<Exception>())),
+        );
       });
     });
 

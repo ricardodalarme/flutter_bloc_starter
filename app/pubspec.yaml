@@ -15,9 +15,10 @@ dependencies:
     path: ./packages/common_data
   common_ui:
     path: ./packages/common_ui
+  crash_report_service:
+    path: ./packages/services/crash_report
   equatable: ^2.0.5
   firebase_core: ^2.30.0
-  firebase_crashlytics: ^3.5.2
   firebase_performance: ^0.9.4+2
   flutter:
     sdk: flutter

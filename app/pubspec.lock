@@ -277,6 +277,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.7.2"
+  crash_report_service:
+    dependency: "direct main"
+    description:
+      path: "packages/services/crash_report"
+      relative: true
+    source: path
+    version: "0.0.0"
   crypto:
     dependency: transitive
     description:
@@ -406,7 +413,7 @@ packages:
     source: hosted
     version: "2.15.0"
   firebase_crashlytics:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: firebase_crashlytics
       sha256: c39ad1df819130dbb3468e1ad4e6fcd09fa37f8bc1581e8881d515a54a181757

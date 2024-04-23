@@ -1,6 +1,6 @@
 import 'package:common/common.dart';
+import 'package:crash_report_service/crash_report_service.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,6 +24,7 @@ Future<void> bootstrap(Widget Function() builder) async {
     _setupBloc(),
     _registerModules(),
   ]);
+  await _configureCrashReportService();
 
   runApp(builder());
 }
@@ -32,16 +33,21 @@ Future<void> _setupFirebase() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
-  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
-  PlatformDispatcher.instance.onError = (error, stack) {
-    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
-    return true;
-  };
 }
 
 Future<void> _setupBloc() async {
   Bloc.observer = AppBlocObserver();
+}
+
+Future<void> _configureCrashReportService() async {
+  final crashReportService = AppInjector.instance.get<CrashReportService>();
+
+  await crashReportService.setCrashlyticsCollectionEnabled(true);
+  FlutterError.onError = crashReportService.recordFlutterFatalError;
+  PlatformDispatcher.instance.onError = (error, stack) {
+    crashReportService.recordError(error, stack, fatal: true);
+    return true;
+  };
 }
 
 Future<void> _registerModules() async {

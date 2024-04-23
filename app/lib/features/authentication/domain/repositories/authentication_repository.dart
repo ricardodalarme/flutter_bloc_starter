@@ -5,6 +5,8 @@ abstract class AuthenticationRepository {
 
   void dispose();
 
+  Future<void> checkAuthenticationStatus();
+
   Future<void> logInWithUsernameAndPassword({
     required String username,
     required String password,

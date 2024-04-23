@@ -11,12 +11,16 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
     required TokenLocalDataSource tokenLocalDataSource,
   })  : _loginDataSource = loginDataSource,
         _tokenLocalDataSource = tokenLocalDataSource {
-    _authenticationStreamController = StreamController<bool>.broadcast();
+    _authenticationStreamController.onListen = () {
+      _authenticationStreamController.add(_initialAuthenticationStatus);
+    };
   }
-
   final AuthenticationDataSource _loginDataSource;
   final TokenLocalDataSource _tokenLocalDataSource;
-  late final StreamController<bool> _authenticationStreamController;
+  final StreamController<bool> _authenticationStreamController =
+      StreamController<bool>.broadcast();
+
+  bool _initialAuthenticationStatus = false;
 
   @override
   Stream<bool> get isAuthenticated => _authenticationStreamController.stream;
@@ -25,6 +29,15 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   void dispose() {
     _authenticationStreamController.close();
   }
+
+  @override
+  Future<void> checkAuthenticationStatus() async {
+    final token = await _tokenLocalDataSource.get();
+    _initialAuthenticationStatus = !_hasTokenExpired(token);
+  }
+
+  bool _hasTokenExpired(TokenLocal? token) =>
+      token == null || token.expires.isBefore(DateTime.now());
 
   @override
   Future<void> logInWithUsernameAndPassword({

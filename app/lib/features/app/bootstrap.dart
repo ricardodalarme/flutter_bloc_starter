@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quickstart_flutter_bloc/features/app/di/app_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/app/observers/bloc_observer.dart';
 import 'package:quickstart_flutter_bloc/features/authentication/di/authentication_injection_module.dart';
+import 'package:quickstart_flutter_bloc/features/authentication/domain/repositories/authentication_repository.dart';
 import 'package:quickstart_flutter_bloc/features/change_password/di/change_password_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/edit_profile/di/edit_profile_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/di/forgot_password_injection_module.dart';
@@ -24,7 +25,10 @@ Future<void> bootstrap(Widget Function() builder) async {
     _setupBloc(),
     _registerModules(),
   ]);
-  await _configureCrashReportService();
+  await Future.wait([
+    _checkAuthenticationStatus(),
+    _configureCrashReportService(),
+  ]);
 
   runApp(builder());
 }
@@ -48,6 +52,13 @@ Future<void> _configureCrashReportService() async {
     crashReportService.recordError(error, stack, fatal: true);
     return true;
   };
+}
+
+Future<void> _checkAuthenticationStatus() async {
+  final authenticationRepository =
+      AppInjector.instance.get<AuthenticationRepository>();
+
+  await authenticationRepository.checkAuthenticationStatus();
 }
 
 Future<void> _registerModules() async {

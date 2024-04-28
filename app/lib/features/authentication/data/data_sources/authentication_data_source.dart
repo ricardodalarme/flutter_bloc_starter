@@ -1,3 +1,4 @@
+import 'package:common/common.dart';
 import 'package:common_data/common_data.dart';
 import 'package:schemas/fragments/generated/TokenFragment.graphql.dart';
 import 'package:schemas/generated/schema.graphql.dart';
@@ -42,9 +43,13 @@ class AuthenticationDataSourceImpl implements AuthenticationDataSource {
 
       final data = response.parsedData?.login;
 
-      if (response.hasException || data == null) {
+      if (response.hasException) {
         throw response.exception!;
       }
+      if (data == null) {
+        throw const NoDataException();
+      }
+
       return (data.accessToken, data.refreshToken);
     } catch (e) {
       throw Exception();

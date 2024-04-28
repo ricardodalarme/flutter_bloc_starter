@@ -1,3 +1,4 @@
+import 'package:common/common.dart';
 import 'package:common_data/common_data.dart';
 import 'package:schemas/queries/generated/GetPosts.graphql.dart';
 
@@ -32,7 +33,7 @@ class PostDataSourceImpl implements PostDataSource {
       final data = response.parsedData?.posts;
 
       if (data == null) {
-        throw Exception();
+        throw const NoDataException();
       }
       return data;
     } catch (e) {

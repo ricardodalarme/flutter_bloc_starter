@@ -49,6 +49,13 @@ scripts:
       dirExists:
         - test
 
+  pod:update:
+    exec: cd ios && pod update
+    description: Install iOS dependencies.
+    packageFilters:
+      scope:
+        - quickstart_flutter_bloc
+
   # App commands
   l10n:
     exec: dart run slang && dart format lib/l10n/translations.g.dart

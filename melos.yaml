@@ -23,11 +23,11 @@ scripts:
     description: Upgrade all dependencies.
 
   lint:
-    run: melos format:no-output && melos analyze
+    run: melos format:no-output && melos check
     description: Lint all packages.
 
-  analyze:
-    exec: flutter analyze
+  check:
+    exec: flutter analyze --no-pub
     description: Analyze all packages.
 
   format:

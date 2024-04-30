@@ -53,11 +53,8 @@ jobs:
       - name: Setup environment
         uses: ./.github/actions/setup-environment
 
-      - name: Run Flutter Format
-        run: melos format:no-output
-
-      - name: Run Flutter Analyze
-        run: melos analyze
+      - name: Run Lint
+        run: melos lint
 
       - name: Analyze Localizations
         run: melos l10n:analyze

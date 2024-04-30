@@ -5,6 +5,6 @@ source "$(dirname "$0")"/scripts
 
 check_flutter_installed
 check_localization_files
-run_flutter_format
-run_flutter_analyzer
-run_flutter_tests
+run_format
+run_lint
+run_tests

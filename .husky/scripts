@@ -1,71 +1,64 @@
 #!/bin/bash
 set -e
 
+# Paths
 FLUTTER=$(which flutter)
 
-# Colors
+# Terminal color codes
 RED='\033[0;31m'
 BLACK_ON_RED='\033[41m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 BOLD='\033[1m'
-NC='\033[0m' # No Color
-
-check_staged_files() {
-  STAGED_FILES="$(git diff --cached --diff-filter=ACMR --oneline --name-only --relative)"
-  if [ -z "$STAGED_FILES" ]; then
-    echo "No files changed, nothing to check"
-    return 1
-  fi
-}
+NO_COLOR='\033[0m' # Resets color
 
 check_flutter_installed() {
-  if ! [ -x "$FLUTTER" ]; then
-    printf '%bPlease install Flutter before running the hook%b\n' "$BLACK_ON_RED" "$NC"
+  if [ ! -x "$FLUTTER" ]; then
+    printf '%bError: Flutter is not installed. Please install Flutter to proceed.%b\n' "$BLACK_ON_RED" "$NO_COLOR"
     return 1
   fi
 }
 
 check_localization_files() {
-  printf '\n%b%bChecking localization files%b\n' "$YELLOW" "$BOLD" "$NC"
+  printf '\n%bChecking localization files...%b\n' "$YELLOW$BOLD" "$NO_COLOR"
 
-  if melos l10n:analyze ; then
-    printf '%b%bSUCCESS: Localization files are valid.%b\n' "$GREEN" "$BOLD" "$NC"
+  if melos l10n:analyze; then
+    printf '%bLocalization check successful.%b\n' "$GREEN$BOLD" "$NO_COLOR"
   else
-    printf '%b%bFAILED: Fix localization files and try again.%b\n' "$RED" "$BOLD" "$NC"
+    printf '%bLocalization errors detected. Please correct them and try again.%b\n' "$RED$BOLD" "$NO_COLOR"
     return 1
   fi
 }
 
-run_flutter_format() {
-  printf '\n%b%bRunning the Flutter formatter%b\n' "$YELLOW" "$BOLD" "$NC"
+run_format() {
+  printf '\n%bRunning formatter...%b\n' "$YELLOW$BOLD" "$NO_COLOR"
 
   if melos format:no-output; then
-    printf '%b%bSUCCESS: Flutter format run successfully with no errors.%b\n' "$GREEN" "$BOLD" "$NC"
+    printf '%bFormatter completed successfully.%b\n' "$GREEN$BOLD" "$NO_COLOR"
   else
-    printf '%b%bFAILED: Fix Flutter formatter errors and try again.%b\n' "$RED" "$BOLD" "$NC"
+    printf '%bFormatting errors found. Please fix them and try again.%b\n' "$RED$BOLD" "$NO_COLOR"
     return 1
   fi
 }
 
-run_flutter_analyzer() {
-  printf "\n%b%bRunning the Flutter analyzer%b\n" "$YELLOW" "$BOLD" "$NC"
+run_lint() {
+  printf "\n%bRunning linter...%b\n" "$YELLOW$BOLD" "$NO_COLOR"
 
-  if melos analyze ; then
-    printf '%b%bSUCCESS: Flutter analyze run successfully with no errors.%b\n' "$GREEN" "$BOLD" "$NC"
+  if melos lint; then
+    printf '%bLinting completed successfully.%b\n' "$GREEN$BOLD" "$NO_COLOR"
   else
-    printf '%b%bFAILED: Fix Flutter analyzer errors and try again.%b\n' "$RED" "$BOLD" "$NC"
+    printf '%bLinting errors found. Please fix them and try again.%b\n' "$RED$BOLD" "$NO_COLOR"
     return 1
   fi
 }
 
-run_flutter_tests() {
-  printf "\n%b%bRunning tests%b\n" "$YELLOW" "$BOLD" "$NC"
+run_tests() {
+  printf "\n%bRunning tests...%b\n" "$YELLOW$BOLD" "$NO_COLOR"
 
-  if melos test ; then
-    printf '%b%bSUCCESS: Flutter tests run successfully with no errors.%b\n' "$GREEN" "$BOLD" "$NC"
+  if melos test; then
+    printf '%bAll tests passed successfully.%b\n' "$GREEN$BOLD" "$NO_COLOR"
   else
-    printf '%b%bFAILED: Fix Flutter test errors and try again.%b\n' "$RED" "$BOLD" "$NC"
+    printf '%bTest failures detected. Please resolve them and try again.%b\n' "$RED$BOLD" "$NO_COLOR"
     return 1
   fi
 }

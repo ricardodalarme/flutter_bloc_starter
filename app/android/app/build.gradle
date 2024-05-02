@@ -24,7 +24,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace "com.example.quickstart_flutter_bloc"
+    namespace "com.profusion.quickstart_flutter_bloc"
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -41,7 +41,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.quickstart_flutter_bloc"
+        applicationId "com.profusion.quickstart_flutter_bloc"
         minSdkVersion 21
         compileSdk flutter.compileSdkVersion
         targetSdkVersion flutter.targetSdkVersion

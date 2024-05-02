@@ -1,4 +1,4 @@
-package com.example.storybook
+package com.profusion.storybook
 
 import io.flutter.embedding.android.FlutterActivity
 

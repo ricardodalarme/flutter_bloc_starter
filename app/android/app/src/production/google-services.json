@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:731036601810:android:70b283b46db96688a68c0b",
+        "mobilesdk_app_id": "1:731036601810:android:df2b6a2d66ba2361a68c0b",
         "android_client_info": {
-          "package_name": "com.example.quickstart_flutter_bloc"
+          "package_name": "com.profusion.quickstart_flutter_bloc"
         }
       },
       "oauth_client": [],

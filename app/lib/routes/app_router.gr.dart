@@ -54,7 +54,7 @@ abstract class _$AppRouter extends RootStackRouter {
     PostRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const PostPage(),
+        child: WrappedRoute(child: const PostPage()),
       );
     },
     PrivacyPolicyRoute.name: (routeData) {

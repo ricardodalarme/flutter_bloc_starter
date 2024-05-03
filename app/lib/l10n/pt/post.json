@@ -1,3 +1,4 @@
 {
-  "title": "Feed"
+  "title": "Feed",
+  "textFailure": "Falha ao carregar o feed."
 }

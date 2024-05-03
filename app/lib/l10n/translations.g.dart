@@ -442,6 +442,7 @@ class _TranslationsPostEn {
 
   // Translations
   String get title => 'Feed';
+  String get textFailure => 'Failed to load feed.';
 }
 
 // Path: unusedTranslations.en
@@ -451,8 +452,6 @@ class _TranslationsUnusedTranslationsEnEn {
   final Translations _root; // ignore: unused_field
 
   // Translations
-  late final _TranslationsUnusedTranslationsEnCommonEn common =
-      _TranslationsUnusedTranslationsEnCommonEn._(_root);
 }
 
 // Path: unusedTranslations.pt
@@ -471,16 +470,6 @@ class _TranslationsMissingTranslationsPtEn {
   final Translations _root; // ignore: unused_field
 
   // Translations
-}
-
-// Path: unusedTranslations.en.common
-class _TranslationsUnusedTranslationsEnCommonEn {
-  _TranslationsUnusedTranslationsEnCommonEn._(this._root);
-
-  final Translations _root; // ignore: unused_field
-
-  // Translations
-  String get retry => 'Retry';
 }
 
 // Path: <root>
@@ -863,6 +852,8 @@ class _TranslationsPostPt extends _TranslationsPostEn {
   // Translations
   @override
   String get title => 'Feed';
+  @override
+  String get textFailure => 'Falha ao carregar o feed.';
 }
 
 /// Flat map(s) containing all translations.
@@ -871,8 +862,6 @@ class _TranslationsPostPt extends _TranslationsPostEn {
 extension on Translations {
   dynamic _flatMapFunction(String path) {
     switch (path) {
-      case 'unusedTranslations.en.common.retry':
-        return 'Retry';
       case 'signup.title':
         return 'Sign Up';
       case 'signup.labelConfirmPassword':
@@ -996,6 +985,8 @@ extension on Translations {
         return 'Invalid email';
       case 'post.title':
         return 'Feed';
+      case 'post.textFailure':
+        return 'Failed to load feed.';
       default:
         return null;
     }
@@ -1128,6 +1119,8 @@ extension on _TranslationsPt {
         return 'Email inválido';
       case 'post.title':
         return 'Feed';
+      case 'post.textFailure':
+        return 'Falha ao carregar o feed.';
       default:
         return null;
     }

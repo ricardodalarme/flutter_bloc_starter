@@ -23,21 +23,18 @@ class PostPage extends StatelessWidget implements AutoRouteWrapper {
   Widget build(BuildContext context) {
     return BaseView(
       title: context.l10n.post.title,
-      body: Padding(
-        padding: const EdgeInsets.all(AppSpacing.large),
-        child: BlocBuilder<PostBloc, PostState>(
-          builder: (context, state) => switch (state.posts) {
-            Success(:final value) => _PostSuccess(posts: value),
-            Loading() => const LoadingIndicator(),
-            Failure() => ErrorIndicator(
-                title: context.l10n.common.genericError,
-                buttonText: context.l10n.common.retry,
-                message: context.l10n.post.textFailure,
-                onButtonPressed: () =>
-                    context.read<PostBloc>().add(const PostFetched()),
-              ),
-          },
-        ),
+      body: BlocBuilder<PostBloc, PostState>(
+        builder: (context, state) => switch (state.posts) {
+          Success(:final value) => _PostSuccess(posts: value),
+          Loading() => const LoadingIndicator(),
+          Failure() => ErrorIndicator(
+              title: context.l10n.common.genericError,
+              buttonText: context.l10n.common.retry,
+              message: context.l10n.post.textFailure,
+              onButtonPressed: () =>
+                  context.read<PostBloc>().add(const PostFetched()),
+            ),
+        },
       ),
     );
   }
@@ -51,6 +48,7 @@ class _PostSuccess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: const EdgeInsets.all(AppSpacing.large),
       itemCount: posts.length,
       itemBuilder: (context, index) => PostCard(
         key: ValueKey(posts[index].id),

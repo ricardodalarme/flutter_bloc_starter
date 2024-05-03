@@ -2,4 +2,7 @@ fragment PostFragment on Post {
   id
   title
   body
+  createdBy {
+    ...UserFragment
+  }
 }

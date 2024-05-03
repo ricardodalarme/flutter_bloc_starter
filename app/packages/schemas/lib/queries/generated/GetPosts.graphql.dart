@@ -1,4 +1,5 @@
 import '../../fragments/generated/PostFragment.graphql.dart';
+import '../../fragments/generated/UserFragment.graphql.dart';
 import 'dart:async';
 import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
@@ -187,6 +188,7 @@ const documentNodeQueryGetPosts = DocumentNode(definitions: [
     ]),
   ),
   fragmentDefinitionPostFragment,
+  fragmentDefinitionUserFragment,
 ]);
 QueryGetPosts _parserFnQueryGetPosts(Map<String, dynamic> data) =>
     QueryGetPosts.fromJson(data);
@@ -600,6 +602,7 @@ class QueryGetPostspostsnodesPost
     required this.id,
     required this.title,
     required this.body,
+    required this.createdBy,
     this.$__typename = 'Post',
   });
 
@@ -607,11 +610,14 @@ class QueryGetPostspostsnodesPost
     final l$id = json['id'];
     final l$title = json['title'];
     final l$body = json['body'];
+    final l$createdBy = json['createdBy'];
     final l$$__typename = json['__typename'];
     return QueryGetPostspostsnodesPost(
       id: (l$id as String),
       title: (l$title as String),
       body: (l$body as String),
+      createdBy:
+          FragmentUserFragment.fromJson((l$createdBy as Map<String, dynamic>)),
       $__typename: (l$$__typename as String),
     );
   }
@@ -621,6 +627,8 @@ class QueryGetPostspostsnodesPost
   final String title;
 
   final String body;
+
+  final FragmentUserFragment createdBy;
 
   final String $__typename;
 
@@ -632,6 +640,8 @@ class QueryGetPostspostsnodesPost
     _resultData['title'] = l$title;
     final l$body = body;
     _resultData['body'] = l$body;
+    final l$createdBy = createdBy;
+    _resultData['createdBy'] = l$createdBy.toJson();
     final l$$__typename = $__typename;
     _resultData['__typename'] = l$$__typename;
     return _resultData;
@@ -642,11 +652,13 @@ class QueryGetPostspostsnodesPost
     final l$id = id;
     final l$title = title;
     final l$body = body;
+    final l$createdBy = createdBy;
     final l$$__typename = $__typename;
     return Object.hashAll([
       l$id,
       l$title,
       l$body,
+      l$createdBy,
       l$$__typename,
     ]);
   }
@@ -673,6 +685,11 @@ class QueryGetPostspostsnodesPost
     final l$body = body;
     final lOther$body = other.body;
     if (l$body != lOther$body) {
+      return false;
+    }
+    final l$createdBy = createdBy;
+    final lOther$createdBy = other.createdBy;
+    if (l$createdBy != lOther$createdBy) {
       return false;
     }
     final l$$__typename = $__typename;
@@ -706,8 +723,10 @@ abstract class CopyWithQueryGetPostspostsnodesPost<TRes> {
     String? id,
     String? title,
     String? body,
+    FragmentUserFragment? createdBy,
     String? $__typename,
   });
+  CopyWithFragmentUserFragment<TRes> get createdBy;
 }
 
 class _CopyWithImplQueryGetPostspostsnodesPost<TRes>
@@ -727,6 +746,7 @@ class _CopyWithImplQueryGetPostspostsnodesPost<TRes>
     Object? id = _undefined,
     Object? title = _undefined,
     Object? body = _undefined,
+    Object? createdBy = _undefined,
     Object? $__typename = _undefined,
   }) =>
       _then(QueryGetPostspostsnodesPost(
@@ -737,10 +757,19 @@ class _CopyWithImplQueryGetPostspostsnodesPost<TRes>
         body: body == _undefined || body == null
             ? _instance.body
             : (body as String),
+        createdBy: createdBy == _undefined || createdBy == null
+            ? _instance.createdBy
+            : (createdBy as FragmentUserFragment),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
+
+  CopyWithFragmentUserFragment<TRes> get createdBy {
+    final local$createdBy = _instance.createdBy;
+    return CopyWithFragmentUserFragment(
+        local$createdBy, (e) => call(createdBy: e));
+  }
 }
 
 class _CopyWithStubImplQueryGetPostspostsnodesPost<TRes>
@@ -753,9 +782,13 @@ class _CopyWithStubImplQueryGetPostspostsnodesPost<TRes>
     String? id,
     String? title,
     String? body,
+    FragmentUserFragment? createdBy,
     String? $__typename,
   }) =>
       _res;
+
+  CopyWithFragmentUserFragment<TRes> get createdBy =>
+      CopyWithFragmentUserFragment.stub(_res);
 }
 
 class QueryGetPostspostsnodesRemovedPost implements QueryGetPostspostsnodes {

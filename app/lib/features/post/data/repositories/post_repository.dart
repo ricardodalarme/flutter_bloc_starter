@@ -20,6 +20,7 @@ class PostRepositoryImpl implements PostRepository {
             id: element.id,
             title: element.title,
             body: element.body,
+            authorImageUrl: element.createdBy.profilePicture?.url,
           ),
         )
         .toList();

@@ -17,8 +17,8 @@ class PostCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        leading: const ProfilePicture(
-          photoUrl: null,
+        leading: ProfilePicture(
+          photoUrl: post.authorImageUrl,
           size: _profilePictureSize,
         ),
         isThreeLine: true,

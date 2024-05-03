@@ -11,8 +11,14 @@ class PostRepositoryImpl implements PostRepository {
   final PostDataSource _postDataSource;
 
   @override
-  Future<List<PostModel>> getPosts() async {
-    final result = await _postDataSource.getPosts();
+  Future<List<PostModel>> getPosts({
+    int? first,
+    String? after,
+  }) async {
+    final result = await _postDataSource.getPosts(
+      first: first,
+      after: after,
+    );
     final parsedResult = result.nodes
         .whereType<QueryGetPostspostsnodesPost>()
         .map(

@@ -1,8 +1,150 @@
+import '../../fragments/generated/PageInfoFragment.graphql.dart';
 import '../../fragments/generated/PostFragment.graphql.dart';
 import '../../fragments/generated/UserFragment.graphql.dart';
 import 'dart:async';
 import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
+
+class VariablesQueryGetPosts {
+  factory VariablesQueryGetPosts({
+    int? first,
+    String? after,
+  }) =>
+      VariablesQueryGetPosts._({
+        if (first != null) r'first': first,
+        if (after != null) r'after': after,
+      });
+
+  VariablesQueryGetPosts._(this._$data);
+
+  factory VariablesQueryGetPosts.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('first')) {
+      final l$first = data['first'];
+      result$data['first'] = (l$first as int?);
+    }
+    if (data.containsKey('after')) {
+      final l$after = data['after'];
+      result$data['after'] = (l$after as String?);
+    }
+    return VariablesQueryGetPosts._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  int? get first => (_$data['first'] as int?);
+
+  String? get after => (_$data['after'] as String?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('first')) {
+      final l$first = first;
+      result$data['first'] = l$first;
+    }
+    if (_$data.containsKey('after')) {
+      final l$after = after;
+      result$data['after'] = l$after;
+    }
+    return result$data;
+  }
+
+  CopyWithVariablesQueryGetPosts<VariablesQueryGetPosts> get copyWith =>
+      CopyWithVariablesQueryGetPosts(
+        this,
+        (i) => i,
+      );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is VariablesQueryGetPosts) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$first = first;
+    final lOther$first = other.first;
+    if (_$data.containsKey('first') != other._$data.containsKey('first')) {
+      return false;
+    }
+    if (l$first != lOther$first) {
+      return false;
+    }
+    final l$after = after;
+    final lOther$after = other.after;
+    if (_$data.containsKey('after') != other._$data.containsKey('after')) {
+      return false;
+    }
+    if (l$after != lOther$after) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$first = first;
+    final l$after = after;
+    return Object.hashAll([
+      _$data.containsKey('first') ? l$first : const {},
+      _$data.containsKey('after') ? l$after : const {},
+    ]);
+  }
+}
+
+abstract class CopyWithVariablesQueryGetPosts<TRes> {
+  factory CopyWithVariablesQueryGetPosts(
+    VariablesQueryGetPosts instance,
+    TRes Function(VariablesQueryGetPosts) then,
+  ) = _CopyWithImplVariablesQueryGetPosts;
+
+  factory CopyWithVariablesQueryGetPosts.stub(TRes res) =
+      _CopyWithStubImplVariablesQueryGetPosts;
+
+  TRes call({
+    int? first,
+    String? after,
+  });
+}
+
+class _CopyWithImplVariablesQueryGetPosts<TRes>
+    implements CopyWithVariablesQueryGetPosts<TRes> {
+  _CopyWithImplVariablesQueryGetPosts(
+    this._instance,
+    this._then,
+  );
+
+  final VariablesQueryGetPosts _instance;
+
+  final TRes Function(VariablesQueryGetPosts) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? first = _undefined,
+    Object? after = _undefined,
+  }) =>
+      _then(VariablesQueryGetPosts._({
+        ..._instance._$data,
+        if (first != _undefined) 'first': (first as int?),
+        if (after != _undefined) 'after': (after as String?),
+      }));
+}
+
+class _CopyWithStubImplVariablesQueryGetPosts<TRes>
+    implements CopyWithVariablesQueryGetPosts<TRes> {
+  _CopyWithStubImplVariablesQueryGetPosts(this._res);
+
+  TRes _res;
+
+  call({
+    int? first,
+    String? after,
+  }) =>
+      _res;
+}
 
 class QueryGetPosts {
   QueryGetPosts({
@@ -141,15 +283,62 @@ const documentNodeQueryGetPosts = DocumentNode(definitions: [
   OperationDefinitionNode(
     type: OperationType.query,
     name: NameNode(value: 'GetPosts'),
-    variableDefinitions: [],
+    variableDefinitions: [
+      VariableDefinitionNode(
+        variable: VariableNode(name: NameNode(value: 'first')),
+        type: NamedTypeNode(
+          name: NameNode(value: 'Int'),
+          isNonNull: false,
+        ),
+        defaultValue: DefaultValueNode(value: null),
+        directives: [],
+      ),
+      VariableDefinitionNode(
+        variable: VariableNode(name: NameNode(value: 'after')),
+        type: NamedTypeNode(
+          name: NameNode(value: 'String'),
+          isNonNull: false,
+        ),
+        defaultValue: DefaultValueNode(value: null),
+        directives: [],
+      ),
+    ],
     directives: [],
     selectionSet: SelectionSetNode(selections: [
       FieldNode(
         name: NameNode(value: 'posts'),
         alias: null,
-        arguments: [],
+        arguments: [
+          ArgumentNode(
+            name: NameNode(value: 'first'),
+            value: VariableNode(name: NameNode(value: 'first')),
+          ),
+          ArgumentNode(
+            name: NameNode(value: 'after'),
+            value: VariableNode(name: NameNode(value: 'after')),
+          ),
+        ],
         directives: [],
         selectionSet: SelectionSetNode(selections: [
+          FieldNode(
+            name: NameNode(value: 'pageInfo'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: SelectionSetNode(selections: [
+              FragmentSpreadNode(
+                name: NameNode(value: 'PageInfoFragment'),
+                directives: [],
+              ),
+              FieldNode(
+                name: NameNode(value: '__typename'),
+                alias: null,
+                arguments: [],
+                directives: [],
+                selectionSet: null,
+              ),
+            ]),
+          ),
           FieldNode(
             name: NameNode(value: 'nodes'),
             alias: null,
@@ -187,6 +376,7 @@ const documentNodeQueryGetPosts = DocumentNode(definitions: [
       ),
     ]),
   ),
+  fragmentDefinitionPageInfoFragment,
   fragmentDefinitionPostFragment,
   fragmentDefinitionUserFragment,
 ]);
@@ -200,6 +390,7 @@ typedef OnQueryCompleteQueryGetPosts = FutureOr<void> Function(
 class OptionsQueryGetPosts extends graphql.QueryOptions<QueryGetPosts> {
   OptionsQueryGetPosts({
     String? operationName,
+    VariablesQueryGetPosts? variables,
     graphql.FetchPolicy? fetchPolicy,
     graphql.ErrorPolicy? errorPolicy,
     graphql.CacheRereadPolicy? cacheRereadPolicy,
@@ -211,6 +402,7 @@ class OptionsQueryGetPosts extends graphql.QueryOptions<QueryGetPosts> {
     graphql.OnQueryError? onError,
   })  : onCompleteWithParsed = onComplete,
         super(
+          variables: variables?.toJson() ?? {},
           operationName: operationName,
           fetchPolicy: fetchPolicy,
           errorPolicy: errorPolicy,
@@ -244,6 +436,7 @@ class WatchOptionsQueryGetPosts
     extends graphql.WatchQueryOptions<QueryGetPosts> {
   WatchOptionsQueryGetPosts({
     String? operationName,
+    VariablesQueryGetPosts? variables,
     graphql.FetchPolicy? fetchPolicy,
     graphql.ErrorPolicy? errorPolicy,
     graphql.CacheRereadPolicy? cacheRereadPolicy,
@@ -255,6 +448,7 @@ class WatchOptionsQueryGetPosts
     bool carryForwardDataOnException = true,
     bool fetchResults = false,
   }) : super(
+          variables: variables?.toJson() ?? {},
           operationName: operationName,
           fetchPolicy: fetchPolicy,
           errorPolicy: errorPolicy,
@@ -271,9 +465,12 @@ class WatchOptionsQueryGetPosts
 }
 
 class FetchMoreOptionsQueryGetPosts extends graphql.FetchMoreOptions {
-  FetchMoreOptionsQueryGetPosts({required graphql.UpdateQuery updateQuery})
-      : super(
+  FetchMoreOptionsQueryGetPosts({
+    required graphql.UpdateQuery updateQuery,
+    VariablesQueryGetPosts? variables,
+  }) : super(
           updateQuery: updateQuery,
+          variables: variables?.toJson() ?? {},
           document: documentNodeQueryGetPosts,
         );
 }
@@ -287,18 +484,26 @@ extension ClientExtensionQueryGetPosts on graphql.GraphQLClient {
       this.watchQuery(options ?? WatchOptionsQueryGetPosts());
   void writeQueryGetPosts({
     required QueryGetPosts data,
+    VariablesQueryGetPosts? variables,
     bool broadcast = true,
   }) =>
       this.writeQuery(
         graphql.Request(
-            operation: graphql.Operation(document: documentNodeQueryGetPosts)),
+          operation: graphql.Operation(document: documentNodeQueryGetPosts),
+          variables: variables?.toJson() ?? const {},
+        ),
         data: data.toJson(),
         broadcast: broadcast,
       );
-  QueryGetPosts? readQueryGetPosts({bool optimistic = true}) {
+  QueryGetPosts? readQueryGetPosts({
+    VariablesQueryGetPosts? variables,
+    bool optimistic = true,
+  }) {
     final result = this.readQuery(
       graphql.Request(
-          operation: graphql.Operation(document: documentNodeQueryGetPosts)),
+        operation: graphql.Operation(document: documentNodeQueryGetPosts),
+        variables: variables?.toJson() ?? const {},
+      ),
       optimistic: optimistic,
     );
     return result == null ? null : QueryGetPosts.fromJson(result);
@@ -307,14 +512,18 @@ extension ClientExtensionQueryGetPosts on graphql.GraphQLClient {
 
 class QueryGetPostsposts {
   QueryGetPostsposts({
+    required this.pageInfo,
     required this.nodes,
     this.$__typename = 'PostConnection',
   });
 
   factory QueryGetPostsposts.fromJson(Map<String, dynamic> json) {
+    final l$pageInfo = json['pageInfo'];
     final l$nodes = json['nodes'];
     final l$$__typename = json['__typename'];
     return QueryGetPostsposts(
+      pageInfo: FragmentPageInfoFragment.fromJson(
+          (l$pageInfo as Map<String, dynamic>)),
       nodes: (l$nodes as List<dynamic>)
           .map((e) =>
               QueryGetPostspostsnodes.fromJson((e as Map<String, dynamic>)))
@@ -323,12 +532,16 @@ class QueryGetPostsposts {
     );
   }
 
+  final FragmentPageInfoFragment pageInfo;
+
   final List<QueryGetPostspostsnodes> nodes;
 
   final String $__typename;
 
   Map<String, dynamic> toJson() {
     final _resultData = <String, dynamic>{};
+    final l$pageInfo = pageInfo;
+    _resultData['pageInfo'] = l$pageInfo.toJson();
     final l$nodes = nodes;
     _resultData['nodes'] = l$nodes.map((e) => e.toJson()).toList();
     final l$$__typename = $__typename;
@@ -338,9 +551,11 @@ class QueryGetPostsposts {
 
   @override
   int get hashCode {
+    final l$pageInfo = pageInfo;
     final l$nodes = nodes;
     final l$$__typename = $__typename;
     return Object.hashAll([
+      l$pageInfo,
       Object.hashAll(l$nodes.map((v) => v)),
       l$$__typename,
     ]);
@@ -352,6 +567,11 @@ class QueryGetPostsposts {
       return true;
     }
     if (!(other is QueryGetPostsposts) || runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$pageInfo = pageInfo;
+    final lOther$pageInfo = other.pageInfo;
+    if (l$pageInfo != lOther$pageInfo) {
       return false;
     }
     final l$nodes = nodes;
@@ -393,9 +613,11 @@ abstract class CopyWithQueryGetPostsposts<TRes> {
       _CopyWithStubImplQueryGetPostsposts;
 
   TRes call({
+    FragmentPageInfoFragment? pageInfo,
     List<QueryGetPostspostsnodes>? nodes,
     String? $__typename,
   });
+  CopyWithFragmentPageInfoFragment<TRes> get pageInfo;
   TRes nodes(
       Iterable<QueryGetPostspostsnodes> Function(
               Iterable<
@@ -417,10 +639,14 @@ class _CopyWithImplQueryGetPostsposts<TRes>
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
+    Object? pageInfo = _undefined,
     Object? nodes = _undefined,
     Object? $__typename = _undefined,
   }) =>
       _then(QueryGetPostsposts(
+        pageInfo: pageInfo == _undefined || pageInfo == null
+            ? _instance.pageInfo
+            : (pageInfo as FragmentPageInfoFragment),
         nodes: nodes == _undefined || nodes == null
             ? _instance.nodes
             : (nodes as List<QueryGetPostspostsnodes>),
@@ -428,6 +654,12 @@ class _CopyWithImplQueryGetPostsposts<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+
+  CopyWithFragmentPageInfoFragment<TRes> get pageInfo {
+    final local$pageInfo = _instance.pageInfo;
+    return CopyWithFragmentPageInfoFragment(
+        local$pageInfo, (e) => call(pageInfo: e));
+  }
 
   TRes nodes(
           Iterable<QueryGetPostspostsnodes> Function(
@@ -448,10 +680,14 @@ class _CopyWithStubImplQueryGetPostsposts<TRes>
   TRes _res;
 
   call({
+    FragmentPageInfoFragment? pageInfo,
     List<QueryGetPostspostsnodes>? nodes,
     String? $__typename,
   }) =>
       _res;
+
+  CopyWithFragmentPageInfoFragment<TRes> get pageInfo =>
+      CopyWithFragmentPageInfoFragment.stub(_res);
 
   nodes(_fn) => _res;
 }

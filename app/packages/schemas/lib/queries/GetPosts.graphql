@@ -1,5 +1,8 @@
-query GetPosts {
-  posts {
+query GetPosts($first: Int, $after: String) {
+  posts(first: $first, after: $after) {
+    pageInfo {
+      ...PageInfoFragment
+    }
     nodes {
       ...PostFragment
     }

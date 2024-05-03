@@ -2,7 +2,10 @@ import 'package:common_data/common_data.dart';
 import 'package:schemas/queries/generated/GetPosts.graphql.dart';
 
 abstract class PostDataSource {
-  Future<QueryGetPostsposts> getPosts();
+  Future<QueryGetPostsposts> getPosts({
+    int? first,
+    String? after,
+  });
 }
 
 class PostDataSourceImpl implements PostDataSource {
@@ -13,10 +16,18 @@ class PostDataSourceImpl implements PostDataSource {
   final GQLClient _client;
 
   @override
-  Future<QueryGetPostsposts> getPosts() async {
+  Future<QueryGetPostsposts> getPosts({
+    int? first,
+    String? after,
+  }) async {
     try {
       final response = await _client.query(
-        OptionsQueryGetPosts(),
+        OptionsQueryGetPosts(
+          variables: VariablesQueryGetPosts(
+            first: first,
+            after: after,
+          ),
+        ),
       );
       final data = response.parsedData?.posts;
 

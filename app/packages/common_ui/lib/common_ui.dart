@@ -17,3 +17,4 @@ export 'src/widgets/profile_picture.dart';
 export 'src/widgets/pull_to_refresh.dart';
 export 'src/widgets/sign_in_button.dart';
 export 'src/widgets/text_divider.dart';
+export 'src/widgets/web_view.dart';

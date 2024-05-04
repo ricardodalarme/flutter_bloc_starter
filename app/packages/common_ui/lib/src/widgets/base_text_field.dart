@@ -1,4 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show InputDecoration, TextField;
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 
 const _errorMaxLines = 2;
 

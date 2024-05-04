@@ -1,5 +1,7 @@
 import 'package:common_ui/src/widgets/base_text_field.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show IconButton, Icons;
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 
 class PasswordTextField extends StatefulWidget {
   const PasswordTextField({

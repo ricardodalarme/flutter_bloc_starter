@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show RefreshIndicator;
+import 'package:flutter/widgets.dart';
 
 class PullToRefresh extends StatelessWidget {
   const PullToRefresh({

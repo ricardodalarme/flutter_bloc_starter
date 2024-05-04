@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show ThemeData;
 import 'package:widgetbook/widgetbook.dart';
 
 final List<WidgetbookTheme<ThemeData>> themes = [

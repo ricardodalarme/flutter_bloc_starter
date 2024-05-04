@@ -1,5 +1,5 @@
 import 'package:common_ui/common_ui.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show Divider;
 
 class TextDivider extends StatelessWidget {
   const TextDivider(this.text, {super.key});

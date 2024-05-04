@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show InkWell, Material;
+import 'package:flutter/widgets.dart';
 
 class Tapper extends StatelessWidget {
   const Tapper({

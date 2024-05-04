@@ -1,5 +1,5 @@
 import 'package:common_ui/common_ui.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show Card, ListTile;
 import 'package:quickstart_flutter_bloc/features/post/domain/models/post_model.dart';
 
 const _profilePictureSize = 40.0;

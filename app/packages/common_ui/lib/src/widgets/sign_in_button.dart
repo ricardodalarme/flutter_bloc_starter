@@ -1,5 +1,6 @@
 import 'package:common_ui/src/generated/assets.gen.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show Colors, MaterialButton;
+import 'package:flutter/widgets.dart';
 
 enum ButtonProvider {
   google('Google'),
@@ -28,10 +29,9 @@ class SignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final buttonText = text(button);
 
-    switch (button) {
-      case ButtonProvider.google:
-        return SignInButtonBuilder(
-          key: const ValueKey('Google'),
+    return switch (button) {
+      ButtonProvider.google => SignInButtonBuilder(
+          key: const Key('Google'),
           text: buttonText,
           icon: Container(
             padding: const EdgeInsets.all(4),
@@ -43,10 +43,9 @@ class SignInButton extends StatelessWidget {
           backgroundColor: const Color(0xFF4285F4),
           iconPadding: const EdgeInsets.fromLTRB(2, 0, 4, 0),
           onPressed: onPressed,
-        );
-      case ButtonProvider.facebook:
-        return SignInButtonBuilder(
-          key: const ValueKey('Facebook'),
+        ),
+      ButtonProvider.facebook => SignInButtonBuilder(
+          key: const Key('Facebook'),
           text: buttonText,
           icon: Assets.logos.facebook.svg(
             height: 30,
@@ -54,8 +53,8 @@ class SignInButton extends StatelessWidget {
           backgroundColor: const Color(0xFF1877f2),
           iconPadding: const EdgeInsets.symmetric(horizontal: 4),
           onPressed: onPressed,
-        );
-    }
+        )
+    };
   }
 }
 

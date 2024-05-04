@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show Colors, ScaffoldMessenger, SnackBar;
+import 'package:flutter/widgets.dart';
 
 enum SnackBarType { success, error }
 

@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show AppBar, Scaffold;
+import 'package:flutter/widgets.dart';
 
 class BaseView extends StatelessWidget {
   const BaseView({

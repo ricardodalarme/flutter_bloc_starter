@@ -1,5 +1,5 @@
 import 'package:common_ui/src/widgets/text_divider.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show Divider;
 import 'package:flutter_test/flutter_test.dart';
 
 import '../test_helpers/pump_app.dart';
@@ -8,7 +8,7 @@ void main() {
   group('TextDivider', () {
     testWidgets('renders widget', (tester) async {
       await tester.pumpApp(
-        const Material(child: TextDivider('Divider')),
+        const TextDivider('Divider'),
       );
       await tester.pump();
 
@@ -17,7 +17,7 @@ void main() {
 
     testWidgets('renders text', (tester) async {
       await tester.pumpApp(
-        const Material(child: TextDivider('Divider')),
+        const TextDivider('Divider'),
       );
       await tester.pump();
 
@@ -26,7 +26,7 @@ void main() {
 
     testWidgets('renders dividers', (tester) async {
       await tester.pumpApp(
-        const Material(child: TextDivider('Divider')),
+        const TextDivider('Divider'),
       );
       await tester.pump();
 

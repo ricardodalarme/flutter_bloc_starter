@@ -1,4 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    show NavigationBar, NavigationDestination;
+import 'package:flutter/widgets.dart';
 
 class NavBarItem {
   const NavBarItem({

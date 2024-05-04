@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show CircularProgressIndicator;
+import 'package:flutter/widgets.dart';
 
 class LoadingIndicator extends StatelessWidget {
   const LoadingIndicator({

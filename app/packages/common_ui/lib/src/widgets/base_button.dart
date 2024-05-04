@@ -1,4 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    show CircularProgressIndicator, Colors, FilledButton;
+import 'package:flutter/widgets.dart';
 
 const _loadingSize = 24.0;
 const _loadingStrokeWidth = 2.0;

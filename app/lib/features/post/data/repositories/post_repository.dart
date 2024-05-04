@@ -1,3 +1,4 @@
+import 'package:common/common.dart';
 import 'package:quickstart_flutter_bloc/features/post/data/data_sources/post_data_source.dart';
 import 'package:quickstart_flutter_bloc/features/post/domain/models/post_model.dart';
 import 'package:quickstart_flutter_bloc/features/post/domain/repositories/post_repository.dart';
@@ -6,9 +7,12 @@ import 'package:schemas/queries/generated/GetPosts.graphql.dart';
 class PostRepositoryImpl implements PostRepository {
   PostRepositoryImpl({
     required PostDataSource postDataSource,
-  }) : _postDataSource = postDataSource;
+    required Mapper<QueryGetPostspostsnodesPost, PostModel> mapper,
+  })  : _postDataSource = postDataSource,
+        _mapper = mapper;
 
   final PostDataSource _postDataSource;
+  final Mapper<QueryGetPostspostsnodesPost, PostModel> _mapper;
 
   @override
   Future<List<PostModel>> getPosts({
@@ -21,14 +25,7 @@ class PostRepositoryImpl implements PostRepository {
     );
     final parsedResult = result.nodes
         .whereType<QueryGetPostspostsnodesPost>()
-        .map(
-          (element) => PostModel(
-            id: element.id,
-            title: element.title,
-            body: element.body,
-            authorImageUrl: element.createdBy.profilePicture?.url,
-          ),
-        )
+        .map(_mapper.map)
         .toList();
 
     return parsedResult;

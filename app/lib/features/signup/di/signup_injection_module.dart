@@ -4,7 +4,7 @@ import 'package:common/common.dart';
 import 'package:common_data/common_data.dart';
 import 'package:quickstart_flutter_bloc/features/authentication/domain/repositories/authentication_repository.dart';
 import 'package:quickstart_flutter_bloc/features/signup/data/data_sources/signup_data_source.dart';
-import 'package:quickstart_flutter_bloc/features/signup/data/repositories/signup_repository.dart';
+import 'package:quickstart_flutter_bloc/features/signup/data/repositories/signup_repository_impl.dart';
 import 'package:quickstart_flutter_bloc/features/signup/domain/repositories/signup_repository.dart';
 import 'package:quickstart_flutter_bloc/features/signup/presentation/bloc/signup_bloc.dart';
 

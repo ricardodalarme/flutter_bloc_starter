@@ -5,4 +5,5 @@ export 'src/di/injector.dart';
 export 'src/exceptions/l10n_placeholder_exception.dart';
 export 'src/exceptions/unknown_exception.dart';
 export 'src/storage/storage_keys.dart';
+export 'src/utils/mapper.dart';
 export 'src/utils/resource.dart';

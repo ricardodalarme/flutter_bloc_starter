@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:common/common.dart';
-import 'package:flutter/material.dart' show MaterialApp, ThemeData;
-import 'package:flutter/widgets.dart';
+import 'package:common_ui/common_ui.dart';
+import 'package:flutter/material.dart' show MaterialApp;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:quickstart_flutter_bloc/features/app/bloc/app_bloc.dart';
@@ -26,8 +26,8 @@ class App extends StatelessWidget {
             listener: _onStatusChanged,
             child: MaterialApp.router(
               onGenerateTitle: (context) => context.l10n.common.appName,
-              theme: ThemeData.light(useMaterial3: true),
-              darkTheme: ThemeData.dark(useMaterial3: true),
+              theme: AppTheme.light,
+              darkTheme: AppTheme.dark,
               routerConfig: appRouter.config(
                 navigatorObservers: () => [
                   AppRouterObserver(),

@@ -16,11 +16,10 @@ class NotFoundPage extends StatelessWidget {
           children: [
             Text(
               context.l10n.notFound.title,
-              style: context.typography.displayLarge,
+              style: context.typography.titleLarge,
             ),
             Text(
               context.l10n.notFound.description,
-              style: context.typography.headlineSmall,
             ),
             const Gap(Spacings.xxlarge),
             BaseButton(

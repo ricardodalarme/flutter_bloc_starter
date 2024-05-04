@@ -1,14 +1,15 @@
+import 'package:common_ui/common_ui.dart';
 import 'package:flutter/material.dart' show ThemeData;
 import 'package:widgetbook/widgetbook.dart';
 
 final List<WidgetbookTheme<ThemeData>> themes = [
   WidgetbookTheme(
     name: 'Light',
-    data: ThemeData.light(useMaterial3: true),
+    data: AppTheme.light,
   ),
   WidgetbookTheme(
     name: 'Dark',
-    data: ThemeData.dark(useMaterial3: true),
+    data: AppTheme.dark,
   ),
 ];
 

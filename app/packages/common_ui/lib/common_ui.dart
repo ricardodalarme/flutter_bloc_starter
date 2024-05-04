@@ -4,6 +4,7 @@ export 'package:flutter/widgets.dart';
 export 'package:gap/gap.dart';
 
 export 'src/generated/assets.gen.dart';
+export 'src/theme/app_theme.dart';
 export 'src/theme/theme_extensions.dart';
 export 'src/tokens/spacings.dart';
 export 'src/widgets/base_button.dart';

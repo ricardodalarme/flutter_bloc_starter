@@ -1,3 +1,5 @@
+<!-- Open this PR as draft while it is not ready -->
+
 ## Description
 
 <!-- Describe what your PR does here, change log, etc -->
@@ -13,17 +15,17 @@ For example:
 - This PR solves #12345
 -->
 
-## Type of Change
+### Checklist
 
-<!--- Put an `x` in all the boxes that apply: -->
+<!-- Before submitting the PR, please address each item -->
 
-- [ ] ✨ New feature (non-breaking change which adds functionality)
-- [ ] 🛠️ Bug fix (non-breaking change which fixes an issue)
-- [ ] ❌ Breaking change (fix or feature that would cause existing functionality to change)
-- [ ] 🧹 Code refactor
-- [ ] ✅ Build configuration change
-- [ ] 📝 Documentation
-- [ ] 🗑️ Chore
+- [ ] **Tests**: This PR includes tests for covering the features or bug fixes (if applicable).
+- [ ] **Docs**: This PR updates/creates the necessary documentation.
+- [ ] **CI**: Make sure your Pull Request passes all CI checks. If not, clarify the motif behind that and the action plan to solve it (may reference a ticket)
+
+## How to test it
+
+<!-- Describe how the reviewers can test your feature. -->
 
 ## Visual reference
 
@@ -33,7 +35,7 @@ For example: if this is a bug fix, provide before and after screenshots
 
 <img width="350" alt="Screenshot of bug fix" src="your-image-url-here">
 
-Before | After
-:-:|:-:
-<img width="350" alt="Screenshot of screen pre bug fix" src="your-image-url-here"> | <img width="350" alt="Screenshot of screen post bug fix" src="your-image-url-here">
+|                    Before                   |                    After                    |
+| :-----------------------------------------: | :-----------------------------------------: |
+| <img width="350" src="your-image-url-here"> | <img width="350" src="your-image-url-here"> |
 -->

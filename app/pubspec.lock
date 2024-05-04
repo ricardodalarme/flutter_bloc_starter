@@ -959,6 +959,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.1"
+  persistent_storage_service:
+    dependency: "direct main"
+    description:
+      path: "packages/services/storage/persistent_storage"
+      relative: true
+    source: path
+    version: "0.0.0"
   petitparser:
     dependency: transitive
     description:

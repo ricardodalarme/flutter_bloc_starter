@@ -26,6 +26,8 @@ dependencies:
     sdk: flutter
   formz_inputs:
     path: ./packages/formz_inputs
+  persistent_storage_service:
+    path: ./packages/services/storage/persistent_storage
   remote_config_service:
     path: ./packages/services/remote_config
   schemas:

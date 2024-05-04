@@ -4,8 +4,8 @@ export 'package:flutter/widgets.dart';
 export 'package:gap/gap.dart';
 
 export 'src/generated/assets.gen.dart';
-export 'src/styling/app_spacing.dart';
 export 'src/theme/theme_extensions.dart';
+export 'src/tokens/app_spacing.dart';
 export 'src/widgets/base_button.dart';
 export 'src/widgets/base_snack_bar.dart';
 export 'src/widgets/base_text_field.dart';

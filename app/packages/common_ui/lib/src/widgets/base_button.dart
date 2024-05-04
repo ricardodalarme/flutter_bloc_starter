@@ -1,10 +1,5 @@
-import 'package:common_ui/src/tokens/colors.dart';
-import 'package:flutter/material.dart'
-    show CircularProgressIndicator, FilledButton;
-import 'package:flutter/widgets.dart';
-
-const _loadingSize = 24.0;
-const _loadingStrokeWidth = 2.0;
+import 'package:common_ui/common_ui.dart';
+import 'package:flutter/material.dart' show FilledButton;
 
 class BaseButton extends StatelessWidget {
   const BaseButton({
@@ -41,6 +36,9 @@ class BaseButton extends StatelessWidget {
 class _LoadingIndicator extends StatelessWidget {
   const _LoadingIndicator();
 
+  static const _loadingSize = 24.0;
+  static const _loadingStrokeWidth = 2.0;
+
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
@@ -48,7 +46,7 @@ class _LoadingIndicator extends StatelessWidget {
         maxHeight: _loadingSize,
         maxWidth: _loadingSize,
       ),
-      child: const CircularProgressIndicator(
+      child: const LoadingIndicator(
         strokeWidth: _loadingStrokeWidth,
         color: Colors.white,
       ),

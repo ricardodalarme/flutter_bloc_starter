@@ -26,7 +26,7 @@ class CircleIconButton extends StatelessWidget {
               onTap: onTap,
               customBorder: const CircleBorder(),
               child: Padding(
-                padding: const EdgeInsets.all(AppSpacing.xlarge),
+                padding: const EdgeInsets.all(Spacings.xlarge),
                 child: Icon(
                   icon,
                   color: context.colors.onSurfaceVariant,
@@ -34,7 +34,7 @@ class CircleIconButton extends StatelessWidget {
               ),
             ),
           ),
-          const Gap(AppSpacing.medium),
+          const Gap(Spacings.medium),
           Text(label),
         ],
       ),

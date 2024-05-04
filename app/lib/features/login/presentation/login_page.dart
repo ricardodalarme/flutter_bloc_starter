@@ -30,12 +30,12 @@ class LoginPage extends StatelessWidget implements AutoRouteWrapper {
         listener: _handleStatus,
         child: Center(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(AppSpacing.large),
+            padding: const EdgeInsets.all(Spacings.large),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const _UsernameTextField(),
-                const Gap(AppSpacing.medium),
+                const Gap(Spacings.medium),
                 const _PasswordTextField(),
                 Align(
                   alignment: Alignment.centerRight,
@@ -48,11 +48,10 @@ class LoginPage extends StatelessWidget implements AutoRouteWrapper {
                     ),
                   ),
                 ),
-                const Gap(AppSpacing.small),
+                const Gap(Spacings.small),
                 const _LoginButton(),
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: AppSpacing.large),
+                  padding: const EdgeInsets.symmetric(vertical: Spacings.large),
                   child: TextDivider(context.l10n.login.dividerOr),
                 ),
                 const _SignInWithThirdPartyButtons(),

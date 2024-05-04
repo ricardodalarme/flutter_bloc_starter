@@ -28,16 +28,16 @@ class ChangePasswordPage extends StatelessWidget implements AutoRouteWrapper {
         listener: _handleStatus,
         child: const Center(
           child: SingleChildScrollView(
-            padding: EdgeInsets.all(AppSpacing.large),
+            padding: EdgeInsets.all(Spacings.large),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 _CurrentPasswordTextField(),
-                Gap(AppSpacing.medium),
+                Gap(Spacings.medium),
                 _NewPasswordTextField(),
-                Gap(AppSpacing.medium),
+                Gap(Spacings.medium),
                 _ConfirmPasswordTextField(),
-                Gap(AppSpacing.large),
+                Gap(Spacings.large),
                 _SubmitButton(),
               ],
             ),

@@ -27,7 +27,7 @@ class ForgotPasswordPage extends StatelessWidget implements AutoRouteWrapper {
         listener: _handleStatus,
         child: Center(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(AppSpacing.large),
+            padding: const EdgeInsets.all(Spacings.large),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -36,9 +36,9 @@ class ForgotPasswordPage extends StatelessWidget implements AutoRouteWrapper {
                   textAlign: TextAlign.center,
                   style: context.typography.titleMedium,
                 ),
-                const Gap(AppSpacing.xlarge),
+                const Gap(Spacings.xlarge),
                 const _EmailTextField(),
-                const Gap(AppSpacing.large),
+                const Gap(Spacings.large),
                 const _SubmitButton(),
               ],
             ),

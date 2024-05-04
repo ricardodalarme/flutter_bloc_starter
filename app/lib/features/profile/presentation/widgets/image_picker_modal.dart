@@ -12,8 +12,8 @@ class ImagePickerModal extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.only(
-          top: AppSpacing.xxlarge,
-          bottom: AppSpacing.large,
+          top: Spacings.xxlarge,
+          bottom: Spacings.large,
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -26,7 +26,7 @@ class ImagePickerModal extends StatelessWidget {
                   icon: Icons.camera_alt,
                   onTap: () => context.maybePop(),
                 ),
-                const Gap(AppSpacing.medium),
+                const Gap(Spacings.medium),
                 CircleIconButton(
                   label: context.l10n.profile.buttonPickImageFromGallery,
                   icon: Icons.photo_library,

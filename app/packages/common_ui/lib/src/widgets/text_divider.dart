@@ -17,7 +17,7 @@ class TextDivider extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.medium,
+            horizontal: Spacings.medium,
           ),
           child: Text(
             text,

@@ -26,7 +26,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
       onSubmitted: widget.onSubmitted,
       shadowColor: const MaterialStatePropertyAll<Color>(Colors.transparent),
       leading: const Padding(
-        padding: EdgeInsets.all(AppSpacing.small),
+        padding: EdgeInsets.all(Spacings.small),
         child: Icon(Icons.search),
       ),
       trailing: [

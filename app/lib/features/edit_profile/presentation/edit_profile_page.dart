@@ -28,16 +28,16 @@ class EditProfilePage extends StatelessWidget implements AutoRouteWrapper {
         listener: _handleStatus,
         child: const Center(
           child: SingleChildScrollView(
-            padding: EdgeInsets.all(AppSpacing.large),
+            padding: EdgeInsets.all(Spacings.large),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 _FirstNameTextField(),
-                Gap(AppSpacing.medium),
+                Gap(Spacings.medium),
                 _LastNameTextField(),
-                Gap(AppSpacing.medium),
+                Gap(Spacings.medium),
                 _EmailTextField(),
-                Gap(AppSpacing.large),
+                Gap(Spacings.large),
                 _SubmitButton(),
               ],
             ),

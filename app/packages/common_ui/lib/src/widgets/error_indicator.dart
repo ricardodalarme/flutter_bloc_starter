@@ -25,13 +25,13 @@ class ErrorIndicator extends StatelessWidget {
             textAlign: TextAlign.center,
             style: context.typography.titleMedium,
           ),
-          const Gap(AppSpacing.medium),
+          const Gap(Spacings.medium),
           Text(
             message,
             textAlign: TextAlign.center,
             style: context.typography.bodyMedium,
           ),
-          const Gap(AppSpacing.large),
+          const Gap(Spacings.large),
           BaseButton(
             text: buttonText,
             onPressed: onButtonPressed,

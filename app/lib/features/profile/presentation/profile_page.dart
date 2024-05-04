@@ -22,7 +22,7 @@ class ProfilePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const _ProfilePictureWithSelect(),
-              const Gap(AppSpacing.xxlarge),
+              const Gap(Spacings.xxlarge),
               ListTile(
                 title: Text(context.l10n.profile.buttonEditProfile),
                 leading: const Icon(Icons.person),

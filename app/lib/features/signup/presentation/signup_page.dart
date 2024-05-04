@@ -32,18 +32,18 @@ class SignUpPage extends StatelessWidget implements AutoRouteWrapper {
         },
         child: const Center(
           child: SingleChildScrollView(
-            padding: EdgeInsets.all(AppSpacing.large),
+            padding: EdgeInsets.all(Spacings.large),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 _UsernameTextField(),
-                Gap(AppSpacing.medium),
+                Gap(Spacings.medium),
                 _EmailTextField(),
-                Gap(AppSpacing.medium),
+                Gap(Spacings.medium),
                 _PasswordTextField(),
-                Gap(AppSpacing.medium),
+                Gap(Spacings.medium),
                 _ConfirmPasswordTextField(),
-                Gap(AppSpacing.large),
+                Gap(Spacings.large),
                 _SubmitButton(),
               ],
             ),

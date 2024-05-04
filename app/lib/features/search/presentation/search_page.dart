@@ -12,7 +12,7 @@ class SearchPage extends StatelessWidget {
     return BaseView(
       title: context.l10n.search.title,
       body: const Padding(
-        padding: EdgeInsets.all(AppSpacing.medium),
+        padding: EdgeInsets.all(Spacings.medium),
         child: SearchTextField(),
       ),
     );

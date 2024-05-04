@@ -22,7 +22,7 @@ class NotFoundPage extends StatelessWidget {
               context.l10n.notFound.description,
               style: context.typography.headlineSmall,
             ),
-            const Gap(AppSpacing.xxlarge),
+            const Gap(Spacings.xxlarge),
             BaseButton(
               text: context.l10n.notFound.buttonBack,
               onPressed: () => context.navigateTo(const HomeRoute()),

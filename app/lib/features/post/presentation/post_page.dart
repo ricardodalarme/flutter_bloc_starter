@@ -50,7 +50,7 @@ class _PostSuccess extends StatelessWidget {
     return PullToRefresh(
       onRefresh: () => context.read<PostBloc>().add(const PostFetched()),
       child: ListView.builder(
-        padding: const EdgeInsets.all(AppSpacing.large),
+        padding: const EdgeInsets.all(Spacings.large),
         itemCount: posts.length,
         itemBuilder: (context, index) => PostCard(
           key: ValueKey(posts[index].id),

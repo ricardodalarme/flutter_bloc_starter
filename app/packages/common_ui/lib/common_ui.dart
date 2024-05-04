@@ -6,6 +6,7 @@ export 'package:gap/gap.dart';
 export 'src/generated/assets.gen.dart';
 export 'src/theme/app_theme.dart';
 export 'src/theme/theme_extensions.dart';
+export 'src/theme/typography.dart';
 export 'src/tokens/colors.dart';
 export 'src/tokens/font_sizes.dart';
 export 'src/tokens/spacings.dart';

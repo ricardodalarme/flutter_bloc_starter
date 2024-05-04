@@ -1,6 +1,6 @@
 import 'package:common_ui/common_ui.dart';
 import 'package:flutter/material.dart'
-    show Colors, IconButton, Icons, MaterialStatePropertyAll, SearchBar;
+    show IconButton, Icons, MaterialStatePropertyAll, SearchBar;
 
 class SearchTextField extends StatefulWidget {
   const SearchTextField({

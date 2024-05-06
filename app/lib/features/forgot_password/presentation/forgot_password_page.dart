@@ -34,7 +34,7 @@ class ForgotPasswordPage extends StatelessWidget implements AutoRouteWrapper {
                 Text(
                   context.l10n.forgotPassword.description,
                   textAlign: TextAlign.center,
-                  style: context.typography.titleMedium,
+                  style: context.typography.labelLarge,
                 ),
                 const Gap(Spacings.xlarge),
                 const _EmailTextField(),

@@ -24,7 +24,7 @@ class PostCard extends StatelessWidget {
         isThreeLine: true,
         title: Text(
           post.title,
-          style: context.typography.titleLarge,
+          style: context.typography.titleSmall,
         ),
         subtitle: Text(
           post.body,

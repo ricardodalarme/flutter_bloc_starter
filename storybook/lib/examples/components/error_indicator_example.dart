@@ -1,5 +1,4 @@
 import 'package:common_ui/common_ui.dart';
-import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 final WidgetbookNode errorIndicatorExample = WidgetbookUseCase(
@@ -8,14 +7,6 @@ final WidgetbookNode errorIndicatorExample = WidgetbookUseCase(
     title: 'Something went wrong',
     message: 'Please try again later',
     buttonText: 'Retry',
-    onButtonPressed: () => _onPressed(context),
+    onButtonPressed: () => context.showSnackBar(message: 'Click success'),
   ),
 );
-
-void _onPressed(BuildContext context) {
-  ScaffoldMessenger.of(context).showSnackBar(
-    const SnackBar(
-      content: Text('Click success'),
-    ),
-  );
-}

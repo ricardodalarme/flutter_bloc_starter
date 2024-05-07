@@ -1,5 +1,4 @@
 import 'package:common_ui/common_ui.dart';
-import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 final WidgetbookNode signInButtonExample = WidgetbookUseCase(
@@ -11,14 +10,6 @@ final WidgetbookNode signInButtonExample = WidgetbookUseCase(
     ),
     text: (provider) =>
         'Sign in with ${provider.name.characters.first.toUpperCase() + provider.name.substring(1)}',
-    onPressed: () => _onPressed(context),
+    onPressed: () => context.showSnackBar(message: 'Click success'),
   ),
 );
-
-void _onPressed(BuildContext context) {
-  ScaffoldMessenger.of(context).showSnackBar(
-    const SnackBar(
-      content: Text('Click success'),
-    ),
-  );
-}

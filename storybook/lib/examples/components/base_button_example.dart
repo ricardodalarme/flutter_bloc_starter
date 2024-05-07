@@ -1,5 +1,4 @@
 import 'package:common_ui/common_ui.dart';
-import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 final WidgetbookNode baseButtonExample = WidgetbookUseCase(
@@ -16,14 +15,6 @@ final WidgetbookNode baseButtonExample = WidgetbookUseCase(
     isLoading: context.knobs.boolean(
       label: 'Loading',
     ),
-    onPressed: () => _onPressed(context),
+    onPressed: () => context.showSnackBar(message: 'Click success'),
   ),
 );
-
-void _onPressed(BuildContext context) {
-  ScaffoldMessenger.of(context).showSnackBar(
-    const SnackBar(
-      content: Text('Click success'),
-    ),
-  );
-}

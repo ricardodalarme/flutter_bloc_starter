@@ -1,5 +1,5 @@
 import 'package:common_ui/common_ui.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 final WidgetbookNode baseTextFieldExample = WidgetbookUseCase(
@@ -31,14 +31,6 @@ final WidgetbookNode baseTextFieldExample = WidgetbookUseCase(
       label: 'Keyboard type',
       options: TextInputType.values,
     ),
-    onSubmitted: (value) => _onSubmitted(context, value),
+    onSubmitted: (value) => context.showSnackBar(message: 'Submitted "$value"'),
   ),
 );
-
-void _onSubmitted(BuildContext context, String value) {
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      content: Text('Submitted "$value"'),
-    ),
-  );
-}

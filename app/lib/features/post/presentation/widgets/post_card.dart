@@ -1,4 +1,4 @@
-import 'package:common_ui/common_ui.dart';
+import 'package:common_ui/common_ui.dart' hide ListTile;
 import 'package:flutter/material.dart' show Card, ListTile;
 import 'package:quickstart_flutter_bloc/features/post/domain/models/post_model.dart';
 

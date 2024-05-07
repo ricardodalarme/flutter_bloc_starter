@@ -14,6 +14,7 @@ export 'src/widgets/base_text_field.dart';
 export 'src/widgets/base_view.dart';
 export 'src/widgets/divider.dart';
 export 'src/widgets/error_indicator.dart';
+export 'src/widgets/list_tile.dart';
 export 'src/widgets/loading_indicator.dart';
 export 'src/widgets/password_text_field.dart';
 export 'src/widgets/profile_picture.dart';

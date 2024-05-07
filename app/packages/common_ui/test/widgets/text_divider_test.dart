@@ -1,5 +1,4 @@
-import 'package:common_ui/src/widgets/text_divider.dart';
-import 'package:flutter/material.dart' show Divider;
+import 'package:common_ui/common_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../test_helpers/pump_app.dart';

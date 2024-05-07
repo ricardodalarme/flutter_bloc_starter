@@ -1,5 +1,4 @@
 import 'package:common_ui/common_ui.dart';
-import 'package:flutter/material.dart' show Divider;
 
 class TextDivider extends StatelessWidget {
   const TextDivider(this.text, {super.key});
@@ -10,10 +9,8 @@ class TextDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
-          child: Divider(
-            color: context.colors.onSurface,
-          ),
+        const Expanded(
+          child: Divider(),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(
@@ -24,10 +21,8 @@ class TextDivider extends StatelessWidget {
             style: context.typography.bodySmall,
           ),
         ),
-        Expanded(
-          child: Divider(
-            color: context.colors.onSurface,
-          ),
+        const Expanded(
+          child: Divider(),
         ),
       ],
     );

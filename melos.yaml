@@ -2,9 +2,7 @@ name: quickstart_flutter_bloc
 
 packages:
   - app
-  - app/packages/*
-  - app/packages/services/*
-  - app/packages/services/storage/*
+  - app/packages/**
   - storybook
 
 command:
@@ -15,20 +13,22 @@ command:
 scripts:
   # Flutter commands
   get:
-    exec: flutter pub get
+    run: flutter pub get
     description: Get all dependencies.
+    exec:
+      concurrency: 1
 
   upgrade:
-    exec: flutter pub upgrade
+    run: flutter pub upgrade
     description: Upgrade all dependencies.
+    exec:
+      concurrency: 1
 
   lint:
-    run: melos format:no-output && melos check
+    steps:
+      - analyze
+      - format:no-output
     description: Lint all packages.
-
-  check:
-    exec: flutter analyze --no-pub
-    description: Analyze all packages.
 
   format:
     exec: dart format .
@@ -43,7 +43,7 @@ scripts:
     description: Run all tests available.
 
   test:single:
-    exec: flutter test
+    run: melos exec -c 1 -- flutter test
     description: Run `flutter test` for a specific package.
     packageFilters:
       dirExists:
@@ -75,7 +75,7 @@ scripts:
     description: Run build_runner in all packages.
 
   gen:single:
-    exec: flutter pub run build_runner build --delete-conflicting-outputs
+    run: melos exec -c 1 -- flutter pub run build_runner build --delete-conflicting-outputs
     description: Run build_runner to generate files.
     packageFilters:
       dependsOn: build_runner
@@ -110,7 +110,3 @@ scripts:
   hooks:
     run: dart run husky install
     description: Install git hooks.
-
-ide:
-  intellij:
-    enabled: false

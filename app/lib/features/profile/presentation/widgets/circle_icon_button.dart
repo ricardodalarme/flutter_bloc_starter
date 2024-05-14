@@ -20,7 +20,7 @@ class CircleIconButton extends StatelessWidget {
       child: Column(
         children: [
           Material(
-            color: context.colors.surfaceVariant,
+            color: context.colors.surfaceContainerHighest,
             shape: const CircleBorder(),
             child: InkWell(
               onTap: onTap,

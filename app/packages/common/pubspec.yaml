@@ -2,11 +2,11 @@ name: common
 publish_to: "none"
 
 environment:
-  sdk: ^3.2.0
+  sdk: ^3.4.0
 
 dependencies:
   get_it: ^7.7.0
   meta: any
 
 dev_dependencies:
-  test: ^1.25.4
+  test: ^1.25.5

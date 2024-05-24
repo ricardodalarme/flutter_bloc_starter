@@ -183,42 +183,29 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
   late final Translations _root = this; // ignore: unused_field
 
   // Translations
-  late final _TranslationsUnusedTranslationsEn unusedTranslations =
-      _TranslationsUnusedTranslationsEn._(_root);
   late final _TranslationsMissingTranslationsEn missingTranslations =
       _TranslationsMissingTranslationsEn._(_root);
-  late final _TranslationsSignupEn signup = _TranslationsSignupEn._(_root);
-  late final _TranslationsPrivacyPolicyEn privacyPolicy =
-      _TranslationsPrivacyPolicyEn._(_root);
-  late final _TranslationsSettingsEn settings =
-      _TranslationsSettingsEn._(_root);
-  late final _TranslationsSearchEn search = _TranslationsSearchEn._(_root);
-  late final _TranslationsCommonEn common = _TranslationsCommonEn._(_root);
+  late final _TranslationsUnusedTranslationsEn unusedTranslations =
+      _TranslationsUnusedTranslationsEn._(_root);
   late final _TranslationsChangePasswordEn changePassword =
       _TranslationsChangePasswordEn._(_root);
+  late final _TranslationsCommonEn common = _TranslationsCommonEn._(_root);
   late final _TranslationsEditProfileEn editProfile =
       _TranslationsEditProfileEn._(_root);
+  late final _TranslationsForgotPasswordEn forgotPassword =
+      _TranslationsForgotPasswordEn._(_root);
   late final _TranslationsLoginEn login = _TranslationsLoginEn._(_root);
   late final _TranslationsNotFoundEn notFound =
       _TranslationsNotFoundEn._(_root);
-  late final _TranslationsTermsEn terms = _TranslationsTermsEn._(_root);
-  late final _TranslationsProfileEn profile = _TranslationsProfileEn._(_root);
-  late final _TranslationsForgotPasswordEn forgotPassword =
-      _TranslationsForgotPasswordEn._(_root);
   late final _TranslationsPostEn post = _TranslationsPostEn._(_root);
-}
-
-// Path: unusedTranslations
-class _TranslationsUnusedTranslationsEn {
-  _TranslationsUnusedTranslationsEn._(this._root);
-
-  final Translations _root; // ignore: unused_field
-
-  // Translations
-  late final _TranslationsUnusedTranslationsEnEn en =
-      _TranslationsUnusedTranslationsEnEn._(_root);
-  late final _TranslationsUnusedTranslationsPtEn pt =
-      _TranslationsUnusedTranslationsPtEn._(_root);
+  late final _TranslationsPrivacyPolicyEn privacyPolicy =
+      _TranslationsPrivacyPolicyEn._(_root);
+  late final _TranslationsProfileEn profile = _TranslationsProfileEn._(_root);
+  late final _TranslationsSearchEn search = _TranslationsSearchEn._(_root);
+  late final _TranslationsSettingsEn settings =
+      _TranslationsSettingsEn._(_root);
+  late final _TranslationsSignupEn signup = _TranslationsSignupEn._(_root);
+  late final _TranslationsTermsEn terms = _TranslationsTermsEn._(_root);
 }
 
 // Path: missingTranslations
@@ -232,78 +219,17 @@ class _TranslationsMissingTranslationsEn {
       _TranslationsMissingTranslationsPtEn._(_root);
 }
 
-// Path: signup
-class _TranslationsSignupEn {
-  _TranslationsSignupEn._(this._root);
+// Path: unusedTranslations
+class _TranslationsUnusedTranslationsEn {
+  _TranslationsUnusedTranslationsEn._(this._root);
 
   final Translations _root; // ignore: unused_field
 
   // Translations
-  String get title => 'Sign Up';
-  String get labelConfirmPassword => 'Confirm Password';
-  String get buttonSubmit => 'Sign Up';
-  Map<String, String> get usernameErrors => {
-        'empty': 'Username is required',
-      };
-  Map<String, String> get emailErrors => {
-        'invalid': 'Email is invalid',
-      };
-  Map<String, String> get passwordErrors => {
-        'weak':
-            'Password must be at least 8 characters long and contain at least one letter and one number',
-      };
-  Map<String, String> get confirmPasswordErrors => {
-        'invalid': 'Passwords do not match',
-      };
-}
-
-// Path: privacyPolicy
-class _TranslationsPrivacyPolicyEn {
-  _TranslationsPrivacyPolicyEn._(this._root);
-
-  final Translations _root; // ignore: unused_field
-
-  // Translations
-  String get title => 'Privacy Policy';
-}
-
-// Path: settings
-class _TranslationsSettingsEn {
-  _TranslationsSettingsEn._(this._root);
-
-  final Translations _root; // ignore: unused_field
-
-  // Translations
-  String get title => 'Settings';
-}
-
-// Path: search
-class _TranslationsSearchEn {
-  _TranslationsSearchEn._(this._root);
-
-  final Translations _root; // ignore: unused_field
-
-  // Translations
-  String get title => 'Search';
-}
-
-// Path: common
-class _TranslationsCommonEn {
-  _TranslationsCommonEn._(this._root);
-
-  final Translations _root; // ignore: unused_field
-
-  // Translations
-  String get appName => 'Flutter Bloc Starter';
-  String get send => 'Send';
-  String get save => 'Save';
-  String get retry => 'Retry';
-  String get username => 'Username';
-  String get email => 'Email';
-  String get password => 'Password';
-  String get firstName => 'First Name';
-  String get lastName => 'Last Name';
-  String get genericError => 'Something went wrong';
+  late final _TranslationsUnusedTranslationsEnEn en =
+      _TranslationsUnusedTranslationsEnEn._(_root);
+  late final _TranslationsUnusedTranslationsPtEn pt =
+      _TranslationsUnusedTranslationsPtEn._(_root);
 }
 
 // Path: changePassword
@@ -330,6 +256,25 @@ class _TranslationsChangePasswordEn {
       };
 }
 
+// Path: common
+class _TranslationsCommonEn {
+  _TranslationsCommonEn._(this._root);
+
+  final Translations _root; // ignore: unused_field
+
+  // Translations
+  String get appName => 'Flutter Bloc Starter';
+  String get send => 'Send';
+  String get save => 'Save';
+  String get retry => 'Retry';
+  String get username => 'Username';
+  String get email => 'Email';
+  String get password => 'Password';
+  String get firstName => 'First Name';
+  String get lastName => 'Last Name';
+  String get genericError => 'Something went wrong';
+}
+
 // Path: editProfile
 class _TranslationsEditProfileEn {
   _TranslationsEditProfileEn._(this._root);
@@ -347,6 +292,23 @@ class _TranslationsEditProfileEn {
       };
   Map<String, String> get emailErrors => {
         'invalid': 'Email is invalid',
+      };
+}
+
+// Path: forgotPassword
+class _TranslationsForgotPasswordEn {
+  _TranslationsForgotPasswordEn._(this._root);
+
+  final Translations _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Recover Password';
+  String get description =>
+      'Enter your email address and we\'ll send you a link to reset your password.';
+  String get messageSuccess =>
+      'We\'ve sent you an email with a link to reset your password.';
+  Map<String, String> get emailErrors => {
+        'invalid': 'Invalid email',
       };
 }
 
@@ -388,14 +350,25 @@ class _TranslationsNotFoundEn {
   String get buttonBack => 'Go back home';
 }
 
-// Path: terms
-class _TranslationsTermsEn {
-  _TranslationsTermsEn._(this._root);
+// Path: post
+class _TranslationsPostEn {
+  _TranslationsPostEn._(this._root);
 
   final Translations _root; // ignore: unused_field
 
   // Translations
-  String get title => 'Terms';
+  String get title => 'Feed';
+  String get textFailure => 'Failed to load feed.';
+}
+
+// Path: privacyPolicy
+class _TranslationsPrivacyPolicyEn {
+  _TranslationsPrivacyPolicyEn._(this._root);
+
+  final Translations _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Privacy Policy';
 }
 
 // Path: profile
@@ -417,32 +390,68 @@ class _TranslationsProfileEn {
   String get buttonPickImageFromGallery => 'Gallery';
 }
 
-// Path: forgotPassword
-class _TranslationsForgotPasswordEn {
-  _TranslationsForgotPasswordEn._(this._root);
+// Path: search
+class _TranslationsSearchEn {
+  _TranslationsSearchEn._(this._root);
 
   final Translations _root; // ignore: unused_field
 
   // Translations
-  String get title => 'Recover Password';
-  String get description =>
-      'Enter your email address and we\'ll send you a link to reset your password.';
-  String get messageSuccess =>
-      'We\'ve sent you an email with a link to reset your password.';
+  String get title => 'Search';
+}
+
+// Path: settings
+class _TranslationsSettingsEn {
+  _TranslationsSettingsEn._(this._root);
+
+  final Translations _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Settings';
+}
+
+// Path: signup
+class _TranslationsSignupEn {
+  _TranslationsSignupEn._(this._root);
+
+  final Translations _root; // ignore: unused_field
+
+  // Translations
+  String get title => 'Sign Up';
+  String get labelConfirmPassword => 'Confirm Password';
+  String get buttonSubmit => 'Sign Up';
+  Map<String, String> get usernameErrors => {
+        'empty': 'Username is required',
+      };
   Map<String, String> get emailErrors => {
-        'invalid': 'Invalid email',
+        'invalid': 'Email is invalid',
+      };
+  Map<String, String> get passwordErrors => {
+        'weak':
+            'Password must be at least 8 characters long and contain at least one letter and one number',
+      };
+  Map<String, String> get confirmPasswordErrors => {
+        'invalid': 'Passwords do not match',
       };
 }
 
-// Path: post
-class _TranslationsPostEn {
-  _TranslationsPostEn._(this._root);
+// Path: terms
+class _TranslationsTermsEn {
+  _TranslationsTermsEn._(this._root);
 
   final Translations _root; // ignore: unused_field
 
   // Translations
-  String get title => 'Feed';
-  String get textFailure => 'Failed to load feed.';
+  String get title => 'Terms';
+}
+
+// Path: missingTranslations.pt
+class _TranslationsMissingTranslationsPtEn {
+  _TranslationsMissingTranslationsPtEn._(this._root);
+
+  final Translations _root; // ignore: unused_field
+
+  // Translations
 }
 
 // Path: unusedTranslations.en
@@ -457,15 +466,6 @@ class _TranslationsUnusedTranslationsEnEn {
 // Path: unusedTranslations.pt
 class _TranslationsUnusedTranslationsPtEn {
   _TranslationsUnusedTranslationsPtEn._(this._root);
-
-  final Translations _root; // ignore: unused_field
-
-  // Translations
-}
-
-// Path: missingTranslations.pt
-class _TranslationsMissingTranslationsPtEn {
-  _TranslationsMissingTranslationsPtEn._(this._root);
 
   final Translations _root; // ignore: unused_field
 
@@ -510,146 +510,37 @@ class _TranslationsPt extends Translations {
 
   // Translations
   @override
-  late final _TranslationsSignupPt signup = _TranslationsSignupPt._(_root);
-  @override
-  late final _TranslationsPrivacyPolicyPt privacyPolicy =
-      _TranslationsPrivacyPolicyPt._(_root);
-  @override
-  late final _TranslationsSettingsPt settings =
-      _TranslationsSettingsPt._(_root);
-  @override
-  late final _TranslationsSearchPt search = _TranslationsSearchPt._(_root);
-  @override
-  late final _TranslationsCommonPt common = _TranslationsCommonPt._(_root);
-  @override
   late final _TranslationsChangePasswordPt changePassword =
       _TranslationsChangePasswordPt._(_root);
   @override
+  late final _TranslationsCommonPt common = _TranslationsCommonPt._(_root);
+  @override
   late final _TranslationsEditProfilePt editProfile =
       _TranslationsEditProfilePt._(_root);
+  @override
+  late final _TranslationsForgotPasswordPt forgotPassword =
+      _TranslationsForgotPasswordPt._(_root);
   @override
   late final _TranslationsLoginPt login = _TranslationsLoginPt._(_root);
   @override
   late final _TranslationsNotFoundPt notFound =
       _TranslationsNotFoundPt._(_root);
   @override
-  late final _TranslationsTermsPt terms = _TranslationsTermsPt._(_root);
+  late final _TranslationsPostPt post = _TranslationsPostPt._(_root);
+  @override
+  late final _TranslationsPrivacyPolicyPt privacyPolicy =
+      _TranslationsPrivacyPolicyPt._(_root);
   @override
   late final _TranslationsProfilePt profile = _TranslationsProfilePt._(_root);
   @override
-  late final _TranslationsForgotPasswordPt forgotPassword =
-      _TranslationsForgotPasswordPt._(_root);
+  late final _TranslationsSearchPt search = _TranslationsSearchPt._(_root);
   @override
-  late final _TranslationsPostPt post = _TranslationsPostPt._(_root);
-}
-
-// Path: signup
-class _TranslationsSignupPt extends _TranslationsSignupEn {
-  _TranslationsSignupPt._(_TranslationsPt root)
-      : this._root = root,
-        super._(root);
-
+  late final _TranslationsSettingsPt settings =
+      _TranslationsSettingsPt._(_root);
   @override
-  final _TranslationsPt _root; // ignore: unused_field
-
-  // Translations
+  late final _TranslationsSignupPt signup = _TranslationsSignupPt._(_root);
   @override
-  String get title => 'Registrar';
-  @override
-  String get labelConfirmPassword => 'Confirmar Senha';
-  @override
-  String get buttonSubmit => 'Registrar';
-  @override
-  Map<String, String> get usernameErrors => {
-        'empty': 'Nome de usuário é obrigatório',
-      };
-  @override
-  Map<String, String> get emailErrors => {
-        'invalid': 'Email é inválido',
-      };
-  @override
-  Map<String, String> get passwordErrors => {
-        'weak':
-            'Senha deve ter pelo menos 8 caracteres e conter pelo menos uma letra e um número',
-      };
-  @override
-  Map<String, String> get confirmPasswordErrors => {
-        'invalid': 'Senhas não coincidem',
-      };
-}
-
-// Path: privacyPolicy
-class _TranslationsPrivacyPolicyPt extends _TranslationsPrivacyPolicyEn {
-  _TranslationsPrivacyPolicyPt._(_TranslationsPt root)
-      : this._root = root,
-        super._(root);
-
-  @override
-  final _TranslationsPt _root; // ignore: unused_field
-
-  // Translations
-  @override
-  String get title => 'Politíca de Privacidade';
-}
-
-// Path: settings
-class _TranslationsSettingsPt extends _TranslationsSettingsEn {
-  _TranslationsSettingsPt._(_TranslationsPt root)
-      : this._root = root,
-        super._(root);
-
-  @override
-  final _TranslationsPt _root; // ignore: unused_field
-
-  // Translations
-  @override
-  String get title => 'Configurações';
-}
-
-// Path: search
-class _TranslationsSearchPt extends _TranslationsSearchEn {
-  _TranslationsSearchPt._(_TranslationsPt root)
-      : this._root = root,
-        super._(root);
-
-  @override
-  final _TranslationsPt _root; // ignore: unused_field
-
-  // Translations
-  @override
-  String get title => 'Pesquisar';
-}
-
-// Path: common
-class _TranslationsCommonPt extends _TranslationsCommonEn {
-  _TranslationsCommonPt._(_TranslationsPt root)
-      : this._root = root,
-        super._(root);
-
-  @override
-  final _TranslationsPt _root; // ignore: unused_field
-
-  // Translations
-  @override
-  String get appName => 'Flutter Bloc Starter';
-  @override
-  String get send => 'Enviar';
-  @override
-  String get save => 'Salvar';
-  @override
-  String get retry => 'Tentar novamente';
-  @override
-  String get email => 'Email';
-  @override
-  String get username => 'Usuário';
-  @override
-  String get password => 'Senha';
-  @override
-  String get firstName => 'Nome';
-  @override
-  String get lastName => 'Sobrenome';
-  @override
-  String get genericError => 'Algo deu errado';
+  late final _TranslationsTermsPt terms = _TranslationsTermsPt._(_root);
 }
 
 // Path: changePassword
@@ -687,6 +578,38 @@ class _TranslationsChangePasswordPt extends _TranslationsChangePasswordEn {
       };
 }
 
+// Path: common
+class _TranslationsCommonPt extends _TranslationsCommonEn {
+  _TranslationsCommonPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get appName => 'Flutter Bloc Starter';
+  @override
+  String get send => 'Enviar';
+  @override
+  String get save => 'Salvar';
+  @override
+  String get retry => 'Tentar novamente';
+  @override
+  String get email => 'Email';
+  @override
+  String get username => 'Usuário';
+  @override
+  String get password => 'Senha';
+  @override
+  String get firstName => 'Nome';
+  @override
+  String get lastName => 'Sobrenome';
+  @override
+  String get genericError => 'Algo deu errado';
+}
+
 // Path: editProfile
 class _TranslationsEditProfilePt extends _TranslationsEditProfileEn {
   _TranslationsEditProfilePt._(_TranslationsPt root)
@@ -709,6 +632,30 @@ class _TranslationsEditProfilePt extends _TranslationsEditProfileEn {
   Map<String, String> get lastNameErrors => {
         'empty': 'Sobrenome é obrigatório',
       };
+  @override
+  Map<String, String> get emailErrors => {
+        'invalid': 'Email inválido',
+      };
+}
+
+// Path: forgotPassword
+class _TranslationsForgotPasswordPt extends _TranslationsForgotPasswordEn {
+  _TranslationsForgotPasswordPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Recuperar Senha';
+  @override
+  String get description =>
+      'Digite seu email e enviaremos um link para você redefinir a sua senha.';
+  @override
+  String get messageSuccess =>
+      'Enviamos um email com um link para você redefinir a sua senha.';
   @override
   Map<String, String> get emailErrors => {
         'invalid': 'Email inválido',
@@ -770,9 +717,9 @@ class _TranslationsNotFoundPt extends _TranslationsNotFoundEn {
   String get buttonBack => 'Voltar para página inicial';
 }
 
-// Path: terms
-class _TranslationsTermsPt extends _TranslationsTermsEn {
-  _TranslationsTermsPt._(_TranslationsPt root)
+// Path: post
+class _TranslationsPostPt extends _TranslationsPostEn {
+  _TranslationsPostPt._(_TranslationsPt root)
       : this._root = root,
         super._(root);
 
@@ -781,7 +728,23 @@ class _TranslationsTermsPt extends _TranslationsTermsEn {
 
   // Translations
   @override
-  String get title => 'Termos';
+  String get title => 'Feed';
+  @override
+  String get textFailure => 'Falha ao carregar o feed.';
+}
+
+// Path: privacyPolicy
+class _TranslationsPrivacyPolicyPt extends _TranslationsPrivacyPolicyEn {
+  _TranslationsPrivacyPolicyPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Politíca de Privacidade';
 }
 
 // Path: profile
@@ -816,9 +779,9 @@ class _TranslationsProfilePt extends _TranslationsProfileEn {
   String get buttonPickImageFromGallery => 'Galeria';
 }
 
-// Path: forgotPassword
-class _TranslationsForgotPasswordPt extends _TranslationsForgotPasswordEn {
-  _TranslationsForgotPasswordPt._(_TranslationsPt root)
+// Path: search
+class _TranslationsSearchPt extends _TranslationsSearchEn {
+  _TranslationsSearchPt._(_TranslationsPt root)
       : this._root = root,
         super._(root);
 
@@ -827,22 +790,61 @@ class _TranslationsForgotPasswordPt extends _TranslationsForgotPasswordEn {
 
   // Translations
   @override
-  String get title => 'Recuperar Senha';
+  String get title => 'Pesquisar';
+}
+
+// Path: settings
+class _TranslationsSettingsPt extends _TranslationsSettingsEn {
+  _TranslationsSettingsPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
   @override
-  String get description =>
-      'Digite seu email e enviaremos um link para você redefinir a sua senha.';
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
   @override
-  String get messageSuccess =>
-      'Enviamos um email com um link para você redefinir a sua senha.';
+  String get title => 'Configurações';
+}
+
+// Path: signup
+class _TranslationsSignupPt extends _TranslationsSignupEn {
+  _TranslationsSignupPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Registrar';
+  @override
+  String get labelConfirmPassword => 'Confirmar Senha';
+  @override
+  String get buttonSubmit => 'Registrar';
+  @override
+  Map<String, String> get usernameErrors => {
+        'empty': 'Nome de usuário é obrigatório',
+      };
   @override
   Map<String, String> get emailErrors => {
-        'invalid': 'Email inválido',
+        'invalid': 'Email é inválido',
+      };
+  @override
+  Map<String, String> get passwordErrors => {
+        'weak':
+            'Senha deve ter pelo menos 8 caracteres e conter pelo menos uma letra e um número',
+      };
+  @override
+  Map<String, String> get confirmPasswordErrors => {
+        'invalid': 'Senhas não coincidem',
       };
 }
 
-// Path: post
-class _TranslationsPostPt extends _TranslationsPostEn {
-  _TranslationsPostPt._(_TranslationsPt root)
+// Path: terms
+class _TranslationsTermsPt extends _TranslationsTermsEn {
+  _TranslationsTermsPt._(_TranslationsPt root)
       : this._root = root,
         super._(root);
 
@@ -851,9 +853,7 @@ class _TranslationsPostPt extends _TranslationsPostEn {
 
   // Translations
   @override
-  String get title => 'Feed';
-  @override
-  String get textFailure => 'Falha ao carregar o feed.';
+  String get title => 'Termos';
 }
 
 /// Flat map(s) containing all translations.
@@ -862,26 +862,22 @@ class _TranslationsPostPt extends _TranslationsPostEn {
 extension on Translations {
   dynamic _flatMapFunction(String path) {
     switch (path) {
-      case 'signup.title':
-        return 'Sign Up';
-      case 'signup.labelConfirmPassword':
+      case 'changePassword.title':
+        return 'Change Password';
+      case 'changePassword.labelCurrentPassword':
+        return 'Current Password';
+      case 'changePassword.labelNewPassword':
+        return 'New Password';
+      case 'changePassword.labelConfirmPassword':
         return 'Confirm Password';
-      case 'signup.buttonSubmit':
-        return 'Sign Up';
-      case 'signup.usernameErrors.empty':
-        return 'Username is required';
-      case 'signup.emailErrors.invalid':
-        return 'Email is invalid';
-      case 'signup.passwordErrors.weak':
-        return 'Password must be at least 8 characters long and contain at least one letter and one number';
-      case 'signup.confirmPasswordErrors.invalid':
+      case 'changePassword.messageSuccess':
+        return 'Password changed successfully';
+      case 'changePassword.currentPasswordErrors.empty':
+        return 'Current password is required';
+      case 'changePassword.newPasswordErrors.weak':
+        return 'New password must be at least 8 characters long and contain at least one letter and one number';
+      case 'changePassword.confirmPasswordErrors.invalid':
         return 'Passwords do not match';
-      case 'privacyPolicy.title':
-        return 'Privacy Policy';
-      case 'settings.title':
-        return 'Settings';
-      case 'search.title':
-        return 'Search';
       case 'common.appName':
         return 'Flutter Bloc Starter';
       case 'common.send':
@@ -902,22 +898,6 @@ extension on Translations {
         return 'Last Name';
       case 'common.genericError':
         return 'Something went wrong';
-      case 'changePassword.title':
-        return 'Change Password';
-      case 'changePassword.labelCurrentPassword':
-        return 'Current Password';
-      case 'changePassword.labelNewPassword':
-        return 'New Password';
-      case 'changePassword.labelConfirmPassword':
-        return 'Confirm Password';
-      case 'changePassword.messageSuccess':
-        return 'Password changed successfully';
-      case 'changePassword.currentPasswordErrors.empty':
-        return 'Current password is required';
-      case 'changePassword.newPasswordErrors.weak':
-        return 'New password must be at least 8 characters long and contain at least one letter and one number';
-      case 'changePassword.confirmPasswordErrors.invalid':
-        return 'Passwords do not match';
       case 'editProfile.title':
         return 'Edit Profile';
       case 'editProfile.messageSuccess':
@@ -928,6 +908,14 @@ extension on Translations {
         return 'Last name is required';
       case 'editProfile.emailErrors.invalid':
         return 'Email is invalid';
+      case 'forgotPassword.title':
+        return 'Recover Password';
+      case 'forgotPassword.description':
+        return 'Enter your email address and we\'ll send you a link to reset your password.';
+      case 'forgotPassword.messageSuccess':
+        return 'We\'ve sent you an email with a link to reset your password.';
+      case 'forgotPassword.emailErrors.invalid':
+        return 'Invalid email';
       case 'login.title':
         return 'Login';
       case 'login.buttonLogin':
@@ -953,8 +941,12 @@ extension on Translations {
         return 'Page not found';
       case 'notFound.buttonBack':
         return 'Go back home';
-      case 'terms.title':
-        return 'Terms';
+      case 'post.title':
+        return 'Feed';
+      case 'post.textFailure':
+        return 'Failed to load feed.';
+      case 'privacyPolicy.title':
+        return 'Privacy Policy';
       case 'profile.title':
         return 'Profile';
       case 'profile.buttonEditProfile':
@@ -975,18 +967,26 @@ extension on Translations {
         return 'Camera';
       case 'profile.buttonPickImageFromGallery':
         return 'Gallery';
-      case 'forgotPassword.title':
-        return 'Recover Password';
-      case 'forgotPassword.description':
-        return 'Enter your email address and we\'ll send you a link to reset your password.';
-      case 'forgotPassword.messageSuccess':
-        return 'We\'ve sent you an email with a link to reset your password.';
-      case 'forgotPassword.emailErrors.invalid':
-        return 'Invalid email';
-      case 'post.title':
-        return 'Feed';
-      case 'post.textFailure':
-        return 'Failed to load feed.';
+      case 'search.title':
+        return 'Search';
+      case 'settings.title':
+        return 'Settings';
+      case 'signup.title':
+        return 'Sign Up';
+      case 'signup.labelConfirmPassword':
+        return 'Confirm Password';
+      case 'signup.buttonSubmit':
+        return 'Sign Up';
+      case 'signup.usernameErrors.empty':
+        return 'Username is required';
+      case 'signup.emailErrors.invalid':
+        return 'Email is invalid';
+      case 'signup.passwordErrors.weak':
+        return 'Password must be at least 8 characters long and contain at least one letter and one number';
+      case 'signup.confirmPasswordErrors.invalid':
+        return 'Passwords do not match';
+      case 'terms.title':
+        return 'Terms';
       default:
         return null;
     }
@@ -996,26 +996,22 @@ extension on Translations {
 extension on _TranslationsPt {
   dynamic _flatMapFunction(String path) {
     switch (path) {
-      case 'signup.title':
-        return 'Registrar';
-      case 'signup.labelConfirmPassword':
+      case 'changePassword.title':
+        return 'Alterar Senha';
+      case 'changePassword.labelCurrentPassword':
+        return 'Senha Atual';
+      case 'changePassword.labelNewPassword':
+        return 'Nova Senha';
+      case 'changePassword.labelConfirmPassword':
         return 'Confirmar Senha';
-      case 'signup.buttonSubmit':
-        return 'Registrar';
-      case 'signup.usernameErrors.empty':
-        return 'Nome de usuário é obrigatório';
-      case 'signup.emailErrors.invalid':
-        return 'Email é inválido';
-      case 'signup.passwordErrors.weak':
-        return 'Senha deve ter pelo menos 8 caracteres e conter pelo menos uma letra e um número';
-      case 'signup.confirmPasswordErrors.invalid':
-        return 'Senhas não coincidem';
-      case 'privacyPolicy.title':
-        return 'Politíca de Privacidade';
-      case 'settings.title':
-        return 'Configurações';
-      case 'search.title':
-        return 'Pesquisar';
+      case 'changePassword.messageSuccess':
+        return 'Senha alterada com sucesso!';
+      case 'changePassword.currentPasswordErrors.empty':
+        return 'Senha atual é obrigatória';
+      case 'changePassword.newPasswordErrors.weak':
+        return 'A nova senha deve ter pelo menos 8 caracteres e conter pelo menos uma letra e um número';
+      case 'changePassword.confirmPasswordErrors.invalid':
+        return 'As senhas não coincidem';
       case 'common.appName':
         return 'Flutter Bloc Starter';
       case 'common.send':
@@ -1036,22 +1032,6 @@ extension on _TranslationsPt {
         return 'Sobrenome';
       case 'common.genericError':
         return 'Algo deu errado';
-      case 'changePassword.title':
-        return 'Alterar Senha';
-      case 'changePassword.labelCurrentPassword':
-        return 'Senha Atual';
-      case 'changePassword.labelNewPassword':
-        return 'Nova Senha';
-      case 'changePassword.labelConfirmPassword':
-        return 'Confirmar Senha';
-      case 'changePassword.messageSuccess':
-        return 'Senha alterada com sucesso!';
-      case 'changePassword.currentPasswordErrors.empty':
-        return 'Senha atual é obrigatória';
-      case 'changePassword.newPasswordErrors.weak':
-        return 'A nova senha deve ter pelo menos 8 caracteres e conter pelo menos uma letra e um número';
-      case 'changePassword.confirmPasswordErrors.invalid':
-        return 'As senhas não coincidem';
       case 'editProfile.title':
         return 'Editar Perfil';
       case 'editProfile.messageSuccess':
@@ -1061,6 +1041,14 @@ extension on _TranslationsPt {
       case 'editProfile.lastNameErrors.empty':
         return 'Sobrenome é obrigatório';
       case 'editProfile.emailErrors.invalid':
+        return 'Email inválido';
+      case 'forgotPassword.title':
+        return 'Recuperar Senha';
+      case 'forgotPassword.description':
+        return 'Digite seu email e enviaremos um link para você redefinir a sua senha.';
+      case 'forgotPassword.messageSuccess':
+        return 'Enviamos um email com um link para você redefinir a sua senha.';
+      case 'forgotPassword.emailErrors.invalid':
         return 'Email inválido';
       case 'login.title':
         return 'Entrar';
@@ -1087,8 +1075,12 @@ extension on _TranslationsPt {
         return 'Página não encontrada';
       case 'notFound.buttonBack':
         return 'Voltar para página inicial';
-      case 'terms.title':
-        return 'Termos';
+      case 'post.title':
+        return 'Feed';
+      case 'post.textFailure':
+        return 'Falha ao carregar o feed.';
+      case 'privacyPolicy.title':
+        return 'Politíca de Privacidade';
       case 'profile.title':
         return 'Perfil';
       case 'profile.buttonEditProfile':
@@ -1109,18 +1101,26 @@ extension on _TranslationsPt {
         return 'Câmera';
       case 'profile.buttonPickImageFromGallery':
         return 'Galeria';
-      case 'forgotPassword.title':
-        return 'Recuperar Senha';
-      case 'forgotPassword.description':
-        return 'Digite seu email e enviaremos um link para você redefinir a sua senha.';
-      case 'forgotPassword.messageSuccess':
-        return 'Enviamos um email com um link para você redefinir a sua senha.';
-      case 'forgotPassword.emailErrors.invalid':
-        return 'Email inválido';
-      case 'post.title':
-        return 'Feed';
-      case 'post.textFailure':
-        return 'Falha ao carregar o feed.';
+      case 'search.title':
+        return 'Pesquisar';
+      case 'settings.title':
+        return 'Configurações';
+      case 'signup.title':
+        return 'Registrar';
+      case 'signup.labelConfirmPassword':
+        return 'Confirmar Senha';
+      case 'signup.buttonSubmit':
+        return 'Registrar';
+      case 'signup.usernameErrors.empty':
+        return 'Nome de usuário é obrigatório';
+      case 'signup.emailErrors.invalid':
+        return 'Email é inválido';
+      case 'signup.passwordErrors.weak':
+        return 'Senha deve ter pelo menos 8 caracteres e conter pelo menos uma letra e um número';
+      case 'signup.confirmPasswordErrors.invalid':
+        return 'Senhas não coincidem';
+      case 'terms.title':
+        return 'Termos';
       default:
         return null;
     }

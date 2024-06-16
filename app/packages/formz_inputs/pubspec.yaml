@@ -2,13 +2,10 @@ name: formz_inputs
 publish_to: "none"
 
 environment:
-  sdk: ">=3.4.0 <4.0.0"
+  sdk: ^3.4.0
 
 dependencies:
-  flutter:
-    sdk: flutter
   formz: ^0.7.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  test: ^1.25.7

@@ -7,11 +7,11 @@ environment:
 
 dependencies:
   equatable: ^2.0.5
-  firebase_analytics: ^10.10.6
+  firebase_analytics: ^11.0.1
   flutter:
     sdk: flutter
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mocktail: ^1.0.3
+  mocktail: ^1.0.4

@@ -1,5 +1,3 @@
-library common_ui;
-
 export 'package:flutter/widgets.dart';
 export 'package:gap/gap.dart';
 

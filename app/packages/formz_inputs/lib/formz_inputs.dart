@@ -1,5 +1,3 @@
-library formz_inputs;
-
 export 'package:formz/formz.dart';
 
 export './src/confirmed_password.dart';

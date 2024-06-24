@@ -34,7 +34,7 @@ dependencies:
     path: ./packages/schemas
   secure_storage_service:
     path: ./packages/services/storage/secure_storage
-  slang: ^3.31.0
+  slang: ^3.31.1
   slang_flutter: ^3.31.0
   storage_service:
     path: ./packages/services/storage/storage

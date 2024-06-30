@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:analytics_service/analytics_service.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:biometric_service/biometric_service.dart';
 import 'package:common/common.dart';
 import 'package:common_data/common_data.dart';
 import 'package:crash_report_service/crash_report_service.dart';
@@ -47,6 +48,10 @@ class AppInjectionModule extends InjectionModule {
 
     injector.registerSingleton<CrashReportService>(
       CrashReportServiceImpl(),
+    );
+
+    injector.registerSingleton<BiometricService>(
+      BiometricServiceImpl(),
     );
 
     injector.registerFactory<AppBloc>(

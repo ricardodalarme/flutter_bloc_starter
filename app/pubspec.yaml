@@ -9,6 +9,8 @@ dependencies:
   analytics_service:
     path: ./packages/services/analytics
   auto_route: ^8.2.0
+  biometric_service:
+    path: ./packages/services/biometric
   common:
     path: ./packages/common
   common_data:

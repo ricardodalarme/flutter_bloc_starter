@@ -1,22 +1,28 @@
 import 'dart:async';
 
+import 'package:common/common.dart';
 import 'package:quickstart_flutter_bloc/features/authentication/data/data_sources/authentication_data_source.dart';
 import 'package:quickstart_flutter_bloc/features/authentication/data/data_sources/models/token_local.dart';
 import 'package:quickstart_flutter_bloc/features/authentication/data/data_sources/token_local_data_source.dart';
 import 'package:quickstart_flutter_bloc/features/authentication/domain/repositories/authentication_repository.dart';
+import 'package:schemas/mutations/generated/Login.graphql.dart';
 
 class AuthenticationRepositoryImpl implements AuthenticationRepository {
   AuthenticationRepositoryImpl({
     required AuthenticationDataSource loginDataSource,
     required TokenLocalDataSource tokenLocalDataSource,
+    required Mapper<MutationLoginlogin, TokenLocal> tokenLocalMapper,
   })  : _loginDataSource = loginDataSource,
-        _tokenLocalDataSource = tokenLocalDataSource {
+        _tokenLocalDataSource = tokenLocalDataSource,
+        _tokenLocalMapper = tokenLocalMapper {
     _authenticationStreamController.onListen = () {
       _authenticationStreamController.add(_initialAuthenticationStatus);
     };
   }
   final AuthenticationDataSource _loginDataSource;
   final TokenLocalDataSource _tokenLocalDataSource;
+  final Mapper<MutationLoginlogin, TokenLocal> _tokenLocalMapper;
+
   final StreamController<bool> _authenticationStreamController =
       StreamController<bool>.broadcast();
 
@@ -45,15 +51,13 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
     required String password,
   }) async {
     try {
-      final (accessToken, _) =
-          await _loginDataSource.logInWithUsernameAndPassword(
+      final response = await _loginDataSource.logInWithUsernameAndPassword(
         username: username,
         password: password,
       );
 
-      await _tokenLocalDataSource.save(
-        TokenLocal(expires: accessToken.expires, token: accessToken.token),
-      );
+      final localToken = _tokenLocalMapper.map(response);
+      await _tokenLocalDataSource.save(localToken);
 
       _authenticationStreamController.add(true);
     } catch (_) {

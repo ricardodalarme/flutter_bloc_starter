@@ -1,30 +1,52 @@
+import 'package:shared_preferences/shared_preferences.dart';
+
 abstract class PersistentStorageService {
-  Future<String?> read({required String key});
-  Future<void> write({required String key, required String value});
+  Future<void> initialize();
+  String? readString({required String key});
+  Future<void> writeString({required String key, required String value});
+  bool? readBool({required String key});
+  Future<void> writeBool({required String key, required bool value});
   Future<void> delete({required String key});
   Future<void> clear();
 }
 
 class PersistentStorageServiceImpl implements PersistentStorageService {
-  const PersistentStorageServiceImpl();
+  PersistentStorageServiceImpl();
+
+  late final SharedPreferences _sharedPreferences;
 
   @override
-  Future<String?> read({required String key}) async {
-    throw UnimplementedError();
+  Future<void> initialize() async {
+    _sharedPreferences = await SharedPreferences.getInstance();
   }
 
   @override
-  Future<void> write({required String key, required String value}) async {
-    throw UnimplementedError();
+  String? readString({required String key}) {
+    return _sharedPreferences.getString(key);
+  }
+
+  @override
+  Future<void> writeString({required String key, required String value}) async {
+    await _sharedPreferences.setString(key, value);
+  }
+
+  @override
+  bool? readBool({required String key}) {
+    return _sharedPreferences.getBool(key);
+  }
+
+  @override
+  Future<void> writeBool({required String key, required bool value}) async {
+    await _sharedPreferences.setBool(key, value);
   }
 
   @override
   Future<void> delete({required String key}) async {
-    throw UnimplementedError();
+    await _sharedPreferences.remove(key);
   }
 
   @override
   Future<void> clear() async {
-    throw UnimplementedError();
+    await _sharedPreferences.clear();
   }
 }

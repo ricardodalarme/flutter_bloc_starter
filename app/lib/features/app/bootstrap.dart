@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:persistent_storage_service/persistent_storage_service.dart';
 import 'package:quickstart_flutter_bloc/features/app/di/app_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/app/observers/bloc_observer.dart';
 import 'package:quickstart_flutter_bloc/features/authentication/di/authentication_injection_module.dart';
@@ -29,6 +30,7 @@ Future<void> bootstrap(Widget Function() builder) async {
   await Future.wait([
     _checkAuthenticationStatus(),
     _configureCrashReportService(),
+    _initializeStorageService(),
   ]);
 
   runApp(builder());
@@ -60,6 +62,13 @@ Future<void> _checkAuthenticationStatus() async {
       AppInjector.instance.get<AuthenticationRepository>();
 
   await authenticationRepository.checkAuthenticationStatus();
+}
+
+Future<void> _initializeStorageService() async {
+  final persistentStorageService =
+      AppInjector.instance.get<PersistentStorageService>();
+
+  await persistentStorageService.initialize();
 }
 
 Future<void> _registerModules() async {

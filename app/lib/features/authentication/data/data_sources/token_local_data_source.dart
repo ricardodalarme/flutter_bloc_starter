@@ -1,6 +1,6 @@
 import 'package:common/common.dart';
 import 'package:quickstart_flutter_bloc/features/authentication/data/data_sources/models/token_local.dart';
-import 'package:storage_service/storage_service.dart';
+import 'package:secure_storage_service/secure_storage_service.dart';
 
 abstract class TokenLocalDataSource {
   Future<void> save(TokenLocal token);
@@ -12,10 +12,10 @@ abstract class TokenLocalDataSource {
 
 class TokenLocalDataSourceImpl implements TokenLocalDataSource {
   TokenLocalDataSourceImpl({
-    required StorageService storage,
+    required SecureStorageService storage,
   }) : _storage = storage;
 
-  final StorageService _storage;
+  final SecureStorageService _storage;
 
   @override
   Future<void> save(TokenLocal token) async {

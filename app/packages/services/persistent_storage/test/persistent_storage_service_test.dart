@@ -7,7 +7,7 @@ void main() {
       test('defaults to internal FlutterPersistentStorage if none is provided',
           () {
         expect(
-          () => const PersistentStorageService(),
+          () => const PersistentStorageServiceImpl(),
           isNot(throwsA(isA<Exception>())),
         );
       });

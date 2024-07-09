@@ -1,4 +1,4 @@
-name: secure_storage_service
+name: persistent_storage_service
 publish_to: none
 
 environment:
@@ -7,9 +7,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_secure_storage: ^9.2.2
-  storage_service:
-    path: ../storage
 
 dev_dependencies:
   flutter_test:

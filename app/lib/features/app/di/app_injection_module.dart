@@ -19,7 +19,7 @@ class AppInjectionModule extends InjectionModule {
     );
 
     injector.registerLazySingleton<SecureStorageService>(
-      SecureStorageService.new,
+      SecureStorageServiceImpl.new,
     );
 
     injector.registerLazySingleton<GQLClient>(

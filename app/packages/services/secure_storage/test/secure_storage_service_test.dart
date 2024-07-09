@@ -2,7 +2,6 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:secure_storage_service/secure_storage_service.dart';
-import 'package:storage_service/storage_service.dart';
 
 class MockFlutterSecureStorage extends Mock implements FlutterSecureStorage {}
 
@@ -13,17 +12,17 @@ void main() {
 
   group('SecureStorage', () {
     late FlutterSecureStorage flutterSecureStorage;
-    late SecureStorageService secureStorage;
+    late SecureStorageServiceImpl secureStorage;
 
     setUp(() {
       flutterSecureStorage = MockFlutterSecureStorage();
-      secureStorage = SecureStorageService(flutterSecureStorage);
+      secureStorage = SecureStorageServiceImpl(flutterSecureStorage);
     });
 
     group('constructor', () {
       test('defaults to internal FlutterSecureStorage if none is provided', () {
         expect(
-          () => const SecureStorageService(),
+          () => const SecureStorageServiceImpl(),
           isNot(throwsA(isA<Exception>())),
         );
       });
@@ -45,13 +44,14 @@ void main() {
         expect(actual, isNull);
       });
 
-      test('throws StorageException when FlutterSecureStorage fails', () async {
+      test('throws SecureStorageException when FlutterSecureStorage fails',
+          () async {
         when(() => flutterSecureStorage.read(key: any(named: 'key')))
             .thenThrow(mockException);
 
         try {
           await secureStorage.read(key: mockKey);
-        } on StorageException catch (e) {
+        } on SecureStorageException catch (e) {
           expect(e.error, mockException);
         }
       });
@@ -71,7 +71,8 @@ void main() {
         );
       });
 
-      test('throws StorageException when FlutterSecureStorage fails', () async {
+      test('throws SecureStorageException when FlutterSecureStorage fails',
+          () async {
         when(
           () => flutterSecureStorage.write(
             key: any(named: 'key'),
@@ -80,7 +81,7 @@ void main() {
         ).thenThrow(mockException);
         try {
           await secureStorage.write(key: mockKey, value: mockValue);
-        } on StorageException catch (e) {
+        } on SecureStorageException catch (e) {
           expect(e.error, mockException);
         }
       });
@@ -96,12 +97,13 @@ void main() {
         );
       });
 
-      test('throws StorageException when FlutterSecureStorage fails', () async {
+      test('throws SecureStorageException when FlutterSecureStorage fails',
+          () async {
         when(() => flutterSecureStorage.delete(key: any(named: 'key')))
             .thenThrow(mockException);
         try {
           await secureStorage.delete(key: mockKey);
-        } on StorageException catch (e) {
+        } on SecureStorageException catch (e) {
           expect(e.error, mockException);
         }
       });
@@ -114,11 +116,12 @@ void main() {
         expect(secureStorage.clear(), completes);
       });
 
-      test('throws StorageException when FlutterSecureStorage fails', () async {
+      test('throws SecureStorageException when FlutterSecureStorage fails',
+          () async {
         when(() => flutterSecureStorage.deleteAll()).thenThrow(mockException);
         try {
           await secureStorage.clear();
-        } on StorageException catch (e) {
+        } on SecureStorageException catch (e) {
           expect(e.error, mockException);
         }
       });

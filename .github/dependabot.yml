@@ -109,7 +109,7 @@ updates:
       prefix: "chore"
       include: "scope"
   - package-ecosystem: "pub"
-    directory: "/app/packages/services/storage/storage"
+    directory: "/app/packages/services/persistent_storage"
     schedule:
       interval: "weekly"
     labels:
@@ -118,16 +118,7 @@ updates:
       prefix: "chore"
       include: "scope"
   - package-ecosystem: "pub"
-    directory: "/app/packages/services/storage/persistent_storage"
-    schedule:
-      interval: "weekly"
-    labels:
-      - ":package: dependencies"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-  - package-ecosystem: "pub"
-    directory: "/app/packages/services/storage/secure_storage"
+    directory: "/app/packages/services/secure_storage"
     schedule:
       interval: "weekly"
     labels:

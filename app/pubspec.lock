@@ -962,7 +962,7 @@ packages:
   persistent_storage_service:
     dependency: "direct main"
     description:
-      path: "packages/services/storage/persistent_storage"
+      path: "packages/services/persistent_storage"
       relative: true
     source: path
     version: "0.0.0"
@@ -1047,7 +1047,7 @@ packages:
   secure_storage_service:
     dependency: "direct main"
     description:
-      path: "packages/services/storage/secure_storage"
+      path: "packages/services/secure_storage"
       relative: true
     source: path
     version: "0.0.0"
@@ -1168,13 +1168,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.11.1"
-  storage_service:
-    dependency: "direct main"
-    description:
-      path: "packages/services/storage/storage"
-      relative: true
-    source: path
-    version: "0.0.0"
   stream_channel:
     dependency: transitive
     description:

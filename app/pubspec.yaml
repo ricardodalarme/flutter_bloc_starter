@@ -27,17 +27,15 @@ dependencies:
   formz_inputs:
     path: ./packages/formz_inputs
   persistent_storage_service:
-    path: ./packages/services/storage/persistent_storage
+    path: ./packages/services/persistent_storage
   remote_config_service:
     path: ./packages/services/remote_config
   schemas:
     path: ./packages/schemas
   secure_storage_service:
-    path: ./packages/services/storage/secure_storage
+    path: ./packages/services/secure_storage
   slang: ^3.31.1
   slang_flutter: ^3.31.0
-  storage_service:
-    path: ./packages/services/storage/storage
 
 dev_dependencies:
   auto_route_generator: ^8.0.0

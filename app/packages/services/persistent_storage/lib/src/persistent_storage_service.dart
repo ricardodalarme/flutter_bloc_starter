@@ -1,7 +1,12 @@
-import 'package:storage_service/storage_service.dart';
+abstract class PersistentStorageService {
+  Future<String?> read({required String key});
+  Future<void> write({required String key, required String value});
+  Future<void> delete({required String key});
+  Future<void> clear();
+}
 
-class PersistentStorageService implements StorageService {
-  const PersistentStorageService();
+class PersistentStorageServiceImpl implements PersistentStorageService {
+  const PersistentStorageServiceImpl();
 
   @override
   Future<String?> read({required String key}) async {

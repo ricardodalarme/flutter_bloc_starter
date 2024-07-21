@@ -13,6 +13,7 @@ import 'package:quickstart_flutter_bloc/features/change_password/di/change_passw
 import 'package:quickstart_flutter_bloc/features/edit_profile/di/edit_profile_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/forgot_password/di/forgot_password_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/login/di/login_injection_module.dart';
+import 'package:quickstart_flutter_bloc/features/onboarding/di/onboarding_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/post/di/post_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/settings/di/settings_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/signup/di/signup_injection_module.dart';
@@ -76,6 +77,7 @@ Future<void> _registerModules() async {
   final injectionModules = <InjectionModule>[
     AppInjectionModule(),
     AuthenticationInjectionModule(),
+    OnboardingInjectionModule(),
     LoginInjectionModule(),
     SignupInjectionModule(),
     ForgotPasswordInjectionModule(),

@@ -145,6 +145,22 @@ class AppLocaleUtils extends BaseAppLocaleUtils<AppLocale, Translations> {
   static List<String> get supportedLocalesRaw => instance.supportedLocalesRaw;
 }
 
+// interfaces generated as mixins
+
+mixin OnboardingPageData {
+  String get title;
+  String get message;
+
+  @override
+  bool operator ==(Object other) =>
+      other is OnboardingPageData &&
+      title == other.title &&
+      message == other.message;
+
+  @override
+  int get hashCode => title.hashCode * message.hashCode;
+}
+
 // translations
 
 // Path: <root>
@@ -197,6 +213,8 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
   late final _TranslationsLoginEn login = _TranslationsLoginEn._(_root);
   late final _TranslationsNotFoundEn notFound =
       _TranslationsNotFoundEn._(_root);
+  late final _TranslationsOnboardingEn onboarding =
+      _TranslationsOnboardingEn._(_root);
   late final _TranslationsPostEn post = _TranslationsPostEn._(_root);
   late final _TranslationsPrivacyPolicyEn privacyPolicy =
       _TranslationsPrivacyPolicyEn._(_root);
@@ -350,6 +368,21 @@ class _TranslationsNotFoundEn {
   String get buttonBack => 'Go back home';
 }
 
+// Path: onboarding
+class _TranslationsOnboardingEn {
+  _TranslationsOnboardingEn._(this._root);
+
+  final Translations _root; // ignore: unused_field
+
+  // Translations
+  List<OnboardingPageData> get pages => [
+        _TranslationsOnboarding$pages$0i0$En._(_root),
+        _TranslationsOnboarding$pages$0i1$En._(_root),
+        _TranslationsOnboarding$pages$0i2$En._(_root),
+      ];
+  String get doneButton => 'Get started';
+}
+
 // Path: post
 class _TranslationsPostEn {
   _TranslationsPostEn._(this._root);
@@ -472,6 +505,47 @@ class _TranslationsUnusedTranslationsPtEn {
   // Translations
 }
 
+// Path: onboarding.pages.0
+class _TranslationsOnboarding$pages$0i0$En with OnboardingPageData {
+  _TranslationsOnboarding$pages$0i0$En._(this._root);
+
+  final Translations _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Welcome!';
+  @override
+  String get message => 'Welcome to QuickStart Flutter';
+}
+
+// Path: onboarding.pages.1
+class _TranslationsOnboarding$pages$0i1$En with OnboardingPageData {
+  _TranslationsOnboarding$pages$0i1$En._(this._root);
+
+  final Translations _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'What is QuickStart Flutter?';
+  @override
+  String get message =>
+      'QuickStart Flutter is a project to speed up the bootstrapping of new Flutter projects. It already comes with a series of features ready to use, such as internationalization, themes, routes, state management, among others.';
+}
+
+// Path: onboarding.pages.2
+class _TranslationsOnboarding$pages$0i2$En with OnboardingPageData {
+  _TranslationsOnboarding$pages$0i2$En._(this._root);
+
+  final Translations _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Let\'s get started?';
+  @override
+  String get message =>
+      'Ready to explore everything QuickStart Flutter has to offer? Let\'s get started!';
+}
+
 // Path: <root>
 class _TranslationsPt extends Translations {
   /// You can call this constructor and build your own translation instance of this locale.
@@ -525,6 +599,9 @@ class _TranslationsPt extends Translations {
   @override
   late final _TranslationsNotFoundPt notFound =
       _TranslationsNotFoundPt._(_root);
+  @override
+  late final _TranslationsOnboardingPt onboarding =
+      _TranslationsOnboardingPt._(_root);
   @override
   late final _TranslationsPostPt post = _TranslationsPostPt._(_root);
   @override
@@ -717,6 +794,26 @@ class _TranslationsNotFoundPt extends _TranslationsNotFoundEn {
   String get buttonBack => 'Voltar para página inicial';
 }
 
+// Path: onboarding
+class _TranslationsOnboardingPt extends _TranslationsOnboardingEn {
+  _TranslationsOnboardingPt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  List<OnboardingPageData> get pages => [
+        _TranslationsOnboarding$pages$0i0$Pt._(_root),
+        _TranslationsOnboarding$pages$0i1$Pt._(_root),
+        _TranslationsOnboarding$pages$0i2$Pt._(_root),
+      ];
+  @override
+  String get doneButton => 'Começar';
+}
+
 // Path: post
 class _TranslationsPostPt extends _TranslationsPostEn {
   _TranslationsPostPt._(_TranslationsPt root)
@@ -856,6 +953,59 @@ class _TranslationsTermsPt extends _TranslationsTermsEn {
   String get title => 'Termos';
 }
 
+// Path: onboarding.pages.0
+class _TranslationsOnboarding$pages$0i0$Pt
+    extends _TranslationsOnboarding$pages$0i0$En with OnboardingPageData {
+  _TranslationsOnboarding$pages$0i0$Pt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Bem vindo!';
+  @override
+  String get message => 'Seja muito bem vindo ao QuickStart Flutter';
+}
+
+// Path: onboarding.pages.1
+class _TranslationsOnboarding$pages$0i1$Pt
+    extends _TranslationsOnboarding$pages$0i1$En with OnboardingPageData {
+  _TranslationsOnboarding$pages$0i1$Pt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'O que é o QuickStart Flutter?';
+  @override
+  String get message =>
+      'O QuickStart Flutter é um projeto para agilizar o bootstrapping de novos projetos Flutter. Ele já vem com uma série de funcionalidades prontas para uso, como internacionalização, temas, rotas, gerenciamento de estado, entre outros.';
+}
+
+// Path: onboarding.pages.2
+class _TranslationsOnboarding$pages$0i2$Pt
+    extends _TranslationsOnboarding$pages$0i2$En with OnboardingPageData {
+  _TranslationsOnboarding$pages$0i2$Pt._(_TranslationsPt root)
+      : this._root = root,
+        super._(root);
+
+  @override
+  final _TranslationsPt _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get title => 'Vamos começar?';
+  @override
+  String get message =>
+      'Pronto para explorar tudo o que o QuickStart Flutter tem a oferecer? Vamos começar!';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -941,6 +1091,20 @@ extension on Translations {
         return 'Page not found';
       case 'notFound.buttonBack':
         return 'Go back home';
+      case 'onboarding.pages.0.title':
+        return 'Welcome!';
+      case 'onboarding.pages.0.message':
+        return 'Welcome to QuickStart Flutter';
+      case 'onboarding.pages.1.title':
+        return 'What is QuickStart Flutter?';
+      case 'onboarding.pages.1.message':
+        return 'QuickStart Flutter is a project to speed up the bootstrapping of new Flutter projects. It already comes with a series of features ready to use, such as internationalization, themes, routes, state management, among others.';
+      case 'onboarding.pages.2.title':
+        return 'Let\'s get started?';
+      case 'onboarding.pages.2.message':
+        return 'Ready to explore everything QuickStart Flutter has to offer? Let\'s get started!';
+      case 'onboarding.doneButton':
+        return 'Get started';
       case 'post.title':
         return 'Feed';
       case 'post.textFailure':
@@ -1075,6 +1239,20 @@ extension on _TranslationsPt {
         return 'Página não encontrada';
       case 'notFound.buttonBack':
         return 'Voltar para página inicial';
+      case 'onboarding.pages.0.title':
+        return 'Bem vindo!';
+      case 'onboarding.pages.0.message':
+        return 'Seja muito bem vindo ao QuickStart Flutter';
+      case 'onboarding.pages.1.title':
+        return 'O que é o QuickStart Flutter?';
+      case 'onboarding.pages.1.message':
+        return 'O QuickStart Flutter é um projeto para agilizar o bootstrapping de novos projetos Flutter. Ele já vem com uma série de funcionalidades prontas para uso, como internacionalização, temas, rotas, gerenciamento de estado, entre outros.';
+      case 'onboarding.pages.2.title':
+        return 'Vamos começar?';
+      case 'onboarding.pages.2.message':
+        return 'Pronto para explorar tudo o que o QuickStart Flutter tem a oferecer? Vamos começar!';
+      case 'onboarding.doneButton':
+        return 'Começar';
       case 'post.title':
         return 'Feed';
       case 'post.textFailure':

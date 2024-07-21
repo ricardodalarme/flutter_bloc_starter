@@ -5,6 +5,7 @@ import 'package:quickstart_flutter_bloc/features/forgot_password/presentation/fo
 import 'package:quickstart_flutter_bloc/features/home/presentation/home_page.dart';
 import 'package:quickstart_flutter_bloc/features/login/presentation/login_page.dart';
 import 'package:quickstart_flutter_bloc/features/not_found/presentation/not_found_page.dart';
+import 'package:quickstart_flutter_bloc/features/onboarding/presentation/onboarding_page.dart';
 import 'package:quickstart_flutter_bloc/features/post/presentation/post_page.dart';
 import 'package:quickstart_flutter_bloc/features/privacy_policy/presentation/privacy_policy_page.dart';
 import 'package:quickstart_flutter_bloc/features/profile/presentation/profile_page.dart';
@@ -19,7 +20,8 @@ part 'app_router.gr.dart';
 class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: LoginRoute.page, initial: true),
+        AutoRoute(page: OnboardingRoute.page, initial: true),
+        AutoRoute(page: LoginRoute.page),
         AutoRoute(page: SignUpRoute.page),
         AutoRoute(page: ForgotPasswordRoute.page),
         AutoRoute(

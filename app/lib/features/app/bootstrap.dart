@@ -14,6 +14,7 @@ import 'package:quickstart_flutter_bloc/features/edit_profile/di/edit_profile_in
 import 'package:quickstart_flutter_bloc/features/forgot_password/di/forgot_password_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/login/di/login_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/post/di/post_injection_module.dart';
+import 'package:quickstart_flutter_bloc/features/settings/di/settings_injection_module.dart';
 import 'package:quickstart_flutter_bloc/features/signup/di/signup_injection_module.dart';
 import 'package:quickstart_flutter_bloc/firebase_options.dart';
 import 'package:quickstart_flutter_bloc/l10n/translations.g.dart';
@@ -81,6 +82,7 @@ Future<void> _registerModules() async {
     EditProfileInjectionModule(),
     ChangePasswordInjectionModule(),
     PostInjectionModule(),
+    SettingsInjectionModule(),
   ];
 
   final injector = AppInjector.instance;

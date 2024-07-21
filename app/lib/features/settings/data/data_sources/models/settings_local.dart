@@ -1,12 +1,21 @@
 import 'package:equatable/equatable.dart';
 
 final class SettingsLocal with EquatableMixin {
-  const SettingsLocal();
+  const SettingsLocal({
+    required this.hasOnboarded,
+  });
 
-  SettingsLocal.fromMap(Map<String, dynamic> _);
+  SettingsLocal.fromMap(Map<String, dynamic> map)
+      : hasOnboarded = map['hasOnboarded'] as bool;
 
-  Map<String, dynamic> toMap() => {};
+  final bool hasOnboarded;
+
+  Map<String, dynamic> toMap() => {
+        'hasOnboarded': hasOnboarded,
+      };
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [
+        hasOnboarded,
+      ];
 }

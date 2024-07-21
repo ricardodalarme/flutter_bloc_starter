@@ -6,6 +6,8 @@ final class SettingsModelToLocalMapper
     implements Mapper<SettingsModel, SettingsLocal> {
   @override
   SettingsLocal map(SettingsModel input) {
-    return const SettingsLocal();
+    return SettingsLocal(
+      hasOnboarded: input.hasOnboarded,
+    );
   }
 }

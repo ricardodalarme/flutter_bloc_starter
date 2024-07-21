@@ -12,6 +12,17 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/placeholder.svg
+  SvgGenImage get placeholder =>
+      const SvgGenImage('assets/images/placeholder.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [placeholder];
+}
+
 class $AssetsLogosGen {
   const $AssetsLogosGen();
 
@@ -30,6 +41,7 @@ class Assets {
 
   static const String package = 'common_ui';
 
+  static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLogosGen logos = $AssetsLogosGen();
 }
 

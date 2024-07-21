@@ -21,7 +21,7 @@ dev_dependencies:
 
 flutter:
   assets:
-    - assets/
+    - assets/images/
     - assets/logos/
 
 flutter_gen:

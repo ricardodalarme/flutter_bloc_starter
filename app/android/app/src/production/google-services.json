@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "731036601810",
+    "project_id": "qs-flutter-production",
+    "storage_bucket": "qs-flutter-production.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731036601810:android:df2b6a2d66ba2361a68c0b",
+        "android_client_info": {
+          "package_name": "com.ricardodalarme.flutter_bloc_starter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1dfrVPNdFVN4AObmLd2wQQCJW4Z3faxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

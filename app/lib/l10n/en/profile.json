@@ -1,0 +1,12 @@
+{
+  "title": "Profile",
+  "buttonEditProfile": "Edit Profile",
+  "buttonChangePassword": "Change Password",
+  "buttonSettings": "Settings",
+  "buttonPrivacyPolicy": "Privacy Policy",
+  "buttonTerms": "Terms",
+  "buttonLogout": "Logout",
+  "buttonChangePicture": "Change Picture",
+  "buttonPickImageFromCamera": "Camera",
+  "buttonPickImageFromGallery": "Gallery"
+}

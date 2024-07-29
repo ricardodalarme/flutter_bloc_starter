@@ -1,0 +1,11 @@
+name: formz_inputs
+publish_to: "none"
+
+environment:
+  sdk: ^3.4.0
+
+dependencies:
+  formz: ^0.7.0
+
+dev_dependencies:
+  test: ^1.25.8

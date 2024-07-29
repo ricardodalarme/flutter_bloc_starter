@@ -2,15 +2,93 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Lunch Development",
-      "request": "launch",
-      "type": "dart"
-    },
-    {
-      "name": "Lunch Production",
+      "name": "Development (debug)",
+      "cwd": "app",
       "request": "launch",
       "type": "dart",
-      "flutterMode": "release"
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define-from-file",
+        "../.env.development",
+        "--flavor",
+        "development"
+      ]
+    },
+    {
+      "name": "Development (profile)",
+      "cwd": "app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define-from-file",
+        "../.env.development",
+        "--flavor",
+        "development"
+      ]
+    },
+    {
+      "name": "Development (release)",
+      "cwd": "app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define-from-file",
+        "../.env.development",
+        "--flavor",
+        "development"
+      ]
+    },
+    {
+      "name": "Production (debug)",
+      "cwd": "app",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define-from-file",
+        "../.env.production",
+        "--flavor",
+        "production"
+      ]
+    },
+    {
+      "name": "Production (profile)",
+      "cwd": "app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define-from-file",
+        "../.env.production",
+        "--flavor",
+        "production"
+      ]
+    },
+    {
+      "name": "Production (release)",
+      "cwd": "app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define-from-file",
+        "../.env.production",
+        "--flavor",
+        "production"
+      ]
+    },
+    {
+      "name": "Storybook",
+      "cwd": "storybook",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart"
     }
   ]
 }

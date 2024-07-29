@@ -1,0 +1,16 @@
+name: storybook
+version: 1.0.0
+publish_to: "none"
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  common_ui:
+    path: ../app/packages/common_ui
+  flutter:
+    sdk: flutter
+  widgetbook: ^3.8.1
+
+flutter:
+  uses-material-design: true

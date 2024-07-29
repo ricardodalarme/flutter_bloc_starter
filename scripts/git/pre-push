@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# shellcheck source=scripts/git/scripts
-source "$(dirname "$0")"/scripts
-
-check_flutter_installed
-run_flutter_format
-run_flutter_analyzer
-run_flutter_tests

@@ -1,5 +1,6 @@
 version: 2
 updates:
+  # Actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -9,6 +10,8 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
+
+  # Root
   - package-ecosystem: "pub"
     directory: "/"
     schedule:
@@ -18,8 +21,21 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
+
+  # App
   - package-ecosystem: "pub"
-    directory: "/packages/authentication_repository"
+    directory: "/app/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # Packages
+  - package-ecosystem: "pub"
+    directory: "/app/packages/common"
     schedule:
       interval: "weekly"
     labels:
@@ -28,7 +44,91 @@ updates:
       prefix: "chore"
       include: "scope"
   - package-ecosystem: "pub"
-    directory: "/packages/user_repository"
+    directory: "/app/packages/common_data"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: "pub"
+    directory: "/app/packages/common_ui"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: "pub"
+    directory: "/app/packages/formz_inputs"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: "pub"
+    directory: "/app/packages/schemas"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # Services
+  - package-ecosystem: "pub"
+    directory: "/app/packages/services/analytics"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: "pub"
+    directory: "/app/packages/services/crash_report"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: "pub"
+    directory: "/app/packages/services/remote_config"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: "pub"
+    directory: "/app/packages/services/persistent_storage"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: "pub"
+    directory: "/app/packages/services/secure_storage"
+    schedule:
+      interval: "weekly"
+    labels:
+      - ":package: dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  - package-ecosystem: "pub"
+    directory: "/storybook/"
     schedule:
       interval: "weekly"
     labels:

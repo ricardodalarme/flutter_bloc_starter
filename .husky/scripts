@@ -1,0 +1,64 @@
+#!/bin/bash
+set -e
+
+# Paths
+FLUTTER=$(which flutter)
+
+# Terminal color codes
+RED='\033[0;31m'
+BLACK_ON_RED='\033[41m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BOLD='\033[1m'
+NO_COLOR='\033[0m' # Resets color
+
+check_flutter_installed() {
+  if [ ! -x "$FLUTTER" ]; then
+    printf '%bError: Flutter is not installed. Please install Flutter to proceed.%b\n' "$BLACK_ON_RED" "$NO_COLOR"
+    return 1
+  fi
+}
+
+check_localization_files() {
+  printf '\n%bChecking localization files...%b\n' "$YELLOW$BOLD" "$NO_COLOR"
+
+  if melos l10n:analyze; then
+    printf '%bLocalization check successful.%b\n' "$GREEN$BOLD" "$NO_COLOR"
+  else
+    printf '%bLocalization errors detected. Please correct them and try again.%b\n' "$RED$BOLD" "$NO_COLOR"
+    return 1
+  fi
+}
+
+run_format() {
+  printf '\n%bRunning formatter...%b\n' "$YELLOW$BOLD" "$NO_COLOR"
+
+  if melos format:no-output; then
+    printf '%bFormatter completed successfully.%b\n' "$GREEN$BOLD" "$NO_COLOR"
+  else
+    printf '%bFormatting errors found. Please fix them and try again.%b\n' "$RED$BOLD" "$NO_COLOR"
+    return 1
+  fi
+}
+
+run_lint() {
+  printf "\n%bRunning linter...%b\n" "$YELLOW$BOLD" "$NO_COLOR"
+
+  if melos lint; then
+    printf '%bLinting completed successfully.%b\n' "$GREEN$BOLD" "$NO_COLOR"
+  else
+    printf '%bLinting errors found. Please fix them and try again.%b\n' "$RED$BOLD" "$NO_COLOR"
+    return 1
+  fi
+}
+
+run_tests() {
+  printf "\n%bRunning tests...%b\n" "$YELLOW$BOLD" "$NO_COLOR"
+
+  if melos test; then
+    printf '%bAll tests passed successfully.%b\n' "$GREEN$BOLD" "$NO_COLOR"
+  else
+    printf '%bTest failures detected. Please resolve them and try again.%b\n' "$RED$BOLD" "$NO_COLOR"
+    return 1
+  fi
+}

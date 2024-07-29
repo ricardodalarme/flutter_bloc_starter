@@ -1,0 +1,14 @@
+{
+  "title": "Login",
+  "buttonLogin": "Login",
+  "buttonForgotPassword": "Forgot password?",
+  "buttonSignInWith": "Sign in with {provider}",
+  "buttonNewAccount(rich)": "Don't have an account? {signUp(Sign up)}",
+  "dividerOr": "OR",
+  "usernameErrors(map)": {
+    "empty": "Username is required"
+  },
+  "passwordErrors(map)": {
+    "empty": "Password is required"
+  }
+}

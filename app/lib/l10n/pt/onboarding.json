@@ -1,0 +1,17 @@
+{
+  "pages(interface=OnboardingPageData)": [
+    {
+      "title": "Bem vindo!",
+      "message": "Seja muito bem vindo ao Flutter Bloc Starter"
+    },
+    {
+      "title": "O que é o Flutter Bloc Starter?",
+      "message": "O Flutter Bloc Starter é um projeto para agilizar o bootstrapping de novos projetos Flutter. Ele já vem com uma série de funcionalidades prontas para uso, como internacionalização, temas, rotas, gerenciamento de estado, entre outros."
+    },
+    {
+      "title": "Vamos começar?",
+      "message": "Pronto para explorar tudo o que o Flutter Bloc Starter tem a oferecer? Vamos começar!"
+    }
+  ],
+  "doneButton": "Começar"
+}

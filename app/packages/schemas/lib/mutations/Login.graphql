@@ -1,0 +1,10 @@
+mutation Login($credentials: LoginInput!) {
+  login(credentials: $credentials) {
+    accessToken {
+      ...TokenFragment
+    }
+    refreshToken {
+      ...TokenFragment
+    }
+  }
+}

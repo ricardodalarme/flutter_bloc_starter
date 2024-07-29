@@ -1,0 +1,19 @@
+name: Setup Environment
+description: Setup environment for the project
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        channel: "stable"
+        cache: true
+        cache-key: "flutter-:os:-:channel:-:version:-:arch:-:hash:"
+
+    - name: Install melos
+      uses: bluefireteam/melos-action@v3
+
+    - name: Generate env
+      shell: bash
+      run: cp .env.example .env.development

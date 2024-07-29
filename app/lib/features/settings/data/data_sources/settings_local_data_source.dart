@@ -1,0 +1,41 @@
+import 'dart:convert';
+
+import 'package:flutter_bloc_starter/features/settings/data/data_sources/models/settings_local.dart';
+import 'package:persistent_storage_service/persistent_storage_service.dart';
+
+abstract class SettingsLocalDataSource {
+  Future<void> save(SettingsLocal settings);
+
+  SettingsLocal? get();
+}
+
+class SettingsLocalDataSourceImpl implements SettingsLocalDataSource {
+  SettingsLocalDataSourceImpl({
+    required PersistentStorageService storage,
+  }) : _storage = storage;
+
+  final PersistentStorageService _storage;
+
+  static const _key = 'settings';
+
+  @override
+  Future<void> save(SettingsLocal settings) async {
+    final settingsLocalMap = settings.toMap();
+    final settingsLocalMapInString = jsonEncode(settingsLocalMap);
+
+    await _storage.writeString(key: _key, value: settingsLocalMapInString);
+  }
+
+  @override
+  SettingsLocal? get() {
+    final settingsLocalMapInString = _storage.readString(key: _key);
+
+    if (settingsLocalMapInString != null) {
+      final settingsLocalMap =
+          jsonDecode(settingsLocalMapInString) as Map<String, dynamic>;
+      return SettingsLocal.fromMap(settingsLocalMap);
+    }
+
+    return null;
+  }
+}

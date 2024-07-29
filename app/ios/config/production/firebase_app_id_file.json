@@ -1,0 +1,6 @@
+{
+  "purpose": "FirebaseAppID & ProjectID for this Firebase app in this directory",
+  "GOOGLE_APP_ID": "1:29061775636:ios:ec3417c753de56e2e20201",
+  "FIREBASE_PROJECT_ID": "flutter-bloc-starter-prd",
+  "GCM_SENDER_ID": "29061775636"
+}

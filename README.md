@@ -13,6 +13,8 @@ Base repository for application using Flutter + Bloc
   - [Pre-requirements](#pre-requirements)
   - [Install Melos](#install-melos)
   - [Bootstrap](#bootstrap)
+  - [Environment Variables](#environment-variables)
+  - [Login](#login)
 - [Running it](#running-it)
   - [Mobile App](#mobile-app)
     - [VSCode (Recommended)](#vscode-recommended)
@@ -54,6 +56,17 @@ Fortunately, Melos has a command that does this for us. To install the dependenc
 ```bash
 melos bootstrap
 ```
+
+### Environment Variables
+
+Create a `.env.development` file in the root of the project using the .env.example file as a template. This file will be used to store the environment variables for the development environment. You can get the values for the variables from the [wiki](https://github.com/ricardodalarme/flutter_bloc_starter/wiki) of the project. 
+
+### Login
+
+To login in the application, you can create a new user or use the following credentials:
+
+- **Username:** `admin`
+- **Password:** `admin`
 
 ## Running it
 
